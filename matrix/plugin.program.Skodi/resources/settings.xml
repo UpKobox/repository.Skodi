@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<settings>
+    <category label="[COLOR orange]Choisissez un skin préconfiguré [/COLOR]">
+        <setting label="Choisir et Lancer [COLOR lime]Skin Arctic Horizon 2 de: [/COLOR]" type="lsep" />
+        <setting id="ChoixSkinAH2CoKodi" label="Arctic Horizon 2 [COLOR yellow](CoKodico)[/COLOR]" type="action" action="RunPlugin(plugin://plugin.program.Skodi/?action=ChangeSkinAH2CoKoetlance)"/>
+        <setting id="ChoixSkinAH2bePurple" label="Arctic Horizon 2 [COLOR yellow](bePurple)[/COLOR]" type="action" action="RunPlugin(plugin://plugin.program.Skodi/?action=skinAH2bePurpleetlance)"/>
+        <setting id="ChoixSkinAH2Luc562" label="Arctic Horizon 2 [COLOR yellow](Luc562)[/COLOR]" type="action" action="RunPlugin(plugin://plugin.program.Skodi/?action=skinLuc562AH2etlance)"/>
+        <setting id="ChoixSkinAH2pistachePoilue" label="Arctic Horizon 2 [COLOR yellow](pistachePoilue)[/COLOR]" type="action" action="RunPlugin(plugin://plugin.program.Skodi/?action=skinAH2pistachePoilueetlance)"/>
+        <setting label="Choisir et Lancer [COLOR lime]Skin Auramod de: [/COLOR]" type="lsep" /> 
+        <setting id="ChoixSkinAuramodbePurple" label="Skin Auramod [COLOR yellow](bePurple)[/COLOR]" type="action" action="RunPlugin(plugin://plugin.program.Skodi/?action=ChangeSkinskinauramodetlance)"/>
+        <!--<setting id="ChoixSkinAuramodbePurpleEnfants" label="Skin Auramod Enfants [COLOR yellow](bePurple)[/COLOR]" type="action" action="RunPlugin(plugin://plugin.program.Skodi/?action=ChangeSkinbePurpleAuraKidetlance)">-->
+        <setting label="Choisir et Lancer [COLOR lime]Skin Mimic de: [/COLOR]" type="lsep" />
+        <setting id="ChoixSkinMimicLuc562" label="Skin Mimic [COLOR yellow](Luc562)[/COLOR]" type="action" action="RunPlugin(plugin://plugin.program.Skodi/?action=ChangeSkinmimiclretlance)"/>
+        <!--<setting id="ChoixSkinMimicGhantholiny" label="Lancer Skin Mimic [COLOR yellow](Ghantholiny)[/COLOR]" type="action" action="RunPlugin(plugin://plugin.program.Skodi/?action=GhantholinyMimicetlance)">-->
+        <setting label="Choisir et Lancer [COLOR lime]Skin ProjectAura de: [/COLOR]" type="lsep" />
+        <setting id="ChoixSkinRayFlixLite" label="RayFlixSkin Project Aura [COLOR yellow](Leger)[/COLOR]" type="action" action="RunPlugin(plugin://plugin.program.Skodi/?action=ChangeSkinsProjectAuraliteetlance)"/>
+        <setting id="ChoixSkinRayFlixComplet" label="RayFlixSkin Project Aura [COLOR yellow](Complet)[/COLOR]" type="action" action="RunPlugin(plugin://plugin.program.Skodi/?action=ChangeSkinsProjectAurahk2fulletlance)"/>
+        <setting id="ChoixSkinRayFlixKid" label="RayFlixSkin Project Aura [COLOR yellow](Enfants)[/COLOR]" type="action" action="RunPlugin(plugin://plugin.program.Skodi/?action=ChangeSkinsProjectAurahk2kidsetlance)"/>
+        <setting id="ChoixSkinRayFlixretro" label="RayFlixSkin Project Aura [COLOR yellow](Retro)[/COLOR]" type="action" action="RunPlugin(plugin://plugin.program.Skodi/?action=ChangeSkinsProjectAurahk2retretlance)"/>
+        <setting label="Choisir et Lancer [COLOR lime]Skin Titan Bingie de: [/COLOR]" type="lsep" />
+        <setting id="ChoixSkinbingieCoKodi" label="Skin Titan Bingie [COLOR yellow](CoKodico)[/COLOR]" type="action" action="RunPlugin(plugin://plugin.program.Skodi/?action=ChangeSkinbingieCoKoetlance)"/>
+        <setting label="Choisir et Lancer [COLOR lime]Skin Copacetic de: [/COLOR]" type="lsep" />
+        <setting id="ChoixSkinCoKopacetiCoKodi" label="Skin Copacetic [COLOR yellow](CoKodico)[/COLOR]" type="action" action="RunPlugin(plugin://plugin.program.Skodi/?action=ChangeSkincopacetiCoKoetlance)"/>
+        <setting label="Choisir et Lancer [COLOR lime]Skin Aeon MQ8 de: [/COLOR]" type="lsep" />
+        <setting id="ChoixSkinAeonMQ8CoKodi" label="Skin Aeon MQ8 [COLOR yellow](CoKodico)[/COLOR]" type="action" action="RunPlugin(plugin://plugin.program.Skodi/?action=AeonMQ8)"/>
+        <setting label="Choisir et Lancer [COLOR lime]Skin Aeon Nox Silvo de: [/COLOR]" type="lsep" />
+        <setting id="ChoixSkinaeonnoxsilvoLuc562" label="Skin Aeon Nox Silvo [COLOR yellow](Luc562)[/COLOR]" type="action" action="RunPlugin(plugin://plugin.program.Skodi/?action=ChangeSkinaeonnoxsilvoetlance)"/>
+        <setting label="Choisir et Lancer [COLOR lime]Skin Arctic Horizon 1 de: [/COLOR]" type="lsep" />
+        <setting id="ChoixSkinGhantholinyarctichorizon1" label="Skin Arctic Horizon 1 [COLOR yellow](Ghantholiny)[/COLOR]" type="action" action="RunPlugin(plugin://plugin.program.Skodi/?action=ChangeSkinarctichorizonetlance)"/>
+    </category>
+
+
+        <category label="[COLOR orange]Sauvegarde Skin et kodi [/COLOR]">
+        <setting label="[COLOR yellow]Sauvegarde Skin (Arctic Horizon 2)[/COLOR]" type="lsep" />
+        <setting label="Sauvegarde Skin (Arctic Horizon 2)" type="action" action="RunPlugin(plugin://plugin.program.Skodi/?action=skin_save1)"/>
+        <setting label="Restauration Skin (Arctic Horizon 2)" type="action" action="RunPlugin(plugin://plugin.program.Skodi/?action=skin_restor1)" />
+        <setting label="[COLOR yellow]Sauvegarde Skin (Rayflix)[/COLOR]" type="lsep" />
+        <setting label="Sauvegarde Skin (Rayflix)" type="action" action="RunPlugin(plugin://plugin.program.Skodi/?action=skin_save2)"/>
+        <setting label="Restauration Skin (Rayflix)" type="action" action="RunPlugin(plugin://plugin.program.Skodi/?action=skin_restor2)" />
+        <setting label="[COLOR yellow]Sauvegarde Skin Addon Backup[/COLOR]" type="lsep" />
+        <setting label="Sauvegarde (Tout Kodi avec Addon Backup)" type="action" action="RunPlugin(plugin://plugin.program.Skodi/?action=skin_save3)"/>
+        <setting label="Restauration (Tout Kodi avec Addon Backup)" type="action" action="RunPlugin(plugin://plugin.program.Skodi/?action=skin_restor3)" />
+    </category>
+
+
+    <category label="[COLOR orange]Import et Maj Database HK2[/COLOR]">
+        <setting label="[COLOR yellow]Maj Database HK2[/COLOR]" type="lsep" />
+        <setting id="majhk2S" label="[COLOR lime]Maj HK2 et Skin rafraichissement[/COLOR]" type="action" action="RunScript(special://home/addons/service.U2PplayMaj/U2Pplay.py,True)"/>
+        <setting id="majhk2" label="[COLOR lime]Maj HK2 seulement (rapide)[/COLOR]" type="action" action="RunScript(special://home/addons/service.U2PplayMaj/U2PplayFast.py,True)"/>
+        <setting id="settingmajHk2" label="[COLOR lime]U2Pplay Token et Bloc-notes en ligne (Rentry, Anotepad...)[/COLOR]" type="action" action="RunPlugin(plugin://plugin.program.Skodi/?action=majHk)" />
+        <setting label="[COLOR yellow]Import et Reset Database HK2[/COLOR]" type="lsep" />
+        <setting label="[COLOR lime]Import Database[/COLOR]" type="action" action="RunPlugin(plugin://plugin.video.sendtokodiU2P/?action=folderPastebin&maj=false)"/>
+        <setting label="[COLOR lime]Reset Database[/COLOR]" type="action" action="RunPlugin(plugin://plugin.video.sendtokodiU2P/?action=resetBDhkNew)"/>
+    </category>
+
+
+    <category label="[COLOR orange]Nettoyage Kodi [/COLOR]">
+        <setting label="[COLOR yellow]Nettoyer[/COLOR]" type="lsep" />
+        <setting label="[COLOR red]Nettoyer Tout !!![/COLOR]" type="action" action="RunPlugin(plugin://plugin.program.Skodi/?action=vider_cache)" />
+        <setting label="[COLOR lime]Nettoyer Cache Uniquement[/COLOR]" type="action" action="RunPlugin(plugin://plugin.program.Skodi/?action=cache_seul)" />
+        <setting label="[COLOR lime]Nettoyer Tmp Uniquement[/COLOR]" type="action" action="RunPlugin(plugin://plugin.program.Skodi/?action=tmp_seul)" />
+        <setting label="[COLOR lime]Nettoyer Packages Uniquement[/COLOR]" type="action" action="RunPlugin(plugin://plugin.program.Skodi/?action=package_seul)" />
+        <setting label="[COLOR lime]Nettoyer Thumbnails Uniquement[/COLOR]" type="action" action="RunPlugin(plugin://plugin.program.Skodi/?action=thumb_seul)" />        
+    </category>
+ 
+
+    <category label="[COLOR orange]Installation Repo Skin [/COLOR]">
+        <setting label="[COLOR yellow]Installation des Repo Skin (À faire après installation de cet addon ou ajout repo) [/COLOR]" type="lsep" />
+        <setting id="InstaSkin" label="[COLOR lime]Installation des repo[/COLOR]" type="action" action="RunPlugin(plugin://plugin.program.Skodi/?action=inst_tout)"/>
+        <setting id="ActiSkin" label="[COLOR lime]Activation  des repo[/COLOR]" type="action" action="RunPlugin(plugin://plugin.program.Skodi/?action=au_maj2)"/>
+    </category>
+   
+</settings>
