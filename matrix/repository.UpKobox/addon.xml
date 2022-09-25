@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="repository.UpKobox" name="UpKobox Alpha Repository" version="1.0" provider-name="UpKobox">
+    <extension point="xbmc.addon.repository" name="UpKobox Alpha Repository">
+        <dir>
+            <info compressed="false">https://raw.githubusercontent.com/UpKobox/repository.UpKobox/master/repo/zips/addons.xml</info>
+            <checksum>https://raw.githubusercontent.com/UpKobox/repository.UpKobox/master/repo/zips/addons.xml.md5</checksum>
+            <datadir zip="true">https://raw.githubusercontent.com/UpKobox/repository.UpKobox/master/repo/zips/</datadir>
+        </dir>
+        <dir minversion="19.0.0">
+            <info compressed="false">https://raw.githubusercontent.com/UpKobox/repository.UpKobox/master/matrix/zips/addons.xml</info>
+            <checksum>https://raw.githubusercontent.com/UpKobox/repository.UpKobox/master/matrix/zips/addons.xml.md5</checksum>
+            <datadir zip="true">https://raw.githubusercontent.com/UpKobox/repository.UpKobox/master/matrix/zips/</datadir>
+        </dir>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary>UpKobox Alpha Repository</summary>
+        <description>Un référentiel pour les versions alpha </description>
+        <disclaimer></disclaimer>
+        <platform>all</platform>
+        <assets>
+            <icon>icon.png</icon>
+            <fanart>fanart.jpg</fanart>
+        </assets>
+    </extension>
+</addon>
