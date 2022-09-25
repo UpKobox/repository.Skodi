@@ -1,4 +1,4 @@
-#✨ Référentiel Alpha de : Skodi ✨ 
+✨ Référentiel Alpha de : Skodi ✨ 
 
 Source du gestionnaire de fichiers Kodi :
 
