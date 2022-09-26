@@ -308,6 +308,14 @@ def ouvrir_u2p():
  # Fenetre Parametres Backup
 def settings_Backup():
     xbmc.executebuiltin('RunScript(special://home/addons/plugin.program.Skodi/resources/Settings Fenetre Backup.py,True)')
+
+ # Ouvrir SHSB
+def ouvrir_SHSB():
+    xbmc.executebuiltin('RunScript(special://home/addons/plugin.program.Skodi/resources/Script SHSB.py,True)')
+
+# Ouvrir openwizard
+def ouvrir_openwizard():
+    xbmc.executebuiltin('RunScript(special://home/addons/plugin.program.Skodi/resources/openwizard.py,True)')
 ##############################################
 
 # COMPTES PREMIUM ALEATOIRE
@@ -538,10 +546,11 @@ def Ghantholiny():
     #choix skin
     xbmcplugin.setPluginCategory(__handle__, "[COLOR lime]Skin de [/COLOR][COLOR yellow]Ghantholiny[/COLOR]")
     xbmcplugin.setContent(__handle__, 'files')
+    add_dir("[COLOR cyan]lancer :[/COLOR] Skin Arctic Horizon 2 [COLOR lime](WIP Alpha)[/COLOR]", 'ChangeSkinarctichorizon2etlance', artworkPath + 'icon (AH2).png')
     add_dir("[COLOR cyan]lancer :[/COLOR] Skin Arctic Horizon [COLOR lime](1)[/COLOR]", 'ChangeSkinarctichorizonetlance', artworkPath + 'skin.arctic.horizon.png')
     #add_dir("[COLOR white]Choisir:[/COLOR] Skin Arctic Horizon [COLOR yellow][/COLOR](1)", 'GhantholinyAH', artworkPath + 'skin.arctic.horizon.png')
     #add_dir("[COLOR lime]Lancer:[/COLOR] Skin Arctic Horizon [COLOR yellow](1)[/COLOR]", 'ChangeSkinarctichorizon', artworkPath + 'mimic.jpg')
-    #add_dir("[COLOR cyan]lancer :[/COLOR] Skin Mimic [COLOR yellow](lr)[/COLOR]", 'GhantholinyMimicetlance', artworkPath + 'mimic.jpg')
+    add_dir("[COLOR cyan]lancer :[/COLOR] Skin Mimic [COLOR yellow](lr)[/COLOR]", 'GhantholinyMimicetlance', artworkPath + 'mimic.jpg')
     #add_dir("[COLOR white]Choisir:[/COLOR] Skin Mimic [COLOR yellow](lr)[/COLOR]", 'GhantholinyMimic', artworkPath + 'mimic.jpg')
     #add_dir("[COLOR lime]Lancer:[/COLOR] Skin Mimic [COLOR yellow](lr)[/COLOR]", 'GhantholinyMimichange', artworkPath + 'mimic.jpg')
     #add_dir("[COLOR lime]Paramètres U2P [/COLOR]", 'settings_u2p', artworkPath + 'icon (U2P).png')
@@ -606,16 +615,19 @@ def save_restor():
     #menu sauvegarde restauration
     xbmcplugin.setPluginCategory(__handle__, "[COLOR cyan]Sauvegarde et restauration[/COLOR]")
     xbmcplugin.setContent(__handle__, 'files')
-    add_dir("[COLOR lime]CREER UNE SAUVEGARDE : [/COLOR]", 'skin_save1', artworkPath + 'save.png')
-    add_dir("[COLOR lime]Skin Arctic Horizon 2[/COLOR]", 'skin_save1', artworkPath + 'icon (AH2).png')
-    add_dir("[COLOR lime]Skin Rayflix[/COLOR]", 'skin_save2', artworkPath + 'icon (Ray).png')
+    add_dir("[COLOR lime]CREER UNE SAUVEGARDE : [/COLOR]", 'ouvrir_SHSB', artworkPath + 'save.png')
+    #add_dir("[COLOR lime]Skin Arctic Horizon 2[/COLOR]", 'skin_save1', artworkPath + 'icon (AH2).png')
+    #add_dir("[COLOR lime]Skin Rayflix[/COLOR]", 'skin_save2', artworkPath + 'icon (Ray).png')
+    add_dir("[COLOR lime]Sauvegarder Skin au choix  [/COLOR][COLOR yellow](addon Skin Backup nécessaire, dans Repo Skodi!)[/COLOR]", 'ouvrir_SHSB', artworkPath + 'fanart (SHSB).jpg')
     add_dir("[COLOR lime]Sauvegarder tout [/COLOR][COLOR yellow](addon Backup nécessaire)[/COLOR]", 'skin_save3', artworkPath + 'icon (backup).png')
-    add_dir("[COLOR magenta]RESTAURER UNE SAUVEGARDE : [/COLOR]", 'skin_restor1', artworkPath + 'restaurer.jpg')
-    add_dir("[COLOR magenta]Skin Arctic Horizon 2[/COLOR]", 'skin_restor1', artworkPath + 'icon (AH2).png')
-    add_dir("[COLOR magenta]Skin Rayflix[/COLOR]", 'skin_restor2', artworkPath + 'icon (Ray).png')
-    add_dir("[COLOR magenta]Restaurer tout [/COLOR][COLOR yellow](addon Backup nécessaire)[/COLOR]", 'skin_restor3', artworkPath + 'icon (backup).png')
+    add_dir("[COLOR magenta]RESTAURER UNE SAUVEGARDE : [/COLOR]", 'ouvrir_SHSB', artworkPath + 'restaurer.jpg')
+    #add_dir("[COLOR magenta]Skin Arctic Horizon 2[/COLOR]", 'skin_restor1', artworkPath + 'icon (AH2).png')
+    #add_dir("[COLOR magenta]Skin Rayflix[/COLOR]", 'skin_restor2', artworkPath + 'icon (Ray).png')
+    #add_dir("[COLOR magenta]Restaurer Skin  [/COLOR][COLOR yellow](addon Skin Backup nécessaire , dans Repo Skodi!)[/COLOR]", 'skin_restor4', artworkPath + 'icon (backup).png')
+    add_dir("[COLOR magenta]Restaurer tout [/COLOR][COLOR yellow](addon Backup nécessaire , dans Repo Kodi !)[/COLOR]", 'skin_restor3', artworkPath + 'fanart (SHSB).jpg')
     add_dir("[COLOR yellow]Ouvrir Paramètres Addon Backup [/COLOR]", 'settings_Backup', artworkPath + 'icon (backup).png')
     #add_dir("[COLOR cyan]Paramètres U2P [/COLOR]", 'settings_u2p', artworkPath + 'icon (U2P).png')
+    add_dir("[COLOR lime]Openwizard : [/COLOR]", 'ouvrir_openwizard', artworkPath + 'save.png')
     xbmcplugin.endOfDirectory(handle=__handle__, succeeded=True)  
 
 ##############################################
@@ -658,6 +670,13 @@ def skin_save3():
     #shutil.copytree(source_dir, destination_dir, dirs_exist_ok=True)
     #xbmc.sleep(1000)
     xbmc.executebuiltin('RunScript(script.xbmcbackup,mode=backup)')
+
+def skin_save4():
+   xbmc.executebuiltin('RunScript(script.skin.helper.skinbackup,action=backup)')              
+
+
+
+
 
 #def AddonbBackupKodi():
     #xbmc.executebuiltin('Addon.OpenSettings(script.xbmcbackup)')  
@@ -709,6 +728,9 @@ def skin_restor3():
     xbmc.executebuiltin('RunScript(script.xbmcbackup,mode=restore)')
 
 
+def skin_restor4():
+    xbmc.executebuiltin('RunScript(script.skin.helper.skinbackup,action=restore)')
+             
 ##############################################
 
 # MENU MAJ DATABASE
@@ -962,7 +984,9 @@ def GhantholinyMimicetlance():
 def ChangeSkinarctichorizon():
     xbmc.executebuiltin('RunScript(special://home/addons/plugin.program.Skodi/resources/ChangeSkin-skin.arctic.horizon.py)')
 def ChangeSkinarctichorizonetlance():
-    xbmc.executebuiltin('RunScript(special://home/addons/plugin.program.Skodi/resources/testprofileskin.arctic.horizonGhantholiny.py)')     
+    xbmc.executebuiltin('RunScript(special://home/addons/plugin.program.Skodi/resources/testprofileskin.arctic.horizonGhantholiny.py)')   
+def ChangeSkinarctichorizon2etlance():
+    xbmc.executebuiltin('RunScript(special://home/addons/plugin.program.Skodi/resources/skin.arctic.horizon2Ghantholiny.py)')        
 # ChangeSkin-ProjectAura
 def ChangeSkinsProjectAura():
     xbmc.executebuiltin('RunScript(special://home/addons/plugin.program.Skodi/resources/ChangeSkin-skin.project.aura.py)')
@@ -1002,7 +1026,8 @@ def router(paramstring):
         'Luc562Aeon': (importSkin, 'https://github.com/UpKobox/Skodi/raw/main/SKIN/luc562/skin.aeon.nox.silvo.zip'),
         'Luc562Mimic': (importSkin, 'https://github.com/UpKobox/Skodi/raw/main/SKIN/luc562/skin.mimic.lr.zip'),
         'pistachePoilueAH2': (importSkin, 'https://github.com/UpKobox/Skodi/raw/main/SKIN/pistachePoilue/skin.arctic.horizon.2.zip'),   
-        'GhantholinyAH': (importSkin, 'https://github.com/UpKobox/Skodi/raw/main/SKIN/Ghantholiny/skin.arctic.horizon.zip'), 
+        'GhantholinyAH': (importSkin, 'https://github.com/UpKobox/Skodi/raw/main/SKIN/Ghantholiny/skin.arctic.horizon.zip'),
+        'GhantholinyAH2': (importSkin, 'https://github.com/UpKobox/Skodi/raw/main/SKIN/Ghantholiny/skin.artic.horizon.2.zip'),
         'GhantholinyMimic': (importSkin, 'https://github.com/UpKobox/Skodi/raw/main/SKIN/Ghantholiny/sin.mimic.lr.zip'), 
         'FanKai': (importSkin, 'https://github.com/UpKobox/Skodi/raw/main/SKIN/FanKai/fankai.zip'),
         #Choiir et Lancer Skin
@@ -1031,6 +1056,7 @@ def router(paramstring):
         'GhantholinyMimicetlance': (GhantholinyMimicetlance, ""),
         'GhantholinyMimichange': (GhantholinyMimichange, ""),
         'ChangeSkinarctichorizonetlance': (ChangeSkinarctichorizonetlance, ""),
+        'ChangeSkinarctichorizon2etlance': (ChangeSkinarctichorizon2etlance, ""),
         'ChangeSkinsProjectAuraliteetlance': (ChangeSkinsProjectAuraliteetlance, ""),
         'ChangeSkinsProjectAurahk2fulletlance': (ChangeSkinsProjectAurahk2fulletlance, ""),
         'ChangeSkinsProjectAurahk2kidsetlance': (ChangeSkinsProjectAurahk2kidsetlance, ""),
@@ -1065,9 +1091,11 @@ def router(paramstring):
         'skin_save1': (skin_save1, ""), 
         'skin_save2': (skin_save2, ""), 
         'skin_save3': (skin_save3, ""), 
+        'skin_save4': (skin_save3, ""),
         'skin_restor1': (skin_restor1, ""), 
         'skin_restor2': (skin_restor2, ""), 
         'skin_restor3': (skin_restor3, ""),
+        'skin_restor4': (skin_restor3, ""),
         #'AddonbBackupKodi': (AddonbBackupKodi, ""),
         #'AddonbBackupKodiSettings': (AddonbBackupKodiSettings, ""),         
         #autres
@@ -1085,6 +1113,8 @@ def router(paramstring):
         'inst_skin': (inst_skin, ""),
         'settings_u2p': (settings_u2p, ""),
         'ouvrir_u2p': (ouvrir_u2p, ""),
+        'ouvrir_SHSB': (ouvrir_SHSB, ""),
+        'ouvrir_openwizard': (ouvrir_openwizard, ""),
         'settings_Backup': (settings_Backup, ""),
         }
         
