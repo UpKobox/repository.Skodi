@@ -1,0 +1,180 @@
+# Embuary Helper language file
+# Addon Name: Embuary Helper
+# Addon id: script.embuary.helper
+# Addon Provider: sualfred
+# Translators:
+# sualfred <su4lfred@gmail.com>, 2019
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Embuary Helper\n"
+"Report-Msgid-Bugs-To: translations@kodi.tv\n"
+"POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2021-07-26 23:29+0000\n"
+"Last-Translator: Kai Sommerfeld <kai.sommerfeld@gmx.com>\n"
+"Language-Team: German <https://kodi.weblate.cloud/projects/kodi-add-ons-scripts/script-embuary-helper/de_de/>\n"
+"Language: de_DE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.7.2\n"
+
+msgctxt "Addon Summary"
+msgid "Embuary Helper Script"
+msgstr ""
+
+msgctxt "Addon Description"
+msgid "Helper script to provide features and functions to the Embuary skin. A full documentation can be found on GitHub: https://github.com/sualfred/script.embuary.helper/wiki"
+msgstr ""
+
+msgctxt "#32000"
+msgid "Error"
+msgstr "Fehler"
+
+msgctxt "#32001"
+msgid ""
+"This is a tool to provide features to a skin and requires skin integration."
+msgstr "Dieses Tool stellt Features für Skins bereit und benötigt Skin-Integration."
+
+msgctxt "#32002"
+msgid "Enable logging"
+msgstr "Protokollierung aktivieren"
+
+msgctxt "#32004"
+msgid "detected"
+msgstr "erkannt"
+
+msgctxt "#32005"
+msgid "Changed font to"
+msgstr "Schriftart ändern zu"
+
+msgctxt "#32003"
+msgid "Delete add-on image cache"
+msgstr "Addon-Bilder-Cache löschen"
+
+msgctxt "#32006"
+msgid "Applying changes"
+msgstr "Änderungen werden übernommen"
+
+msgctxt "#32007"
+msgid "Suggestions based on random watched item"
+msgstr "Vorschläge basierend auf zufällig ausgewähltem gesehenen Video"
+
+msgctxt "#32008"
+msgid "Next up"
+msgstr "Als Nächstes"
+
+msgctxt "#32009"
+msgid "Suggestions by random genre"
+msgstr "Vorschläge basierend auf zufällig ausgewähltem Genre"
+
+msgctxt "#32010"
+msgid "Recently added episodes and shows"
+msgstr "Kürzlich hinzugefügte Episoden und Serien"
+
+msgctxt "#32011"
+msgid "All media"
+msgstr "Alle Medien"
+
+msgctxt "#32012"
+msgid "Recommended by rating"
+msgstr "Empfohlen nach Bewertung"
+
+msgctxt "#32013"
+msgid "Continue watching"
+msgstr "Weiterschauen"
+
+msgctxt "#32014"
+msgid "Suggestions based on the last watched item"
+msgstr "Vorschläge basierend auf dem zuletzt gesehenen Video"
+
+msgctxt "#32015"
+msgid "Recently added unwatched episodes and shows"
+msgstr "Kürzlich hinzugefügte ungesehene Episoden und Serien"
+
+msgctxt "#32016"
+msgid "Enable service module"
+msgstr "Servicemodul aktivieren"
+
+msgctxt "#32017"
+msgid "Service interval time"
+msgstr "Service-Zeitintervall"
+
+msgctxt "#32018"
+msgid "Default blurring radius"
+msgstr "Standardradius des Weichzeichners"
+
+msgctxt "#32020"
+msgid "Misc."
+msgstr "Sonstiges"
+
+msgctxt "#32021"
+msgid "Background change interval"
+msgstr "Hintergrundwechselintervall"
+
+msgctxt "#32019"
+msgid ""
+"This will delete all created images (blurred backgrounds, genre thumbs, "
+"etc.) in the addon_data folder. Do you want to proceed?"
+msgstr "Dies löscht alle erstellten Bilder (weichgezeichnete Hintergründe, Genre-Vorschaubilder, usw.) im addon_data Ordner. Fortfahren?"
+
+msgctxt "#32022"
+msgid "All available database items"
+msgstr "Alle Datenbankeinträge"
+
+msgctxt "#32023"
+msgid "items"
+msgstr "Inhalte"
+
+msgctxt "#32024"
+msgid "The video database has no library tags stored."
+msgstr "Die Videodatenbank enthält keine Tags."
+
+msgctxt "#32025"
+msgid "Attention"
+msgstr "Achtung"
+
+msgctxt "#32026"
+msgid "Enable library tag detection for"
+msgstr "Tag-Erkennung aktivieren für"
+
+msgctxt "#32029"
+msgid "Directed by"
+msgstr "Unter der Regie von"
+
+msgctxt "#32030"
+msgid "Items starring"
+msgstr "Einträge mit"
+
+msgctxt "#32031"
+msgid "Because you watched"
+msgstr "Ähnliche Titel wie"
+
+msgctxt "#32032"
+msgid "Christmas holiday season"
+msgstr "Weihnachtszeit"
+
+msgctxt "#32033"
+msgid "Spooky suggestions"
+msgstr "Gruselige Vorschläge"
+
+msgctxt "#32034"
+msgid "May the force be with you"
+msgstr "Möge die Macht mit dir sein"
+
+msgctxt "#32035"
+msgid "Live long and prosper"
+msgstr "Lebe lang und in Frieden"
+
+msgctxt "#32036"
+msgid "Special and seasonal widgets"
+msgstr "Spezielle und saisonale Widgets"
+
+#~ msgctxt "#32027"
+#~ msgid "Add/remove movie favourite"
+#~ msgstr "Film-Favorit hinzufügen/entfernen"
+
+#~ msgctxt "#32028"
+#~ msgid "Add/remove TV show favourite"
+#~ msgstr "Serien-Favorit hinzufügen/entfernen"
