@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>			
+	<zorder>2</zorder>
+	<onload condition="!skin.hassetting(pas_de_pause_2) + !skin.hassetting(pas_de_pause_1) + player.hasvideo + !player.paused + window.isvisible(fullscreenvideo)">setproperty(pause,non,home)</onload>
+	<onload condition="!skin.hassetting(pas_de_pause_2) + !skin.hassetting(pas_de_pause_1) + player.hasvideo + !player.paused + window.isvisible(fullscreenvideo)">playercontrol(play)</onload>
+	<onunload condition="!skin.hassetting(pas_de_pause_2) + !skin.hassetting(pas_de_pause_1) + !string.isempty(window(home).property(pause))">playercontrol(play)</onunload>
+	<onunload>clearproperty(pause,home)</onunload>	
+	
+	
+	
+	
+	<onload>alarmclock(forcer_masquer_tout,noop,00:01,silent)</onload>
+	<onunload>alarmclock(forcer_masquer_tout,noop,00:01,silent)</onunload>	
+	<!-- empeche l'ouverture de la fenetre depuis la fenetre d'informations si propriete "casting" definie -->
+	<onload condition="window.isvisible(movieinformation) + string.isequal(window(home).property(liste),casting)">dialog.close(filebrowser,true)</onload>	
+	
+	<!-- modification de la vignette d'un episode de l'accueil -->
+	<onunload condition="string.isequal(window(home).property(modifier_miniature_episode),oui)">setproperty(retour_filebrowser,oui,home)</onunload><!-- definition de la propriete "filebrowser" qui empechera l'ouverture de la fenetre "dialogselect" a la fermeture de la fenetre "filebrowser" --> 
+
+	<defaultcontrol always="true">10</defaultcontrol>
+<controls>	
+	<control type="button" id="10">																		<description>bouton active par defaut en cas d'erreur</description>		
+		<onfocus condition="control.isvisible(450)">alarmclock(focus,setfocus(450),00:00,silent)</onfocus>
+		<onfocus condition="control.isvisible(451)">alarmclock(focus,setfocus(451),00:00,silent)</onfocus>
+		<onright>setfocus(10)</onright>
+		<onleft>setfocus(10)</onleft>
+		<onup>setfocus(10)</onup>
+		<ondown>setfocus(10)</ondown>
+	</control>
+	<control type="image">
+		<texture colordiffuse="$VAR[gris]">commun/fond.png</texture>	
+	</control>	
+	<control type="group">																				<description>liste simple</description>	
+		<animation effect="fade" start="0" end="100" reversible="false" condition="control.isvisible(450)">conditional</animation>		
+		<animation effect="fade" start="100" end="0" reversible="false" condition="!control.isvisible(450)">conditional</animation>		
+	<control type="group">
+	<control type="image">
+		<top>55</top>
+		<left>50</left>
+		<width>256</width>
+		<height>256</height>
+		<texture colordiffuse="$VAR[blanc]">$INFO[container(450).listitem.icon]</texture>
+	</control>		
+	<include content="liste_3">
+		<param name="id" value="450"/>
+	</include>
+	</control>
+	</control>
+	<control type="group">																				<description>liste complexe</description>				
+		<animation effect="fade" start="0" end="100" reversible="false" condition="control.isvisible(451)">conditional</animation>		
+		<animation effect="fade" start="100" end="0" reversible="false" condition="!control.isvisible(451)">conditional</animation>
+	<control type="image">
+		<visible>string.contains(container($PARAM[id]).listitem.icon,default) | string.contains(container($PARAM[id]).listitem.icon,/browse/)</visible>
+		<top>55</top>
+		<left>50</left>
+		<width>256</width>
+		<height>256</height>
+		<texture colordiffuse="$VAR[blanc]">$INFO[container(451).listitem.icon]</texture>
+	</control>
+	<include content="liste_6">
+		<param name="id" value="451"/>
+	</include>
+	</control>	
+	<control type="grouplist" id="1000">
+		<bottom>150</bottom>
+		<height>60</height>
+		<align>center</align>	
+		<onup condition="control.isvisible(450)">450</onup>		
+		<onup condition="control.isvisible(451)">451</onup>
+		<itemgap>30</itemgap>		
+		<orientation>horizontal</orientation>
+		<usecontrolcoords>true</usecontrolcoords>
+	<include content="bouton_defaut">
+		<param name="id" value="413"/>
+		<param name="visible" value="control.isenabled(413)"/>
+		<param name="label" value="$LOCALIZE[186]"/>
+	</include>
+	<include content="bouton_defaut">
+		<param name="id" value="414"/>
+		<param name="visible" value="control.isenabled(414)"/>
+		<param name="label" value="$LOCALIZE[222]"/>
+	</include>
+	<include content="bouton_defaut">
+		<param name="id" value="415"/>
+		<param name="visible" value="control.isenabled(415)"/>
+		<param name="label" value="$LOCALIZE[119]"/>
+	</include>
+	</control>
+
+	
+	<control type="label">
+		<label>$INFO[]</label>		
+	</control>	
+</controls>
+</window>

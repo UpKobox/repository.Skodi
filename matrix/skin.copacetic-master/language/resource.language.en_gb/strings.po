@@ -1,0 +1,1101 @@
+  # Kodi Media Center language file
+# Addon Name: Copacetic
+# Addon id: skin.copacetic
+# Addon Provider: QuizKid
+msgid ""
+msgstr ""
+"Project-Id-Version: Kodi Addons\n"
+"Report-Msgid-Bugs-To: http://trac.xbmc.org/\n"
+"POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Kodi Translation Team\n"
+"Language-Team: English (https://kodi.weblate.cloud/languages/en_gb/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+
+
+#: C
+
+#: Common
+msgctxt "#31115"
+msgid "[COLOR copacetic_accent_color]/[/COLOR]"
+
+#: Common
+msgctxt "#31116"
+msgid "[B][COLOR copacetic_accent_color]/[/COLOR][/B]"
+
+#: Common
+msgctxt "#31130"
+msgid "[COLOR copacetic_accent_color]‹[/COLOR]"
+
+#: Common
+msgctxt "#31131"
+msgid "[COLOR copacetic_accent_color]›[/COLOR]"
+
+
+
+
+#: D
+#/16x9/DialogAddonInfo.xml
+msgctxt "#31002"
+msgid "Auto-update on"
+msgstr ""
+
+#/16x9/DialogAddonInfo.xml
+msgctxt "#31003"
+msgid "Auto-update off"
+msgstr ""
+
+
+
+
+#: /16x9/DialogButtonMenu.xml
+msgctxt "#31209"
+msgid "Night"
+msgstr ""
+
+#: /16x9/DialogButtonMenu.xml
+msgctxt "#31210"
+msgid "Light"
+msgstr ""
+
+#: /16x9/DialogButtonMenu.xml
+msgctxt "#31211"
+msgid "Home"
+msgstr ""
+
+#: /16x9/DialogButtonMenu.xml
+msgctxt "#31212"
+msgid "Sign out"
+msgstr ""
+
+#: /16x9/DialogButtonMenu.xml
+msgctxt "#31214"
+msgid "Sleep"
+msgstr ""
+
+#: /16x9/DialogButtonMenu.xml
+msgctxt "#31215"
+msgid "Restart"
+msgstr ""
+
+#: /16x9/DialogButtonMenu.xml
+msgctxt "#31216"
+msgid "Power"
+msgstr ""
+
+
+
+
+#: /xml/DialogPlayerProcessInfo.xml
+msgctxt "#31613"
+msgid "PVR"
+msgstr ""
+
+#: /xml/DialogPlayerProcessInfo.xml
+msgctxt "#31610"
+msgid "Media"
+msgstr ""
+
+#: /xml/DialogPlayerProcessInfo.xml
+msgctxt "#31611"
+msgid "Player"
+msgstr ""
+
+#: /xml/DialogPlayerProcessInfo.xml
+msgctxt "#31612"
+msgid "System"
+msgstr ""
+
+#: /xml/DialogPlayerProcessInfo.xml
+msgctxt "#31604"
+msgid "Video codec"
+msgstr ""
+
+#: /xml/DialogPlayerProcessInfo.xml
+msgctxt "#31607"
+msgid "Video resolution"
+msgstr ""
+
+#: /xml/DialogPlayerProcessInfo.xml
+msgctxt "#31608"
+msgid "Video aspect ratio"
+msgstr ""
+
+#: /xml/DialogPlayerProcessInfo.xml
+msgctxt "#31609"
+msgid "Audio codec"
+msgstr ""
+
+#: /xml/DialogPlayerProcessInfo.xml
+msgctxt "#31605"
+msgid "Audio channels"
+msgstr ""
+
+#: /xml/DialogPlayerProcessInfo.xml
+msgctxt "#31606"
+msgid "Audio bitrate"
+msgstr ""
+
+#: /xml/DialogPlayerProcessInfo.xml
+msgctxt "#31600"
+msgid "Memory"
+msgstr ""
+
+#: /xml/DialogPlayerProcessInfo.xml
+msgctxt "#31601"
+msgid "CPU"
+msgstr ""
+
+#: /xml/DialogPlayerProcessInfo.xml
+msgctxt "#31602"
+msgid "Video decoder"
+msgstr ""
+
+#: /xml/DialogPlayerProcessInfo.xml
+msgctxt "#31603"
+msgid "Pixel format"
+msgstr ""
+
+#: /xml/DialogPlayerProcessInfo.xml
+msgctxt "#31603"
+msgid "Pixel format"
+msgstr ""
+
+#: /xml/DialogPlayerProcessInfo.xml
+msgctxt "#31614"
+msgid "Screen resolution"
+msgstr ""
+
+#: /xml/DialogPlayerProcessInfo.xml
+msgctxt "#31615"
+msgid "System rendering speed"
+msgstr ""
+
+#: /xml/DialogPlayerProcessInfo.xml
+msgctxt "#31616"
+msgid "System memory usage"
+msgstr ""
+
+#: /xml/DialogPlayerProcessInfo.xml
+msgctxt "#31617"
+msgid "System CPU usage"
+msgstr ""
+
+
+
+
+#: /xml/DialogSeekBar.xml
+msgctxt "#31148"
+msgid "Rated"
+msgstr ""
+
+
+
+
+#/16x9/DialogVolumeBar.xml
+msgctxt "#31144"
+msgid "Muted"
+msgstr ""
+
+
+
+
+#: F
+
+#/16x9/FileManager.xml, /16x9/MusicPlaylistEditor.xml /16x9/Variables.xml
+msgctxt "#31001"
+msgid "items"
+msgstr ""
+
+#/16x9/FileManager.xml, /16x9/MusicPlaylistEditor.xml
+msgctxt "#31000"
+msgid "item"
+msgstr ""
+
+
+
+
+#: I
+
+#: /16x9/Includes_Player.xml
+msgctxt "#31526"
+msgid "Pause"
+msgstr ""
+
+#: /16x9/Includes_Player.xml
+msgctxt "#31527"
+msgid "Album"
+msgstr ""
+
+#: /16x9/Includes_Player.xml
+msgctxt "#31528"
+msgid "Stop"
+msgstr ""
+
+#: /16x9/Includes_Player.xml
+msgctxt "#31529"
+msgid "Fullscreen"
+msgstr ""
+
+
+
+#: /16x9/Includes_Settings.xml, /16x9/Includes_Widgets.xml, /16x9/Variables_Widgets.xml
+msgctxt "#31226"
+msgid "Continue watching"
+msgstr ""
+
+#: /16x9/Includes_Settings.xml, /16x9/Includes_Widgets.xml, /16x9/Variables_Widgets.xml
+msgctxt "#31227"
+msgid "Next up"
+msgstr ""
+
+#: /16x9/Includes_Settings.xml, /16x9/Includes_Widgets.xml, /16x9/Variables_Widgets.xml
+msgctxt "#31228"
+msgid "Latest movies"
+msgstr ""
+
+#: /16x9/Includes_Settings.xml, /16x9/Includes_Widgets.xml, /16x9/Variables_Widgets.xml
+msgctxt "#31229"
+msgid "Latest TV shows"
+msgstr ""
+
+#: /16x9/Includes_Settings.xml, /16x9/Includes_Widgets.xml, /16x9/Variables_Widgets.xml
+msgctxt "#31145"
+msgid "Random movies"
+msgstr ""
+
+#: /16x9/Includes_Settings.xml, /16x9/Includes_Widgets.xml, /16x9/Variables_Widgets.xml
+msgctxt "#31146"
+msgid "Random TV shows"
+msgstr ""
+
+#: /16x9/Includes_Settings.xml, /16x9/Includes_Widgets.xml, /16x9/Variables_Widgets.xml
+msgctxt "#31230"
+msgid "Latest albums"
+msgstr ""
+
+#: /16x9/Includes_Settings.xml, /16x9/Includes_Widgets.xml, /16x9/Variables_Widgets.xml
+msgctxt "#31231"
+msgid "Recently played albums"
+msgstr ""
+
+#: /16x9/Includes_Settings.xml, /16x9/Includes_Widgets.xml, /16x9/Variables_Widgets.xml
+msgctxt "#31147"
+msgid "Random albums"
+msgstr ""
+
+#: /16x9/Includes_Settings.xml, /16x9/Includes_Widgets.xml, /16x9/Variables_Widgets.xml
+msgctxt "#31150"
+msgid "Custom"
+msgstr ""
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31067"
+msgid "Event log"
+msgstr ""
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31068"
+msgid "Current settings level:"
+msgstr ""
+
+
+
+
+#: /16x9/Includes_MyViews.xml, 16x9/Includes_Settings.xml
+msgctxt "#31224"
+msgid "Layout"
+msgstr ""
+
+#: /16x9/Includes_MyViews.xml
+msgctxt "#31201"
+msgid "List"
+msgstr ""
+
+#: /16x9/Includes_MyViews.xml
+msgctxt "#31202"
+msgid "Billboard"
+msgstr ""
+
+#: /16x9/Includes_MyViews.xml
+msgctxt "#31203"
+msgid "Showcase"
+msgstr ""
+
+#: /16x9/Includes_MyViews.xml
+msgctxt "#31204"
+msgid "Strip"
+msgstr ""
+
+#: /16x9/Includes_MyViews.xml
+msgctxt "#31205"
+msgid "Grid"
+msgstr ""
+
+#: /16x9/Includes_MyViews.xml
+msgctxt "#32101"
+msgid "Thumbnails"
+msgstr ""
+
+#: /16x9/Includes_MyViews.xml
+msgctxt "#32102"
+msgid "Background"
+msgstr ""
+
+#: /16x9/Includes_MyViews.xml, 16x9/Includes_Settings.xml
+msgctxt "#31206"
+msgid "Posters"
+msgstr ""
+
+#: /16x9/Includes_MyViews.xml, 16x9/Includes_Settings.xml
+msgctxt "#31207"
+msgid "Fanart"
+msgstr ""
+
+#: /16x9/Includes_MyViews.xml, 16x9/Includes_Settings.xml
+msgctxt "#31208"
+msgid "Square"
+msgstr ""
+
+#: /16x9/Includes_MyViews.xml
+msgctxt "#32109"
+msgid "Details"
+msgstr ""
+
+#: /16x9/Includes_MyViews.xml
+msgctxt "#32111"
+msgid "Title"
+msgstr ""
+
+#: /16x9/Includes_MyViews.xml
+msgctxt "#32150"
+msgid "Title and Info"
+msgstr ""
+
+#: /16x9/Includes_MyViews.xml
+msgctxt "#32151"
+msgid "Title and Plot"
+msgstr ""
+
+#: /16x9/Includes_MyViews.xml
+msgctxt "#32152"
+msgid "Title and Biography"
+msgstr ""
+
+#: /16x9/Includes_MyViews.xml
+msgctxt "#32153"
+msgid "Title and Review"
+msgstr ""
+
+#: /16x9/Includes_MyViews.xml
+msgctxt "#32155"
+msgid "Side"
+msgstr ""
+
+#: /16x9/Includes_MyViews.xml
+msgctxt "#32156"
+msgid "Overlay"
+msgstr ""
+
+#: /16x9/Includes_MyViews.xml
+msgctxt "#32158"
+msgid "Breadcrumb"
+msgstr ""
+
+#: /16x9/Includes_MyViews.xml
+msgctxt "#32112"
+msgid "Logos"
+msgstr ""
+
+#: /16x9/Includes_MyViews.xml, /16x9/Variables.xml
+msgctxt "#32123"
+msgid "Plot"
+msgstr ""
+msgstr ""
+
+#: /16x9/Includes_MyViews.xml
+msgctxt "#32114"
+msgid "Info"
+msgstr ""
+
+#: /16x9/Includes_MyViews.xml
+msgctxt "#32115"
+msgid "Flags"
+msgstr ""
+
+#: /16x9/Includes_MyViews.xml
+msgctxt "#32116"
+msgid "Studio"
+msgstr ""
+
+#: /16x9/Includes_MyViews.xml
+msgctxt "#32117"
+msgid "Age rating"
+msgstr ""
+
+#: /16x9/Includes_MyViews.xml
+msgctxt "#32118"
+msgid "Sort"
+msgstr ""
+
+#: /16x9/Includes_MyViews.xml
+msgctxt "#32119"
+msgid "Order"
+msgstr ""
+
+#: /16x9/Includes_MyViews.xml
+msgctxt "#32120"
+msgid "Include"
+msgstr ""
+
+#: /16x9/Includes_MyViews.xml
+msgctxt "#31109"
+msgid "Update Library"
+msgstr ""
+
+#: /16x9/Includes_MyViews.xml
+msgctxt "#31524"
+msgid "Enabled"
+msgstr ""
+
+#: /16x9/Includes_MyViews.xml
+msgctxt "#31525"
+msgid "Disabled"
+msgstr ""
+
+
+
+
+#: L
+
+#/16x9/LoginScreen.xml
+msgctxt "#31100"
+msgid "Who's watching?"
+
+#/16x9/LoginScreen.xml
+msgctxt "#31101"
+msgid "Good evening!"
+
+#/16x9/LoginScreen.xml
+msgctxt "#31102"
+msgid "Good afternoon!"
+
+#/16x9/LoginScreen.xml
+msgctxt "#31103"
+msgid "Good morning!"
+
+
+
+
+#: M
+
+#: /16x9/MusicOSD.xml
+msgctxt "#31560"
+msgid "Playlist"
+msgstr ""
+
+#: /16x9/MusicOSD.xml
+msgctxt "#31561"
+msgid "Rewind"
+msgstr ""
+
+#: /16x9/MusicOSD.xml
+msgctxt "#31562"
+msgid "Forward"
+msgstr ""
+
+#: /16x9/MusicOSD.xml
+msgctxt "#31563"
+msgid "Rating"
+msgstr ""
+
+
+
+
+#16x9/MusicPlaylistEditor.xml
+msgctxt "#31136"
+msgid "No items"
+msgstr ""
+
+#16x9/MusicPlaylistEditor.xml
+msgctxt "#31137"
+msgid "songs"
+msgstr ""
+
+#16x9/MusicPlaylistEditor.xml
+msgctxt "#31140"
+msgid "song"
+msgstr ""
+
+#16x9/MusicPlaylistEditor.xml
+msgctxt "#31139"
+msgid "No songs added"
+msgstr ""
+
+
+
+
+#: /16x9/MusicVisualisation.xml
+msgctxt "#31564"
+msgid "Now playing..."
+msgstr ""
+
+
+
+
+#: S
+
+#: /16x9/SettingsCategory.xml
+msgctxt "#31016"
+msgid "Settings level"
+msgstr ""
+
+#/16x9/SettingsCategory.xml
+msgctxt "#31104"
+msgid "Click for addon browser"
+msgstr ""
+
+
+
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31200"
+msgid "Copacetic"
+msgstr ""
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31149"
+msgid "Menus"
+msgstr ""
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31220"
+msgid "Configure home menu"
+msgstr ""
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31151"
+msgid "Configure shutdown menu"
+msgstr ""
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31221"
+msgid "Reset all menu items"
+msgstr ""
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31238"
+msgid "Enable home widgets"
+msgstr "
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31152"
+msgid "Reset all home widgets"
+msgstr ""
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31153"
+msgid "Are you sure you want to reset all home widgets back to default?"
+msgstr ""
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31219"
+msgid "Widgets"
+msgstr ""
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31222"
+msgid "Widget"
+msgstr ""
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31223"
+msgid "Content"
+msgstr ""
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31258"
+msgid "Override artwork slideshow"
+msgstr ""
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31259"
+msgid "Choose new path..."
+msgstr ""
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31243"
+msgid "Set artwork brightness"
+msgstr ""
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31244"
+msgid "Hide clock"
+msgstr ""
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31239"
+msgid "Enable embedded lists"
+msgstr ""
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31240"
+msgid "Enable embedded music player"
+msgstr ""
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31245"
+msgid "Enable multiart slideshows"
+msgstr ""
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31251"
+msgid "Refresh interval"
+msgstr ""
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31252"
+msgid "Set refresh interval"
+msgstr ""
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31248"
+msgid "50%"
+msgstr ""
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31249"
+msgid "33% (default)"
+msgstr ""
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31250"
+msgid "25%"
+msgstr ""
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31253"
+msgid "3 seconds"
+msgstr ""
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31254"
+msgid "4 seconds (default)"
+msgstr ""
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31255"
+msgid "5 seconds"
+msgstr ""
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31256"
+msgid "7 seconds"
+msgstr ""
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31257"
+msgid "10 seconds"
+msgstr ""
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31241"
+msgid "Prefer keyart for poster views"
+msgstr ""
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31246"
+msgid "Show unwatched episodes count"
+msgstr ""
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31247"
+msgid "Display unwatched episodes info"
+msgstr ""
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31242"
+msgid "Hide progress bar on pause screen"
+msgstr ""
+
+
+
+
+#/16x9/SmartPlaylistEditor.xml
+msgctxt "#31117"
+msgid "Match"
+
+#/16x9/SmartPlaylistEditor.xml
+msgctxt "#31118"
+msgid "Limit"
+
+#/16x9/SmartPlaylistEditor.xml
+msgctxt "#31119"
+msgid "Sort"
+
+#/16x9/SmartPlaylistEditor.xml
+msgctxt "#31120"
+msgid "Direction"
+
+
+
+
+#: V
+
+#: /16x9/Variables.xml
+msgctxt "#32000"
+msgid "Ends"
+msgstr ""
+
+#: /16x9/Variables.xml
+msgctxt "#32124"
+msgid "Rating"
+msgstr ""
+
+#: /16x9/Variables.xml
+msgctxt "#32125"
+msgid "Credit"
+msgstr ""
+
+#: /16x9/Variables.xml
+msgctxt "#32126"
+msgid "for"
+msgstr ""
+
+#: /16x9/Variables.xml
+msgctxt "#32127"
+msgid "including"
+msgstr ""
+
+#: /16x9/Variables.xml
+msgctxt "#32128"
+msgid "left"
+msgstr ""
+
+#: /16x9/Variables.xml
+msgctxt "#32129"
+msgid "right"
+msgstr ""
+
+#: /16x9/Variables.xml
+msgctxt "#32130"
+msgid "Browse"
+msgstr ""
+
+#: /16x9/Variables.xml
+msgctxt "#32131"
+msgid "8K"
+msgstr ""
+
+#: /16x9/Variables.xml
+msgctxt "#32132"
+msgid "4K"
+msgstr ""
+
+#: /16x9/Variables.xml
+msgctxt "#32133"
+msgid "Dolby Vision"
+msgstr ""
+
+#: /16x9/Variables.xml
+msgctxt "#32134"
+msgid "HDR"
+msgstr ""
+
+#: /16x9/Variables.xml
+msgctxt "#32135"
+msgid "Ultra HD"
+msgstr ""
+
+#: /16x9/Variables.xml
+msgctxt "#32136"
+msgid "Full HD"
+msgstr ""
+
+#: /16x9/Variables.xml
+msgctxt "#32137"
+msgid "HD"
+msgstr ""
+
+#: /16x9/Variables.xml
+msgctxt "#32138"
+msgid "SD"
+msgstr ""
+
+#: /16x9/Variables.xml
+msgctxt "#32139"
+msgid "HLG"
+msgstr ""
+
+#16x9/Variables.xml
+msgctxt "#31138"
+msgid "Mins"
+msgstr ""
+
+#16x9/Variables.xml
+msgctxt "#31142"
+msgid "pics"
+msgstr ""
+
+#16x9/Variables.xml
+msgctxt "#31143"
+msgid "pic"
+msgstr ""
+
+
+
+
+#: /16x9/VideoOSDBookmarks.xml
+msgctxt "#31530"
+msgid "Add"
+msgstr ""
+
+#: /16x9/VideoOSDBookmarks.xml
+msgctxt "#31531"
+msgid "Clear"
+msgstr ""
+
+#: /16x9/VideoOSDBookmarks.xml
+msgctxt "#31532"
+msgid "Use selected as episode thumb"
+msgstr ""
+
+
+
+
+#: W
+#/16x9/Widget_Templates.xml
+msgctxt "#31113"
+msgid "More from Season"
+
+#/16x9/Widget_Templates.xml
+msgctxt "#31154"
+msgid "Episodes from Season"
+msgstr ""
+
+#/16x9/Widget_Templates.xml
+msgctxt "#31114"
+msgid "More"
+
+#/16x9/Widget_Templates.xml
+msgctxt "#31010"
+msgid "Most played"
+msgstr ""
+
+
+
+#/16x9/Widget_Variables.xml
+msgctxt "#31007"
+msgid "More"
+msgstr ""
+
+#/16x9/Widget_Variables.xml
+msgctxt "#31004"
+msgid "More from"
+msgstr ""
+
+#/16x9/Widget_Variables.xml
+msgctxt "#31005"
+msgid "More soundtracks"
+msgstr ""
+
+#/16x9/Widget_Variables.xml
+msgctxt "#31009"
+msgid "Similar"
+msgstr ""
+
+#/16x9/Widget_Variables.xml
+msgctxt "#31008"
+msgid "Similar artists"
+msgstr ""
+
+#/16x9/Widget_Variables.xml
+msgctxt "#31006"
+msgid "Similar albums"
+msgstr ""
+
+
+
+
+
+
+
+
+msgctxt "#31011"
+msgid "Close playlist"
+msgstr ""
+
+msgctxt "#31012"
+msgid "Current playlist"
+msgstr ""
+
+msgctxt "#31013"
+msgid "Muted"
+msgstr ""
+
+msgctxt "#31014"
+msgid "Show visualisation & Artist Slideshow"
+msgstr ""
+
+msgctxt "#31015"
+msgid "Live TV"
+msgstr ""
+
+msgctxt "#31017"
+msgid "Voted"
+msgstr ""
+
+msgctxt "#31018"
+msgid "Increase"
+msgstr ""
+
+msgctxt "#31019"
+msgid "Decrease"
+msgstr ""
+
+msgctxt "#31020"
+msgid "Background"
+msgstr ""
+
+msgctxt "#31021"
+msgid "Home"
+msgstr ""
+
+msgctxt "#31027"
+msgid "Show background video"
+msgstr ""
+
+msgctxt "#31028"
+msgid "Show background visualisation"
+msgstr ""
+
+msgctxt "#31030"
+msgid "Enable curves"
+msgstr ""
+
+msgctxt "#31031"
+msgid "Recent movies"
+msgstr ""
+
+msgctxt "#31032"
+msgid "Recommended movies"
+msgstr ""
+
+msgctxt "#31034"
+msgid "Enable Artist Slideshow"
+msgstr ""
+
+msgctxt "#31035"
+msgid "Recent episodes"
+msgstr ""
+
+msgctxt "#31036"
+msgid "Recommended episodes"
+msgstr ""
+
+msgctxt "#31038"
+msgid "Recent albums"
+msgstr ""
+
+msgctxt "#31039"
+msgid "Recommended albums"
+msgstr ""
+
+msgctxt "#31040"
+msgid "Hide Conq logo"
+msgstr ""
+
+msgctxt "#31041"
+msgid "Debug grid"
+msgstr ""
+
+msgctxt "#31042"
+msgid "Debug labels"
+msgstr ""
+
+msgctxt "#31043"
+msgid "Extra art"
+msgstr ""
+
+msgctxt "#31044"
+msgid "Local subtitle found!"
+msgstr ""
+
+msgctxt "#31046"
+msgid "Currently"
+msgstr ""
+
+msgctxt "#31047"
+msgid "Visualisation Presets"
+msgstr ""
+
+msgctxt "#31048"
+msgid "Playlist Options"
+msgstr ""
+
+
+
+msgctxt "#31051"
+msgid "Settings can be accessed from the Shutdown menu or by rebooting XBMC!"
+msgstr ""
+
+msgctxt "#31052"
+msgid "Rated"
+msgstr ""
+
+msgctxt "#31053"
+msgid "Hide submenu headings"
+msgstr ""
+
+msgctxt "#31054"
+msgid "Random movies"
+msgstr ""
+
+msgctxt "#31055"
+msgid "Random episodes"
+msgstr ""
+
+msgctxt "#31056"
+msgid "Random albums"
+msgstr ""
+
+msgctxt "#31057"
+msgid "Kiosk mode"
+msgstr ""
+
+msgctxt "#31058"
+msgid "Reset all Conq settings"
+msgstr ""
+
+msgctxt "#31059"
+msgid "Memory Used:"
+msgstr ""
+
+msgctxt "#31060"
+msgid "Enable Headings"
+msgstr ""
+
+msgctxt "#31061"
+msgid "Enable Horizontal home layout"
+msgstr ""
+
+msgctxt "#31063"
+msgid "Addons"
+msgstr ""
+
+msgctxt "#31064"
+msgid "Customise Colours"
+msgstr ""
+
+msgctxt "#31065"
+msgid "Hide 'Mouse' warning"
+msgstr ""
+
+msgctxt "#31066"
+msgid "Cinema Exp."
+msgstr ""

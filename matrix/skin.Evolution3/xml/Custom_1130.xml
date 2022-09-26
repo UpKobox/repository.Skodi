@@ -1,0 +1,930 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window type="dialog" id="1130">
+	<zorder>2</zorder>
+	<onload>clearproperty(fanart)</onload>
+	<onload>setproperty(type_de_recherche,films,home)</onload>
+	<onload>setproperty(sous_type_de_recherche_films,700,home)</onload>
+	<onload>setproperty(sous_type_de_recherche_series,800,home)</onload>
+	<onload>setproperty(sous_type_de_recherche_musique,900,home)</onload>
+	<onload>setproperty(bouton_recherche_films,201,home)</onload>
+	<onload>setproperty(bouton_recherche_series,301,home)</onload>
+	<onload>setproperty(bouton_recherche_musique,401,home)</onload>
+	<onload>setproperty(label_type_de_recherche,$LOCALIZE[31151])</onload>	
+	<onload>setproperty(rechercher,oui,home)</onload>
+	<onload>setfocus(102)</onload>
+	<onload>skin.setstring(rechercher,)</onload>
+	<onload>skin.setstring(rechercher)</onload>
+	<onunload>clearproperty(rechercher,home)</onunload>
+	<onunload>skin.setstring(rechercher,)</onunload>
+	<onunload>alarmclock(masquer_tout,noop,00:00,silent)</onunload>
+	<defaultcontrol always="true">100</defaultcontrol>
+<controls>	
+	<control type="button" id="50">
+		<onfocus condition="!string.isequal(window(home).property(type_de_recherche),films) + !integer.isequal(container(706).numitems,0)">setproperty(sous_type_de_recherche_films,706,home)</onfocus>
+		<onfocus condition="!string.isequal(window(home).property(type_de_recherche),films) + !integer.isequal(container(705).numitems,0)">setproperty(sous_type_de_recherche_films,705,home)</onfocus>
+		<onfocus condition="!string.isequal(window(home).property(type_de_recherche),films) + !integer.isequal(container(704).numitems,0)">setproperty(sous_type_de_recherche_films,704,home)</onfocus>
+		<onfocus condition="!string.isequal(window(home).property(type_de_recherche),films) + !integer.isequal(container(703).numitems,0)">setproperty(sous_type_de_recherche_films,703,home)</onfocus>
+		<onfocus condition="!string.isequal(window(home).property(type_de_recherche),films) + !integer.isequal(container(702).numitems,0)">setproperty(sous_type_de_recherche_films,702,home)</onfocus>
+		<onfocus condition="!string.isequal(window(home).property(type_de_recherche),films) + !integer.isequal(container(701).numitems,0)">setproperty(sous_type_de_recherche_films,701,home)</onfocus>
+		<onfocus condition="!string.isequal(window(home).property(type_de_recherche),films) + !integer.isequal(container(700).numitems,0)">setproperty(sous_type_de_recherche_films,700,home)</onfocus>
+		<onfocus condition="!string.isequal(window(home).property(type_de_recherche),films) + !integer.isequal(container(706).numitems,0)">setproperty(bouton_recherche_films,207,home)</onfocus>
+		<onfocus condition="!string.isequal(window(home).property(type_de_recherche),films) + !integer.isequal(container(705).numitems,0)">setproperty(bouton_recherche_films,206,home)</onfocus>
+		<onfocus condition="!string.isequal(window(home).property(type_de_recherche),films) + !integer.isequal(container(704).numitems,0)">setproperty(bouton_recherche_films,205,home)</onfocus>
+		<onfocus condition="!string.isequal(window(home).property(type_de_recherche),films) + !integer.isequal(container(703).numitems,0)">setproperty(bouton_recherche_films,204,home)</onfocus>
+		<onfocus condition="!string.isequal(window(home).property(type_de_recherche),films) + !integer.isequal(container(702).numitems,0)">setproperty(bouton_recherche_films,203,home)</onfocus>
+		<onfocus condition="!string.isequal(window(home).property(type_de_recherche),films) + !integer.isequal(container(701).numitems,0)">setproperty(bouton_recherche_films,202,home)</onfocus>
+		<onfocus condition="!string.isequal(window(home).property(type_de_recherche),films) + !integer.isequal(container(700).numitems,0)">setproperty(bouton_recherche_films,201,home)</onfocus>		
+		<onfocus condition="!string.isequal(window(home).property(type_de_recherche),series) + !integer.isequal(container(806).numitems,0)">setproperty(sous_type_de_recherche_series,806,home)</onfocus>
+		<onfocus condition="!string.isequal(window(home).property(type_de_recherche),series) + !integer.isequal(container(805).numitems,0)">setproperty(sous_type_de_recherche_series,805,home)</onfocus>
+		<onfocus condition="!string.isequal(window(home).property(type_de_recherche),series) + !integer.isequal(container(804).numitems,0)">setproperty(sous_type_de_recherche_series,804,home)</onfocus>
+		<onfocus condition="!string.isequal(window(home).property(type_de_recherche),series) + !integer.isequal(container(803).numitems,0)">setproperty(sous_type_de_recherche_series,803,home)</onfocus>
+		<onfocus condition="!string.isequal(window(home).property(type_de_recherche),series) + !integer.isequal(container(802).numitems,0)">setproperty(sous_type_de_recherche_series,802,home)</onfocus>
+		<onfocus condition="!string.isequal(window(home).property(type_de_recherche),series) + !integer.isequal(container(801).numitems,0)">setproperty(sous_type_de_recherche_series,801,home)</onfocus>
+		<onfocus condition="!string.isequal(window(home).property(type_de_recherche),series) + !integer.isequal(container(800).numitems,0)">setproperty(sous_type_de_recherche_series,800,home)</onfocus>
+		<onfocus condition="!string.isequal(window(home).property(type_de_recherche),series) + !integer.isequal(container(806).numitems,0)">setproperty(bouton_recherche_series,307,home)</onfocus>
+		<onfocus condition="!string.isequal(window(home).property(type_de_recherche),series) + !integer.isequal(container(805).numitems,0)">setproperty(bouton_recherche_series,306,home)</onfocus>
+		<onfocus condition="!string.isequal(window(home).property(type_de_recherche),series) + !integer.isequal(container(804).numitems,0)">setproperty(bouton_recherche_series,305,home)</onfocus>
+		<onfocus condition="!string.isequal(window(home).property(type_de_recherche),series) + !integer.isequal(container(803).numitems,0)">setproperty(bouton_recherche_series,304,home)</onfocus>
+		<onfocus condition="!string.isequal(window(home).property(type_de_recherche),series) + !integer.isequal(container(802).numitems,0)">setproperty(bouton_recherche_series,303,home)</onfocus>
+		<onfocus condition="!string.isequal(window(home).property(type_de_recherche),series) + !integer.isequal(container(801).numitems,0)">setproperty(bouton_recherche_series,302,home)</onfocus>
+		<onfocus condition="!string.isequal(window(home).property(type_de_recherche),series) + !integer.isequal(container(800).numitems,0)">setproperty(bouton_recherche_series,301,home)</onfocus>		
+		<onfocus condition="!string.isequal(window(home).property(type_de_recherche),musique) + !integer.isequal(container(902).numitems,0)">setproperty(sous_type_de_recherche_musique,902,home)</onfocus>
+		<onfocus condition="!string.isequal(window(home).property(type_de_recherche),musique) + !integer.isequal(container(901).numitems,0)">setproperty(sous_type_de_recherche_musique,901,home)</onfocus>
+		<onfocus condition="!string.isequal(window(home).property(type_de_recherche),musique) + !integer.isequal(container(900).numitems,0)">setproperty(sous_type_de_recherche_musique,900,home)</onfocus>
+		<onfocus condition="!string.isequal(window(home).property(type_de_recherche),musique) + !integer.isequal(container(902).numitems,0)">setproperty(bouton_recherche_musique,403,home)</onfocus>
+		<onfocus condition="!string.isequal(window(home).property(type_de_recherche),musique) + !integer.isequal(container(901).numitems,0)">setproperty(bouton_recherche_musique,402,home)</onfocus>
+		<onfocus condition="!string.isequal(window(home).property(type_de_recherche),musique) + !integer.isequal(container(900).numitems,0)">setproperty(bouton_recherche_musique,401,home)</onfocus>		
+		
+		
+		<onfocus condition="!window.isvisible(virtualkeyboard) + string.isequal(window(home).property(type_de_recherche),films) + integer.isgreater(container(200).numitems,0) + !string.isempty(skin.string(rechercher))">setfocus(200)</onfocus>
+		<onfocus condition="!window.isvisible(virtualkeyboard) + string.isequal(window(home).property(type_de_recherche),films) + [integer.isequal(container(200).numitems,0) | string.isempty(skin.string(rechercher))]">setfocus(102)</onfocus>
+		<onfocus condition="!window.isvisible(virtualkeyboard) + string.isequal(window(home).property(type_de_recherche),series) + integer.isgreater(container(300).numitems,0) + !string.isempty(skin.string(rechercher))">setfocus(300)</onfocus>
+		<onfocus condition="!window.isvisible(virtualkeyboard) + string.isequal(window(home).property(type_de_recherche),series) + [integer.isequal(container(300).numitems,0) | string.isempty(skin.string(rechercher))]">setfocus(101)</onfocus>
+		<onfocus condition="!window.isvisible(virtualkeyboard) + string.isequal(window(home).property(type_de_recherche),musique) + integer.isgreater(container(400).numitems,0) + !string.isempty(skin.string(rechercher))">setfocus(400)</onfocus>
+		<onfocus condition="!window.isvisible(virtualkeyboard) + string.isequal(window(home).property(type_de_recherche),musique) + [integer.isequal(container(400).numitems,0) | string.isempty(skin.string(rechercher))]">setfocus(103)</onfocus>			
+	</control>	
+	<control type="group">
+		<visible>[!window.isvisible(movieinformation) | !string.isempty(window(home).property(fermer_infos))] + [!window.isvisible(dialogmusicinfo.xml) | !string.isempty(window(home).property(fermer_infos))]</visible>	
+	<control type="group">																				<description>interface</description>
+	<control type="image">																				<description>fond ecran video</description>	
+		<right>0</right>
+		<width>1400</width>
+		<texture colordiffuse="ff000000">commun/texture.png</texture>
+	</control>
+	<control type="videowindow">																		<description>ecran video</description>		
+		<visible>!system.hasalarm(masquer_tout)</visible>
+		<right>0</right>
+		<width>1400</width>
+		<height>787</height>
+	</control>
+	<control type="image">
+		<animation effect="fade" start="100" end="0" delay="500" time="500" condition="player.hasvideo + [integer.isgreater(player.time(mm),00) | integer.isgreater(player.time(ss),00)]">conditional</animation>
+		<texture colordiffuse="$VAR[gris]">commun/fond.png</texture>
+	</control>
+
+	<control type="image">
+		<animation effect="fade" start="100" end="0" delay="500" time="500" condition="player.hasvideo + [integer.isgreater(player.time(mm),00) | integer.isgreater(player.time(ss),00)]">conditional</animation>
+		<animation effect="fade" start="100" end="0" condition="string.isequal(window(home).property(liste),suggestions) | $EXP[liste_500]" reversible="false">conditional</animation>
+		<right>0</right>
+		<width>1400</width>
+		<height>787</height>
+		<texture fallback="extras/recherche.png">$INFO[window().property(fanart)]</texture>
+		<fadetime>250</fadetime>
+	</control>	
+	<control type="image">
+		<texture colordiffuse="$VAR[gris]">commun/masque_interface.png</texture>
+	</control>	
+	<control type="image">
+		<visible>!skin.hassetting(pas_de_couleur) + !player.hasvideo</visible>
+		<animation effect="fade" start="0" end="100" delay="250" time="500" reversible="false">visible</animation>		
+		<right>-100</right>
+		<width>400000</width>
+		<height>250000</height>
+		<texture diffuse="commun/masque_couleur.png" fallback="extras/recherche.png">$INFO[window().property(fanart)]</texture>
+		<fadetime>250</fadetime>
+	</control>
+	<control type="image">
+		<visible>!skin.hassetting(pas_de_couleur) + !player.hasvideo</visible>
+		<texture colordiffuse="$VAR[gris]">commun/masque_interface.png</texture>
+		<include>saturation</include>
+	</control>	
+	</control>
+
+
+	
+
+
+
+
+	<control type="image">
+		<top>30</top>
+		<left>40</left>
+		<width>1005</width>
+		<height>70</height>
+		<texture colordiffuse="$VAR[blanc_25%]" border="20">commun/bordure_ronde.png</texture>
+	</control>
+	<control type="image">
+		<top>30</top>
+		<left>40</left>
+		<width>80</width>
+		<height>70</height>
+		<texture colordiffuse="$VAR[blanc]" border="20">commun/rond_40px.png</texture>
+	</control>
+	<control type="image">
+		<top>45</top>
+		<left>60</left>
+		<width>40</width>
+		<height>40</height>
+		<texture colordiffuse="$VAR[gris]">icones/rechercher.png</texture>
+	</control>
+	<control type="label">				
+		<top>30</top>
+		<left>150</left>
+		<width>740</width>
+		<height>70</height>
+		<font>b_28</font>
+		<textcolor>$VAR[blanc]</textcolor>
+		<shadowcolor></shadowcolor>
+		<aligny>center</aligny>
+		<label>[COLOR $VAR[couleur_2]]$INFO[window().property(label_type_de_recherche)] : [/COLOR]$INFO[skin.string(rechercher)]</label>
+	</control>	
+	
+	
+	
+	<control type="image">
+		<visible>string.isempty(skin.string(rechercher))</visible>	
+		<top>735</top>
+		<left>100</left>
+		<width>150</width>
+		<height>150</height>
+		<texture colordiffuse="$VAR[blanc]">icones/infobulle.png</texture>
+	</control>
+	
+	<control type="grouplist">
+		<visible>string.isempty(skin.string(rechercher))</visible>	
+		<bottom>20</bottom>
+		<left>300</left>
+		<right>400</right>
+		<align>bottom</align>
+	<control type="textbox">				
+		<height>auto</height>
+		<font>r_24</font>
+		<textcolor>$VAR[blanc]</textcolor>
+		<shadowcolor></shadowcolor>
+		<aligny>center</aligny>
+		<label>$LOCALIZE[31158]</label>
+	</control>	
+	</control>
+	
+	
+	
+	<include content="pas_de_resultat_recherche">
+		<param name="liste" value="700"/>
+		<param name="liste_2" value="200"/>
+		<param name="type" value="films"/>
+		<param name="label" value="$LOCALIZE[31144]"/>
+	</include>
+	<include content="pas_de_resultat_recherche">
+		<param name="liste" value="701"/>
+		<param name="liste_2" value="200"/>
+		<param name="type" value="films"/>
+		<param name="label" value="$LOCALIZE[31145]"/>
+	</include>
+	<include content="pas_de_resultat_recherche">
+		<param name="liste" value="702"/>
+		<param name="liste_2" value="200"/>
+		<param name="type" value="films"/>
+		<param name="label" value="$LOCALIZE[31146]"/>
+	</include>
+	<include content="pas_de_resultat_recherche">
+		<param name="liste" value="703"/>
+		<param name="liste_2" value="200"/>
+		<param name="type" value="films"/>
+		<param name="label" value="$LOCALIZE[31147]"/>
+	</include>
+	<include content="pas_de_resultat_recherche">
+		<param name="liste" value="704"/>
+		<param name="liste_2" value="200"/>
+		<param name="type" value="films"/>
+		<param name="label" value="$LOCALIZE[31148]"/>
+	</include>
+	<include content="pas_de_resultat_recherche">
+		<param name="liste" value="705"/>
+		<param name="liste_2" value="200"/>
+		<param name="type" value="films"/>
+		<param name="label" value="$LOCALIZE[31149]"/>
+	</include>
+	<include content="pas_de_resultat_recherche">
+		<param name="liste" value="706"/>
+		<param name="liste_2" value="200"/>
+		<param name="type" value="films"/>
+		<param name="label" value="$LOCALIZE[31150]"/>
+	</include>
+	<include content="pas_de_resultat_recherche">
+		<param name="liste" value="800"/>
+		<param name="liste_2" value="300"/>
+		<param name="type" value="series"/>
+		<param name="label" value="$LOCALIZE[31154]"/>
+	</include>
+	<include content="pas_de_resultat_recherche">
+		<param name="liste" value="801"/>
+		<param name="liste_2" value="300"/>
+		<param name="type" value="series"/>
+		<param name="label" value="$LOCALIZE[31155]"/>
+	</include>	
+	<include content="pas_de_resultat_recherche">
+		<param name="liste" value="802"/>
+		<param name="liste_2" value="300"/>
+		<param name="type" value="series"/>
+		<param name="label" value="$LOCALIZE[31156]"/>
+	</include>	
+	<include content="pas_de_resultat_recherche">
+		<param name="liste" value="803"/>
+		<param name="liste_2" value="300"/>
+		<param name="type" value="series"/>
+		<param name="label" value="$LOCALIZE[31157]"/>
+	</include>	
+	<include content="pas_de_resultat_recherche">
+		<param name="liste" value="804"/>
+		<param name="liste_2" value="300"/>
+		<param name="type" value="series"/>
+		<param name="label" value="$LOCALIZE[31146]"/>
+	</include>	
+	<include content="pas_de_resultat_recherche">
+		<param name="liste" value="805"/>
+		<param name="liste_2" value="300"/>
+		<param name="type" value="series"/>
+		<param name="label" value="$LOCALIZE[31149]"/>
+	</include>
+	<include content="pas_de_resultat_recherche">
+		<param name="liste" value="900"/>
+		<param name="liste_2" value="400"/>
+		<param name="type" value="musique"/>
+		<param name="label" value="$LOCALIZE[31159]"/>
+	</include>
+	<include content="pas_de_resultat_recherche">
+		<param name="liste" value="901"/>
+		<param name="liste_2" value="400"/>
+		<param name="type" value="musique"/>
+		<param name="label" value="$LOCALIZE[31160]"/>
+	</include>
+	<include content="pas_de_resultat_recherche">
+		<param name="liste" value="902"/>
+		<param name="liste_2" value="400"/>
+		<param name="type" value="musique"/>
+		<param name="label" value="$LOCALIZE[31161]"/>
+	</include>
+	
+	
+	
+	
+	
+	
+	<control type="grouplist">
+		<visible>!string.isempty(skin.string(rechercher))</visible> 
+		<animation effect="fade" start="100" end="0" condition="window.isvisible(virtualkeyboard)">conditional</animation>
+		<animation effect="fade" start="0" end="100" delay="250" time="250" condition="!window.isvisible(virtualkeyboard)">conditional</animation>
+		<top>130</top>
+		<left>150</left>
+		<itemgap>30</itemgap>
+		<orientation>horizontal</orientation>
+	<control type="label">	
+		<height>34</height>
+		<width>auto</width>
+		<font>b_22</font>
+		<textcolor>$VAR[couleur_2]</textcolor>
+		<aligny>center</aligny>
+		<label>$LOCALIZE[31057]</label>
+	</control>
+	<control type="grouplist">
+		<visible>!string.isempty(skin.string(rechercher))</visible> 
+		<animation effect="fade" start="100" end="0" condition="window.isvisible(virtualkeyboard)">conditional</animation>
+		<animation effect="fade" start="0" end="100" delay="250" time="250" condition="!window.isvisible(virtualkeyboard)">conditional</animation>
+		<top>130</top>
+		<itemgap>0</itemgap>
+		<orientation>vertical</orientation>
+	<include content="label_resultat_recherche">
+		<param name="visible" value="string.isequal(window(home).property(type_de_recherche),films)"/>
+		<param name="liste" value="700"/>
+		<param name="listes" value="200"/>
+		<param name="type_de_recherche" value="films"/>
+		<param name="label" value="$LOCALIZE[31144]"/>
+		<param name="label2" value="$LOCALIZE[36900]"/>
+		<param name="label3" value="$LOCALIZE[36901]"/>
+	</include>
+	<include content="label_resultat_recherche">
+		<param name="visible" value="string.isequal(window(home).property(type_de_recherche),films)"/>
+		<param name="liste" value="701"/>
+		<param name="listes" value="200"/>
+		<param name="type_de_recherche" value="films"/>
+		<param name="label" value="$LOCALIZE[31145]"/>
+		<param name="label2" value="$LOCALIZE[36900]"/>
+		<param name="label3" value="$LOCALIZE[36901]"/>
+	</include>
+	<include content="label_resultat_recherche">
+		<param name="visible" value="string.isequal(window(home).property(type_de_recherche),films)"/>
+		<param name="liste" value="702"/>
+		<param name="listes" value="200"/>
+		<param name="type_de_recherche" value="films"/>
+		<param name="label" value="$LOCALIZE[31146]"/>
+		<param name="label2" value="$LOCALIZE[36900]"/>
+		<param name="label3" value="$LOCALIZE[36901]"/>
+	</include>
+	<include content="label_resultat_recherche">
+		<param name="visible" value="string.isequal(window(home).property(type_de_recherche),films)"/>
+		<param name="liste" value="703"/>
+		<param name="listes" value="200"/>
+		<param name="type_de_recherche" value="films"/>
+		<param name="label" value="$LOCALIZE[31147]"/>
+		<param name="label2" value="$LOCALIZE[36900]"/>
+		<param name="label3" value="$LOCALIZE[36901]"/>
+	</include>
+	<include content="label_resultat_recherche">
+		<param name="visible" value="string.isequal(window(home).property(type_de_recherche),films)"/>
+		<param name="liste" value="704"/>
+		<param name="listes" value="200"/>
+		<param name="type_de_recherche" value="films"/>
+		<param name="label" value="$LOCALIZE[31148]"/>
+		<param name="label2" value="$LOCALIZE[36900]"/>
+		<param name="label3" value="$LOCALIZE[36901]"/>
+	</include>
+	<include content="label_resultat_recherche">
+		<param name="visible" value="string.isequal(window(home).property(type_de_recherche),films)"/>
+		<param name="liste" value="705"/>
+		<param name="listes" value="200"/>
+		<param name="type_de_recherche" value="films"/>
+		<param name="label" value="$LOCALIZE[31149]"/>
+		<param name="label2" value="$LOCALIZE[36900]"/>
+		<param name="label3" value="$LOCALIZE[36901]"/>
+	</include>
+	<include content="label_resultat_recherche">
+		<param name="visible" value="string.isequal(window(home).property(type_de_recherche),films)"/>
+		<param name="liste" value="706"/>
+		<param name="listes" value="200"/>
+		<param name="type_de_recherche" value="films"/>
+		<param name="label" value="$LOCALIZE[31150]"/>
+		<param name="label2" value="$LOCALIZE[36900]"/>
+		<param name="label3" value="$LOCALIZE[36901]"/>
+	</include>
+	<include content="label_resultat_recherche">
+		<param name="visible" value="string.isequal(window(home).property(type_de_recherche),series)"/>
+		<param name="liste" value="800"/>
+		<param name="listes" value="300"/>
+		<param name="type_de_recherche" value="series"/>
+		<param name="label" value="$LOCALIZE[31154]"/>
+		<param name="label2" value="$LOCALIZE[36902]"/>
+		<param name="label3" value="$LOCALIZE[36903]"/>
+	</include>
+	<include content="label_resultat_recherche">
+		<param name="visible" value="string.isequal(window(home).property(type_de_recherche),series)"/>
+		<param name="liste" value="801"/>
+		<param name="listes" value="300"/>
+		<param name="type_de_recherche" value="series"/>
+		<param name="label" value="$LOCALIZE[31155]"/>
+		<param name="label2" value="$LOCALIZE[36902]"/>
+		<param name="label3" value="$LOCALIZE[36903]"/>
+	</include>
+	<include content="label_resultat_recherche">
+		<param name="visible" value="string.isequal(window(home).property(type_de_recherche),series)"/>
+		<param name="liste" value="802"/>
+		<param name="listes" value="300"/>
+		<param name="type_de_recherche" value="series"/>
+		<param name="label" value="$LOCALIZE[31156]"/>
+		<param name="label2" value="$LOCALIZE[36906]"/>
+		<param name="label3" value="$LOCALIZE[36907]"/>
+	</include>
+	<include content="label_resultat_recherche">
+		<param name="visible" value="string.isequal(window(home).property(type_de_recherche),series)"/>
+		<param name="liste" value="803"/>
+		<param name="listes" value="300"/>
+		<param name="type_de_recherche" value="series"/>
+		<param name="label" value="$LOCALIZE[31157]"/>
+		<param name="label2" value="$LOCALIZE[36906]"/>
+		<param name="label3" value="$LOCALIZE[36907]"/>
+	</include>
+	<include content="label_resultat_recherche">
+		<param name="visible" value="string.isequal(window(home).property(type_de_recherche),series)"/>
+		<param name="liste" value="804"/>
+		<param name="listes" value="300"/>
+		<param name="type_de_recherche" value="series"/>
+		<param name="label" value="$LOCALIZE[31146]"/>
+		<param name="label2" value="$LOCALIZE[36902]"/>
+		<param name="label3" value="$LOCALIZE[36903]"/>
+	</include>
+	<include content="label_resultat_recherche">
+		<param name="visible" value="string.isequal(window(home).property(type_de_recherche),series)"/>
+		<param name="liste" value="805"/>
+		<param name="listes" value="300"/>
+		<param name="type_de_recherche" value="series"/>
+		<param name="label" value="$LOCALIZE[31149]"/>
+		<param name="label2" value="$LOCALIZE[36902]"/>
+		<param name="label3" value="$LOCALIZE[36903]"/>
+	</include>
+	<include content="label_resultat_recherche">
+		<param name="visible" value="string.isequal(window(home).property(type_de_recherche),musique)"/>
+		<param name="liste" value="900"/>
+		<param name="listes" value="400"/>
+		<param name="type_de_recherche" value="musique"/>
+		<param name="label" value="$LOCALIZE[31159]"/>
+		<param name="label2" value="$LOCALIZE[36918]"/>
+		<param name="label3" value="$LOCALIZE[36919]"/>
+	</include>
+	<include content="label_resultat_recherche">
+		<param name="visible" value="string.isequal(window(home).property(type_de_recherche),musique)"/>
+		<param name="liste" value="901"/>
+		<param name="listes" value="400"/>
+		<param name="type_de_recherche" value="musique"/>
+		<param name="label" value="$LOCALIZE[31160]"/>
+		<param name="label2" value="$LOCALIZE[36918]"/>
+		<param name="label3" value="$LOCALIZE[36919]"/>
+	</include>
+	<include content="label_resultat_recherche">
+		<param name="visible" value="string.isequal(window(home).property(type_de_recherche),musique)"/>
+		<param name="liste" value="902"/>
+		<param name="listes" value="400"/>
+		<param name="type_de_recherche" value="musique"/>
+		<param name="label" value="$LOCALIZE[31161]"/>
+		<param name="label2" value="$LOCALIZE[36920]"/>
+		<param name="label3" value="$LOCALIZE[36921]"/>
+	</include>
+	</control>
+	</control>
+		
+	<control type="group">		
+		<animation effect="slide" start="0,0" end="0,1080" condition="!string.isequal(window(home).property(type_de_recherche),films)">conditional</animation>
+		<animation effect="slide" start="0,0" end="0,100" time="250" condition="window.isvisible(virtualkeyboard)">conditional</animation>
+		<top>460</top>
+		<height>318</height>
+	<include content="liste_resultat_recherche">
+		<param name="id" value="70"/>
+		<param name="liste" value="700"/>
+		<param name="type_de_recherche" value="films"/>
+		<param name="ondown" value="setfocus(200)"/>
+		<param name="onclick1" value="info"/>
+		<param name="content" value="videodb://movies/titles/?xsp=%7b%22rules%22%3a%7b%22or%22%3a%5b%7b%22field%22%3A%22title%22%2C%22operator%22%3A%22startswith%22%2C%22value%22%3A%5B%22$INFO[skin.string(rechercher)]%22%5D%7D%2C%7B%22field%22%3a%22title%22%2c%22operator%22%3a%22contains%22%2c%22value%22%3a%5b%22 $INFO[skin.string(rechercher)]%22%5d%7d%5d%7d%2c%22type%22%3a%22movies%22%7d"/>
+	</include>
+	<include content="liste_resultat_recherche">
+		<param name="id" value="71"/>
+		<param name="liste" value="701"/>
+		<param name="type_de_recherche" value="films"/>
+		<param name="ondown" value="setfocus(200)"/>
+		<param name="onclick1" value="info"/>
+		<param name="content" value="videodb://movies/titles/?xsp=%7b%22rules%22%3a%7b%22or%22%3a%5b%7b%22field%22%3A%22plot%22%2C%22operator%22%3A%22contains%22%2C%22value%22%3A%5B%22 $INFO[skin.string(rechercher)] %22%5D%7D%2C%7B%22field%22%3A%22plot%22%2C%22operator%22%3A%22startswith%22%2C%22value%22%3A%5B%22$INFO[skin.string(rechercher)] %22%5D%7D%2C%7B%22field%22%3a%22plot%22%2c%22operator%22%3a%22endswith%22%2c%22value%22%3a%5b%22 $INFO[skin.string(rechercher)]%22%5d%7d%5d%7d%2c%22type%22%3a%22movies%22%7d"/>
+	</include>
+	<include content="liste_resultat_recherche">
+		<param name="id" value="72"/>
+		<param name="liste" value="702"/>
+		<param name="type_de_recherche" value="films"/>
+		<param name="ondown" value="setfocus(200)"/>
+		<param name="onclick1" value="info"/>
+		<param name="content" value="videodb://movies/titles/?xsp=%7b%22rules%22%3a%7b%22or%22%3a%5b%7b%22field%22%3A%22actor%22%2C%22operator%22%3A%22is%22%2C%22value%22%3A%5B%22$INFO[skin.string(rechercher)]%22%5D%7D%2C%7B%22field%22%3A%22actor%22%2C%22operator%22%3A%22startswith%22%2C%22value%22%3A%5B%22$INFO[skin.string(rechercher)] %22%5D%7D%2C%7B%22field%22%3a%22actor%22%2c%22operator%22%3a%22endswith%22%2c%22value%22%3a%5b%22 $INFO[skin.string(rechercher)]%22%5d%7d%5d%7d%2c%22type%22%3a%22movies%22%7d"/>
+	</include>	
+	<include content="liste_resultat_recherche">
+		<param name="id" value="73"/>
+		<param name="liste" value="703"/>
+		<param name="type_de_recherche" value="films"/>
+		<param name="ondown" value="setfocus(200)"/>
+		<param name="onclick1" value="info"/>
+		<param name="content" value="videodb://movies/titles/?xsp=%7b%22rules%22%3a%7b%22or%22%3a%5b%7b%22field%22%3A%22director%22%2C%22operator%22%3A%22is%22%2C%22value%22%3A%5B%22$INFO[skin.string(rechercher)]%22%5D%7D%2C%7B%22field%22%3A%22director%22%2C%22operator%22%3A%22startswith%22%2C%22value%22%3A%5B%22$INFO[skin.string(rechercher)] %22%5D%7D%2C%7B%22field%22%3a%22director%22%2c%22operator%22%3a%22endswith%22%2c%22value%22%3a%5b%22 $INFO[skin.string(rechercher)]%22%5d%7d%5d%7d%2c%22type%22%3a%22movies%22%7d"/>
+	</include>
+	<include content="liste_resultat_recherche">
+		<param name="id" value="74"/>
+		<param name="liste" value="704"/>
+		<param name="type_de_recherche" value="films"/>
+		<param name="ondown" value="setfocus(200)"/>
+		<param name="onclick1" value="info"/>
+		<param name="content" value="videodb://movies/titles/?xsp=%7b%22rules%22%3a%7b%22or%22%3a%5b%7b%22field%22%3A%22writers%22%2C%22operator%22%3A%22is%22%2C%22value%22%3A%5B%22$INFO[skin.string(rechercher)]%22%5D%7D%2C%7B%22field%22%3A%22writers%22%2C%22operator%22%3A%22startswith%22%2C%22value%22%3A%5B%22$INFO[skin.string(rechercher)] %22%5D%7D%2C%7B%22field%22%3a%22writers%22%2c%22operator%22%3a%22endswith%22%2c%22value%22%3a%5b%22 $INFO[skin.string(rechercher)]%22%5d%7d%5d%7d%2c%22type%22%3a%22movies%22%7d"/>
+	</include>
+	<include content="liste_resultat_recherche">
+		<param name="id" value="75"/>
+		<param name="liste" value="705"/>
+		<param name="type_de_recherche" value="films"/>
+		<param name="ondown" value="setfocus(200)"/>
+		<param name="onclick1" value="info"/>
+		<param name="content" value="videodb://movies/titles/?xsp=%7b%22rules%22%3a%7b%22or%22%3a%5b%7b%22field%22%3A%22studio%22%2C%22operator%22%3A%22is%22%2C%22value%22%3A%5B%22$INFO[skin.string(rechercher)]%22%5D%7D%2C%7B%22field%22%3A%22studio%22%2C%22operator%22%3A%22startswith%22%2C%22value%22%3A%5B%22$INFO[skin.string(rechercher)] %22%5D%7D%2C%7B%22field%22%3a%22studio%22%2c%22operator%22%3a%22endswith%22%2c%22value%22%3a%5b%22 $INFO[skin.string(rechercher)]%22%5d%7d%5d%7d%2c%22type%22%3a%22movies%22%7d"/>
+	</include>
+	<include content="liste_resultat_recherche">
+		<param name="id" value="76"/>
+		<param name="liste" value="706"/>
+		<param name="type_de_recherche" value="films"/>
+		<param name="ondown" value="setfocus(200)"/>
+		<param name="onclick1" value="info"/>
+		<param name="content" value="videodb://movies/titles/?xsp=%7b%22rules%22%3a%7b%22or%22%3a%5b%7b%22field%22%3A%22tag%22%2C%22operator%22%3A%22is%22%2C%22value%22%3A%5B%22$INFO[skin.string(rechercher)]%22%5D%7D%2C%7B%22field%22%3A%22tag%22%2C%22operator%22%3A%22startswith%22%2C%22value%22%3A%5B%22$INFO[skin.string(rechercher)] %22%5D%7D%2C%7B%22field%22%3a%22tag%22%2c%22operator%22%3a%22endswith%22%2c%22value%22%3a%5b%22 $INFO[skin.string(rechercher)]%22%5d%7d%5d%7d%2c%22type%22%3a%22movies%22%7d"/>
+	</include>	
+	</control>
+	
+	<control type="group">		
+		<animation effect="slide" start="0,0" end="0,1080" condition="!string.isequal(window(home).property(type_de_recherche),series)">conditional</animation>
+		<animation effect="slide" start="0,0" end="0,100" time="250" condition="window.isvisible(virtualkeyboard)">conditional</animation>
+		<top>460</top>
+		<height>318</height>
+	<include content="liste_resultat_recherche">
+		<param name="id" value="80"/>
+		<param name="liste" value="800"/>
+		<param name="type_de_recherche" value="series"/>
+		<param name="ondown" value="setfocus(300)"/>
+		<param name="onclick1" value="info"/>
+		<param name="content" value="videodb://tvshows/titles/?xsp=%7b%22rules%22%3a%7b%22or%22%3a%5b%7b%22field%22%3A%22title%22%2C%22operator%22%3A%22startswith%22%2C%22value%22%3A%5B%22$INFO[skin.string(rechercher)]%22%5D%7D%2C%7B%22field%22%3a%22title%22%2c%22operator%22%3a%22contains%22%2c%22value%22%3a%5b%22 $INFO[skin.string(rechercher)]%22%5d%7d%5d%7d%2c%22type%22%3a%22tvshows%22%7d"/>
+	</include>
+	<include content="liste_resultat_recherche">
+		<param name="id" value="81"/>
+		<param name="liste" value="801"/>
+		<param name="type_de_recherche" value="series"/>
+		<param name="ondown" value="setfocus(300)"/>
+		<param name="onclick1" value="info"/>
+		<param name="content" value="videodb://tvshows/titles/?xsp=%7b%22rules%22%3a%7b%22or%22%3a%5b%7b%22field%22%3A%22plot%22%2C%22operator%22%3A%22contains%22%2C%22value%22%3A%5B%22 $INFO[skin.string(rechercher)] %22%5D%7D%2C%7B%22field%22%3A%22plot%22%2C%22operator%22%3A%22startswith%22%2C%22value%22%3A%5B%22$INFO[skin.string(rechercher)] %22%5D%7D%2C%7B%22field%22%3a%22plot%22%2c%22operator%22%3a%22endswith%22%2c%22value%22%3a%5b%22 $INFO[skin.string(rechercher)]%22%5d%7d%5d%7d%2c%22type%22%3a%22tvshows%22%7d"/>
+	</include>
+	<include content="liste_resultat_recherche">
+		<param name="id" value="82"/>
+		<param name="liste" value="802"/>
+		<param name="type_de_recherche" value="series"/>
+		<param name="ondown" value="setfocus(300)"/>
+		<param name="onclick1" value="dialog.close(1130,true)"/>
+		<param name="onclick2" value="alarmclock(masquer_tout,noop,00:10,silent)"/>
+		<param name="onclick3" value="playmedia($ESCINFO[listitem.filenameandpath],0,resume)"/>
+		<param name="content" value="videodb://tvshows/titles/-1/-1/?xsp=%7b%22rules%22%3a%7b%22or%22%3a%5b%7b%22field%22%3A%22title%22%2C%22operator%22%3A%22startswith%22%2C%22value%22%3A%5B%22$INFO[skin.string(rechercher)]%22%5D%7D%2C%7B%22field%22%3a%22title%22%2c%22operator%22%3a%22contains%22%2c%22value%22%3a%5b%22 $INFO[skin.string(rechercher)]%22%5d%7d%5d%7d%2c%22type%22%3a%22episodes%22%7d"/>
+	</include>	
+	<include content="liste_resultat_recherche">
+		<param name="id" value="83"/>
+		<param name="liste" value="803"/>
+		<param name="type_de_recherche" value="series"/>
+		<param name="ondown" value="setfocus(300)"/>
+		<param name="onclick1" value="dialog.close(1130,true)"/>
+		<param name="onclick2" value="alarmclock(masquer_tout,noop,00:10,silent)"/>
+		<param name="onclick3" value="playmedia($ESCINFO[listitem.filenameandpath],0,resume)"/>
+		<param name="content" value="videodb://tvshows/titles/-1/-1/?xsp=%7b%22rules%22%3a%7b%22or%22%3a%5b%7b%22field%22%3A%22plot%22%2C%22operator%22%3A%22contains%22%2C%22value%22%3A%5B%22 $INFO[skin.string(rechercher)] %22%5D%7D%2C%7B%22field%22%3A%22plot%22%2C%22operator%22%3A%22startswith%22%2C%22value%22%3A%5B%22$INFO[skin.string(rechercher)] %22%5D%7D%2C%7B%22field%22%3a%22plot%22%2c%22operator%22%3a%22endswith%22%2c%22value%22%3a%5b%22 $INFO[skin.string(rechercher)]%22%5d%7d%5d%7d%2c%22type%22%3a%22episodes%22%7d"/>
+	</include>
+	<include content="liste_resultat_recherche">
+		<param name="id" value="84"/>
+		<param name="liste" value="804"/>
+		<param name="type_de_recherche" value="series"/>
+		<param name="ondown" value="setfocus(300)"/>
+		<param name="onclick1" value="info"/>
+		<param name="content" value="videodb://tvshows/titles/?xsp=%7b%22rules%22%3a%7b%22or%22%3a%5b%7b%22field%22%3A%22actor%22%2C%22operator%22%3A%22is%22%2C%22value%22%3A%5B%22$INFO[skin.string(rechercher)]%22%5D%7D%2C%7B%22field%22%3A%22actor%22%2C%22operator%22%3A%22startswith%22%2C%22value%22%3A%5B%22$INFO[skin.string(rechercher)] %22%5D%7D%2C%7B%22field%22%3a%22actor%22%2c%22operator%22%3a%22endswith%22%2c%22value%22%3a%5b%22 $INFO[skin.string(rechercher)]%22%5d%7d%5d%7d%2c%22type%22%3a%22tvshows%22%7d"/>
+	</include>
+	<include content="liste_resultat_recherche">
+		<param name="id" value="85"/>
+		<param name="liste" value="805"/>
+		<param name="type_de_recherche" value="series"/>
+		<param name="ondown" value="setfocus(300)"/>
+		<param name="onclick1" value="info"/>
+		<param name="content" value="videodb://tvshows/titles/?xsp=%7b%22rules%22%3a%7b%22or%22%3a%5b%7b%22field%22%3A%22studio%22%2C%22operator%22%3A%22is%22%2C%22value%22%3A%5B%22$INFO[skin.string(rechercher)]%22%5D%7D%2C%7B%22field%22%3A%22studio%22%2C%22operator%22%3A%22startswith%22%2C%22value%22%3A%5B%22$INFO[skin.string(rechercher)] %22%5D%7D%2C%7B%22field%22%3a%22studio%22%2c%22operator%22%3a%22endswith%22%2c%22value%22%3a%5b%22 $INFO[skin.string(rechercher)]%22%5d%7d%5d%7d%2c%22type%22%3a%22tvshows%22%7d"/>
+	</include>
+	<include content="liste_resultat_recherche">
+		<param name="id" value="86"/>
+		<param name="liste" value="806"/>
+		<param name="type_de_recherche" value="series"/>
+		<param name="ondown" value="setfocus(300)"/>
+		<param name="onclick1" value="info"/>
+		<param name="content" value="videodb://tvshows/titles/?xsp=%7b%22rules%22%3a%7b%22or%22%3a%5b%7b%22field%22%3A%22tag%22%2C%22operator%22%3A%22is%22%2C%22value%22%3A%5B%22$INFO[skin.string(rechercher)]%22%5D%7D%2C%7B%22field%22%3A%22tag%22%2C%22operator%22%3A%22startswith%22%2C%22value%22%3A%5B%22$INFO[skin.string(rechercher)] %22%5D%7D%2C%7B%22field%22%3a%22tag%22%2c%22operator%22%3a%22endswith%22%2c%22value%22%3a%5b%22 $INFO[skin.string(rechercher)]%22%5d%7d%5d%7d%2c%22type%22%3a%22tvshows%22%7d"/>
+	</include>	
+	</control>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<control type="group">		
+		<animation effect="slide" start="0,0" end="0,1080" condition="!string.isequal(window(home).property(type_de_recherche),musique)">conditional</animation>
+		<animation effect="slide" start="0,0" end="0,100" time="250" condition="window.isvisible(virtualkeyboard)">conditional</animation>
+		<top>460</top>
+		<height>318</height>
+	<include content="liste_resultat_recherche_album">
+		<param name="id" value="90"/>
+		<param name="liste" value="900"/>
+		<param name="type_de_recherche" value="musique"/>
+		<param name="ondown" value="setfocus(400)"/>
+		<param name="onclick1" value="info"/>
+		<param name="content" value="musicdb://albums/?xsp=%7b%22rules%22%3a%7b%22or%22%3a%5b%7b%22field%22%3A%22album%22%2C%22operator%22%3A%22startswith%22%2C%22value%22%3A%5B%22$INFO[skin.string(rechercher)]%22%5D%7D%2C%7B%22field%22%3a%22album%22%2c%22operator%22%3a%22contains%22%2c%22value%22%3a%5b%22 $INFO[skin.string(rechercher)]%22%5d%7d%5d%7d%2c%22type%22%3a%22albums%22%7d"/>
+	</include>
+	<include content="liste_resultat_recherche_album">
+		<param name="id" value="91"/>
+		<param name="liste" value="901"/>
+		<param name="type_de_recherche" value="musique"/>
+		<param name="ondown" value="setfocus(400)"/>
+		<param name="onclick1" value="info"/>
+		<param name="content" value="musicdb://albums/?xsp=%7b%22rules%22%3a%7b%22or%22%3a%5b%7b%22field%22%3A%22albumartist%22%2C%22operator%22%3A%22startswith%22%2C%22value%22%3A%5B%22$INFO[skin.string(rechercher)]%22%5D%7D%2C%7B%22field%22%3a%22albumartist%22%2c%22operator%22%3a%22contains%22%2c%22value%22%3a%5b%22 $INFO[skin.string(rechercher)]%22%5d%7d%5d%7d%2c%22type%22%3a%22albums%22%7d"/>
+	</include>
+	<include content="liste_resultat_recherche_album">
+		<param name="id" value="92"/>
+		<param name="liste" value="902"/>
+		<param name="type_de_recherche" value="musique"/>
+		<param name="ondown" value="setfocus(400)"/>
+		<param name="onclick1" value="playmedia($ESCINFO[listitem.filenameandpath],1)"/>
+		<param name="content" value="musicdb://songs/?xsp=%7b%22rules%22%3a%7b%22or%22%3a%5b%7b%22field%22%3A%22title%22%2C%22operator%22%3A%22startswith%22%2C%22value%22%3A%5B%22$INFO[skin.string(rechercher)]%22%5D%7D%2C%7B%22field%22%3a%22title%22%2c%22operator%22%3a%22contains%22%2c%22value%22%3a%5b%22 $INFO[skin.string(rechercher)]%22%5d%7d%5d%7d%2c%22type%22%3a%22songs%22%7d"/>
+	</include>
+	</control>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<control type="group">
+		<visible>[!controlgroup(100).hasfocus + !controlgroup(200).hasfocus + !controlgroup(300).hasfocus + !controlgroup(400).hasfocus] + [[string.isequal(window(home).property(type_de_recherche),films) + integer.isgreater(container(200).numitems,0)] | [string.isequal(window(home).property(type_de_recherche),series) + integer.isgreater(container(300).numitems,0)] | [string.isequal(window(home).property(type_de_recherche),musique) + integer.isgreater(container(400).numitems,0)]]</visible>
+		<animation effect="fade" start="100" end="0" condition="window.isvisible(virtualkeyboard)">conditional</animation>
+		<animation effect="fade" start="0" end="100" delay="250" time="250" condition="!window.isvisible(virtualkeyboard)">conditional</animation>
+		<animation effect="fade" start="0" end="100" delay="375" time="250">visible</animation>
+		<left>150</left>
+		<top>380</top>
+	<control type="label">
+		<height>40</height>
+		<font>recherche</font>
+		<textcolor>$VAR[blanc]</textcolor>
+		<aligny>center</aligny>
+		<label>$INFO[listitem.title]</label>
+	</control>
+	<control type="label">
+		<top>418</top>		
+		<height>40</height>
+		<font>b_22</font>
+		<textcolor>$VAR[couleur_2]</textcolor>
+		<aligny>center</aligny>
+		<label>$LOCALIZE[31057]            [COLOR $VAR[couleur_1]]$INFO[window().property(currentitem)] / $INFO[window().property(numitems)][/COLOR]</label>
+	</control>
+	<control type="label">		
+		<top>448</top>
+		<top>40</top>	
+		<left>20</left>
+		<height>40</height>
+		<font>b_22</font>
+		<textcolor>$VAR[blanc]</textcolor>
+		<aligny>center</aligny>
+		<label>$LOCALIZE[369] [LOWERCASE]$LOCALIZE[584][/LOWERCASE]</label>
+	</control>
+	</control>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<control type="grouplist" id="100">
+		<animation effect="slide" start="0,0" end="0,80" time="250" condition="window.isvisible(virtualkeyboard)">conditional</animation>
+		<bottom>-30</bottom>
+		<width>1920</width>
+		<height>120</height>
+		<align>center</align>
+		<itemgap>10</itemgap>
+		<orientation>horizontal</orientation>
+		<defaultcontrol>102</defaultcontrol>
+		<usecontrolcoords>true</usecontrolcoords>
+	<include content="onglet_recherche">
+		<param name="id" value="101"/>
+		<param name="condition_onup" value="!integer.isequal(container(300).numitems,0)"/>
+		<param name="onup" value="$INFO[window(home).property(bouton_recherche_series)]"/>
+		<param name="type_de_recherche" value="series"/>
+		<param name="label" value="$LOCALIZE[31152]"/>		
+	</include>
+	<include content="onglet_recherche">
+		<param name="id" value="102"/>
+		<param name="condition_onup" value="!integer.isequal(container(200).numitems,0)"/>
+		<param name="onup" value="$INFO[window(home).property(bouton_recherche_films)]"/>
+		<param name="type_de_recherche" value="films"/>
+		<param name="label" value="$LOCALIZE[31151]"/>		
+	</include>
+	<include content="onglet_recherche">
+		<param name="id" value="103"/>
+		<param name="condition_onup" value="!integer.isequal(container(400).numitems,0)"/>
+		<param name="onup" value="$INFO[window(home).property(bouton_recherche_musique)]"/>
+		<param name="type_de_recherche" value="musique"/>
+		<param name="label" value="$LOCALIZE[31153]"/>		
+	</include>
+	</control>
+	
+	
+	
+	
+	
+	
+	<control type="grouplist" id="200">
+		<animation effect="fade" start="0" end="100" delay="325" time="250" condition="string.isequal(window(home).property(type_de_recherche),films)">conditional</animation>
+		<animation effect="fade" start="100" end="0" time="250" condition="!string.isequal(window(home).property(type_de_recherche),films)">conditional</animation>
+		<animation effect="slide" start="0,0" end="0,80" time="250" condition="window.isvisible(virtualkeyboard)">conditional</animation>
+		<animation effect="fade" start="0" end="100" delay="50" time="1" condition="!container(700).isupdating">conditional</animation>
+		<animation effect="fade" start="100" end="0" condition="container(700).isupdating">conditional</animation>		
+		<bottom>140</bottom>
+		<height>120</height>
+		<align>center</align>
+		<itemgap>10</itemgap>
+		<orientation>horizontal</orientation>
+		<defaultcontrol>201</defaultcontrol>
+		<usecontrolcoords>true</usecontrolcoords>	
+	<include content="bouton_recherche">
+		<param name="id" value="201"/>
+		<param name="liste" value="700"/>
+		<param name="type_de_recherche" value="films"/>
+		<param name="ondown" value="102"/>
+		<param name="label" value="$LOCALIZE[31144]"/>
+		<param name="icone" value="titre"/>
+	</include>
+	<include content="bouton_recherche">
+		<param name="id" value="202"/>
+		<param name="liste" value="701"/>
+		<param name="type_de_recherche" value="films"/>
+		<param name="ondown" value="102"/>
+		<param name="label" value="$LOCALIZE[31145]"/>
+		<param name="icone" value="resume"/>
+	</include>
+	<include content="bouton_recherche">
+		<param name="id" value="203"/>
+		<param name="liste" value="702"/>
+		<param name="type_de_recherche" value="films"/>
+		<param name="ondown" value="102"/>
+		<param name="label" value="$LOCALIZE[31146]"/>
+		<param name="icone" value="acteur"/>
+	</include>
+	<include content="bouton_recherche">
+		<param name="id" value="204"/>
+		<param name="liste" value="703"/>
+		<param name="type_de_recherche" value="films"/>
+		<param name="ondown" value="102"/>
+		<param name="label" value="$LOCALIZE[31147]"/>
+		<param name="icone" value="realisateur"/>
+	</include>
+	<include content="bouton_recherche">
+		<param name="id" value="205"/>
+		<param name="liste" value="704"/>
+		<param name="type_de_recherche" value="films"/>
+		<param name="ondown" value="102"/>
+		<param name="label" value="$LOCALIZE[31148]"/>
+		<param name="icone" value="scenariste"/>
+	</include>
+	<include content="bouton_recherche">
+		<param name="id" value="206"/>
+		<param name="liste" value="705"/>
+		<param name="type_de_recherche" value="films"/>
+		<param name="ondown" value="102"/>
+		<param name="label" value="$LOCALIZE[31149]"/>
+		<param name="icone" value="studio"/>
+	</include>
+	<include content="bouton_recherche">
+		<param name="id" value="207"/>
+		<param name="liste" value="706"/>
+		<param name="type_de_recherche" value="films"/>
+		<param name="ondown" value="102"/>
+		<param name="label" value="$LOCALIZE[31150]"/>
+		<param name="icone" value="balise"/>
+	</include>
+	</control>
+	
+	<control type="grouplist" id="300">
+		<animation effect="fade" start="0" end="100" delay="325" time="250" condition="string.isequal(window(home).property(type_de_recherche),series)">conditional</animation>
+		<animation effect="fade" start="100" end="0" time="250" condition="!string.isequal(window(home).property(type_de_recherche),series)">conditional</animation>
+		<animation effect="slide" start="0,0" end="0,80" time="250" condition="window.isvisible(virtualkeyboard)">conditional</animation>
+		<animation effect="fade" start="0" end="100" delay="50" time="1" condition="!container(800).isupdating">conditional</animation>
+		<animation effect="fade" start="100" end="0" condition="container(800).isupdating">conditional</animation>
+		<bottom>140</bottom>
+		<height>120</height>
+		<align>center</align>
+		<itemgap>10</itemgap>
+		<orientation>horizontal</orientation>
+		<defaultcontrol>301</defaultcontrol>
+		<usecontrolcoords>true</usecontrolcoords>
+	<include content="bouton_recherche">
+		<param name="id" value="301"/>
+		<param name="liste" value="800"/>
+		<param name="type_de_recherche" value="series"/>
+		<param name="ondown" value="101"/>
+		<param name="label" value="$LOCALIZE[31144]"/>
+		<param name="icone" value="titre"/>
+	</include>
+	<include content="bouton_recherche">
+		<param name="id" value="302"/>
+		<param name="liste" value="801"/>
+		<param name="type_de_recherche" value="series"/>
+		<param name="ondown" value="101"/>
+		<param name="label" value="$LOCALIZE[31145]"/>
+		<param name="icone" value="resume"/>
+	</include>
+	<include content="bouton_recherche">
+		<param name="id" value="303"/>
+		<param name="liste" value="802"/>
+		<param name="type_de_recherche" value="series"/>
+		<param name="ondown" value="101"/>
+		<param name="label" value="$LOCALIZE[31146]"/>
+		<param name="icone" value="titre_episode"/>
+	</include>
+	<include content="bouton_recherche">
+		<param name="id" value="304"/>
+		<param name="liste" value="803"/>
+		<param name="type_de_recherche" value="series"/>
+		<param name="ondown" value="101"/>
+		<param name="label" value="$LOCALIZE[31147]"/>
+		<param name="icone" value="resume_episode"/>
+	</include>
+	<include content="bouton_recherche">
+		<param name="id" value="305"/>
+		<param name="liste" value="804"/>
+		<param name="type_de_recherche" value="series"/>
+		<param name="ondown" value="101"/>
+		<param name="label" value="$LOCALIZE[31148]"/>
+		<param name="icone" value="acteur"/>
+	</include>
+	<include content="bouton_recherche">
+		<param name="id" value="306"/>
+		<param name="liste" value="805"/>
+		<param name="type_de_recherche" value="series"/>
+		<param name="ondown" value="101"/>
+		<param name="label" value="$LOCALIZE[31149]"/>
+		<param name="icone" value="studio"/>
+	</include>
+	<include content="bouton_recherche">
+		<param name="id" value="307"/>
+		<param name="liste" value="806"/>
+		<param name="type_de_recherche" value="series"/>
+		<param name="ondown" value="101"/>
+		<param name="label" value="$LOCALIZE[31150]"/>
+		<param name="icone" value="balise"/>
+	</include>
+	</control>
+	
+	<control type="grouplist" id="400">
+		<animation effect="fade" start="0" end="100" delay="325" time="250" condition="string.isequal(window(home).property(type_de_recherche),musique)">conditional</animation>
+		<animation effect="fade" start="100" end="0" time="250" condition="!string.isequal(window(home).property(type_de_recherche),musique)">conditional</animation>
+		<animation effect="slide" start="0,0" end="0,80" time="250" condition="window.isvisible(virtualkeyboard)">conditional</animation>
+		<animation effect="fade" start="0" end="100" delay="50" time="1" condition="!container(900).isupdating">conditional</animation>
+		<animation effect="fade" start="100" end="0" condition="container(900).isupdating">conditional</animation>
+		<bottom>140</bottom>
+		<height>120</height>
+		<align>center</align>
+		<itemgap>10</itemgap>
+		<orientation>horizontal</orientation>
+		<defaultcontrol>401</defaultcontrol>
+		<usecontrolcoords>true</usecontrolcoords>
+	<include content="bouton_recherche">
+		<param name="id" value="401"/>
+		<param name="liste" value="900"/>
+		<param name="type_de_recherche" value="musique"/>
+		<param name="ondown" value="103"/>
+		<param name="label" value="$LOCALIZE[31159]"/>
+		<param name="icone" value="titre"/>
+	</include>
+	<include content="bouton_recherche">
+		<param name="id" value="402"/>
+		<param name="liste" value="901"/>
+		<param name="type_de_recherche" value="musique"/>
+		<param name="ondown" value="103"/>
+		<param name="label" value="$LOCALIZE[31160]"/>
+		<param name="icone" value="artiste"/>
+	</include>
+	<include content="bouton_recherche">
+		<param name="id" value="403"/>
+		<param name="liste" value="902"/>
+		<param name="type_de_recherche" value="musique"/>
+		<param name="ondown" value="103"/>
+		<param name="label" value="$LOCALIZE[31160]"/>
+		<param name="icone" value="chanson"/>
+	</include>
+	</control>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	</control>
+	
+	
+	
+	
+	<control type="label">
+		<label>$INFO[]</label>
+		<scroll>true</scroll>
+	</control>	
+</controls>
+</window>

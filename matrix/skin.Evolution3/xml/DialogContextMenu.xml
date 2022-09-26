@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>	
+	
+	
+	<onload condition="string.isempty(window(home).property(gerer)) + string.isempty(window(home).property(menu_contextuel))">dialog.close(contextmenu,true)</onload>
+	
+	
+	<onunload condition="!$EXP[librairie_applications]">clearproperty(menu_contextuel,home)</onunload>
+	
+	
+	
+	<!-- marquer une serie non vue au lancement -->
+	<onload condition="string.isequal(window(home).property(gerer),marquer_vu)">alarmclock(focus,setfocus(1002),00:00,silent)</onload>
+	<onload condition="string.isequal(window(home).property(gerer),marquer_vu)">alarmclock(select,action(select),00:00,silent)</onload>	
+	<onload condition="string.isequal(window(home).property(gerer),marquer_non_vu)">alarmclock(focus,setfocus(1003),00:00,silent)</onload>
+	<onload condition="string.isequal(window(home).property(gerer),marquer_non_vu)">alarmclock(select,action(select),00:00,silent)</onload>	
+	<onunload condition="string.isequal(window(home).property(gerer),marquer_vu)">setproperty(gerer,marquer_non_vu,home)</onunload>
+	<onunload condition="string.isequal(window(home).property(gerer),marquer_vu)">alarmclock(back,setfocus(700),00:00,silent)</onunload>
+	<onunload condition="string.isequal(window(home).property(gerer),marquer_non_vu)">clearproperty(gerer,home)</onunload>
+	<onunload condition="string.isequal(window(home).property(gerer),marquer_non_vu)">alarmclock(close,action(close,videos),00:00,silent)</onunload>
+		
+	<!-- renommer un film ou une serie -->	
+	<onload condition="string.isequal(window(home).property(gerer),renommer_film)">alarmclock(focus,action(up),00:00,silent)</onload>
+	<onload condition="string.isequal(window(home).property(gerer),renommer_film)">alarmclock(select,action(select),00:00,silent)</onload>	
+	<onunload condition="string.isequal(window(home).property(gerer),renommer_film)">setproperty(gerer,renommer_film2,home)</onunload>	
+	<onload condition="string.isequal(window(home).property(gerer),renommer_film2)">alarmclock(select,action(select),00:00,silent)</onload>		
+	<onload condition="string.isequal(window(home).property(gerer),renommer_serie)">alarmclock(focus1,action(up),00:00,silent)</onload>
+	<onload condition="string.isequal(window(home).property(gerer),renommer_serie)">alarmclock(focus2,action(up),00:00,silent)</onload>
+	<onload condition="string.isequal(window(home).property(gerer),renommer_serie">alarmclock(select,action(select),00:00,silent)</onload>
+	<onunload condition="string.isequal(window(home).property(gerer),renommer_serie)">setproperty(gerer,renommer_serie2,home)</onunload>	
+	<onload condition="string.isequal(window(home).property(gerer),renommer_serie2)">alarmclock(select,action(select),00:00,silent)</onload>
+	<onunload condition="string.isequal(window(home).property(gerer),renommer_film2) | string.isequal(window(home).property(gerer),renommer_serie2)">alarmclock(close,action(close,videos),00:00,silent)</onunload>
+		
+	<!-- supprimer un film ou une serie -->
+	<onload condition="string.isequal(window(home).property(gerer),supprimer_film)">alarmclock(focus,action(up),00:00,silent)</onload>
+	<onload condition="string.isequal(window(home).property(gerer),supprimer_film)">alarmclock(select,action(select),00:00,silent)</onload>	
+	<onunload condition="string.isequal(window(home).property(gerer),supprimer_film)">setproperty(gerer,supprimer_film2,home)</onunload>	
+	<onload condition="string.isequal(window(home).property(gerer),supprimer_film2)">alarmclock(focus,action(up),00:00,silent)</onload>	
+	<onload condition="string.isequal(window(home).property(gerer),supprimer_film2)">alarmclock(select,action(select),00:00,silent)</onload>
+	<onload condition="string.isequal(window(home).property(gerer),supprimer_serie)">alarmclock(focus,action(up),00:00,silent)</onload>	
+	<onload condition="string.isequal(window(home).property(gerer),supprimer_serie)">alarmclock(focus2,action(up),00:00,silent)</onload>
+	<onload condition="string.isequal(window(home).property(gerer),supprimer_serie)">alarmclock(select,action(select),00:00,silent)</onload>
+	<onunload condition="string.isequal(window(home).property(gerer),supprimer_serie)">setproperty(gerer,supprimer_serie2,home)</onunload>	
+	<onload condition="string.isequal(window(home).property(gerer),supprimer_serie2)">alarmclock(focus,action(up),00:00,silent)</onload>	
+	<onload condition="string.isequal(window(home).property(gerer),supprimer_serie2)">alarmclock(select,action(select),00:00,silent)</onload>
+	<onunload condition="string.isequal(window(home).property(gerer),supprimer_film2) | string.isequal(window(home).property(gerer),supprimer_serie2)">alarmclock(close,action(close,videos),00:00,silent)</onunload>
+
+	<defaultcontrol always="true">996</defaultcontrol>	
+<controls>		
+	
+	<control type="group">
+		<animation effect="slide" start="0,0" end="0,-1080" delay="250" time="1" condition="$EXP[librairie_applications] + window.isvisible(videos)">windowopen</animation> 
+		<top>1280</top>
+		<left>190</left>	
+	<control type="image">
+		<width>560</width>
+		<height>240</height>
+		<texture colordiffuse="$VAR[blanc_10%]">commun/texture.png</texture>
+	</control>
+	<control type="image">
+		<top>240</top>
+		<left>-40</left>
+		<width>640</width>
+		<height>24</height>
+		<texture>commun/ombre.png</texture>	
+	</control>
+	<control type="grouplist" id="996">		
+		<onleft>action(close)</onleft>
+		<onright>action(close)</onright>
+		<width>560</width>
+		<height>240</height>
+		<align>center</align>
+		<itemgap>0</itemgap>		
+		<usecontrolcoords>true</usecontrolcoords>
+		<defaultcontrol always="true">1000</defaultcontrol>
+	</control>
+	</control>
+	
+	
+	<control type="button" id="1000">
+		<width>560</width>
+		<height>60</height>	
+		<font>b_24</font>
+		<textcolor>$VAR[blanc]</textcolor>
+		<focusedcolor>$VAR[gris]</focusedcolor>
+		<shadowcolor></shadowcolor>
+		<align>center</align>
+		<aligny>center</aligny>
+		<texturefocus colordiffuse="$VAR[blanc_75%]">commun/texture.png</texturefocus>
+		<texturenofocus colordiffuse="00ffffff">commun/texture.png</texturenofocus>
+	</control>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		
+</controls>
+</window>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window type="dialog" id="1105">	
+	<zorder>2</zorder>
+	<onload>setfocus(800)</onload>
+	<defaultcontrol always="true">800</defaultcontrol>
+<controls>	
+	<control type="button" id="800">
+		<onfocus>alarmclock(focus,setfocus(804),00:01,silent)</onfocus>
+	</control>
+	<control type="button" id="804">
+		<onfocus condition="integer.isgreater(container(801).numitems,0)">setfocus(805)</onfocus>
+		<onfocus condition="!integer.isgreater(container(801).numitems,0)">dialog.close(1103,true)</onfocus>
+		<onfocus condition="!integer.isgreater(container(801).numitems,0)">dialog.close(1104,true)</onfocus>
+		<onfocus condition="!integer.isgreater(container(801).numitems,0)">dialog.close(1105,true)</onfocus>
+	</control>	
+	<control type="list" id="801"> 																							<description>recherche de tous les episodes suivants dans toutes les saisons si pas dernier episode de toutes les saisons</description>			
+	<itemlayout></itemlayout>
+	<content sortby="episode" sortorder="ascending">videodb://tvshows/titles/$INFO[videoplayer.tvshowdbid]/$INFO[videoplayer.season]/?xsp=%7B%22rules%22%3A%7B%22and%22%3A%5B%7B%22field%22%3A%22episode%22%2C%22operator%22%3A%22greaterthan%22%2C%22value%22%3A%5B%22$INFO[videoplayer.episode]%22%5D%7D%5D%7D%2C%22type%22%3A%22episodes%22%7D</content>
+	<content sortby="episode" sortorder="ascending">videodb://tvshows/titles/$INFO[videoplayer.tvshowdbid]/-1/?xsp=%7B%22rules%22%3A%7B%22and%22%3A%5B%7B%22field%22%3A%22season%22%2C%22operator%22%3A%22greaterthan%22%2C%22value%22%3A%5B%22$INFO[videoplayer.season]%22%5D%7D%5D%7D%2C%22type%22%3A%22episodes%22%7D</content>
+	</control>	
+	<control type="button" id="805">
+		<onfocus>alarmclock(masquer_tout,noop,00:10,silent)</onfocus>
+		<onfocus>playmedia($ESCINFO[container(801).listitemabsolute(0).filenameandpath],0,noresume)</onfocus>
+		<onfocus>dialog.close(1103,true)</onfocus>
+		<onfocus>dialog.close(1104,true)</onfocus>	
+		<onfocus>dialog.close(1105,true)</onfocus>	
+	</control>
+</controls>
+</window>

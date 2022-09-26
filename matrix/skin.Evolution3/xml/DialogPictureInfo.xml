@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<backgroundcolor>00X000000</backgroundcolor>		
+	<onload>control.setfocus(100)</onload>
+	<onload>setproperty(infos_diaporama,1,home)</onload>
+	<onunload condition="string.isequal(window(home).property(initialiser_diaporama),)">clearproperty(infos_diaporama,home)</onunload>	
+	<onunload condition="!Slideshow.IsActive + !Slideshow.IsPaused">alarmclock(alarme,action(back),00:00,silent)</onunload>	
+	<onunload condition="!Slideshow.IsActive + !Slideshow.IsPaused + !string.isequal(window(home).property(initialiser_diaporama),)">alarmclock(alarme2,control.setfocus(1225),00:00,silent)</onunload>
+	<onunload condition="[Slideshow.IsActive | Slideshow.IsPaused] + string.isequal(window(home).property(initialiser_diaporama),fin_slideshow)">alarmclock(alarme,action(back),00:00,silent)</onunload>	
+	<onunload condition="[Slideshow.IsActive | Slideshow.IsPaused] + !string.isequal(window(home).property(initialiser_diaporama),)">clearproperty(initialiser_diaporama,home)</onunload>
+	<onunload condition="[Slideshow.IsActive | Slideshow.IsPaused] + string.isequal(window(home).property(initialiser_diaporama),right)">alarmclock(alarme,action(right),00:00,silent)</onunload>
+	<onunload condition="[Slideshow.IsActive | Slideshow.IsPaused] + string.isequal(window(home).property(initialiser_diaporama),left)">alarmclock(alarme,action(left),00:00,silent)</onunload>
+	<onunload condition="[Slideshow.IsActive | Slideshow.IsPaused] + !string.isequal(window(home).property(initialiser_diaporama),) + !string.isequal(window(home).property(initialiser_diaporama),fin_slideshow)">alarmclock(alarme2,action(info),00:01,silent)</onunload>	
+<controls>
+	<control type="group">
+		<animation effect="fade" start="0" end="100" time="50" reversible="false">windowopen</animation>
+		<animation effect="fade" start="100" end="0" time="50" reversible="false">windowclose</animation>		
+		<top>0</top>
+		<left>1085</left>
+		<width>795</width>
+	<control type="group">			
+		<animation effect="slide" start="0,0" end="0,20" time="0" condition="Integer.isequal(Container(5).NumItems,26)">conditional</animation>
+		<animation effect="slide" start="0,0" end="0,40" time="0" condition="Integer.isequal(Container(5).NumItems,25)">conditional</animation>
+		<animation effect="slide" start="0,0" end="0,60" time="0" condition="Integer.isequal(Container(5).NumItems,24)">conditional</animation>
+		<animation effect="slide" start="0,0" end="0,80" time="0" condition="Integer.isequal(Container(5).NumItems,23)">conditional</animation>
+		<animation effect="slide" start="0,0" end="0,100" time="0" condition="Integer.isequal(Container(5).NumItems,22)">conditional</animation>
+		<animation effect="slide" start="0,0" end="0,120" time="0" condition="Integer.isequal(Container(5).NumItems,21)">conditional</animation>
+		<animation effect="slide" start="0,0" end="0,140" time="0" condition="Integer.isequal(Container(5).NumItems,20)">conditional</animation>
+		<animation effect="slide" start="0,0" end="0,160" time="0" condition="Integer.isequal(Container(5).NumItems,19)">conditional</animation>
+		<animation effect="slide" start="0,0" end="0,180" time="0" condition="Integer.isequal(Container(5).NumItems,18)">conditional</animation>
+		<animation effect="slide" start="0,0" end="0,200" time="0" condition="Integer.isequal(Container(5).NumItems,17)">conditional</animation>
+		<animation effect="slide" start="0,0" end="0,220" time="0" condition="Integer.isequal(Container(5).NumItems,16)">conditional</animation>
+		<animation effect="slide" start="0,0" end="0,240" time="0" condition="Integer.isequal(Container(5).NumItems,15)">conditional</animation>
+		<animation effect="slide" start="0,0" end="0,260" time="0" condition="Integer.isequal(Container(5).NumItems,14)">conditional</animation>
+		<animation effect="slide" start="0,0" end="0,280" time="0" condition="Integer.isequal(Container(5).NumItems,13)">conditional</animation>
+		<animation effect="slide" start="0,0" end="0,300" time="0" condition="Integer.isequal(Container(5).NumItems,12)">conditional</animation>		
+		<animation effect="slide" start="0,0" end="0,320" time="0" condition="Integer.isequal(Container(5).NumItems,11)">conditional</animation>
+		<animation effect="slide" start="0,0" end="0,340" time="0" condition="Integer.isequal(Container(5).NumItems,10)">conditional</animation>
+		<animation effect="slide" start="0,0" end="0,360" time="0" condition="Integer.isequal(Container(5).NumItems,9)">conditional</animation>
+		<animation effect="slide" start="0,0" end="0,380" time="0" condition="Integer.isequal(Container(5).NumItems,8)">conditional</animation>
+		<animation effect="slide" start="0,0" end="0,400" time="0" condition="Integer.isequal(Container(5).NumItems,7)">conditional</animation>
+		<animation effect="slide" start="0,0" end="0,420" time="0" condition="Integer.isequal(Container(5).NumItems,6)">conditional</animation>
+		<animation effect="slide" start="0,0" end="0,440" time="0" condition="Integer.isequal(Container(5).NumItems,5)">conditional</animation>
+		<animation effect="slide" start="0,0" end="0,460" time="0" condition="Integer.isequal(Container(5).NumItems,4)">conditional</animation>
+		<animation effect="slide" start="0,0" end="0,480" time="0" condition="Integer.isequal(Container(5).NumItems,3)">conditional</animation>
+		<animation effect="slide" start="0,0" end="0,500" time="0" condition="Integer.isequal(Container(5).NumItems,2)">conditional</animation>
+		<animation effect="slide" start="0,0" end="0,520" time="0" condition="Integer.isequal(Container(5).NumItems,1)">conditional</animation>
+	<control type="panel" id="5">									
+	<itemlayout height="40">
+	<control type="image">
+		<texture colordiffuse="$VAR[couleur_OSD]">commun/texture.png</texture>
+	</control>
+	<control type="image">
+		<right>5</right>
+		<left>5</left>
+		<height>1</height>
+		<bottom>0</bottom>
+		<aspectratio>stretch</aspectratio>
+		<texture colordiffuse="20000000">commun/texture.png</texture>		
+	</control>
+	<control type="label">
+		<left>20</left>
+		<top>1</top>
+		<width>280</width>		
+		<bottom>5</bottom>
+		<font>infos</font>
+		<label>$INFO[listitem.label]</label>	
+	</control>
+	<control type="label">
+		<left>308</left>
+		<top>10</top>
+		<width>485</width>		
+		<height>20</height>
+		<align>left</align>
+		<font>infos</font>
+		<label>  $INFO[listitem.label2]</label>
+		<scroll>true</scroll>
+	</control>
+	<include content="barre_separation_verticale">
+		<param name="left" value="305"/> 
+		<param name="right" value="0"/>
+		<param name="bottom" value="0"/>		
+		<param name="top" value="0"/>
+	</include>
+	</itemlayout>	
+	<focusedlayout height="40">	
+	</focusedlayout>	
+	</control>
+	</control>
+	<control type="button" id="100">		
+		<onclick condition="!Slideshow.IsActive + !Slideshow.IsPaused">setproperty(initialiser_diaporama,debut_diaporama,home)</onclick>
+		<onclick condition="!Slideshow.IsActive + !Slideshow.IsPaused">action(info)</onclick>
+		<onclick condition="Slideshow.IsActive | Slideshow.IsPaused">setproperty(initialiser_diaporama,fin_slideshow,home)</onclick>
+		<onclick condition="Slideshow.IsActive | Slideshow.IsPaused">action(info)</onclick>
+		<onup condition="!Slideshow.IsActive + !Slideshow.IsPaused + !string.isequal(window(home).property(zoom_diaporama),1)">setproperty(zoom_diaporama,1,home)</onup>
+		<onup condition="!Slideshow.IsActive + !Slideshow.IsPaused + string.isequal(window(home).property(zoom_diaporama),1)">clearproperty(zoom_diaporama,home)</onup>
+		<ondown condition="!Slideshow.IsActive + !Slideshow.IsPaused + !string.isequal(window(home).property(zoom_diaporama),1)">setproperty(zoom_diaporama,1,home)</ondown>
+		<ondown condition="!Slideshow.IsActive + !Slideshow.IsPaused + string.isequal(window(home).property(zoom_diaporama),1)">clearproperty(zoom_diaporama,home)</ondown>
+		<onright>setproperty(initialiser_diaporama,right,home)</onright>
+		<onright>action(info)</onright>
+		<onleft>setproperty(initialiser_diaporama,left,home)</onleft>
+		<onleft>action(info)</onleft>
+	</control>
+	</control>
+</controls>
+</window>

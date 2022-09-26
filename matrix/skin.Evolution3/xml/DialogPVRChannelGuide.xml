@@ -1,0 +1,859 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>		
+	<onload condition="!window.isvisible(fullscreenvideo)">Action(Close)</onload>
+	<onload condition="!window.isvisible(fullscreenvideo)">ActivateWindow(tvguide)</onload>	
+	<onload>clearproperty(numero_menu)</onload>
+	<onload>clearproperty(pvrchannelguide,videoosd)</onload>
+	<onunload condition="!string.isequal(window(home).property(quitter_osd),oui)">alarmclock(focus,setfocus(145),00:00,silent)</onunload>		
+	<onunload>clearproperty(numero_menu)</onunload>
+	<onunload>cancelalarm(delais_affichage_guide_osd,silent)</onunload>
+	<onunload>cancelalarm(rafraichir_guideTV2_osd,silent)</onunload>		
+	<onload>cancelalarm(delais_affichage_guide_osd,silent)</onload>				
+	<onload>alarmclock(delais_affichage_guide_osd,setfocus(234),$INFO[skin.string(delais_affichage_guide_osd)],silent)</onload>		
+	
+	
+	<onload>setproperty(premier_item,$INFO[container(11).listitem(0).startdate])</onload>
+	
+	
+	
+	<defaultcontrol always="true">235</defaultcontrol>
+<controls>
+	<control type="list" id="11">
+		<itemlayout>
+		</itemlayout>
+		<focusedlayout>
+		</focusedlayout>	
+	</control>
+	
+	
+	<control type="button" id="233">			
+		<onfocus condition="!string.isequal(window().property(numero_menu),3) + !string.isequal(container(11).listitem(0).starttime,videoplayer.starttime)">control.move(11,1)</onfocus>
+		<onfocus>setfocus(235)</onfocus>
+	</control>
+	
+	<control type="button" id="234">
+		<onfocus>setfocus(235)</onfocus>		
+		<onfocus>alarmclock(a1,action(left),00:00,silent)</onfocus>		
+		<onfocus>alarmclock(a2,action(left),00:00,silent)</onfocus>		
+		<onfocus>alarmclock(a3,action(left),00:00,silent)</onfocus>		
+		<onfocus>alarmclock(a4,action(left),00:00,silent)</onfocus>
+	</control>
+	
+	
+	<control type="group">
+		<visible>!window.isvisible(1211)</visible>
+		<animation effect="fade" start="0" end="100" time="100" reversible="false">visible</animation>
+		<animation effect="fade" start="100" end="0" time="100" reversible="false">hidden</animation>
+		<animation effect="slide" start="-480,0" end="0,0" time="250" reversible="false">windowopen</animation>
+		<animation effect="slide" start="0,0" end="-480,0" time="250" reversible="false" condition="string.isempty(window().property(numero_menu))">windowclose</animation>	
+		<animation effect="fade" start="100" end="0" time="100" reversible="false" condition="!string.isempty(window().property(numero_menu))">windowclose</animation>	
+	
+
+	<control type="button" id="235">
+		<oninfo>noop</oninfo>
+		<onback>clearproperty(numero_menu)</onback>		
+		<onback>setproperty(quitter_osd,oui,home)</onback>		
+		<onback>alarmclock(back,dialog.close(videoosd),00:00,silent)</onback>
+		
+		<onup>setproperty(pvrchannelguide,oui,videoosd)</onup>
+		<ondown>setproperty(pvrchannelguide,oui,videoosd)</ondown>
+		<onup>alarmclock(a,activatewindow(pvrchannelguide),00:01,silent)</onup>
+		<onup>action(ChannelUp)</onup>
+		<onup>clearproperty(numero_menu)</onup>		
+		<onup>dialog.close(pvrchannelguide)</onup>
+		<ondown>alarmclock(a,activatewindow(pvrchannelguide),00:01,silent)</ondown>
+		<ondown>action(ChannelDown)</ondown>
+		<ondown>clearproperty(numero_menu)</ondown>		
+		<ondown>dialog.close(pvrchannelguide)</ondown>
+		
+		<onright>cancelalarm(delais_affichage_guide_osd,silent)</onright>
+		<onleft>cancelalarm(delais_affichage_guide_osd,silent)</onleft>
+		<onright>alarmclock(delais_affichage_guide_osd,setfocus(234),$INFO[skin.string(delais_affichage_guide_osd)],silent)</onright>
+		<onleft>alarmclock(delais_affichage_guide_osd,setfocus(234),$INFO[skin.string(delais_affichage_guide_osd)],silent)</onleft>
+		<onleft condition="string.isempty(window().property(numero_menu))">alarmclock(retour,setfocus(145),00:00,silent)</onleft>
+		<onleft condition="string.isempty(window().property(numero_menu))">dialog.close(pvrchannelguide)</onleft>
+		<onright condition="string.isempty(window().property(numero_menu))">setproperty(numero_menu,1)</onright>
+		<onright condition="string.isequal(window().property(numero_menu),1)">setproperty(numero_menu,2)</onright>
+		<onright condition="string.isequal(window().property(numero_menu),2)">setproperty(numero_menu,3)</onright>
+		<onright condition="string.isequal(window().property(numero_menu),2)">setproperty(retour_ce_soir_OSD,$INFO[container(11).currentitem])</onright>
+		<onright condition="string.isequal(window().property(numero_menu),2)">control.move(11,$VAR[ce_soir_OSD])</onright>
+		<onleft condition="string.isequal(window().property(numero_menu),3)">control.setfocus(11,$INFO[window().property(retour_ce_soir_OSD)],absolute)</onleft>
+		<onleft condition="string.isequal(window().property(numero_menu),3)">control.move(11,-1)</onleft>
+		<onleft condition="string.isequal(window().property(numero_menu),3)">control.setfocus(235)</onleft>
+		<onleft condition="string.isequal(window().property(numero_menu),3)">setproperty(numero_menu,2)</onleft>
+		<onleft condition="string.isequal(window().property(numero_menu),2)">setproperty(numero_menu,1)</onleft>
+		<onleft condition="string.isequal(window().property(numero_menu),1)">clearproperty(numero_menu)</onleft>
+	</control>
+	
+	
+	
+	
+	<control type="group">
+		<width>480</width>	
+	<control type="group">
+		<visible>string.isempty(window().property(numero_menu)) | string.isequal(window().property(numero_menu),3)</visible>
+		<height>50</height>
+	<control type="image">
+		<visible>string.isempty(window().property(numero_menu))</visible>
+		<right>1</right>
+		<texture colordiffuse="$VAR[couleur_dominante]">commun/texture.png</texture>		
+	</control>
+	<control type="image">
+		<visible>string.isequal(window().property(numero_menu),3)</visible>
+		<texture colordiffuse="$VAR[couleur_dominante]">commun/texture.png</texture>		
+	</control>				
+	<control type="label">																														<description>numero + nom de chaine</description>
+        <visible>string.isempty(window().property(numero_menu))</visible>
+		<bottom>10</bottom>		
+        <left>10</left>
+		<right>90</right>
+        <height>30</height>
+		<aligny>center</aligny>
+		<font>font22b</font>
+		<textcolor>$VAR[blanc]</textcolor>
+		<selectedcolor>$VAR[blanc]</selectedcolor>
+		<label>$INFO[container(11).listItem(0).channelnumberlabel]  ○  $INFO[container(11).listItem(0).channelname]</label>		
+	</control>
+	<control type="label">																														<description>numero + nom de chaine</description>
+        <visible>string.isequal(window().property(numero_menu),3)</visible>
+		<bottom>10</bottom>		
+        <left>10</left>
+		<right>-890</right>
+        <height>30</height>
+		<aligny>center</aligny>
+		<font>font22b</font>
+		<textcolor>$VAR[blanc]</textcolor>
+		<selectedcolor>$VAR[blanc]</selectedcolor>
+		<label>○  $LOCALIZE[31337] $INFO[container(11).listItem(0).channelname]</label>		
+	</control>
+	</control>
+	<control type="group">
+		<visible>!string.isempty(window().property(numero_menu)) + !string.isequal(window().property(numero_menu),3)</visible>
+		<height>50</height>
+	<control type="image">
+		<right>1</right>
+		<texture colordiffuse="$VAR[verre_blanc]">commun/texture.png</texture>		
+	</control>
+	</control>
+	<control type="group">																														<description>titre + progression</description>				
+		<top>51</top>
+		<height>50</height>	
+	<control type="image">
+		<right>1</right>
+        <height>49</height>
+		<texture colordiffuse="$VAR[verre_blanc]">commun/texture.png</texture>		
+	</control>		
+	<control type="label">																														<description>titre</description>
+        <visible>!string.isempty(container(11).listItem(0).title)</visible>		
+		<top>10</top>		
+        <left>2</left>
+		<right>2</right>
+        <height>30</height>
+		<aligny>center</aligny>
+		<font>font20b</font>
+		<textcolor>$VAR[gris_fonce]</textcolor>
+		<selectedcolor>$VAR[gris_fonce]</selectedcolor>				
+		<scrollsuffix></scrollsuffix>
+		<label>  ○  $INFO[container(11).listItem(0).title]</label>		
+	</control>
+	<control type="label">																														<description>titre</description>
+        <visible>string.isempty(container(11).listItem(0).title)</visible>		
+		<top>10</top>		
+        <left>2</left>
+		<right>2</right>
+        <height>30</height>
+		<aligny>center</aligny>
+		<font>font20b</font>
+		<textcolor>$VAR[gris_fonce]</textcolor>
+		<selectedcolor>$VAR[gris_fonce]</selectedcolor>				
+		<scrollsuffix></scrollsuffix>
+		<label>  ○  $LOCALIZE[31169]</label>		
+	</control>
+	<control type="progress">																													<description>progression</description>
+		<visible>!string.isempty(container(11).listItem(0).title) + !string.isequal(window().property(numero_menu),3)</visible>		
+		<top>-13</top>
+		<height>28</height>
+		<width>486</width>
+		<reveal>false</reveal>
+		<texturebg colordiffuse="00ffffff">commun/texture.png</texturebg>
+		<midtexture border="5,5,12,5">commun/progression_epg.png</midtexture>	
+		<info>container(11).listItem(0).progress</info>
+	</control>
+	</control>
+	<control type="group">																														<description>information</description>				
+		<top>100</top>
+		<height>275</height>		
+	<control type="image">
+		<top>1</top>		
+        <right>1</right>
+		<texture colordiffuse="$VAR[verre_blanc]">commun/texture.png</texture>		
+	</control>		
+	<control type="image">																														<description>miniature</description>
+		<visible>!string.isempty(container(11).listItem(0).title)</visible>				
+		<left>5</left>
+		<right>5</right>
+		<top>5</top>
+		<bottom>5</bottom>
+		<aspectratio align="center">keep</aspectratio>
+		<texture fallback="extras/kodi.jpg">$INFO[container(11).listItem(0).epgeventicon]</texture>		
+	</control>
+	<control type="image">																														<description>miniature</description>
+		<visible>string.isempty(container(11).listItem(0).title)</visible>				
+		<left>5</left>
+		<right>5</right>
+		<top>5</top>
+		<bottom>5</bottom>
+		<aspectratio align="center">keep</aspectratio>
+		<texture>extras/kodi.png</texture>		
+	</control>
+	</control>
+	<control type="group">
+		<top>375</top>
+		<height>100</height>
+	<control type="image">
+		<top>1</top>		
+        <right>1</right>
+		<texture colordiffuse="$VAR[verre_blanc]">commun/texture.png</texture>		
+	</control>
+	<control type="label">																														<description>heure de debut et de fin</description>
+        <visible>!string.isempty(container(11).listItem(0).starttime)</visible>		
+		<top>10</top>		
+        <left>10</left>
+		<right>10</right>
+		<height>30</height>
+		<align>center</align>
+		<aligny>center</aligny>
+		<font>font20b</font>
+		<textcolor>$VAR[gris_fonce]</textcolor>
+		<selectedcolor>$VAR[gris_fonce]</selectedcolor>
+		<label>$INFO[container(11).listItem(0).starttime] ○ $INFO[container(11).listItem(0).endtime] ○ $INFO[container(11).listItem(0).duration(mins)] mins</label>		
+	</control>
+	<control type="textbox">																													<description>genre</description>
+        <top>40</top>		
+        <left>10</left>
+		<right>10</right>
+		<height>50</height>
+		<align>center</align>
+		<aligny>center</aligny>
+		<font>font20bt</font>
+		<textcolor>$VAR[gris_moyen]</textcolor>
+		<selectedcolor>$VAR[gris_moyen]</selectedcolor>
+		<label>$INFO[container(11).listItem(0).genre]</label>		
+	</control>	
+	</control>	
+	<control type="group">																														<description>resume</description>				
+		<top>476</top>
+		<bottom>50</bottom>	
+	<control type="image">
+		<right>1</right>
+        <bottom>1</bottom>
+		<texture colordiffuse="$VAR[verre_blanc]">commun/texture.png</texture>		
+	</control>
+	<control type="textbox">																													<description>resume</description>
+        <top>1</top>		
+		<bottom>2</bottom>
+		<left>20</left>
+		<right>20</right>
+		<align>justify</align>
+		<aligny>center</aligny>
+		<font>font18b</font>
+		<textcolor>$VAR[gris_fonce]</textcolor>
+		<label>$INFO[container(11).listItem(0).plot]</label>
+		<autoscroll delay="5000" time="3000" repeat="5000">string.isempty(window().property(numero_menu)) | string.isequal(window().property(numero_menu),3)</autoscroll>			
+	</control>	
+	</control>
+	<control type="group">
+		<bottom>0</bottom>
+		<height>50</height>
+	<control type="image">
+		<right>1</right>
+		<texture colordiffuse="$VAR[verre_noir]">commun/texture.png</texture>		
+	</control>	
+	<control type="label">																														<description>numero + nom de chaine</description>
+        <visible>!string.isequal(window().property(numero_menu),3)</visible>
+		<bottom>10</bottom>		
+        <left>10</left>
+		<right>90</right>
+        <height>30</height>
+		<aligny>center</aligny>
+		<font>font22b</font>
+		<textcolor>$VAR[blanc]</textcolor>
+		<selectedcolor>$VAR[blanc]</selectedcolor>
+		<label>  ○  $LOCALIZE[31215]</label>		
+	</control>
+	<control type="label">																														<description>numero + nom de chaine</description>
+        <visible>string.isequal(window().property(numero_menu),3) + string.isequal(container(11).listItem(0).startdate,control.getlabel(1234))</visible>
+		<bottom>10</bottom>		
+        <left>10</left>
+		<right>90</right>
+        <height>30</height>
+		<aligny>center</aligny>
+		<font>font22b</font>
+		<textcolor>$VAR[blanc]</textcolor>
+		<selectedcolor>$VAR[blanc]</selectedcolor>
+		<label>  ○  $LOCALIZE[31331] $INFO[container(11).listItem(0).starttime]</label>		
+	</control>	
+	<control type="label">																														<description>numero + nom de chaine</description>
+        <visible>string.isequal(window().property(numero_menu),3) + string.isequal(container(11).listItem(0).startdate,control.getlabel(1235))</visible>
+		<bottom>10</bottom>		
+        <left>10</left>
+		<right>90</right>
+        <height>30</height>
+		<aligny>center</aligny>
+		<font>font22b</font>
+		<textcolor>$VAR[blanc]</textcolor>
+		<selectedcolor>$VAR[blanc]</selectedcolor>
+		<label>  ○  $LOCALIZE[31332] $INFO[container(11).listItem(0).starttime]</label>		
+	</control>
+	</control>
+	</control>	
+	
+	<control type="group">
+		<visible>!string.isempty(window().property(numero_menu))</visible>
+		<animation type="visible">
+			<effect type="zoom" start="0,100" end="100,100" center="480,540" time="100" reversible="false"/>
+			<effect type="fade" start="0" end="100" time="100" reversible="false"/>
+		</animation>
+		<animation type="hidden">
+			<effect type="zoom" start="100,100" end="0,100" center="480,540" time="100" reversible="false"/>
+			<effect type="fade" start="100" end="0" time="100" reversible="false"/>
+		</animation>
+		<left>480</left>
+		<width>480</width>	
+	<control type="group">
+		<visible>string.isequal(window().property(numero_menu),1) | string.isequal(window().property(numero_menu),3)</visible>
+		<height>50</height>
+	<control type="image">
+		<visible>string.isequal(window().property(numero_menu),1)</visible>
+		<right>1</right>
+		<texture colordiffuse="$VAR[couleur_dominante]">commun/texture.png</texture>		
+	</control>
+	<control type="image">
+		<visible>string.isequal(window().property(numero_menu),3)</visible>
+		<texture colordiffuse="$VAR[couleur_dominante]">commun/texture.png</texture>		
+	</control>		
+	<control type="label">																														<description>numero + nom de chaine</description>
+        <visible>!string.isequal(window().property(numero_menu),3)</visible>
+		<bottom>10</bottom>		
+        <left>10</left>
+		<right>90</right>
+        <height>30</height>
+		<aligny>center</aligny>
+		<font>font22b</font>
+		<textcolor>$VAR[blanc]</textcolor>
+		<selectedcolor>$VAR[blanc]</selectedcolor>
+		<label>$INFO[container(11).listItem(0).channelnumberlabel]  ○  $INFO[container(11).listItem(0).channelname]</label>		
+	</control>
+	</control>
+	<control type="group">
+		<visible>!string.isequal(window().property(numero_menu),1) + !string.isequal(window().property(numero_menu),3)</visible>
+		<height>50</height>
+	<control type="image">
+		<right>1</right>
+		<texture colordiffuse="$VAR[verre_blanc]">commun/texture.png</texture>		
+	</control>
+	</control>
+	<control type="group">																														<description>titre + progression</description>				
+		<top>51</top>
+		<height>50</height>	
+	<control type="image">
+		<right>1</right>
+        <height>49</height>
+		<texture colordiffuse="$VAR[verre_blanc]">commun/texture.png</texture>		
+	</control>		
+	<control type="label">																														<description>titre</description>
+        <visible>!string.isempty(container(11).listItem(1).title)</visible>		
+		<top>10</top>		
+        <left>2</left>
+		<right>2</right>
+        <height>30</height>
+		<aligny>center</aligny>
+		<font>font20b</font>
+		<textcolor>$VAR[gris_fonce]</textcolor>
+		<selectedcolor>$VAR[gris_fonce]</selectedcolor>				
+		<scrollsuffix></scrollsuffix>
+		<label>  ○  $INFO[container(11).listItem(1).title]</label>		
+	</control>
+	<control type="label">																														<description>titre</description>
+        <visible>string.isempty(container(11).listItem(1).title)</visible>		
+		<top>10</top>		
+        <left>2</left>
+		<right>2</right>
+        <height>30</height>
+		<aligny>center</aligny>
+		<font>font20b</font>
+		<textcolor>$VAR[gris_fonce]</textcolor>
+		<selectedcolor>$VAR[gris_fonce]</selectedcolor>				
+		<scrollsuffix></scrollsuffix>
+		<label>  ○  $LOCALIZE[31169]</label>		
+	</control>
+	</control>
+	<control type="group">																														<description>information</description>				
+		<top>100</top>
+		<height>275</height>		
+	<control type="image">
+		<top>1</top>		
+        <right>1</right>
+		<texture colordiffuse="$VAR[verre_blanc]">commun/texture.png</texture>		
+	</control>		
+	<control type="image">																														<description>miniature</description>
+		<visible>!string.isempty(container(11).listItem(1).title)</visible>				
+		<left>5</left>
+		<right>5</right>
+		<top>5</top>
+		<bottom>5</bottom>
+		<aspectratio align="center">keep</aspectratio>
+		<texture fallback="extras/kodi.jpg">$INFO[container(11).listItem(1).epgeventicon]</texture>		
+	</control>
+	<control type="image">																														<description>miniature</description>
+		<visible>string.isempty(container(11).listItem(1).title)</visible>				
+		<left>5</left>
+		<right>5</right>
+		<top>5</top>
+		<bottom>5</bottom>
+		<aspectratio align="center">keep</aspectratio>
+		<texture>extras/kodi.png</texture>		
+	</control>
+	</control>
+	<control type="group">
+		<top>375</top>
+		<height>100</height>
+	<control type="image">
+		<top>1</top>		
+        <right>1</right>
+		<texture colordiffuse="$VAR[verre_blanc]">commun/texture.png</texture>		
+	</control>
+	<control type="label">																														<description>heure de debut et de fin</description>
+        <visible>!string.isempty(container(11).listItem(1).starttime)</visible>		
+		<top>10</top>		
+        <left>10</left>
+		<right>10</right>
+		<height>30</height>
+		<align>center</align>
+		<aligny>center</aligny>
+		<font>font20b</font>
+		<textcolor>$VAR[gris_fonce]</textcolor>
+		<selectedcolor>$VAR[gris_fonce]</selectedcolor>
+		<label>$INFO[container(11).listItem(1).starttime] ○ $INFO[container(11).listItem(1).endtime] ○ $INFO[container(11).listItem(1).duration(mins)] mins</label>		
+	</control>
+	<control type="textbox">																													<description>genre</description>
+        <top>40</top>		
+        <left>10</left>
+		<right>10</right>
+		<height>50</height>
+		<align>center</align>
+		<aligny>center</aligny>
+		<font>font20bt</font>
+		<textcolor>$VAR[gris_moyen]</textcolor>
+		<selectedcolor>$VAR[gris_moyen]</selectedcolor>
+		<label>$INFO[container(11).listItem(1).genre]</label>		
+	</control>	
+	</control>	
+	<control type="group">																														<description>resume</description>				
+		<top>476</top>
+		<bottom>50</bottom>	
+	<control type="image">
+		<right>1</right>
+        <bottom>1</bottom>
+		<texture colordiffuse="$VAR[verre_blanc]">commun/texture.png</texture>		
+	</control>
+	<control type="textbox">																													<description>resume</description>
+        <top>1</top>		
+		<bottom>2</bottom>
+		<left>20</left>
+		<right>20</right>
+		<align>justify</align>
+		<aligny>center</aligny>
+		<font>font18b</font>
+		<textcolor>$VAR[gris_fonce]</textcolor>
+		<label>$INFO[container(11).listItem(1).plot]</label>
+		<autoscroll delay="5000" time="3000" repeat="5000">string.isequal(window().property(numero_menu),1) | string.isequal(window().property(numero_menu),3)</autoscroll>			
+	</control>	
+	</control>
+	<control type="group">
+		<bottom>0</bottom>
+		<height>50</height>
+	<control type="image">
+		<right>1</right>
+		<texture colordiffuse="$VAR[verre_noir]">commun/texture.png</texture>		
+	</control>	
+	<control type="label">																														<description>numero + nom de chaine</description>
+        <visible>!string.isequal(window().property(numero_menu),3)</visible>
+		<bottom>10</bottom>		
+        <left>10</left>
+		<right>90</right>
+        <height>30</height>
+		<aligny>center</aligny>
+		<font>font22b</font>
+		<textcolor>$VAR[blanc]</textcolor>
+		<selectedcolor>$VAR[blanc]</selectedcolor>
+		<label>  ○  $LOCALIZE[31329]</label>		
+	</control>	
+	<control type="label">																														<description>numero + nom de chaine</description>
+        <visible>string.isequal(window().property(numero_menu),3) + string.isequal(container(11).listItem(1).startdate,control.getlabel(1234))</visible>
+		<bottom>10</bottom>		
+        <left>10</left>
+		<right>90</right>
+        <height>30</height>
+		<aligny>center</aligny>
+		<font>font22b</font>
+		<textcolor>$VAR[blanc]</textcolor>
+		<selectedcolor>$VAR[blanc]</selectedcolor>
+		<label>  ○  $LOCALIZE[31331] $INFO[container(11).listItem(1).starttime]</label>		
+	</control>	
+	<control type="label">																														<description>numero + nom de chaine</description>
+        <visible>string.isequal(window().property(numero_menu),3) + string.isequal(container(11).listItem(1).startdate,control.getlabel(1235))</visible>
+		<bottom>10</bottom>		
+        <left>10</left>
+		<right>90</right>
+        <height>30</height>
+		<aligny>center</aligny>
+		<font>font22b</font>
+		<textcolor>$VAR[blanc]</textcolor>
+		<selectedcolor>$VAR[blanc]</selectedcolor>
+		<label>  ○  $LOCALIZE[31332] $INFO[container(11).listItem(1).starttime]</label>		
+	</control>
+	</control>
+	</control>	
+	
+	<control type="group">
+		<visible>string.isequal(window().property(numero_menu),2) | string.isequal(window().property(numero_menu),3)</visible>
+		<animation type="visible">
+			<effect type="zoom" start="0,100" end="100,100" center="960,540" time="100" reversible="false"/>
+			<effect type="fade" start="0" end="100" time="100" reversible="false"/>
+		</animation>
+		<animation type="hidden">
+			<effect type="zoom" start="100,100" end="0,100" center="960,540" time="100" reversible="false"/>
+			<effect type="fade" start="100" end="0" time="100" reversible="false"/>
+		</animation>			
+		<left>960</left>
+		<width>530</width>	
+	<control type="group">
+		<visible>string.isequal(window().property(numero_menu),2)</visible>
+		<right>0</right>
+		<width>50</width>
+	<control type="image">
+		<texture colordiffuse="$VAR[verre_noir]">commun/texture.png</texture>		
+	</control>	
+	<control type="label">	       
+		<height>600</height>
+		<align>center</align>
+		<aligny>center</aligny>
+		<font>font50b</font>
+		<textcolor>$VAR[blanc]</textcolor>
+		<label>»</label>		
+	</control>
+	<control type="label">       
+		<animation effect="rotate" end="90" center="auto" condition="true">conditional</animation>
+		<left>-130</left>
+		<width>300</width>
+		<align>center</align>
+		<aligny>center</aligny>
+		<font>font25b</font>
+		<textcolor>$VAR[blanc]</textcolor>
+		<label>$LOCALIZE[31333]</label>		
+	</control>
+	<control type="label">     
+		<bottom>0</bottom>
+		<height>600</height>
+		<align>center</align>
+		<aligny>center</aligny>
+		<font>font50b</font>
+		<textcolor>$VAR[blanc]</textcolor>
+		<label>»</label>		
+	</control>
+	</control>
+	<control type="group">
+		<visible>string.isequal(window().property(numero_menu),3)</visible>
+		<right>0</right>
+		<width>50</width>
+	<control type="image">
+		<texture colordiffuse="$VAR[verre_noir]">commun/texture.png</texture>		
+	</control>	
+	<control type="label">	       
+		<height>600</height>
+		<align>center</align>
+		<aligny>center</aligny>
+		<font>font50b</font>
+		<textcolor>$VAR[blanc]</textcolor>
+		<label>«</label>		
+	</control>
+	<control type="label">       
+		<animation effect="rotate" end="90" center="auto" condition="true">conditional</animation>
+		<left>-130</left>
+		<width>300</width>
+		<align>center</align>
+		<aligny>center</aligny>
+		<font>font25b</font>
+		<textcolor>$VAR[blanc]</textcolor>
+		<label>$LOCALIZE[31215]</label>		
+	</control>
+	<control type="label">     
+		<bottom>0</bottom>
+		<height>600</height>
+		<align>center</align>
+		<aligny>center</aligny>
+		<font>font50b</font>
+		<textcolor>$VAR[blanc]</textcolor>
+		<label>«</label>		
+	</control>
+	</control>
+	<control type="group">
+		<width>480</width>
+	
+	<control type="group">
+		<visible>string.isequal(window().property(numero_menu),2) | string.isequal(window().property(numero_menu),3)</visible>
+		<height>50</height>
+	<control type="image">
+		<visible>string.isequal(window().property(numero_menu),2) | string.isequal(window().property(numero_menu),3)</visible>
+		<right>1</right>
+		<texture colordiffuse="$VAR[couleur_dominante]">commun/texture.png</texture>		
+	</control>	
+	<control type="label">																														<description>numero + nom de chaine</description>
+        <visible>!string.isequal(window().property(numero_menu),3)</visible>
+		<bottom>10</bottom>		
+        <left>10</left>
+		<right>90</right>
+        <height>30</height>
+		<aligny>center</aligny>
+		<font>font22b</font>
+		<textcolor>$VAR[blanc]</textcolor>
+		<selectedcolor>$VAR[blanc]</selectedcolor>
+		<label>$INFO[container(11).listItem(0).channelnumberlabel]  ○  $INFO[container(11).listItem(0).channelname]</label>		
+	</control>
+	</control>
+	<control type="group">
+		<visible>!string.isequal(window().property(numero_menu),2) + !string.isequal(window().property(numero_menu),3)</visible>
+		<height>50</height>
+	<control type="image">
+		<right>1</right>
+		<texture colordiffuse="$VAR[verre_blanc]">commun/texture.png</texture>		
+	</control>
+	</control>
+	<control type="group">																														<description>titre + progression</description>				
+		<top>51</top>
+		<height>50</height>	
+	<control type="image">
+		<right>1</right>
+        <height>49</height>
+		<texture colordiffuse="$VAR[verre_blanc]">commun/texture.png</texture>		
+	</control>		
+	<control type="label">																														<description>titre</description>
+        <visible>!string.isempty(container(11).listItem(2).title)</visible>		
+		<top>10</top>		
+        <left>2</left>
+		<right>2</right>
+        <height>30</height>
+		<aligny>center</aligny>
+		<font>font20b</font>
+		<textcolor>$VAR[gris_fonce]</textcolor>
+		<selectedcolor>$VAR[gris_fonce]</selectedcolor>				
+		<scrollsuffix></scrollsuffix>
+		<label>  ○  $INFO[container(11).listItem(2).title]</label>		
+	</control>
+	<control type="label">																														<description>titre</description>
+        <visible>string.isempty(container(11).listItem(2).title)</visible>		
+		<top>10</top>		
+        <left>2</left>
+		<right>2</right>
+        <height>30</height>
+		<aligny>center</aligny>
+		<font>font20b</font>
+		<textcolor>$VAR[gris_fonce]</textcolor>
+		<selectedcolor>$VAR[gris_fonce]</selectedcolor>				
+		<scrollsuffix></scrollsuffix>
+		<label>  ○  $LOCALIZE[31169]</label>		
+	</control>
+	</control>
+	<control type="group">																														<description>information</description>				
+		<top>100</top>
+		<height>275</height>		
+	<control type="image">
+		<top>1</top>		
+        <right>1</right>
+		<texture colordiffuse="$VAR[verre_blanc]">commun/texture.png</texture>		
+	</control>		
+	<control type="image">																														<description>miniature</description>
+		<visible>!string.isempty(container(11).listItem(2).title)</visible>				
+		<left>5</left>
+		<right>5</right>
+		<top>5</top>
+		<bottom>5</bottom>
+		<aspectratio align="center">keep</aspectratio>
+		<texture fallback="extras/kodi.jpg">$INFO[container(11).listItem(2).epgeventicon]</texture>		
+	</control>
+	<control type="image">																														<description>miniature</description>
+		<visible>string.isempty(container(11).listItem(2).title)</visible>				
+		<left>5</left>
+		<right>5</right>
+		<top>5</top>
+		<bottom>5</bottom>
+		<aspectratio align="center">keep</aspectratio>
+		<texture>extras/kodi.png</texture>		
+	</control>
+	</control>
+	<control type="group">
+		<top>375</top>
+		<height>100</height>
+	<control type="image">
+		<top>1</top>		
+        <right>1</right>
+		<texture colordiffuse="$VAR[verre_blanc]">commun/texture.png</texture>		
+	</control>
+	<control type="label">																														<description>heure de debut et de fin</description>
+        <visible>!string.isempty(container(11).listItem(2).starttime)</visible>		
+		<top>10</top>		
+        <left>10</left>
+		<right>10</right>
+		<height>30</height>
+		<align>center</align>
+		<aligny>center</aligny>
+		<font>font20b</font>
+		<textcolor>$VAR[gris_fonce]</textcolor>
+		<selectedcolor>$VAR[gris_fonce]</selectedcolor>
+		<label>$INFO[container(11).listItem(2).starttime] ○ $INFO[container(11).listItem(2).endtime] ○ $INFO[container(11).listItem(2).duration(mins)] mins</label>		
+	</control>
+	<control type="textbox">																													<description>genre</description>
+        <top>40</top>		
+        <left>10</left>
+		<right>10</right>
+		<height>50</height>
+		<align>center</align>
+		<aligny>center</aligny>
+		<font>font20bt</font>
+		<textcolor>$VAR[gris_moyen]</textcolor>
+		<selectedcolor>$VAR[gris_moyen]</selectedcolor>
+		<label>$INFO[container(11).listItem(2).genre]</label>		
+	</control>	
+	</control>	
+	<control type="group">																														<description>resume</description>				
+		<top>476</top>
+		<bottom>50</bottom>	
+	<control type="image">
+		<right>1</right>
+        <bottom>1</bottom>
+		<texture colordiffuse="$VAR[verre_blanc]">commun/texture.png</texture>		
+	</control>
+	<control type="textbox">																													<description>resume</description>
+        <top>1</top>		
+		<bottom>2</bottom>
+		<left>20</left>
+		<right>20</right>
+		<align>justify</align>
+		<aligny>center</aligny>
+		<font>font18b</font>
+		<textcolor>$VAR[gris_fonce]</textcolor>
+		<label>$INFO[container(11).listItem(2).plot]</label>
+		<autoscroll delay="5000" time="3000" repeat="5000">string.isequal(window().property(numero_menu),2) | string.isequal(window().property(numero_menu),3)</autoscroll>			
+	</control>	
+	</control>
+	<control type="group">
+		<bottom>0</bottom>
+		<height>50</height>
+	<control type="image">
+		<right>1</right>
+		<texture colordiffuse="$VAR[verre_noir]">commun/texture.png</texture>		
+	</control>	
+	<control type="label">																														<description>numero + nom de chaine</description>
+        <visible>!string.isequal(window().property(numero_menu),3)</visible>
+		<bottom>10</bottom>		
+        <left>10</left>
+		<right>90</right>
+        <height>30</height>
+		<aligny>center</aligny>
+		<font>font22b</font>
+		<textcolor>$VAR[blanc]</textcolor>
+		<selectedcolor>$VAR[blanc]</selectedcolor>
+		<label>  ○  $LOCALIZE[31330] $INFO[container(11).listItem(2).starttime]</label>		
+	</control>
+	<control type="label">																														<description>numero + nom de chaine</description>
+        <visible>string.isequal(window().property(numero_menu),3) + string.isequal(container(11).listItem(2).startdate,control.getlabel(1234))</visible>
+		<bottom>10</bottom>		
+        <left>10</left>
+		<right>90</right>
+        <height>30</height>
+		<aligny>center</aligny>
+		<font>font22b</font>
+		<textcolor>$VAR[blanc]</textcolor>
+		<selectedcolor>$VAR[blanc]</selectedcolor>
+		<label>  ○  $LOCALIZE[31331] $INFO[container(11).listItem(2).starttime]</label>		
+	</control>
+	<control type="label">																														<description>numero + nom de chaine</description>
+        <visible>string.isequal(window().property(numero_menu),3) + string.isequal(container(11).listItem(2).startdate,control.getlabel(1235)) + !string.startswith(container(11).listItem(2).starttime,12:) + !string.startswith(container(11).listItem(2).starttime,0:) + !string.startswith(container(11).listItem(2).starttime,1:) + !string.startswith(container(11).listItem(2).starttime,2:) + !string.startswith(container(11).listItem(2).starttime,3:)</visible>
+		<bottom>10</bottom>		
+        <left>10</left>
+		<right>90</right>
+        <height>30</height>
+		<aligny>center</aligny>
+		<font>font22b</font>
+		<textcolor>$VAR[blanc]</textcolor>
+		<selectedcolor>$VAR[blanc]</selectedcolor>
+		<label>  ○  $LOCALIZE[31332] $INFO[container(11).listItem(2).starttime]</label>		
+	</control>
+	<control type="label">																														<description>numero + nom de chaine</description>
+        <visible>string.isequal(window().property(numero_menu),3) + string.isequal(container(11).listItem(2).startdate,control.getlabel(1235)) + [string.startswith(container(11).listItem(2).starttime,12:) | string.startswith(container(11).listItem(2).starttime,0:) | string.startswith(container(11).listItem(2).starttime,1:) | string.startswith(container(11).listItem(2).starttime,2:) | string.startswith(container(11).listItem(2).starttime,3:)]</visible>
+		<bottom>10</bottom>		
+        <left>10</left>
+		<right>90</right>
+        <height>30</height>
+		<aligny>center</aligny>
+		<font>font22b</font>
+		<textcolor>$VAR[blanc]</textcolor>
+		<selectedcolor>$VAR[blanc]</selectedcolor>
+		<label>  ○  $LOCALIZE[31335] $INFO[container(11).listItem(2).starttime]</label>		
+	</control>
+	
+	
+	<control type="label">																														<description>numero + nom de chaine</description>
+        <visible>string.isequal(window().property(numero_menu),3) + !string.isequal(container(11).listItem(2).startdate,control.getlabel(1234)) + !string.isequal(container(11).listItem(2).startdate,control.getlabel(1235))</visible>
+		<bottom>10</bottom>		
+        <left>10</left>
+		<right>90</right>
+        <height>30</height>
+		<aligny>center</aligny>
+		<font>font22b</font>
+		<textcolor>$VAR[blanc]</textcolor>
+		<selectedcolor>$VAR[blanc]</selectedcolor>
+		<label>  ○  $LOCALIZE[31336] $INFO[container(11).listItem(2).starttime]</label>		
+	</control>
+	
+	</control>
+	</control>	
+	</control>	
+	
+	
+	
+	
+	
+	
+	
+	
+	</control>
+	
+	
+		
+		
+		
+		
+	
+	
+	<control type="label" id="1234">																											<description>label pour recuperer la date des programmes du soir</description>
+		<top>1080</top>
+		<label>$INFO[system.date]</label>
+	</control>
+	<control type="label" id="1235">																											<description>label pour recuperer la date + 1 des programmes du soir</description>
+		<top>1080</top>
+		<label>$VAR[jour_plus1_OSD]</label>
+	</control>
+	
+	
+	<control type="label">       																												<description>label pour tests</description>
+		<top>980</top>
+		<font>font50b</font>
+		<textcolor>white</textcolor>
+		<label>$INFO[]</label>
+	</control>	
+	
+	
+</controls>
+</window>

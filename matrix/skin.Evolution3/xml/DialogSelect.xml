@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<onload>alarmclock(masquer_tout,noop,00:01,silent)</onload>
+	<onunload>alarmclock(masquer_tout,noop,00:01,silent)</onunload>		
+	
+	
+	
+	
+	<zorder>2</zorder>
+	
+	
+	<onload condition="$EXP[librairie_musique] + string.isequal(window(home).property(liste_courante_musique),4000) + string.isequal(skin.string(sortorder_4000),ascending)">skin.setstring(sortorder_4000,descending)</onload>
+	<onload condition="$EXP[librairie_musique] + string.isequal(window(home).property(liste_courante_musique),4000) + string.isequal(skin.string(sortorder_4000),descending)">skin.setstring(sortorder_4000,ascending)</onload>
+	<onload condition="$EXP[librairie_musique] + string.isequal(window(home).property(liste_courante_musique),4001) + string.isequal(skin.string(sortorder_4001),ascending)">skin.setstring(sortorder_4001,descending)</onload>
+	<onload condition="$EXP[librairie_musique] + string.isequal(window(home).property(liste_courante_musique),4001) + string.isequal(skin.string(sortorder_4001),descending)">skin.setstring(sortorder_4001,ascending)</onload>
+	<onload condition="$EXP[librairie_musique] + string.isequal(window(home).property(liste_courante_musique),4002) + string.isequal(skin.string(sortorder_4002),ascending)">skin.setstring(sortorder_4002,descending)</onload>
+	<onload condition="$EXP[librairie_musique] + string.isequal(window(home).property(liste_courante_musique),4002) + string.isequal(skin.string(sortorder_4002),descending)">skin.setstring(sortorder_4002,ascending)</onload>
+	<onload condition="$EXP[librairie_musique] + string.isequal(window(home).property(liste_courante_musique),4003) + string.isequal(skin.string(sortorder_4003),ascending)">skin.setstring(sortorder_4003,descending)</onload>
+	<onload condition="$EXP[librairie_musique] + string.isequal(window(home).property(liste_courante_musique),4003) + string.isequal(skin.string(sortorder_4003),descending)">skin.setstring(sortorder_4003,ascending)</onload>
+	
+	
+	
+	
+	
+	<onunload condition="$EXP[librairie_musique] + string.isequal(window(home).property(liste_courante_musique),4000) + string.isequal(skin.string(sortorder_4000),descending)">skin.setstring(sortorder_4000,ascending)</onunload>
+	<onunload condition="$EXP[librairie_musique] + string.isequal(window(home).property(liste_courante_musique),4000) + string.isequal(skin.string(sortorder_4000),ascending)">skin.setstring(sortorder_4000,descending)</onunload>
+	<onunload condition="$EXP[librairie_musique] + string.isequal(window(home).property(liste_courante_musique),4001) + string.isequal(skin.string(sortorder_4001),descending)">skin.setstring(sortorder_4001,ascending)</onunload>
+	<onunload condition="$EXP[librairie_musique] + string.isequal(window(home).property(liste_courante_musique),4001) + string.isequal(skin.string(sortorder_4001),ascending)">skin.setstring(sortorder_4001,descending)</onunload>
+	<onunload condition="$EXP[librairie_musique] + string.isequal(window(home).property(liste_courante_musique),4002) + string.isequal(skin.string(sortorder_4002),descending)">skin.setstring(sortorder_4002,ascending)</onunload>
+	<onunload condition="$EXP[librairie_musique] + string.isequal(window(home).property(liste_courante_musique),4002) + string.isequal(skin.string(sortorder_4002),ascending)">skin.setstring(sortorder_4002,descending)</onunload>
+	<onunload condition="$EXP[librairie_musique] + string.isequal(window(home).property(liste_courante_musique),4003) + string.isequal(skin.string(sortorder_4003),descending)">skin.setstring(sortorder_4003,ascending)</onunload>
+	<onunload condition="$EXP[librairie_musique] + string.isequal(window(home).property(liste_courante_musique),4003) + string.isequal(skin.string(sortorder_4003),ascending)">skin.setstring(sortorder_4003,descending)</onunload>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<onload condition="string.isequal(window(home).property(liste),casting)">dialog.close(selectdialog,true)</onload>
+	<onload condition="!string.isempty(window(home).property(retour_filebrowser))">dialog.close(selectdialog,true)</onload>
+	
+	
+	<!-- modification de la vignette d'un episode de l'accueil -->
+	<onload condition="string.isequal(window(home).property(modifier_miniature_episode),oui) + string.isempty(window(home).property(retour_filebrowser))">alarmclock(close,dialog.close(movieinformation,true),00:00,silent)</onload><!-- fermerure de la fenetre "informations" ouverte depuis les vues -->	
+	<onload condition="string.isequal(window(home).property(modifier_miniature_episode),oui) + string.isempty(window(home).property(retour_filebrowser))">alarmclock(focus_6,setfocus(6),00:00,silent)</onload><!-- focus a la liste 6 --> 
+	<onload condition="string.isequal(window(home).property(modifier_miniature_episode),oui) + string.isempty(window(home).property(retour_filebrowser))">alarmclock(select_6,action(select),00:00,silent)</onload><!-- click sur la liste 6 pour ouvrir la fenetre "filebrowser" -->
+	<onload condition="string.isequal(window(home).property(modifier_miniature_episode),oui) + string.isequal(window(home).property(retour_filebrowser),oui)">dialog.close(selectdialog,true)</onload><!-- fermeture de la fenetre "dialogselect" -->	
+	<onunload condition="string.isequal(window(home).property(modifier_miniature_episode),oui) + string.isequal(window(home).property(retour_filebrowser),oui)">setproperty(sortorder_episodes,ascending,home)</onunload><!-- modification de l'ordre des episodes pour permettre le rafraichissement de la vignette -->
+	<onunload condition="string.isequal(window(home).property(modifier_miniature_episode),oui) + string.isequal(window(home).property(retour_filebrowser),oui)">alarmclock(masquer_tout,noop,00:02,silent)</onunload><!-- animation de l'interface -->		
+	<onunload condition="string.isequal(window(home).property(modifier_miniature_episode),oui) + string.isequal(window(home).property(retour_filebrowser),oui)">alarmclock(focus_11,setfocus(11),00:00,silent)</onunload><!-- focus au bouton 11 de l'accueil qui va redonner le focus a la liste active des episodes -->
+	<onunload>clearproperty(retour_filebrowser,home)</onunload><!-- effacement de la propriete "retour_filebrowser" -->
+	<!-- suite se passe dans la fenetre filebrowser.xml -->
+	
+	
+	<!-- effacement de la propriete "gerer" en cas d'actualisation d'un media -->
+	<onunload condition="string.isequal(window(home).property(gerer),actualiser)">alarmclock(clear_gerer,clearproperty(gerer,home),00:00,silent)</onunload>
+	
+	
+	
+	
+	
+		
+	<onunload condition="window.isvisible(movieinformation) + string.isempty(window(home).property(liste))">alarmclock(fanart,setproperty(fanart,$INFO[listitem.art(fanart)],home),00:00,silent)</onunload>
+	
+	
+	<onunload condition="!window.isvisible(fullscreenvideo) + !window.isvisible(settingscategory.xml) + !window.isvisible(addoninformation) + !window.isvisible(movieinformation) + !window.isvisible(musicinformation) + $EXP[librairie_applications]">alarmclock(focus_10,setfocus(10),00:00,silent)</onunload>
+	
+	
+	
+	
+	<defaultcontrol>10</defaultcontrol>
+<controls>	
+	
+	
+	<control type="button" id="10">																		<description>bouton active par defaut en cas d'erreur</description>		
+		<onfocus condition="control.isvisible(3)">alarmclock(focus,setfocus(3),00:00,silent)</onfocus>
+		<onfocus condition="control.isvisible(6)">alarmclock(focus,setfocus(6),00:00,silent)</onfocus>
+		<onright>setfocus(10)</onright>
+		<onleft>setfocus(10)</onleft>
+		<onup>setfocus(10)</onup>
+		<ondown>setfocus(10)</ondown>
+	</control>
+	
+	<control type="image">
+		<visible>!window.isvisible(fullscreenvideo)</visible>
+		<texture colordiffuse="$VAR[gris]">commun/fond.png</texture>	
+	</control>
+		
+	
+	<control type="group">
+		<visible>string.isempty(window(home).property(modifier_miniature_episode))</visible>
+		<animation effect="fade" start="0" end="100" delay="400" time="100" reversible="false" condition="window.isvisible(fullscreenvideo)">windowopen</animation>		
+		<animation effect="fade" start="100" end="0" time="100" reversible="false" condition="window.isvisible(fullscreenvideo)">windowclose</animation>	
+	<control type="group">																				<description>liste simple</description>	
+		<animation effect="fade" start="0" end="100" reversible="false" condition="control.isvisible(3)">conditional</animation>		
+		<animation effect="fade" start="100" end="0" reversible="false" condition="!control.isvisible(3)">conditional</animation>		
+	<control type="group">		
+	<include condition="!window.isvisible(fullscreenvideo)" content="liste_3">
+		<param name="id" value="3"/>
+	</include>
+	<include condition="window.isvisible(fullscreenvideo)">liste_3_dialogselect_fullscreen</include>
+	</control>
+	</control>
+	<control type="group">																				<description>liste complexe</description>				
+		<animation effect="fade" start="0" end="100" reversible="false" condition="control.isvisible(6)">conditional</animation>		
+		<animation effect="fade" start="100" end="0" reversible="false" condition="!control.isvisible(6)">conditional</animation>
+	<include condition="!window.isvisible(fullscreenvideo)" content="liste_6">
+		<param name="id" value="6"/>
+	</include>
+	</control>
+	<control type="grouplist" id="1000">
+		<visible>!window.isvisible(fullscreenvideo)</visible>
+		<bottom>150</bottom>
+		<height>60</height>
+		<align>center</align>	
+		<onup condition="control.isvisible(3)">3</onup>		
+		<onup condition="control.isvisible(6)">6</onup>
+		<itemgap>30</itemgap>		
+		<orientation>horizontal</orientation>
+		<usecontrolcoords>true</usecontrolcoords>
+	<include content="bouton_defaut">
+		<param name="id" value="5"/>
+	</include>
+	<include content="bouton_defaut">
+		<param name="id" value="7"/>
+	</include>
+	<include content="bouton_defaut">
+		<param name="id" value="8"/>
+	</include>
+	</control>
+	</control>
+	<control type="label">
+		<label>$INFO[]</label>
+		<scroll>true</scroll>
+	</control>	
+</controls>
+</window>

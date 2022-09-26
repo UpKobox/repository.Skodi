@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window type="dialog" id="1149">
+	<zorder>10</zorder>
+	<visible>string.isequal(window(home).property(diaporama),oui)</visible>
+	<onload>alarmclock(diaporama,control.move(100,1),00:10,silent,loop)</onload>
+	<onunload>cancelalarm(diaporama,silent)</onunload>
+	<onunload>clearproperty(diaporama,home)</onunload>
+	<defaultcontrol always="true">101</defaultcontrol> 
+<controls>
+	<control type="list" id="100">			  															<description>recuperation des films pour le mode diaporama</description>		
+	<itemlayout></itemlayout>	
+		<content sortby="random">videodb://movies/titles/</content>
+	</control>
+	<control type="image">
+		<texture>$INFO[container(100).listitem.art(fanart)]</texture>
+		<fadetime>150</fadetime>
+	</control>
+</controls>
+</window>

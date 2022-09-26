@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>		
+	<default type="label">				
+		<font>r_24</font>
+		<textcolor>$VAR[blanc]</textcolor>
+		<selectedcolor>$VAR[blanc]</selectedcolor>	
+		<shadowcolor>ff000000</shadowcolor>
+		<scrollspeed>40</scrollspeed>		
+		<scrollsuffix>  ·  </scrollsuffix>
+		<pulseonselect>no</pulseonselect>
+		<scroll>false</scroll>
+	</default>
+	<default type="button">				
+		<scrollspeed>40</scrollspeed>		
+		<scrollsuffix>  ·  </scrollsuffix>
+		<shadowcolor>ff000000</shadowcolor>
+		<pulseonselect>no</pulseonselect>	
+		<scroll>false</scroll>
+	</default>
+	<default type="togglebutton">				
+		<scrollspeed>40</scrollspeed>		
+		<scrollsuffix>  ·  </scrollsuffix>
+		<shadowcolor>ff000000</shadowcolor>
+		<pulseonselect>no</pulseonselect>	
+		<scroll>false</scroll>
+	</default>
+	<default type="edit">		
+		<scrollspeed>40</scrollspeed>		
+		<scrollsuffix>  ·  </scrollsuffix>
+		<shadowcolor>ff000000</shadowcolor>
+		<pulseonselect>no</pulseonselect>	
+		<scroll>false</scroll>
+	</default>
+	<default type="radiobutton">		
+		<scrollspeed>40</scrollspeed>		
+		<scrollsuffix>  ·  </scrollsuffix>	
+		<shadowcolor>ff000000</shadowcolor>
+		<pulseonselect>no</pulseonselect>
+		<scroll>false</scroll>
+	</default>
+	<default type="textbox">		
+		<scrollspeed>40</scrollspeed>		
+		<scrollsuffix>  ·  </scrollsuffix>
+		<shadowcolor>ff000000</shadowcolor>
+		<pulseonselect>no</pulseonselect>
+		<scroll>false</scroll>
+	</default>
+	<default type="spincontrolex">		
+		<spinwidth>45</spinwidth>
+		<spinheight>45</spinheight>
+		<spinposx>40</spinposx>
+		<texturefocus></texturefocus>
+		<texturenofocus></texturenofocus>
+		<textureup colordiffuse="$VAR[blanc]">boutons/haut.png</textureup>
+		<textureupfocus colordiffuse="$VAR[blanc]">boutons/haut_focus.png</textureupfocus>
+		<texturedown colordiffuse="$VAR[blanc]">boutons/bas.png</texturedown>
+		<texturedownfocus colordiffuse="$VAR[blanc]">boutons/bas_focus.png</texturedownfocus>
+		<textureupdisabled colordiffuse="$VAR[blanc_10%]">boutons/haut.png</textureupdisabled>
+		<texturedowndisabled colordiffuse="$VAR[blanc_10%]">boutons/bas.png</texturedowndisabled>
+		<scrollspeed>40</scrollspeed>		
+		<scrollsuffix>  ·  </scrollsuffix>
+		<shadowcolor>ff000000</shadowcolor>
+		<pulseonselect>no</pulseonselect>
+		<scroll>false</scroll>
+	</default>>
+	<default type="sliderex">		
+		<sliderwidth>250</sliderwidth>
+		<sliderheight>25</sliderheight>
+		<texturesliderbar colordiffuse="$VAR[blanc_50%]" border="14">boutons/fond_slider.png</texturesliderbar>
+		<textureslidernib colordiffuse="$VAR[couleur_texte]" border="14">boutons/bouton_slider.png</textureslidernib>
+		<textureslidernibfocus colordiffuse="$VAR[blanc]" border="14">boutons/bouton_slider.png</textureslidernibfocus>	
+		<scrollspeed>40</scrollspeed>		
+		<scrollsuffix>  ·  </scrollsuffix>
+		<shadowcolor>ff000000</shadowcolor>
+		<pulseonselect>no</pulseonselect>
+		<scroll>false</scroll>
+	</default>		
+</includes>

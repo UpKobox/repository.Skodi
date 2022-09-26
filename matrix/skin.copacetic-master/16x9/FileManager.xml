@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<!-- filemanager -->
+	<onload>ClearProperty(ActiveList,filemanager)</onload>
+	<onunload>ClearProperty(ActiveList,filemanager)</onunload>
+	<backgroundcolor>$VAR[Secondary_Color]</backgroundcolor>
+	<include>SettingsCategory_Fade_Animation</include>
+	<defaultcontrol always="true">9001</defaultcontrol>
+	<controls>
+
+		<!-- Hidden Focus setter -->
+		<control type="button" id="9001">
+			<visible allowhiddenfocus="true">false</visible>
+			<onfocus>SetFocus(3000010)</onfocus>
+		</control>
+
+		<!-- Hidden controls -->
+		<control type="label" id="101">
+			<visible>false</visible>
+		</control>
+		<control type="label" id="102">
+			<visible>false</visible>
+		</control>
+
+		<include condition="System.HasAddon(script.embuary.helper)" content="Settings_Fanart_Slideshow"/>
+
+		<!-- Content -->
+		<control type="group">
+			<visible>!$EXP[TransparentDialog_ExcludingContextMenu] + ![System.HasVisibleModalDialog + !Window.IsVisible(contextmenu)]</visible>
+			<include>Delayed_Content_Fade_Animation</include>
+
+			<include content="Transparent_Dialog_Panel">
+				<param name="top" value="180"/>
+				<param name="bottom" value="180"/>
+			</include>
+
+			<include content="SettingsCategory_Layout">
+				<param name="mainlist" value="20"/>
+				<param name="sublist" value="21"/>
+			</include>
+
+			<control type="group">
+				<visible>!Window.IsVisible(textviewer)</visible>
+				<include>Delayed_Content_Fade_Animation</include>
+
+				<!-- Left Side -->
+				<control type="button">
+					<left>90</left>
+					<width>870</width>
+					<bottom>60</bottom>
+					<height>60</height>
+					<label>$INFO[Control.GetLabel(101),,...]</label>
+					<label2>$INFO[Container(20).NumItems,, $LOCALIZE[31001]]</label2>
+					<haspath>true</haspath>
+					<textcolor>$VAR[Light_Color]</textcolor>
+					<aligny>center</aligny>
+					<font>Description</font>
+				</control>
+
+				<control type="group">
+					<visible>![Window.IsVisible(contextmenu) + String.IsEqual(Window(filemanager).Property(ActiveList),Right)]</visible>
+					<include>Delayed_Content_Fade_Animation</include>
+					<include content="Settings_Left_List_Template">
+						<param name="windowname" value="filemanager"/>
+						<param name="id" value="20"/>
+						<param name="scrollbarid" value="60"/>
+						<param name="left" value="90"/>
+						<param name="dividerleft" value="960"/>
+						<param name="width" value="870"/>
+						<param name="onleft" value="3000010"/>
+						<param name="onright" value="21"/>
+					</include>
+				</control>
+
+				<!-- Right Side -->
+				<control type="button">
+					<left>960</left>
+					<width>870</width>
+					<bottom>60</bottom>
+					<height>60</height>
+					<label>$INFO[Control.GetLabel(102),,...]</label>
+					<label2>$INFO[Container(21).NumItems,, $LOCALIZE[31001]]</label2>
+					<haspath>true</haspath>
+					<textcolor>$VAR[Light_Color]</textcolor>
+					<aligny>center</aligny>
+					<font>Description</font>
+				</control>
+
+				<control type="group">
+					<visible>![Window.IsVisible(contextmenu) + String.IsEqual(Window(filemanager).Property(ActiveList),Left)]</visible>
+					<include>Delayed_Content_Fade_Animation</include>
+					<include content="Settings_Right_List_Template">
+						<param name="windowname" value="filemanager"/>
+						<param name="id" value="21"/>
+						<param name="scrollbarid" value="61"/>
+						<param name="focusbordervisible" value="Control.HasFocus(21) | Control.HasFocus(61)"/>
+						<param name="right" value="90"/>
+						<param name="dividerleft" value="960"/>
+						<param name="width" value="870"/>
+						<param name="onleft" value="20"/>
+						<param name="onright" value="3000010"/>
+					</include>
+				</control>
+
+			</control>
+		</control>
+
+	</controls>
+</window>

@@ -1,0 +1,720 @@
+<includes>
+
+	<!-- Furniture -->
+	<include name="Transparent_Dialog_Panel">
+		<param name="visible" default="true"/>
+		<param name="left" default="60"/>
+		<param name="right" default="60"/>
+		<param name="top" default="240"/>
+		<param name="bottom" default="240"/>
+		<param name="colordiffuse" default="$VAR[Panel_Diffuse]"/>
+		<definition>
+			<control type="image">
+				<visible>$PARAM[visible]</visible>
+				<left>$PARAM[left]</left>
+				<right>$PARAM[right]</right>
+				<top>$PARAM[top]</top>
+				<bottom>$PARAM[bottom]</bottom>
+				<texture colordiffuse="$PARAM[colordiffuse]">views/white_100.png</texture>
+			</control>
+		</definition>
+	</include>
+
+	<include name="Transparent_Dialog_Background">
+		<definition>
+			<control type="image">
+				<texture colordiffuse="$VAR[Transparent_Dialog_Mask]">views/white_100.png</texture>
+			</control>
+		</definition>
+	</include>
+
+	<include name="DialogDivider">
+		<param name="visible" default="true"/>
+		<param name="left" default="360"/>
+		<param name="height" default="540"/>
+		<definition>
+			<control type="image">
+				<visible>$PARAM[visible]</visible>
+				<left>$PARAM[left]</left>
+				<width>1</width>
+				<centertop>50%</centertop>
+				<height>$PARAM[height]</height>
+				<aspectratio>scale</aspectratio>
+				<texture colordiffuse="$VAR[Unfocused_Color]">views/white_100.png</texture>
+			</control>
+	</definition>
+	</include>
+
+	<include name="Dialog_Divider_With_Scrollbar">
+		<param name="visible" default="true"/>
+		<param name="dividervisible" default="true"/>
+		<param name="scrollbarvisible" default="false"/>
+		<param name="id" default="60"/>
+		<param name="height" default="630"/>
+		<param name="left" default="960"/>
+		<param name="scrollbaralignleft" default="false"/>
+		<param name="onleft" default="0"/>
+		<param name="onright" default="0"/>
+		<definition>
+			<control type="group">
+				<visible>$PARAM[visible]</visible>
+				<left>$PARAM[left]</left>
+				<centertop>50%</centertop>
+				<height>$PARAM[height]</height>
+				<control type="image">
+					<visible>$PARAM[dividervisible]</visible>
+					<width>1</width>
+					<aspectratio>scale</aspectratio>
+					<texture colordiffuse="$VAR[Unfocused_Color]">views/white_100.png</texture>
+				</control>
+				<control type="scrollbar" id="$PARAM[id]">
+					<visible>$PARAM[scrollbarvisible]</visible>
+					<animation effect="slide" end="-4" time="0" reversible="false" condition="$PARAM[scrollbaralignleft]">Conditional</animation>
+					<left>$PARAM[scrollbarleft]</left>
+					<width>5</width>
+					<onleft>$PARAM[onleft]</onleft>
+					<onright>$PARAM[onright]</onright>
+					<centertop>50%</centertop>
+					<height>$PARAM[height]</height>
+					<showonepage>false</showonepage>
+					<orientation>vertical</orientation>
+					<texturesliderbackground></texturesliderbackground>
+					<texturesliderbar colordiffuse="$VAR[Unfocused_Color]">views/white_100.png</texturesliderbar>
+					<texturesliderbarfocus colordiffuse="$VAR[Light_Color]">views/white_100.png</texturesliderbarfocus>
+					<textureslidernib></textureslidernib>
+					<textureslidernibfocus></textureslidernibfocus>
+				</control>
+			</control>
+	</definition>
+	</include>
+
+	<include name="DialogGrouplist">
+		<width>1200</width>
+		<centerleft>50%</centerleft>
+		<centertop>50%</centertop>
+		<height>542</height>
+		<onright condition="Window.IsVisible(smartplaylistrule)">20</onright>
+		<onright condition="!Window.IsVisible(smartplaylistrule)">9000</onright>
+		<onleft>noop</onleft>
+		<itemgap>0</itemgap>
+		<align>center</align>
+	</include>
+
+	<!-- contextmenu -->
+	<include name="ContextMenuLabelFocused">
+		<definition>
+			<height>60</height>
+			<font>List_Title_Focused</font>
+			<textcolor>$VAR[Light_Color]</textcolor>
+		</definition>
+	</include>
+
+	<include name="ContextMenuLabelUnfocused">
+		<definition>
+			<height>55</height>
+			<font>List_Title_Unfocused</font>
+			<textcolor>$VAR[Light_Color]</textcolor>
+		</definition>
+	</include>
+
+	<include name="Default_ContextMenu_Label">
+		<control type="label">
+			<include>ContextMenuLabelUnfocused</include>
+			<label>$INFO[Control.GetLabel($PARAM[id])]</label>
+			<visible>Control.IsVisible($PARAM[id]) + !Control.HasFocus($PARAM[id])</visible>
+		</control>
+		<control type="label">
+			<include>ContextMenuLabelFocused</include>
+			<label>$INFO[Control.GetLabel($PARAM[id])]</label>
+			<visible>Control.IsVisible($PARAM[id]) + Control.HasFocus($PARAM[id])</visible>
+		</control>
+	</include>
+
+	<include name="Settings_ContextMenu_Label">
+		<control type="group">
+			<height>90</height>
+			<width>100%</width>
+			<control type="label">
+				<visible>Control.IsVisible($PARAM[id]) + !Control.HasFocus($PARAM[id])</visible>
+				<font>Default_Settings_List</font>
+				<textoffsetx>60</textoffsetx>
+				<textcolor>$VAR[Unfocused_Color]</textcolor>
+				<label>$INFO[Control.GetLabel($PARAM[id])]</label>
+			</control>
+			<control type="group">
+				<visible>Control.IsVisible($PARAM[id]) + Control.HasFocus($PARAM[id])</visible>
+				<control type="label">
+					<font>Default_Settings_List</font>
+					<textoffsetx>60</textoffsetx>
+					<textcolor>$VAR[Light_Color]</textcolor>
+					<label>$INFO[Control.GetLabel($PARAM[id])]</label>
+				</control>
+				<control type="image">
+					<left>60</left>
+					<right>0</right>
+					<height>1</height>
+					<bottom>0</bottom>
+					<texture colordiffuse="$VAR[Unfocused_Color]">views/white_100.png</texture>
+				</control>
+			</control>
+		</control>
+	</include>
+
+
+	<include name="ContextMenuLabelTemplate">
+		<include condition="!Window.IsVisible(filemanager)" content="Default_ContextMenu_Label"/>
+		<include condition="Window.IsVisible(filemanager)" content="Settings_ContextMenu_Label"/>
+	</include>
+
+	<!-- virtualkeyboard -->
+	<include name="Keyboard_Label">
+		<definition>
+			<item>
+				<description>$PARAM[description]</description>
+				<visible>!String.IsEmpty(Control.GetLabel($PARAM[id]))</visible>
+				<label>$INFO[Control.GetLabel($PARAM[id])]</label>
+				<onclick>Sendclick($PARAM[id])</onclick>
+			</item>
+		</definition>
+	</include>
+
+	<include name="Special_Keyboard_Label">
+		<param name="label" default=""/>
+		<definition>
+			<item>
+				<description>$PARAM[description]</description>
+				<label>$PARAM[label]</label>
+				<onclick>Sendclick($PARAM[id])</onclick>
+			</item>
+		</definition>
+	</include>
+
+	<include name="Keyboard_Row_List">
+		<param name="visible" default="true"/>
+		<definition>
+			<control type="wraplist" id="$PARAM[rowid]">
+				<visible>$PARAM[visible]</visible>
+				<orientation>horizontal</orientation>
+				<preloaditems>2</preloaditems>
+				<itemlayout/>
+				<focusedlayout/>
+				<content>
+					<include content="Keyboard_Label">
+						<param name="id" value="$PARAM[button1id]"/>
+					</include>
+					<include content="Keyboard_Label">
+						<param name="id" value="$PARAM[button2id]"/>
+					</include>
+					<include content="Keyboard_Label">
+						<param name="id" value="$PARAM[button3id]"/>
+					</include>
+					<include content="Keyboard_Label">
+						<param name="id" value="$PARAM[button4id]"/>
+					</include>
+					<include content="Keyboard_Label">
+						<param name="id" value="$PARAM[button5id]"/>
+					</include>
+					<include content="Keyboard_Label">
+						<param name="id" value="$PARAM[button6id]"/>
+					</include>
+					<include content="Keyboard_Label">
+						<param name="id" value="$PARAM[button7id]"/>
+					</include>
+					<include content="Keyboard_Label">
+						<param name="id" value="$PARAM[button8id]"/>
+					</include>
+					<include content="Keyboard_Label">
+						<param name="id" value="$PARAM[button9id]"/>
+					</include>
+					<include content="Keyboard_Label">
+						<param name="id" value="$PARAM[button10id]"/>
+					</include>
+					<include content="Keyboard_Label">
+						<param name="id" value="$PARAM[button11id]"/>
+					</include>
+					<include content="Keyboard_Label">
+						<param name="id" value="$PARAM[button12id]"/>
+					</include>
+					<include content="Keyboard_Label">
+						<param name="id" value="$PARAM[button13id]"/>
+					</include>
+					<include content="Keyboard_Label">
+						<param name="id" value="$PARAM[button14id]"/>
+					</include>
+					<include content="Keyboard_Label">
+						<param name="id" value="$PARAM[button15id]"/>
+					</include>
+					<include content="Keyboard_Label">
+						<param name="id" value="$PARAM[button16id]"/>
+					</include>
+					<include content="Keyboard_Label">
+						<param name="id" value="$PARAM[button17id]"/>
+					</include>
+					<include content="Keyboard_Label">
+						<param name="id" value="$PARAM[button18id]"/>
+					</include>
+					<include content="Keyboard_Label">
+						<param name="id" value="$PARAM[button19id]"/>
+					</include>
+					<include content="Keyboard_Label">
+						<param name="id" value="$PARAM[button20id]"/>
+					</include>
+					<include content="Keyboard_Label">
+						<param name="id" value="$PARAM[button21id]"/>
+					</include>
+					<include content="Keyboard_Label">
+						<param name="id" value="$PARAM[button22id]"/>
+					</include>
+					<include content="Keyboard_Label">
+						<param name="id" value="$PARAM[button23id]"/>
+					</include>
+					<include content="Keyboard_Label">
+						<param name="id" value="$PARAM[button24id]"/>
+					</include>
+					<include content="Keyboard_Label">
+						<param name="id" value="$PARAM[button25id]"/>
+					</include>
+					<include content="Keyboard_Label">
+						<param name="id" value="$PARAM[button26id]"/>
+					</include>
+				</content>
+			</control>
+		</definition>
+	</include>
+
+	<include name="Special_Keyboard_Row_List">
+		<param name="visible" default="true"/>
+		<definition>
+			<control type="wraplist" id="$PARAM[rowid]">
+				<visible>$PARAM[visible]</visible>
+				<orientation>horizontal</orientation>
+				<preloaditems>2</preloaditems>
+				<itemlayout/>
+				<focusedlayout/>
+				<content>
+					<include content="Special_Keyboard_Label">
+						<param name="id" value="$PARAM[button1id]"/>
+						<param name="label" value="$PARAM[button1label]"/>
+					</include>
+					<include content="Special_Keyboard_Label">
+						<param name="id" value="$PARAM[button2id]"/>
+						<param name="label" value="$PARAM[button2label]"/>
+					</include>
+					<include content="Special_Keyboard_Label">
+						<param name="id" value="$PARAM[button3id]"/>
+						<param name="label" value="$PARAM[button3label]"/>
+					</include>
+					<include content="Special_Keyboard_Label">
+						<param name="id" value="$PARAM[button4id]"/>
+						<param name="label" value="$PARAM[button4label]"/>
+					</include>
+					<include content="Special_Keyboard_Label">
+						<param name="id" value="$PARAM[button5id]"/>
+						<param name="label" value="$PARAM[button5label]"/>
+					</include>
+					<include content="Special_Keyboard_Label">
+						<param name="id" value="$PARAM[button6id]"/>
+						<param name="label" value="$PARAM[button6label]"/>
+					</include>
+					<include content="Special_Keyboard_Label">
+						<param name="id" value="$PARAM[button7id]"/>
+						<param name="label" value="$PARAM[button7label]"/>
+					</include>
+					<include content="Special_Keyboard_Label">
+						<param name="id" value="$PARAM[button8id]"/>
+						<param name="label" value="$PARAM[button8label]"/>
+					</include>
+					<include content="Special_Keyboard_Label">
+						<param name="id" value="$PARAM[button9id]"/>
+						<param name="label" value="$PARAM[button9label]"/>
+					</include>
+				</content>
+			</control>
+		</definition>
+	</include>
+
+	<include name="Keyboard_Label_Button">
+		<param name="id" default=""/>
+		<param name="position" default=""/>
+		<param name="width" default="90"/>
+		<definition>
+			<control type="group">
+				<height>$PARAM[width]</height>
+				<width>$PARAM[width]</width>
+				<control type="group">
+					<visible>Control.HasFocus($PARAM[id])</visible>
+					<control type="image">
+						<visible>Container($PARAM[id]).Position($PARAM[position])</visible>
+						<left>15</left>
+						<right>15</right>
+						<bottom>0</bottom>
+						<height>6</height>
+						<texture colordiffuse="$VAR[Accent_Color]">views/white_100.png</texture>
+					</control>
+					<control type="label">
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>$INFO[Container($PARAM[id]).ListItemNoWrap($PARAM[position]).Label]</label>
+						<font>Keyboard_Button_$PARAM[position]</font>
+						<textcolor>$VAR[Light_Color]</textcolor>
+					</control>
+				</control>
+				<control type="label">
+					<visible>!Control.HasFocus($PARAM[id])</visible>
+					<align>center</align>
+					<aligny>center</aligny>
+					<label>$INFO[Container($PARAM[id]).ListItemNoWrap($PARAM[position]).Label]</label>
+					<font>Keyboard_Button_5</font>
+					<textcolor>$VAR[Unfocused_Color]</textcolor>
+				</control>
+			</control>
+		</definition>
+	</include>
+
+	<include name="Special_Keyboard_Label_Button">
+		<param name="id" default=""/>
+		<param name="position" default=""/>
+		<param name="width" default="90"/>
+		<definition>
+			<control type="group">
+				<height>$PARAM[width]</height>
+				<width>$PARAM[width]</width>
+				<control type="group">
+					<visible>Control.HasFocus($PARAM[id])</visible>
+					<control type="image">
+						<visible>Container($PARAM[id]).Position($PARAM[position])</visible>
+						<left>15</left>
+						<right>15</right>
+						<bottom>0</bottom>
+						<height>6</height>
+						<texture colordiffuse="$VAR[Accent_Color]">views/white_100.png</texture>
+					</control>
+					<control type="image">
+						<animation effect="zoom" end="0,0,20,1" center="45,30" time="0" condition="String.IsEqual(Container($PARAM[id]).ListItemNoWrap(-5).Label,↓)">Conditional</animation>
+						<animation effect="zoom" end="0,0,20,1" center="45,30" time="0" condition="String.IsEqual(Container($PARAM[id]).ListItemNoWrap(-4).Label,↓)">Conditional</animation>
+						<animation effect="zoom" end="0,0,20,1" center="45,30" time="0" condition="String.IsEqual(Container($PARAM[id]).ListItemNoWrap(-3).Label,↓)">Conditional</animation>
+						<animation effect="zoom" end="0,0,30,2" center="45,30" time="0" condition="String.IsEqual(Container($PARAM[id]).ListItemNoWrap(-2).Label,↓)">Conditional</animation>
+						<animation effect="zoom" end="0,0,35,4" center="45,30" time="0" condition="String.IsEqual(Container($PARAM[id]).ListItemNoWrap(-1).Label,↓)">Conditional</animation>
+						<animation effect="zoom" end="0,0,35,4" center="45,30" time="0" condition="String.IsEqual(Container($PARAM[id]).ListItemNoWrap(1).Label,↓)">Conditional</animation>
+						<animation effect="zoom" end="0,0,30,2" center="45,30" time="0" condition="String.IsEqual(Container($PARAM[id]).ListItemNoWrap(2).Label,↓)">Conditional</animation>
+						<animation effect="zoom" end="0,0,20,1" center="45,30" time="0" condition="String.IsEqual(Container($PARAM[id]).ListItemNoWrap(3).Label,↓)">Conditional</animation>
+						<visible>String.IsEqual(Container($PARAM[id]).ListItemNoWrap($PARAM[position]).Label,↓)</visible>
+						<left>22</left>
+						<right>22</right>
+						<top>13</top>
+						<height>6</height>
+						<texture colordiffuse="$VAR[Light_Color]">views/white_100.png</texture>
+					</control>
+					<control type="label">
+						<animation effect="rotate" start="0" end="-90" center="auto" time="0" condition="String.IsEqual(Container($PARAM[id]).ListItemNoWrap($PARAM[position]).Label,Ⅲ)">Conditional</animation>
+						<animation effect="rotate" start="0" end="180" center="auto" time="0" condition="String.IsEqual(Container($PARAM[id]).ListItemNoWrap($PARAM[position]).Label,↓)">Conditional</animation>
+						<animation effect="slide" start="0" end="0,7" time="0" condition="String.IsEqual(Container($PARAM[id]).ListItemNoWrap($PARAM[position]).Label,¹²³)">Conditional</animation>
+						<animation effect="slide" start="0" end="0,4" time="0" condition="String.IsEqual(Container($PARAM[id]).ListItemNoWrap($PARAM[position]).Label,¹²³) + Integer.IsEqual(Container($PARAM[id]).CurrentItem,1)">Conditional</animation>
+						<animation effect="slide" start="0" end="0,5" time="0" condition="String.IsEqual(Container($PARAM[id]).ListItemNoWrap($PARAM[position]).Label,¹²³) + Integer.IsEqual(Container($PARAM[id]).CurrentItem,2)">Conditional</animation>
+						<animation effect="slide" start="0" end="0,4" time="0" condition="String.IsEqual(Container($PARAM[id]).ListItemNoWrap($PARAM[position]).Label,¹²³) + Integer.IsEqual(Container($PARAM[id]).CurrentItem,3)">Conditional</animation>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>$INFO[Container($PARAM[id]).ListItemNoWrap($PARAM[position]).Label]</label>
+						<font>Special_Keyboard_Button_$PARAM[position]</font>
+						<textcolor>$VAR[Light_Color]</textcolor>
+					</control>
+				</control>
+				<control type="group">
+					<visible>!Control.HasFocus($PARAM[id])</visible>
+					<control type="label">
+						<animation effect="rotate" start="0" end="-90" center="auto" time="0" condition="String.IsEqual(Container($PARAM[id]).ListItemNoWrap($PARAM[position]).Label,Ⅲ)">Conditional</animation>
+						<animation effect="rotate" start="0" end="180" center="auto" time="0" condition="String.IsEqual(Container($PARAM[id]).ListItemNoWrap($PARAM[position]).Label,↓)">Conditional</animation>
+						<animation effect="slide" start="0" end="0,7" time="0" condition="String.IsEqual(Container($PARAM[id]).ListItemNoWrap($PARAM[position]).Label,¹²³)">Conditional</animation>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>$INFO[Container($PARAM[id]).ListItemNoWrap($PARAM[position]).Label]</label>
+						<font>Special_Keyboard_Button_5</font>
+						<textcolor>$VAR[Unfocused_Color]</textcolor>
+					</control>
+					<control type="image">
+						<visible>String.IsEqual(Container($PARAM[id]).ListItemNoWrap($PARAM[position]).Label,↓)</visible>
+						<left>35</left>
+						<right>35</right>
+						<top>27</top>
+						<height>1</height>
+						<texture colordiffuse="$VAR[Unfocused_Color]">views/white_100.png</texture>
+					</control>
+				</control>
+			</control>
+		</definition>
+	</include>
+
+	<include name="Numeric_Label_Button">
+		<param name="id" default="1000"/>
+		<param name="position" default=""/>
+		<param name="width" default="90"/>
+		<definition>
+			<control type="group">
+				<width>$PARAM[width]</width>
+				<height>$PARAM[width]</height>
+				<control type="group">
+					<visible>Control.HasFocus($PARAM[id]) + Container($PARAM[id]).Position($PARAM[position])</visible>
+					<control type="label">
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>$INFO[Container($PARAM[id]).ListItemPosition($PARAM[position]).Label]</label>
+						<font>Special_Keyboard_Button_0</font>
+						<textcolor>$VAR[Light_Color]</textcolor>
+					</control>
+					<control type="image">
+						<left>15</left>
+						<right>15</right>
+						<bottom>0</bottom>
+						<height>6</height>
+						<texture colordiffuse="$VAR[Accent_Color]">views/white_100.png</texture>
+					</control>
+				</control>
+				<control type="label">
+					<visible>![Control.HasFocus($PARAM[id]) + Container($PARAM[id]).Position($PARAM[position])]</visible>
+					<align>center</align>
+					<aligny>center</aligny>
+					<label>$INFO[Container($PARAM[id]).ListItemPosition($PARAM[position]).Label]</label>
+					<font>Special_Keyboard_Button_5</font>
+					<textcolor>$VAR[Unfocused_Color]</textcolor>
+				</control>
+			</control>
+		</definition>
+	</include>
+
+
+<!--
+	<include name="Numeric_Simple_Button_Template">
+		<param name="id" default="1000"/>
+		<param name="position" default=""/>
+		<param name="focusedtexture" default=""/>
+		<param name="unfocusedtexture" default=""/>
+		<definition>
+			<control type="group">
+				<width>90</width>
+				<height>90</height>
+				<control type="group">
+					<visible>Control.HasFocus($PARAM[id]) + Container($PARAM[id]).Position($PARAM[position])</visible>
+					<include content="$PARAM[focusedtexture]">
+						<param name="color" value="$Var[Light_Color]"/>
+					</include>
+					<control type="image">
+						<left>15</left>
+						<right>15</right>
+						<bottom>0</bottom>
+						<height>6</height>
+						<texture colordiffuse="$VAR[Accent_Color]">views/white_100.png</texture>
+					</control>
+				</control>
+				<control type="group">
+					<visible>![Control.HasFocus($PARAM[id]) + Container($PARAM[id]).Position($PARAM[position])]</visible>
+					<include content="$PARAM[unfocusedtexture]">
+						<param name="color" value="$VAR[Unfocused_Color]"/>
+					</include>
+				</control>
+			</control>
+		</definition>
+	</include>
+-->
+
+	<include name="Keyboard_Row_Layout">
+		<param name="id" default=""/>
+		<param name="visible" default="true"/>
+		<param name="buttonwidth" default="90"/>
+		<definition>
+			<control type="grouplist">
+				<width>100%</width>
+				<height>$PARAM[buttonwidth]</height>
+				<orientation>horizontal</orientation>
+				<align>center</align>
+				<visible>$PARAM[visible]</visible>
+				<itemgap>0</itemgap>
+				<scrolltime tween="sine" easing="inout">360</scrolltime>
+				<include content="Keyboard_Label_Button">
+					<param name="id" value="$PARAM[id]"/>
+					<param name="position" value="-7"/>
+					<param name="width" value="$PARAM[buttonwidth]"/>
+				</include>
+				<include content="Keyboard_Label_Button">
+					<param name="id" value="$PARAM[id]"/>
+					<param name="position" value="-6"/>
+					<param name="width" value="$PARAM[buttonwidth]"/>
+				</include>
+				<include content="Keyboard_Label_Button">
+					<param name="id" value="$PARAM[id]"/>
+					<param name="position" value="-5"/>
+					<param name="width" value="$PARAM[buttonwidth]"/>
+				</include>
+				<include content="Keyboard_Label_Button">
+					<param name="id" value="$PARAM[id]"/>
+					<param name="position" value="-4"/>
+					<param name="width" value="$PARAM[buttonwidth]"/>
+				</include>
+				<include content="Keyboard_Label_Button">
+					<param name="id" value="$PARAM[id]"/>
+					<param name="position" value="-3"/>
+					<param name="width" value="$PARAM[buttonwidth]"/>
+				</include>
+				<include content="Keyboard_Label_Button">
+					<param name="id" value="$PARAM[id]"/>
+					<param name="position" value="-2"/>
+					<param name="width" value="$PARAM[buttonwidth]"/>
+				</include>
+				<include content="Keyboard_Label_Button">
+					<param name="id" value="$PARAM[id]"/>
+					<param name="position" value="-1"/>
+					<param name="width" value="$PARAM[buttonwidth]"/>
+				</include>
+				<include content="Keyboard_Label_Button">
+					<param name="id" value="$PARAM[id]"/>
+					<param name="position" value="0"/>
+					<param name="width" value="$PARAM[buttonwidth]"/>
+				</include>
+				<include content="Keyboard_Label_Button">
+					<param name="id" value="$PARAM[id]"/>
+					<param name="position" value="1"/>
+					<param name="width" value="$PARAM[buttonwidth]"/>
+				</include>
+				<include content="Keyboard_Label_Button">
+					<param name="id" value="$PARAM[id]"/>
+					<param name="position" value="2"/>
+					<param name="width" value="$PARAM[buttonwidth]"/>
+				</include>
+				<include content="Keyboard_Label_Button">
+					<param name="id" value="$PARAM[id]"/>
+					<param name="position" value="3"/>
+					<param name="width" value="$PARAM[buttonwidth]"/>
+				</include>
+				<include content="Keyboard_Label_Button">
+					<param name="id" value="$PARAM[id]"/>
+					<param name="position" value="4"/>
+					<param name="width" value="$PARAM[buttonwidth]"/>
+				</include>
+				<include content="Keyboard_Label_Button">
+					<param name="id" value="$PARAM[id]"/>
+					<param name="position" value="5"/>
+					<param name="width" value="$PARAM[buttonwidth]"/>
+				</include>
+				<include content="Keyboard_Label_Button">
+					<param name="id" value="$PARAM[id]"/>
+					<param name="position" value="6"/>
+					<param name="width" value="$PARAM[buttonwidth]"/>
+				</include>
+				<include content="Keyboard_Label_Button">
+					<param name="id" value="$PARAM[id]"/>
+					<param name="position" value="7"/>
+					<param name="width" value="$PARAM[buttonwidth]"/>
+				</include>
+			</control>
+		</definition>
+	</include>
+
+	<include name="Special_Keyboard_Row_Layout">
+		<param name="id" default=""/>
+		<param name="visible" default="true"/>
+		<param name="buttonwidth" default="90"/>
+		<definition>
+			<control type="grouplist">
+				<width>100%</width>
+				<height>$PARAM[buttonwidth]</height>
+				<orientation>horizontal</orientation>
+				<align>center</align>
+				<itemgap>0</itemgap>
+				<visible>$PARAM[visible]</visible>
+				<scrolltime tween="sine" easing="inout">360</scrolltime>
+				<include content="Special_Keyboard_Label_Button">
+					<param name="id" value="$PARAM[id]"/>
+					<param name="position" value="-7"/>
+					<param name="width" value="$PARAM[buttonwidth]"/>
+				</include>
+				<include content="Special_Keyboard_Label_Button">
+					<param name="id" value="$PARAM[id]"/>
+					<param name="position" value="-6"/>
+					<param name="width" value="$PARAM[buttonwidth]"/>
+				</include>
+				<include content="Special_Keyboard_Label_Button">
+					<param name="id" value="$PARAM[id]"/>
+					<param name="position" value="-5"/>
+					<param name="width" value="$PARAM[buttonwidth]"/>
+				</include>
+				<include content="Special_Keyboard_Label_Button">
+					<param name="id" value="$PARAM[id]"/>
+					<param name="position" value="-4"/>
+					<param name="width" value="$PARAM[buttonwidth]"/>
+				</include>
+				<include content="Special_Keyboard_Label_Button">
+					<param name="id" value="$PARAM[id]"/>
+					<param name="position" value="-3"/>
+					<param name="width" value="$PARAM[buttonwidth]"/>
+				</include>
+				<include content="Special_Keyboard_Label_Button">
+					<param name="id" value="$PARAM[id]"/>
+					<param name="position" value="-2"/>
+					<param name="width" value="$PARAM[buttonwidth]"/>
+				</include>
+				<include content="Special_Keyboard_Label_Button">
+					<param name="id" value="$PARAM[id]"/>
+					<param name="position" value="-1"/>
+					<param name="width" value="$PARAM[buttonwidth]"/>
+				</include>
+				<include content="Special_Keyboard_Label_Button">
+					<param name="id" value="$PARAM[id]"/>
+					<param name="position" value="0"/>
+					<param name="width" value="$PARAM[buttonwidth]"/>
+				</include>
+				<include content="Special_Keyboard_Label_Button">
+					<param name="id" value="$PARAM[id]"/>
+					<param name="position" value="1"/>
+					<param name="width" value="$PARAM[buttonwidth]"/>
+				</include>
+				<include content="Special_Keyboard_Label_Button">
+					<param name="id" value="$PARAM[id]"/>
+					<param name="position" value="2"/>
+					<param name="width" value="$PARAM[buttonwidth]"/>
+				</include>
+				<include content="Special_Keyboard_Label_Button">
+					<param name="id" value="$PARAM[id]"/>
+					<param name="position" value="3"/>
+					<param name="width" value="$PARAM[buttonwidth]"/>
+				</include>
+				<include content="Special_Keyboard_Label_Button">
+					<param name="id" value="$PARAM[id]"/>
+					<param name="position" value="4"/>
+					<param name="width" value="$PARAM[buttonwidth]"/>
+				</include>
+				<include content="Special_Keyboard_Label_Button">
+					<param name="id" value="$PARAM[id]"/>
+					<param name="position" value="5"/>
+					<param name="width" value="$PARAM[buttonwidth]"/>
+				</include>
+				<include content="Special_Keyboard_Label_Button">
+					<param name="id" value="$PARAM[id]"/>
+					<param name="position" value="6"/>
+					<param name="width" value="$PARAM[buttonwidth]"/>
+				</include>
+				<include content="Special_Keyboard_Label_Button">
+					<param name="id" value="$PARAM[id]"/>
+					<param name="position" value="7"/>
+					<param name="width" value="$PARAM[buttonwidth]"/>
+				</include>
+			</control>
+		</definition>
+	</include>
+
+	<!-- playerprocessinfo -->
+	<include name="playerprocessinfo_Grouplist">
+		<width>1200</width>
+		<centerleft>50%</centerleft>
+		<bottom>60</bottom>
+		<height>420</height>
+		<itemgap>0</itemgap>
+		<align>top</align>
+	</include>
+
+	<include name="playerprocessinfo_Button">
+		<textoffsetx>0</textoffsetx>
+		<height>50</height>
+		<textcolor>$VAR[Light_Color]</textcolor>
+		<texturefocus/>
+	</include>
+
+</includes>

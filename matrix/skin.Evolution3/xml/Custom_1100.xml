@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window type="dialog" id="1100">
+	<zorder>2</zorder>	
+	<onload>alarmclock(timer_1100,action(select,1100),00:01,silent,loop)</onload>	
+	<onunload>cancelalarm(timer_1100,silent)</onunload>
+	<defaultcontrol always="true">700</defaultcontrol>
+	<visible>window.isvisible(fullscreenvideo) + !skin.hassetting(pas_de_fermeture_osd)</visible>		
+<controls>
+	<control type="button" id="700">
+		<onclick condition="string.isequal(skin.string(fermeture_osd),5) + system.idletime(5) + !player.paused + !player.forwarding + !player.rewinding + !window.isvisible(dialogsettings.xml)">dialog.close(videoosd)</onclick>	
+		<onclick condition="string.isequal(skin.string(fermeture_osd),6) + system.idletime(6) + !player.paused + !player.forwarding + !player.rewinding + !window.isvisible(dialogsettings.xml)">dialog.close(videoosd)</onclick>	
+		<onclick condition="string.isequal(skin.string(fermeture_osd),7) + system.idletime(7) + !player.paused + !player.forwarding + !player.rewinding + !window.isvisible(dialogsettings.xml)">dialog.close(videoosd)</onclick>	
+		<onclick condition="string.isequal(skin.string(fermeture_osd),8) + system.idletime(8) + !player.paused + !player.forwarding + !player.rewinding + !window.isvisible(dialogsettings.xml)">dialog.close(videoosd)</onclick>	
+		<onclick condition="string.isequal(skin.string(fermeture_osd),9) + system.idletime(9) + !player.paused + !player.forwarding + !player.rewinding + !window.isvisible(dialogsettings.xml)">dialog.close(videoosd)</onclick>	
+		<onclick condition="string.isequal(skin.string(fermeture_osd),10) + system.idletime(10) + !player.paused + !player.forwarding + !player.rewinding + !window.isvisible(dialogsettings.xml)">dialog.close(videoosd)</onclick>	
+		<onclick condition="string.isequal(skin.string(fermeture_osd),11) + system.idletime(11) + !player.paused + !player.forwarding + !player.rewinding + !window.isvisible(dialogsettings.xml)">dialog.close(videoosd)</onclick>	
+		<onclick condition="string.isequal(skin.string(fermeture_osd),12) + system.idletime(12) + !player.paused + !player.forwarding + !player.rewinding + !window.isvisible(dialogsettings.xml)">dialog.close(videoosd)</onclick>	
+		<onclick condition="string.isequal(skin.string(fermeture_osd),13) + system.idletime(13) + !player.paused + !player.forwarding + !player.rewinding + !window.isvisible(dialogsettings.xml)">dialog.close(videoosd)</onclick>	
+		<onclick condition="string.isequal(skin.string(fermeture_osd),14) + system.idletime(14) + !player.paused + !player.forwarding + !player.rewinding + !window.isvisible(dialogsettings.xml)">dialog.close(videoosd)</onclick>	
+		<onclick condition="string.isequal(skin.string(fermeture_osd),15) + system.idletime(15) + !player.paused + !player.forwarding + !player.rewinding + !window.isvisible(dialogsettings.xml)">dialog.close(videoosd)</onclick>	
+		<onclick condition="string.isequal(skin.string(fermeture_osd),16) + system.idletime(16) + !player.paused + !player.forwarding + !player.rewinding + !window.isvisible(dialogsettings.xml)">dialog.close(videoosd)</onclick>	
+		<onclick condition="string.isequal(skin.string(fermeture_osd),17) + system.idletime(17) + !player.paused + !player.forwarding + !player.rewinding + !window.isvisible(dialogsettings.xml)">dialog.close(videoosd)</onclick>	
+		<onclick condition="string.isequal(skin.string(fermeture_osd),18) + system.idletime(18) + !player.paused + !player.forwarding + !player.rewinding + !window.isvisible(dialogsettings.xml)">dialog.close(videoosd)</onclick>	
+		<onclick condition="string.isequal(skin.string(fermeture_osd),19) + system.idletime(19) + !player.paused + !player.forwarding + !player.rewinding + !window.isvisible(dialogsettings.xml)">dialog.close(videoosd)</onclick>	
+		<onclick condition="string.isequal(skin.string(fermeture_osd),20) + system.idletime(20) + !player.paused + !player.forwarding + !player.rewinding + !window.isvisible(dialogsettings.xml)">dialog.close(videoosd)</onclick>	
+		<onclick condition="string.isequal(skin.string(fermeture_osd),21) + system.idletime(21) + !player.paused + !player.forwarding + !player.rewinding + !window.isvisible(dialogsettings.xml)">dialog.close(videoosd)</onclick>	
+		<onclick condition="string.isequal(skin.string(fermeture_osd),22) + system.idletime(22) + !player.paused + !player.forwarding + !player.rewinding + !window.isvisible(dialogsettings.xml)">dialog.close(videoosd)</onclick>	
+		<onclick condition="string.isequal(skin.string(fermeture_osd),23) + system.idletime(23) + !player.paused + !player.forwarding + !player.rewinding + !window.isvisible(dialogsettings.xml)">dialog.close(videoosd)</onclick>	
+		<onclick condition="string.isequal(skin.string(fermeture_osd),24) + system.idletime(24) + !player.paused + !player.forwarding + !player.rewinding + !window.isvisible(dialogsettings.xml)">dialog.close(videoosd)</onclick>	
+		<onclick condition="string.isequal(skin.string(fermeture_osd),25) + system.idletime(25) + !player.paused + !player.forwarding + !player.rewinding + !window.isvisible(dialogsettings.xml)">dialog.close(videoosd)</onclick>	
+		<onclick condition="string.isequal(skin.string(fermeture_osd),26) + system.idletime(26) + !player.paused + !player.forwarding + !player.rewinding + !window.isvisible(dialogsettings.xml)">dialog.close(videoosd)</onclick>	
+		<onclick condition="string.isequal(skin.string(fermeture_osd),27) + system.idletime(27) + !player.paused + !player.forwarding + !player.rewinding + !window.isvisible(dialogsettings.xml)">dialog.close(videoosd)</onclick>	
+		<onclick condition="string.isequal(skin.string(fermeture_osd),28) + system.idletime(28) + !player.paused + !player.forwarding + !player.rewinding + !window.isvisible(dialogsettings.xml)">dialog.close(videoosd)</onclick>	
+		<onclick condition="string.isequal(skin.string(fermeture_osd),29) + system.idletime(29) + !player.paused + !player.forwarding + !player.rewinding + !window.isvisible(dialogsettings.xml)">dialog.close(videoosd)</onclick>	
+		<onclick condition="string.isequal(skin.string(fermeture_osd),30) + system.idletime(30) + !player.paused + !player.forwarding + !player.rewinding + !window.isvisible(dialogsettings.xml)">dialog.close(videoosd)</onclick>	
+		<onclick condition="player.paused | player.forwarding | player.rewinding">activatewindow(videoosd)</onclick>	
+	</control>
+</controls>
+</window>

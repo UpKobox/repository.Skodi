@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window type="dialog" id="1119">
+	<zorder>0</zorder>
+	<visible>$EXP[TransparentDialog_IsVisible] | [VideoPlayer.IsFullscreen + [Player.Paused | Window.IsVisible(videoosd) | Window.IsVisible(fullscreeninfo)]]</visible>
+	<visible>!$EXP[InfoDialog_IsVisible]</visible>
+	<visible>!String.IsEqual(Window(home).Property(OptionsMenu),Active)</visible>
+	<visible>!$EXP[OpaqueDialog_IsVisible]</visible>
+	<visible>![Window.IsVisible(home) + String.IsEmpty(Window(home).Property(HomeWidget))]</visible>
+	<visible>![$EXP[Background_IsFanart] + $EXP[PanelDialog_IsVisible]]</visible>
+	<visible>![Window.IsActive(addonbrowser) + !Container.Content(addons)]</visible>
+	<visible>![Window.IsVisible(addonbrowser) + Window.IsVisible(selectdialog)]</visible>
+	<visible>!Window.IsVisible(loginscreen)</visible>
+	<visible>!Window.IsVisible(musicplaylisteditor)</visible>
+	<include>Dialog_Fade_Animation</include>
+	<controls>
+		<include>Transparent_Dialog_Background</include>
+	</controls>
+</window>

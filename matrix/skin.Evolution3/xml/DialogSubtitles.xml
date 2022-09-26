@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window type="dialog">
+	<onload condition="integer.isgreater(container(150).numitems,0)">alarmclock(forcer_masquer_tout,noop,00:01,silent)</onload>
+	<onunload condition="integer.isgreater(container(150).numitems,0)">alarmclock(forcer_masquer_tout,noop,00:01,silent)</onunload>
+	<onload condition="integer.isgreater(container(150).numitems,0) + !skin.hassetting(pas_de_pause_2) + !skin.hassetting(pas_de_pause_1) + player.hasvideo + !player.paused + window.isvisible(fullscreenvideo)">setproperty(pause,non,home)</onload>
+	<onload condition="integer.isgreater(container(150).numitems,0) + !skin.hassetting(pas_de_pause_2) + !skin.hassetting(pas_de_pause_1) + player.hasvideo + !player.paused + window.isvisible(fullscreenvideo)">playercontrol(play)</onload>
+	<onunload condition="integer.isgreater(container(150).numitems,0) + !skin.hassetting(pas_de_pause_2) + !skin.hassetting(pas_de_pause_1) + !string.isempty(window(home).property(pause))">playercontrol(play)</onunload>
+	<onunload>clearproperty(pause,home)</onunload>	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<onload condition="!integer.isgreater(container(150).numitems,0)">action(close)</onload>
+	<onload condition="!integer.isgreater(container(150).numitems">activatewindow(1120)</onload>
+	
+	
+	
+	
+	<defaultcontrol>150</defaultcontrol>
+<controls>
+	<control type="videowindow">																									<description>lecteur video</description>		
+		<width>0</width>
+		<height>0</height>
+	</control>		
+	<control type="image">																											<description>fond</description>		
+		<texture colordiffuse="$VAR[gris]">commun/fond.png</texture>
+	</control>		
+	<control type="image">	
+		<top>-150</top>
+		<width>700</width>
+		<height>1380</height>
+		<texture colordiffuse="$VAR[blanc_5%]">commun/fond.png</texture>
+	</control>
+	<control type="image">	
+		<top>-150</top>
+		<left>1920</left>
+		<width>700</width>
+		<height>1380</height>
+		<texture colordiffuse="$VAR[blanc_5%]">commun/fond.png</texture>
+	</control>
+	<control type="list" id="150">																								<description>liste des boutons de gauche</description>		
+		<top>80</top>
+		<left>60</left>
+		<width>600</width>
+		<height>1000</height>
+		<onright>120</onright>
+		<onleft>action(close)</onleft>
+		<ondown>8000</ondown>
+		<orientation>vertical</orientation>
+		<scrolltime>250</scrolltime>	
+	<itemlayout width="580" height="70">
+	<control type="image">
+		<height>60</height>
+		<texture colordiffuse="40797979" border="7">boutons/bouton.png</texture>
+	</control>
+	<control type="label">
+		<height>60</height>
+		<textcolor>$VAR[blanc]</textcolor>
+		<shadowcolor></shadowcolor>
+		<textoffsetx>20</textoffsetx>
+		<aligny>center</aligny>
+		<font>b_24</font>	
+		<textcolor>$VAR[blanc]</textcolor>
+		<label>$INFO[listitem.label]</label>
+	</control>	
+	</itemlayout>	
+	<focusedlayout width="580" height="70">
+	<control type="image">
+		<animation effect="fade" start="100" end="25" time="125" condition="!control.hasfocus(150)">conditional</animation>
+		<height>60</height>
+		<texture colordiffuse="$VAR[couleur_1]" border="7">boutons/bouton.png</texture>
+	</control>
+	<control type="label">
+		<height>60</height>
+		<textcolor>$VAR[blanc]</textcolor>
+		<shadowcolor></shadowcolor>
+		<textoffsetx>20</textoffsetx>
+		<aligny>center</aligny>
+		<font>b_24</font>	
+		<textcolor>$VAR[blanc]</textcolor>
+		<label>$INFO[listitem.label]</label>
+	</control>	
+	</focusedlayout>	
+	</control>	
+	<control type="label">
+		<left>740</left>		
+		<textoffsety>15</textoffsety>
+		<height>60</height>
+		<textcolor>$VAR[blanc]</textcolor>
+		<shadowcolor></shadowcolor>
+		<font>b_24</font>
+		<label>$LOCALIZE[24012]</label>
+	</control>	
+	<control type="label" id="130">
+		<right>40</right>
+		<height>60</height>
+		<align>right</align>
+		<textoffsety>15</textoffsety>
+		<textcolor>$VAR[couleur_1]</textcolor>
+		<shadowcolor></shadowcolor>
+		<font>b_24</font>
+		<label>$LOCALIZE[31119]</label>
+	</control>
+	<control type="image" id="110">
+		<top>60</top>
+		<left>740</left>
+		<width>400</width>
+		<height>120</height>
+		<aspectratio align="left" aligny="center">keep</aspectratio>
+	</control>
+	<control type="image">  
+		<top>199</top>
+		<height>1</height>	
+		<left>700</left>
+		<width>1220</width>
+		<texture colordiffuse="$VAR[blanc_5%]">commun/fond.png</texture>
+	</control>	
+	<control type="grouplist">
+		<top>169</top>
+		<right>40</right>		
+		<height>20</height>
+		<align>right</align>
+		<itemgap>20</itemgap>
+		<orientation>horizontal</orientation>
+		<usecontrolcoords>true</usecontrolcoords>		
+	<control type="label">
+		<width>auto</width>
+		<height>20</height>
+		<aligny>center</aligny>
+		<textcolor>$VAR[couleur_2]</textcolor>
+		<shadowcolor></shadowcolor>
+		<font>r_24</font>
+		<label>[B]$INFO[container(120).listitem.label][/B]</label>
+	</control>
+	<control type="image">
+		<width>25</width>
+	</control>
+	<control type="image">
+		<animation effect="fade" start="100" end="5" condition="!container(120).listitem.property(hearing_imp)">conditional</animation>
+		<width>30</width>
+		<height>20</height>
+		<texture>boutons/osd/close_caption.png</texture>
+	</control>
+	<control type="image">
+		<animation effect="fade" start="100" end="5" condition="!container(120).listitem.property(sync)">conditional</animation>
+		<width>60</width>
+		<height>20</height>
+		<texture>boutons/osd/sync.png</texture>
+	</control>
+	<control type="image">
+		<width>25</width>
+	</control>
+	<control type="label" id="140">
+		<width>auto</width>
+		<height>20</height>
+		<aligny>center</aligny>
+		<textcolor>$VAR[blanc]</textcolor>
+		<shadowcolor></shadowcolor>
+		<font>r_24</font>
+	</control>	
+	</control>
+	<control type="panel" id="120">																								<description>liste des parametres</description>				
+		<top>220</top>
+		<left>700</left>
+		<height>800</height>
+		<width>1220</width>
+		<onleft>150</onleft>		
+		<onup>noop</onup>
+		<ondown>8000</ondown>
+		<orientation>vertical</orientation>
+		<scrolltime>250</scrolltime>
+	<itemlayout width="1220" height="80">
+	<control type="label">
+		<height>60</height>
+		<left>2</left>
+		<right>260</right>
+		<aligny>center</aligny>
+		<font>r_24</font>	
+		<textcolor>$VAR[blanc]</textcolor>	
+		<shadowcolor></shadowcolor>	
+		<scrollsuffix>          ·  </scrollsuffix>
+		<label>        $INFO[listitem.label2]</label>
+	</control>
+	<control type="image">
+		<top>10</top>
+		<right>60</right>
+		<width>40</width>
+		<height>40</height>		
+		<texture>extras/pays/$INFO[listitem.thumb].png</texture>		
+	</control>	
+	<control type="image">
+		<right>120</right>
+		<width>130</width>
+		<height>60</height>
+		<texture fallback="extras/notes/0.png">extras/notes/$INFO[listitem.actualicon].png</texture>
+		<aspectratio>keep</aspectratio>
+	</control>
+	</itemlayout>	
+	<focusedlayout width="1220" height="80">
+	<control type="image">
+		<height>60</height>
+		<texture colordiffuse="$VAR[couleur_1]">commun/texture.png</texture>
+	</control>
+	<control type="label">
+		<height>60</height>
+		<left>2</left>
+		<right>260</right>
+		<aligny>center</aligny>
+		<font>r_24</font>	
+		<textcolor>$VAR[blanc]</textcolor>
+		<shadowcolor></shadowcolor>		
+		<scrollsuffix>          ·  </scrollsuffix>
+		<label>        $INFO[listitem.label2]</label>
+		<scroll>true</scroll>
+	</control>	
+	<control type="image">
+		<top>10</top>
+		<right>60</right>
+		<width>40</width>
+		<height>40</height>		
+		<texture>extras/pays/$INFO[listitem.thumb].png</texture>		
+	</control>
+	<control type="image">
+		<right>120</right>
+		<width>130</width>
+		<height>60</height>
+		<texture fallback="extras/notes/0.png">extras/notes/$INFO[listitem.actualicon].png</texture>
+		<aspectratio>keep</aspectratio>
+	</control>	
+	</focusedlayout>	
+	</control>	
+	<control type="image">  
+		<bottom>60</bottom>
+		<height>1</height>	
+		<left>700</left>
+		<width>1220</width>
+		<texture colordiffuse="$VAR[blanc_5%]">commun/fond.png</texture>
+	</control>	
+	<control type="label">
+		<bottom>0</bottom>
+		<right>2</right>
+		<width>1216</width>
+		<height>60</height>
+		<align>right</align>
+		<aligny>center</aligny>
+		<textcolor>$VAR[couleur_2]</textcolor>
+		<shadowcolor></shadowcolor>
+		<font>r_24</font>
+		<label>$INFO[player.filename]      </label>
+		<scroll>true</scroll>
+	</control>
+	<control type="grouplist" id="8000">
+		<onup>setfocus(150)</onup>
+		<bottom>40</bottom>
+		<width>700</width>
+		<height>60</height>
+		<align>center</align>
+		<onleft>action(close)</onleft>
+		<onright>setfocus(120)</onright>
+		<orientation>horizontal</orientation>
+	<include content="bouton_parametre">
+		<param name="id" value="160"/>
+		<param name="label" value="$LOCALIZE[24120]"/>
+		<param name="onclick1" value="alarmclock(forcer_masquer_tout,noop,00:01,silent)"/>	
+	</include>	
+	</control>
+
+
+
+	
+	<control type="image">	
+		<top>-50</top>
+		<left>700</left>
+		<width>20</width>
+		<height>1180</height>
+		<texture flipx="true">commun/ombre_verticale.png</texture>
+	</control>	
+	<control type="label">
+		<label>$INFO[]</label>
+	</control>
+</controls>
+</window>

@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<backgroundcolor>00X000000</backgroundcolor>
+	<defaultcontrol always="true">8000</defaultcontrol>
+	<views>570</views>
+<controls>				
+	<control type="group">
+	<include>image_fond</include>																												<description>image de fond</description>		
+	<control type="group">
+		<animation effect="fade" start="100" end="0" time="100" condition="window.isvisible(pvrguideinfo) | window.isvisible(selectdialog) | window.isvisible(contextmenu)" reversible="false">Conditional</animation>
+		<animation effect="fade" start="0" end="100" delay="100" time="100" condition="!window.isvisible(pvrguideinfo) + !window.isvisible(selectdialog) + !window.isvisible(contextmenu)" reversible="false">Conditional</animation>
+	<control type="group">																														<description>horloge</description>
+		<right>40</right>					
+	<include>titre</include>
+	</control>
+	<control type="button" id="40">
+		<top>35</top>		
+		<left>50</left>
+		<height>60</height>
+		<width>auto</width>
+	<include content="bouton">																										
+		<param name="width" value="auto"/> 
+		<param name="height" value="80"/>
+		<param name="align" value="center"/>
+		<param name="label" value="$LOCALIZE[31067]"/>
+	</include>
+	</control>		
+	<include content="barre_separation_horizontale">																							<description>barre de separation horizontale</description>
+		<param name="left" value="25"/> 
+		<param name="right" value="25"/>
+		<param name="bottom" value="950"/>		
+	</include>
+	<control type="grouplist" id="8000">																										<description>liste des boutons</description>				
+		<top>200</top>
+		<left>60</left>
+		<width>600</width>
+		<height>800</height>
+		<onleft>action(back)</onleft>
+		<onright condition="!string.isequal(ListItem.Label,..)">570</onright>		
+		<itemgap>20</itemgap>				
+	<control type="button" id="4">
+	<include content="bouton">
+		<param name="height" value="65"/>
+		<param name="label" value="$LOCALIZE[580] : [LOWERCASE]$INFO[Container(570).SortOrder][/LOWERCASE]"/>			
+	</include>
+	</control>
+	<control type="button" id="20">
+	<include content="bouton">
+		<param name="height" value="65"/>
+		<param name="label" value="$LOCALIZE[19185]"/>			
+	</include>
+	</control>
+	<control type="button" id="21">
+	<include content="bouton">
+		<param name="height" value="65"/>		
+	</include>
+	</control>
+	<control type="radiobutton" id="22">	
+	<include content="bouton">
+		<param name="height" value="65"/>		
+	</include>			
+	</control>
+	<control type="button" id="23">
+		<onclick>ActivateWindow(systemsettings,logging)</onclick>
+	<include content="bouton">
+		<param name="height" value="65"/>
+		<param name="label" value="$LOCALIZE[5]"/>		
+	</include>
+	</control>
+	</control>		
+	<include content="barre_separation_horizontale">																							<description>barre de separation horizontale</description>
+		<param name="left" value="25"/> 
+		<param name="right" value="1205"/>
+		<param name="bottom" value="285"/>		
+	</include>
+	<control type="label">
+		<top>795</top>
+		<left>40</left>
+		<width>880</width>
+		<height>90</height>
+		<font>texte</font>
+		<textcolor>80ffffff</textcolor>
+		<label>$INFO[System.FriendlyName]</label>		
+	</control>	
+	<include content="barre_separation_horizontale">																							<description>barre de separation horizontale</description>
+		<param name="left" value="25"/> 
+		<param name="right" value="1205"/>
+		<param name="bottom" value="195"/>		
+	</include>	
+	<control type="label">
+		<top>905</top>
+		<left>40</left>
+		<width>880</width>
+		<height>50</height>
+		<font>texte</font>
+		<textcolor>80ffffff</textcolor>
+		<label>$LOCALIZE[144] $INFO[System.BuildVersion]</label>		
+	</control>
+	<control type="label">
+		<top>945</top>
+		<left>40</left>
+		<width>880</width>
+		<height>50</height>
+		<font>texte</font>
+		<textcolor>80ffffff</textcolor>
+		<label>$LOCALIZE[31030]: $INFO[system.memory(used)] / $INFO[system.memory(total)] ($INFO[system.memory(used.percent)])</label>		
+	</control>
+	<control type="label">
+		<top>985</top>
+		<left>40</left>
+		<width>880</width>
+		<height>50</height>
+		<font>texte</font>
+		<textcolor>80ffffff</textcolor>
+		<label>$LOCALIZE[13271] $INFO[System.CpuUsage]</label>		
+	</control>	
+	<control type="image">																														<description>fond liste des informations</description>
+		<top>200</top>
+		<right>50</right>
+		<width>1140</width>
+		<height>800</height>
+		<aspectratio>stretch</aspectratio>
+		<texture colordiffuse="20000000" border="50">commun/bouton.png</texture>
+	</control>		
+	<control type="panel" id="570">																												<description>liste du rapport</description>
+		<top>210</top>
+		<right>80</right>
+		<width>1100</width>
+		<height>780</height>
+		<onleft>8000</onleft>
+		<onright>60</onright>
+		<pagecontrol>60</pagecontrol>
+		<scrolltime tween="Linear" easing="in">250</scrolltime>	
+	<itemlayout height="100">	
+	<control type="group">	
+		<visible>!string.isequal(ListItem.Label,..)</visible>
+	<control type="button">		
+	<include content="bouton">																											
+		<param name="width" value="1100"/> 
+		<param name="height" value="80"/> 
+		<param name="texturenofocus_colordiffuse" value="05ffffff"/>
+	</include>	
+	</control>			
+	<control type="label">
+		<left>40</left>
+		<height>50</height>
+		<width>960</width>
+		<label>$INFO[ListItem.Label2]   │   $INFO[ListItem.Label]</label>
+	</control>
+	<control type="label">
+		<top>40</top>
+		<left>50</left>
+		<height>40</height>
+		<width>950</width>
+		<font>infos</font>
+		<label>• $INFO[ListItem.Property(Event.Description)]</label>
+	</control>
+	<control type="image">	
+		<right>10</right>
+		<top>10</top>
+		<width>60</width>
+		<height>60</height>
+		<texture background="true" fallback="defaultfolder.png">$INFO[ListItem.Icon]</texture>
+		<aspectratio>keep</aspectratio>
+	</control>
+	</control>
+	</itemlayout>
+	<focusedlayout height="100">	
+	<control type="group">	
+		<visible>!string.isequal(ListItem.Label,..)</visible>
+	<control type="button">		
+		<onfocus condition="!String.IsEqual(listitem.icon,) + !string.EndsWith(listitem.icon,none)">setproperty(image,$INFO[listitem.icon],home)</onfocus>
+		<onfocus condition="String.IsEqual(listitem.icon,) | string.EndsWith(listitem.icon,none)">clearproperty(image,home)</onfocus>	
+		<onfocus>setproperty(label,$INFO[ListItem.Label2]   │   $INFO[ListItem.Label],home)</onfocus>		
+	<include content="bouton">																											
+		<param name="width" value="1100"/> 
+		<param name="height" value="80"/> 
+		<param name="texturenofocus_colordiffuse" value="$VAR[couleur_dominante]"/>
+	</include>	
+	</control>	
+	<control type="label">
+		<left>40</left>
+		<height>50</height>
+		<width>960</width>
+		<textcolor>$VAR[gris]</textcolor>
+		<label>$INFO[ListItem.Label2]   │   $INFO[ListItem.Label]</label>
+	</control>
+	<control type="label">
+		<top>40</top>
+		<left>50</left>
+		<width>950</width>
+		<height>40</height>
+		<textcolor>$VAR[gris]</textcolor>
+		<font>infos</font>
+		<label>• $INFO[ListItem.Property(Event.Description)]</label>
+	</control>
+	<control type="image">	
+		<right>10</right>
+		<top>10</top>
+		<width>60</width>
+		<height>60</height>
+		<texture background="true" fallback="defaultfolder.png">$INFO[ListItem.Icon]</texture>
+		<aspectratio>keep</aspectratio>
+	</control>
+	</control>
+	</focusedlayout>	
+	</control>
+	<include content="scrollbar_parametres">																									<description>scrollbar</description>
+		<param name="id" value="60"/> 
+		<param name="top" value="210"/> 
+		<param name="height" value="780"/> 
+		<param name="container" value="570"/>		
+	</include>
+	</control>		
+	</control>	
+</controls>
+</window>

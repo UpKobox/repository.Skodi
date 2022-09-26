@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<backgroundcolor>ffd6dbdf</backgroundcolor>	
+	<onunload>setproperty(animation_home,oui,home)</onunload>	
+	<onunload>alarmclock(animation,clearproperty(animation_home,home),00:00,silent)</onunload>
+	<defaultcontrol always="true">700</defaultcontrol>
+	<views>700,701</views>
+<controls>	
+	<include>KPR_view</include>
+</controls>
+</window>

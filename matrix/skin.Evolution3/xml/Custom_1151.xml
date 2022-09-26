@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window type="dialog" id="1151">
+	<zorder>20</zorder>
+	<visible>!string.isempty(window(home).property(gerer)) | [!window.isvisible(notification) + !window.isvisible(fullscreenvideo) + !window.isvisible(settingscategory.xml) + !window.isvisible(dialogaddonsettings.xml) + !window.isvisible(skinsettings)]</visible>
+<controls>
+	<control type="group">
+		<visible>string.isequal(system.currentwindow,$LOCALIZE[10000])</visible>
+		<animation effect="fade" start="0" end="100" delay="250" time="1" condition="[$EXP[superieur_liste_courante_1000] | $EXP[superieur_liste_courante_2000] | $EXP[superieur_liste_courante_3000] | $EXP[superieur_liste_courante_4000] | $EXP[superieur_liste_courante_5000]] + $EXP[zoom_interface]" reversible="false">conditional</animation>
+		<animation effect="fade" start="100" end="0" condition="[$EXP[superieur_liste_courante_1000] | $EXP[superieur_liste_courante_2000] | $EXP[superieur_liste_courante_3000] | $EXP[superieur_liste_courante_4000] | $EXP[superieur_liste_courante_5000]] + !$EXP[zoom_interface]" reversible="false">conditional</animation>
+		<include content="horloge"/>
+	</control>	
+	<control type="group">
+		<visible>!string.isequal(system.currentwindow,$LOCALIZE[10000])</visible>
+		<animation effect="fade" start="100" end="0" condition="string.isequal(window(home).property(liste),suggestions) | $EXP[liste_500]">conditional</animation>
+		<include content="horloge"/>
+	</control>
+</controls>
+</window>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<smartplaylist type="movies">
+    <name>1 item</name>
+<match>and</match>
+    <rule field="title" operator="isnot">
+        <value>0</value>
+    </rule>
+    <group>none</group>
+	<limit>1</limit>
+    <order direction="ascending">label</order>
+</smartplaylist>
+

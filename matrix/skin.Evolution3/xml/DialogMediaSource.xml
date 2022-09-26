@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<backgroundcolor>00X000000</backgroundcolor>
+	<defaultcontrol always="true">12</defaultcontrol>
+<controls>	
+	<control type="group">
+	<include>image_fond</include>																												<description>image de fond</description>		
+	<control type="group">
+		<animation effect="fade" start="100" end="0" time="100" condition="window.isvisible(pvrguideinfo) | window.isvisible(selectdialog) | window.isvisible(contextmenu)" reversible="false">Conditional</animation>
+		<animation effect="fade" start="0" end="100" delay="100" time="100" condition="!window.isvisible(pvrguideinfo) + !window.isvisible(selectdialog) + !window.isvisible(contextmenu)" reversible="false">Conditional</animation>
+	<control type="group">																														<description>horloge</description>
+		<right>40</right>					
+	<include>titre</include>
+	</control>
+	<control type="button" id="2">
+		<top>35</top>		
+		<left>50</left>
+		<height>60</height>
+		<width>auto</width>
+	<include content="bouton">																										
+		<param name="width" value="auto"/> 
+		<param name="height" value="80"/>
+		<param name="align" value="center"/>
+	</include>
+	</control>		
+	<include content="barre_separation_horizontale">																							<description>barre de separation horizontale</description>
+		<param name="left" value="25"/> 
+		<param name="right" value="25"/>
+		<param name="bottom" value="950"/>		
+	</include>		
+	<control type="image">																														<description>fond liste</description>
+		<top>163</top>
+		<left>50</left>
+		<height>64</height>
+		<width>1450</width>
+		<aspectratio>stretch</aspectratio>
+		<texture colordiffuse="1affffff" border="20">commun/bouton.png</texture>
+	</control>
+	<control type="label">
+		<top>165</top>
+		<left>70</left>
+		<height>60</height>
+		<textcolor>80ffffff</textcolor>
+		<label>$LOCALIZE[1022]</label>
+	</control>
+	<control type="edit" id="12">																												<description>edition du nom de la source</description>
+		<top>165</top>
+		<left>550</left>
+		<width>948</width>		
+		<height>60</height>
+		<textcolor>80ffffff</textcolor>
+		<focusedcolor>ffffffff</focusedcolor>
+		<texturefocus colordiffuse="$VAR[couleur_dominante]" border="20">commun/bouton.png</texturefocus>					
+		<texturenofocus colordiffuse="1affffff" border="20">commun/bouton.png</texturenofocus>							
+		<ondown>10</ondown>		
+		<pulseonselect>false</pulseonselect>
+	</control>	
+	<control type="image">																														<description>fond liste</description>
+		<top>250</top>
+		<left>50</left>
+		<width>1450</width>
+		<height>710</height>
+		<aspectratio>stretch</aspectratio>
+		<texture colordiffuse="20000000" border="50">commun/bouton.png</texture>
+	</control>
+	<control type="list" id="10">																												<description>liste</description>		
+		<top>255</top>
+		<left>80</left>
+		<width>1410</width>
+		<height>700</height>
+		<onleft>60</onleft>
+		<onup>12</onup>
+		<onright>8000</onright>
+		<itemgap>20</itemgap>
+		<pagecontrol>60</pagecontrol>
+		<scrolltime tween="Linear" easing="in">250</scrolltime>	
+	<itemlayout height="100">	
+	<control type="image">
+		<left>10</left>
+		<top>17</top>
+		<width>66</width>
+		<height>66</height>
+		<texture fallback="defaultnetwork.png">$INFO[ListItem.Icon]</texture>
+		<aspectratio>keep</aspectratio>
+	</control>
+	<control type="label">
+		<top>10</top>
+		<left>90</left>
+		<height>80</height>
+		<label>$INFO[ListItem.Label]</label>
+	</control>
+	</itemlayout>
+	<focusedlayout height="100">
+	<control type="button">	
+		<onfocus condition="!String.IsEqual(listitem.icon,) + !string.EndsWith(listitem.icon,none)">setproperty(image,$INFO[listitem.icon],home)</onfocus>
+		<onfocus condition="String.IsEqual(listitem.icon,) | string.EndsWith(listitem.icon,none)">clearproperty(image,home)</onfocus>	
+		<onfocus>setproperty(label,$ESCINFO[ListItem.Label],home)</onfocus>		
+	</control>
+	<control type="image">		
+		<top>10</top>
+		<height>80</height>
+		<texture colordiffuse="$VAR[couleur_dominante]" border="20">commun/bouton.png</texture>
+		<aspectratio>stretch</aspectratio>
+		<visible>control.hasfocus(10)</visible>
+	</control>
+	<control type="image">		
+		<top>10</top>
+		<height>80</height>
+		<texture colordiffuse="$VAR[couleur_dominante]" border="20">commun/bouton.png</texture>
+		<aspectratio>stretch</aspectratio>
+		<animation effect="fade" start="100" end="25" condition="true">conditional</animation>
+		<visible>!control.hasfocus(10)</visible>
+	</control>	
+	<control type="image">
+		<left>10</left>
+		<top>17</top>
+		<width>66</width>
+		<height>66</height>
+		<texture fallback="defaultnetwork.png" colordiffuse="$VAR[gris]">$INFO[ListItem.Icon]</texture>
+		<aspectratio>keep</aspectratio>
+	</control>
+	<control type="label">
+		<top>10</top>
+		<left>90</left>
+		<height>80</height>
+		<textcolor>$VAR[gris]</textcolor>
+		<label>$INFO[ListItem.Label]</label>
+	</control>
+	</focusedlayout>
+	</control>	
+	<include content="scrollbar_parametres">																									<description>scrollbar</description>
+		<param name="id" value="60"/> 
+		<param name="top" value="265"/> 
+		<param name="height" value="680"/> 
+		<param name="right" value="1850"/>
+		<param name="onright" value="10"/>		
+	</include>	
+	<control type="grouplist" id="8000">																										<description>liste boutons</description>	
+		<top>245</top>
+		<right>50</right>
+		<width>330</width>
+		<itemgap>20</itemgap>
+		<onleft>10</onleft>
+		<orientation>vertical</orientation>		
+	<control type="button" id="11">																														
+	<include content="bouton">
+		<param name="height" value="65"/>
+		<param name="align" value="center"/>	
+		<param name="label" value="$LOCALIZE[1024]"/>
+	</include>		
+	</control>
+	<control type="button" id="13">																												
+	<include content="bouton">
+		<param name="height" value="65"/>
+		<param name="align" value="center"/>	
+		<param name="label" value="$LOCALIZE[15019]"/>
+	</include>			
+	</control>
+	<control type="button" id="14">																												
+	<include content="bouton">
+		<param name="height" value="65"/>
+		<param name="align" value="center"/>	
+		<param name="label" value="$LOCALIZE[1210]"/>
+	</include>					
+	</control>	
+	<control type="button" id="18">																												
+	<include content="bouton">
+		<param name="height" value="65"/>
+		<param name="align" value="center"/>	
+		<param name="label" value="$LOCALIZE[186]"/>
+	</include>					
+	</control>
+	<control type="button" id="19">																													
+	<include content="bouton">
+		<param name="height" value="65"/>
+		<param name="align" value="center"/>	
+		<param name="label" value="$LOCALIZE[222]"/>
+	</include>						
+	</control>	
+	</control>	
+	</control>	
+	<include content="barre_separation_horizontale">																							<description>barre de separation horizontale</description>
+		<param name="left" value="25"/> 
+		<param name="right" value="25"/>
+		<param name="bottom" value="60"/>		
+	</include>		
+	</control>
+</controls>
+</window>

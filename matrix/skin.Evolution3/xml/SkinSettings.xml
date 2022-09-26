@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>			
+	<onload condition="!skin.hassetting(pas_de_pause_1) + player.hasvideo + !player.paused + window.isvisible(fullscreenvideo)">setproperty(pause,non,home)</onload>
+	<onload condition="!skin.hassetting(pas_de_pause_1) + player.hasvideo + !player.paused + window.isvisible(fullscreenvideo)">playercontrol(play)</onload>
+	<onunload condition="!string.isempty(window(home).property(pause))">playercontrol(play)</onunload>
+	<onunload>clearproperty(pause,home)</onunload>		
+	<defaultcontrol always="true">301</defaultcontrol>	
+<controls>
+	<control type="videowindow">																									<description>lecteur video</description>		
+	</control>		
+	<control type="image">																											<description>fond</description>		
+		<texture colordiffuse="$VAR[gris]">commun/fond.png</texture>
+	</control>		
+	<control type="image">	
+		<top>-150</top>
+		<width>700</width>
+		<height>1380</height>
+		<texture colordiffuse="$VAR[blanc_5%]">commun/fond.png</texture>
+	</control>
+	<control type="image">	
+		<top>-150</top>
+		<left>1920</left>
+		<width>700</width>
+		<height>1380</height>
+		<texture colordiffuse="$VAR[blanc_5%]">commun/fond.png</texture>
+	</control>	
+	<control type="grouplist" id="300">																								<description>liste des boutons de gauche</description>		
+		<top>80</top>
+		<left>60</left>
+		<width>600</width>
+		<height>800</height>
+		<onright>5</onright>
+		<onup>3</onup>
+		<ondown>8000</ondown>
+		<itemgap>10</itemgap>	
+	<include content="bouton_parametre">
+		<param name="id" value="301"/>
+		<param name="width" value="580"/>
+		<param name="label" value="$LOCALIZE[31110]"/>
+		<param name="onright" value="502"/>
+	</include>	
+	<include content="bouton_parametre">
+		<param name="id" value="302"/>
+		<param name="width" value="580"/>
+		<param name="label" value="$LOCALIZE[14201]"/>
+		<param name="onright" value="602"/>
+	</include>		
+	</control>
+	<control type="grouplist" id="500">																								<description>liste des parametres</description>				
+		<visible>controlgroup(300).hasfocus(301)</visible>
+		<left>700</left>
+		<height>1080</height>
+		<width>1220</width>
+		<onleft>3</onleft>		
+		<onup>noop</onup>
+		<ondown>noop</ondown>
+		<itemgap>20</itemgap>
+		<scrolltime>250</scrolltime>
+		<usecontrolcoords>true</usecontrolcoords>	
+	<control type="label" id="501">  			
+		<textoffsety>15</textoffsety>
+		<textoffsetx>40</textoffsetx>
+		<height>60</height>
+		<textcolor>$VAR[blanc]</textcolor>
+		<shadowcolor></shadowcolor>
+		<font>b_24</font>
+		<label>$LOCALIZE[31118]</label>
+	</control>	
+	<control type="radiobutton" id="502">
+	<include content="bouton_parametrage_droit">
+		<param name="textoffsetx" value="60"/>
+		<param name="radioposx" value="1120"/>
+		<param name="label" value="$LOCALIZE[31055]"/>
+	</include>		
+		<selected>!skin.hassetting(pas_de_couleur)</selected>
+		<onclick>skin.togglesetting(pas_de_couleur)</onclick>
+		<onleft>301</onleft>
+	</control>	
+	<include content="spincontrol">
+		<param name="enable" value="!skin.hassetting(pas_de_couleur)"/>
+		<param name="id1" value="503"/>
+		<param name="id2" value="504"/>
+		<param name="id3" value="505"/>
+		<param name="id4" value="506"/>
+		<param name="id5" value="507"/>
+		<param name="id6" value="508"/>
+		<param name="id6" value="509"/>
+		<param name="id7" value="510"/>
+		<param name="label" value="$LOCALIZE[31116]"/>
+		<param name="label2" value="$INFO[skin.string(saturation)] %"/>
+		<param name="condition_onclick1_bas" value="!string.isequal(skin.string(saturation),10)"/>
+		<param name="onclick1_bas" value="setproperty(temp,$INFO[skin.string(saturation)],home)"/>
+		<param name="condition_onclick2_bas" value="!string.isequal(skin.string(saturation),10)"/>
+		<param name="onclick2_bas" value="skin.setstring(saturation,$VAR[temp_moins_1])"/>
+		<param name="condition_onclick1_haut" value="!string.isequal(skin.string(saturation),100)"/>
+		<param name="onclick1_haut" value="setproperty(temp,$INFO[skin.string(saturation)],home)"/>
+		<param name="condition_onclick1_haut" value="!string.isequal(skin.string(saturation),100)"/>
+		<param name="onclick2_haut" value="skin.setstring(saturation,$VAR[temp_plus_1])"/>
+		<param name="onup" value="502"/>
+		<param name="ondown" value="513"/>					
+	</include>
+	<control type="image" id="511">  
+		<top>-1</top>
+		<height>1</height>
+		<texture colordiffuse="$VAR[blanc_5%]">commun/fond.png</texture>
+	</control>
+	<control type="label" id="512">  			
+		<textoffsety>15</textoffsety>
+		<textoffsetx>40</textoffsetx>
+		<height>60</height>
+		<textcolor>$VAR[blanc]</textcolor>
+		<shadowcolor></shadowcolor>
+		<font>b_24</font>
+		<label>$LOCALIZE[31115]</label>
+	</control>	
+	<control type="radiobutton" id="513">
+	<include content="bouton_parametrage_droit">
+		<param name="textoffsetx" value="60"/>
+		<param name="radioposx" value="1120"/>
+		<param name="label" value="$LOCALIZE[31111]"/>
+	</include>		
+		<selected>skin.hassetting(masquer_heure)</selected>
+		<onclick>skin.togglesetting(masquer_heure)</onclick>
+		<onleft>301</onleft>
+	</control>	
+	<control type="radiobutton" id="514">
+	<include content="bouton_parametrage_droit">
+		<param name="textoffsetx" value="60"/>
+		<param name="radioposx" value="1120"/>
+		<param name="label" value="$LOCALIZE[31112]"/>
+	</include>		
+		<selected>skin.hassetting(masquer_meteo)</selected>
+		<onclick>skin.togglesetting(masquer_meteo)</onclick>
+		<onleft>301</onleft>
+	</control>
+	<control type="image" id="597">  
+		<top>-1</top>
+		<height>1</height>
+		<texture colordiffuse="$VAR[blanc_5%]">commun/fond.png</texture>
+	</control>
+	<control type="button" id="598">
+	<include content="bouton_parametrage_droit">
+		<param name="textoffsetx" value="60"/>
+		<param name="radioposx" value="1120"/>
+		<param name="label" value="$LOCALIZE[10041]"/>
+	</include>				
+		<onclick condition="skin.hassetting(pas_de_couleur)">skin.togglesetting(pas_de_couleur)</onclick>
+		<onclick>skin.setstring(saturation,30)</onclick>
+		<onclick condition="skin.hassetting(masquer_heure)">skin.togglesetting(masquer_heure)</onclick>		
+		<onclick condition="skin.hassetting(masquer_meteo)">skin.togglesetting(masquer_meteo)</onclick>	
+		<onleft>301</onleft>
+	</control>		
+	</control>	
+	<control type="grouplist" id="600">																								<description>liste des parametres</description>				
+		<visible>controlgroup(300).hasfocus(302)</visible>
+		<left>700</left>
+		<height>1080</height>
+		<width>1220</width>
+		<onleft>3</onleft>		
+		<onup>noop</onup>
+		<ondown>noop</ondown>
+		<itemgap>20</itemgap>
+		<scrolltime>250</scrolltime>
+		<usecontrolcoords>true</usecontrolcoords>	
+	<control type="label" id="601">  			
+		<textoffsety>15</textoffsety>
+		<textoffsetx>40</textoffsetx>
+		<height>60</height>
+		<textcolor>$VAR[blanc]</textcolor>
+		<shadowcolor></shadowcolor>
+		<font>b_24</font>
+		<label>$LOCALIZE[31120]</label>
+	</control>	
+	<control type="radiobutton" id="602">
+	<include content="bouton_parametrage_droit">
+		<param name="textoffsetx" value="60"/>
+		<param name="radioposx" value="1120"/>
+		<param name="label" value="$LOCALIZE[31053]"/>
+	</include>		
+		<selected>!skin.hassetting(pas_de_mini_lecteur)</selected>
+		<onclick>skin.togglesetting(pas_de_mini_lecteur)</onclick>
+		<onleft>302</onleft>
+	</control>
+	<control type="image" id="603">  
+		<top>-1</top>
+		<height>1</height>
+		<texture colordiffuse="$VAR[blanc_5%]">commun/fond.png</texture>
+	</control>	
+	<control type="label" id="604">  			
+		<textoffsety>15</textoffsety>
+		<textoffsetx>40</textoffsetx>
+		<height>60</height>
+		<textcolor>$VAR[blanc]</textcolor>
+		<shadowcolor></shadowcolor>
+		<font>b_24</font>
+		<label>$LOCALIZE[31121]</label>
+	</control>	
+	<control type="radiobutton" id="605">
+		<enable>!skin.hassetting(pas_de_pause_2)</enable>
+	<include content="bouton_parametrage_droit">
+		<param name="textoffsetx" value="60"/>
+		<param name="radioposx" value="1120"/>
+		<param name="label" value="$LOCALIZE[31122]"/>
+	</include>		
+		<selected>!skin.hassetting(pas_de_pause_1)</selected>
+		<onclick>skin.togglesetting(pas_de_pause_1)</onclick>
+		<onleft>302</onleft>
+	</control>
+	<control type="radiobutton" id="606">
+	<include content="bouton_parametrage_droit">
+		<param name="textoffsetx" value="60"/>
+		<param name="radioposx" value="1120"/>
+		<param name="label" value="$LOCALIZE[31123]"/>
+	</include>		
+		<selected>skin.hassetting(pas_de_pause_2)</selected>
+		<onclick>skin.togglesetting(pas_de_pause_2)</onclick>
+		<onclick condition="skin.hassetting(pas_de_pause_1)">skin.togglesetting(pas_de_pause_1)</onclick>
+		<onleft>302</onleft>
+	</control>	
+	<control type="image" id="607">  
+		<top>-1</top>
+		<height>1</height>
+		<texture colordiffuse="$VAR[blanc_5%]">commun/fond.png</texture>
+	</control>	
+	<control type="label" id="608">  			
+		<textoffsety>15</textoffsety>
+		<textoffsetx>40</textoffsetx>
+		<height>60</height>
+		<textcolor>$VAR[blanc]</textcolor>
+		<shadowcolor></shadowcolor>
+		<font>b_24</font>
+		<label>$LOCALIZE[31128]</label>
+	</control>	
+	<include content="spincontrol">
+		<param name="enable" value="!skin.hassetting(pas_de_fermeture_osd)"/>
+		<param name="id1" value="609"/>
+		<param name="id2" value="610"/>
+		<param name="id3" value="611"/>
+		<param name="id4" value="612"/>
+		<param name="id5" value="613"/>
+		<param name="id6" value="614"/>
+		<param name="id6" value="615"/>
+		<param name="id7" value="616"/>
+		<param name="label" value="$LOCALIZE[31126]"/>
+		<param name="label2" value="$INFO[skin.string(fermeture_osd)] $LOCALIZE[31125]"/>
+		<param name="condition_onclick1_bas" value="!string.isequal(skin.string(fermeture_osd),5)"/>
+		<param name="onclick1_bas" value="setproperty(temp,$INFO[skin.string(fermeture_osd)],home)"/>
+		<param name="condition_onclick2_bas" value="!string.isequal(skin.string(fermeture_osd),5)"/>
+		<param name="onclick2_bas" value="skin.setstring(fermeture_osd,$VAR[temp_moins_1])"/>
+		<param name="condition_onclick1_haut" value="!string.isequal(skin.string(fermeture_osd),30)"/>
+		<param name="onclick1_haut" value="setproperty(temp,$INFO[skin.string(fermeture_osd)],home)"/>
+		<param name="condition_onclick1_haut" value="!string.isequal(skin.string(fermeture_osd),30)"/>
+		<param name="onclick2_haut" value="skin.setstring(fermeture_osd,$VAR[temp_plus_1])"/>
+		<param name="onup" value="608"/>
+		<param name="ondown" value="617"/>					
+	</include>
+	<control type="radiobutton" id="617">
+	<include content="bouton_parametrage_droit">
+		<param name="textoffsetx" value="60"/>
+		<param name="radioposx" value="1120"/>
+		<param name="label" value="$LOCALIZE[31127]"/>
+	</include>		
+		<selected>skin.hassetting(pas_de_fermeture_osd)</selected>
+		<onclick>skin.togglesetting(pas_de_fermeture_osd)</onclick>
+		<onleft>302</onleft>
+	</control>		
+	<control type="image" id="618">  
+		<top>-1</top>
+		<height>1</height>
+		<texture colordiffuse="$VAR[blanc_5%]">commun/fond.png</texture>
+	</control>	
+	<control type="label" id="619">  			
+		<textoffsety>15</textoffsety>
+		<textoffsetx>40</textoffsetx>
+		<height>60</height>
+		<textcolor>$VAR[blanc]</textcolor>
+		<shadowcolor></shadowcolor>
+		<font>b_24</font>
+		<label>$LOCALIZE[31129]</label>
+	</control>	
+	<include content="spincontrol">
+		<param name="enable" value="!string.isequal(skin.string(fin_generique),0)"/>
+		<param name="id1" value="620"/>
+		<param name="id2" value="621"/>
+		<param name="id3" value="622"/>
+		<param name="id4" value="623"/>
+		<param name="id5" value="624"/>
+		<param name="id6" value="625"/>
+		<param name="id6" value="626"/>
+		<param name="id7" value="627"/>
+		<param name="label" value="$LOCALIZE[31130]"/>
+		<param name="label2" value="$INFO[skin.string(duree_generique)] $LOCALIZE[31125]"/>
+		<param name="condition_onclick1_bas" value="!string.isequal(skin.string(duree_generique),10)"/>
+		<param name="onclick1_bas" value="setproperty(temp,$INFO[skin.string(duree_generique)],home)"/>
+		<param name="condition_onclick2_bas" value="!string.isequal(skin.string(duree_generique),10)"/>
+		<param name="onclick2_bas" value="skin.setstring(duree_generique,$VAR[temp_moins_1])"/>
+		<param name="condition_onclick1_haut" value="!string.isequal(skin.string(duree_generique),90)"/>
+		<param name="onclick1_haut" value="setproperty(temp,$INFO[skin.string(duree_generique)],home)"/>
+		<param name="condition_onclick1_haut" value="!string.isequal(skin.string(duree_generique),90)"/>
+		<param name="onclick2_haut" value="skin.setstring(duree_generique,$VAR[temp_plus_1])"/>
+		<param name="onup" value="619"/>
+		<param name="ondown" value="628"/>					
+	</include>
+	<include content="spincontrol">
+		<param name="id1" value="628"/>
+		<param name="id2" value="629"/>
+		<param name="id3" value="630"/>
+		<param name="id4" value="631"/>
+		<param name="id5" value="632"/>
+		<param name="id6" value="633"/>
+		<param name="id6" value="634"/>
+		<param name="id7" value="635"/>
+		<param name="label" value="$LOCALIZE[31131]"/>
+		<param name="label2" value="$INFO[skin.string(fin_generique)] $LOCALIZE[31132]"/>
+		<param name="condition_onclick1_bas" value="!string.isequal(skin.string(fin_generique),0)"/>
+		<param name="onclick1_bas" value="setproperty(temp,$INFO[skin.string(fin_generique)],home)"/>
+		<param name="condition_onclick2_bas" value="!string.isequal(skin.string(fin_generique),0)"/>
+		<param name="onclick2_bas" value="skin.setstring(fin_generique,$VAR[temp_moins_1])"/>
+		<param name="condition_onclick1_haut" value="!string.isequal(skin.string(fin_generique),10)"/>
+		<param name="onclick1_haut" value="setproperty(temp,$INFO[skin.string(fin_generique)],home)"/>
+		<param name="condition_onclick1_haut" value="!string.isequal(skin.string(fin_generique),10)"/>
+		<param name="onclick2_haut" value="skin.setstring(fin_generique,$VAR[temp_plus_1])"/>
+		<param name="onup" value="627"/>
+		<param name="ondown" value="697"/>					
+	</include>	
+	<control type="image" id="697">  
+		<top>-1</top>
+		<height>1</height>
+		<texture colordiffuse="$VAR[blanc_5%]">commun/fond.png</texture>
+	</control>
+	<control type="button" id="698">
+	<include content="bouton_parametrage_droit">
+		<param name="textoffsetx" value="60"/>
+		<param name="radioposx" value="1120"/>
+		<param name="label" value="$LOCALIZE[10041]"/>
+	</include>				
+		<onclick condition="skin.hassetting(pas_de_mini_lecteur)">skin.togglesetting(pas_de_mini_lecteur)</onclick>
+		<onclick condition="skin.hassetting(pas_de_pause_1)">skin.togglesetting(pas_de_pause_1)</onclick>		
+		<onclick condition="skin.hassetting(pas_de_pause_2)">skin.togglesetting(pas_de_pause_2)</onclick>		
+		<onclick condition="skin.hassetting(pas_de_fermeture_osd)">skin.togglesetting(pas_de_fermeture_osd)</onclick>	
+		<onclick>skin.setstring(fermeture_osd,10)</onclick>		
+		<onclick>skin.setstring(duree_generique,30)</onclick>			
+		<onclick>skin.setstring(fin_generique,0)</onclick>			
+		<onleft>302</onleft>
+	</control>		
+	</control>
+	
+
+	<control type="image">	
+		<top>-50</top>
+		<left>700</left>
+		<width>20</width>
+		<height>1180</height>
+		<texture flipx="true">commun/ombre_verticale.png</texture>
+	</control>
+</controls>
+</window>

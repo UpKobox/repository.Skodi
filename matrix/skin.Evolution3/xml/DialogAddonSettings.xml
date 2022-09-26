@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<onload>alarmclock(masquer_tout,noop,00:01,silent)</onload>
+	<onunload>alarmclock(masquer_tout,noop,00:01,silent)</onunload>	
+	<defaultcontrol always="true">3</defaultcontrol>	
+<controls>	
+	<control type="videowindow">																									<description>lecteur video</description>		
+	</control>	
+	
+	
+	<control type="image">																											<description>fond</description>		
+		<texture colordiffuse="$VAR[gris]">commun/fond.png</texture>
+	</control>
+	
+	
+	<control type="group">
+		
+		<visible>!window.isvisible(dialogselect.xml) + !window.isvisible(filebrowser.xml)</visible>
+		<animation effect="fade" start="0" end="100" delay="500" reversible="false">visible</animation>
+	
+
+	<control type="image">	
+		<top>-150</top>
+		<width>700</width>
+		<height>1380</height>
+		<texture colordiffuse="$VAR[blanc_5%]">commun/fond.png</texture>
+	</control>
+	<control type="image">	
+		<top>-150</top>
+		<left>1920</left>
+		<width>700</width>
+		<height>1380</height>
+		<texture colordiffuse="$VAR[blanc_5%]">commun/fond.png</texture>
+	</control>
+	
+	
+	
+	
+	
+	<control type="grouplist" id="3">																								<description>liste des boutons de gauche</description>		
+		<top>80</top>
+		<left>60</left>
+		<width>600</width>
+		<height>800</height>
+		<onright>5</onright>
+		<onup>3</onup>
+		<ondown>8000</ondown>
+		<itemgap>10</itemgap>	
+	</control>	
+		
+	<control type="button" id="10">
+		<include content="bouton_parametrage_gauche">
+	</include>		
+	</control>
+	
+	<control type="grouplist" id="5">																								<description>liste des parametres</description>				
+		<left>700</left>
+		<height>1080</height>
+		<width>1220</width>
+		<onleft>3</onleft>		
+		<onright>60</onright>		
+		<onup>noop</onup>
+		<ondown>noop</ondown>
+		<itemgap>20</itemgap>
+		<pagecontrol>60</pagecontrol>
+		<scrolltime tween="Linear" easing="in">250</scrolltime>		
+	</control>	
+	<include content="scrollbar_parametres">																						<description>scrollbar</description>
+		<param name="id" value="60"/> 
+		<param name="top" value="0"/> 
+		<param name="height" value="1080"/> 
+		<param name="container" value="5"/>		
+	</include>	
+	<control type="button" id="7">
+	<include content="bouton_parametrage_droit">
+		<param name="textoffsetx" value="60"/>
+	</include>		
+	</control>
+	<control type="radiobutton" id="8">
+	<include content="bouton_parametrage_droit">
+		<param name="textoffsetx" value="60"/>
+		<param name="radioposx" value="1120"/>			 		
+	</include>		
+	</control>
+	<control type="spincontrolex" id="9">
+	<include content="bouton_parametrage_droit">
+		<param name="textoffsetx" value="60"/>
+	</include>		
+	</control>
+	<control type="edit" id="12">
+	<include content="bouton_parametrage_droit">
+		<param name="textoffsetx" value="60"/>
+	</include>	
+	</control>
+	<control type="sliderex" id="13">
+	<include content="bouton_parametrage_droit">
+		<param name="textoffsetx" value="60"/>
+	</include>	
+	</control>
+	<control type="image" id="11">  
+		<top>-1</top>
+		<height>1</height>
+		<texture colordiffuse="$VAR[blanc_5%]">commun/fond.png</texture>
+	</control>
+	<control type="label" id="14">  			
+		<textoffsety>15</textoffsety>
+		<textoffsetx>40</textoffsetx>
+		<height>60</height>
+		<textcolor>$VAR[blanc]</textcolor>
+		<shadowcolor></shadowcolor>
+		<font>b_24</font>
+	</control>
+	
+	<control type="image">	
+		<top>-50</top>
+		<left>700</left>
+		<width>20</width>
+		<height>1180</height>
+		<texture flipx="true">commun/ombre_verticale.png</texture>
+	</control>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<control type="grouplist" id="8000">																							<description>liste boutons</description>	
+		<bottom>40</bottom>
+		<height>60</height>
+		<width>600</width>
+		<onup>3</onup>
+		<align>center</align>
+		<itemgap>10</itemgap>		
+		<orientation>horizontal</orientation>		
+	<include content="bouton_parametre">
+		<param name="id" value="30"/>	
+	</include>
+	<include content="bouton_parametre">
+		<param name="id" value="29"/>	
+	</include>		
+	<include content="bouton_parametre">
+		<param name="id" value="28"/>	
+	</include>	
+	</control>	
+	
+	</control>	
+</controls>
+</window>

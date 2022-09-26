@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<onload condition="string.isempty(skin.string(fermeture_osd))">skin.setstring(fermeture_osd,10)</onload>
+	<onload condition="string.isempty(skin.string(fin_generique))">skin.setstring(fin_generique,0)</onload>
+	<onload condition="string.isempty(skin.string(duree_generique))">skin.setstring(duree_generique,30)</onload>
+	<onload condition="string.isempty(window(home).property(sortorder_episodes))">setproperty(sortorder_episodes,ascending,home)</onload>
+	<onload condition="string.isempty(window(home).property(librairie))">setproperty(librairie,films,home)</onload>		
+	<onload condition="string.isempty(window(home).property(liste_courante_films))">setproperty(liste_courante_films,1000,home)</onload>		
+	<onload condition="string.isempty(window(home).property(liste_courante_series))">setproperty(liste_courante_series,2000,home)</onload>			
+	<onload condition="string.isempty(window(home).property(liste_courante_episodes))">setproperty(liste_courante_episodes,3000,home)</onload>				
+	<onload condition="string.isempty(window(home).property(liste_courante_musique))">setproperty(liste_courante_musique,4000,home)</onload>				
+	<onload condition="string.isempty(window(home).property(liste_courante_applications))">setproperty(liste_courante_applications,5000,home)</onload>		
+	<onload condition="string.isempty(skin.string(sortby_1000))">skin.setstring(sortby_1000,dateadded)</onload>		
+	<onload condition="string.isempty(skin.string(sortorder_1000))">skin.setstring(sortorder_1000,descending)</onload>				
+	<onload condition="string.isempty(skin.string(sortby_1001))">skin.setstring(sortby_1001,title)</onload>		
+	<onload condition="string.isempty(skin.string(sortorder_1001))">skin.setstring(sortorder_1001,ascending)</onload>		
+	<onload condition="string.isempty(skin.string(sortby_1002))">skin.setstring(sortby_1002,year)</onload>		
+	<onload condition="string.isempty(skin.string(sortorder_1002))">skin.setstring(sortorder_1002,descending)</onload>		
+	<onload condition="string.isempty(skin.string(sortby_1003))">skin.setstring(sortby_1003,title)</onload>		
+	<onload condition="string.isempty(skin.string(sortorder_1003))">skin.setstring(sortorder_1003,ascending)</onload>	
+	<onload condition="string.isempty(skin.string(sortby_1004))">skin.setstring(sortby_1004,title)</onload>		
+	<onload condition="string.isempty(skin.string(sortorder_1004))">skin.setstring(sortorder_1004,ascending)</onload>	
+	<onload condition="string.isempty(skin.string(sortby_1005))">skin.setstring(sortby_1005,title)</onload>		
+	<onload condition="string.isempty(skin.string(sortorder_1005))">skin.setstring(sortorder_1005,ascending)</onload>
+	<onload condition="string.isempty(skin.string(sortby_2000))">skin.setstring(sortby_2000,dateadded)</onload>		
+	<onload condition="string.isempty(skin.string(sortorder_2000))">skin.setstring(sortorder_2000,descending)</onload>	
+	<onload condition="string.isempty(skin.string(sortby_2001))">skin.setstring(sortby_2001,title)</onload>		
+	<onload condition="string.isempty(skin.string(sortorder_2001))">skin.setstring(sortorder_2001,ascending)</onload>	
+	<onload condition="string.isempty(skin.string(sortby_2002))">skin.setstring(sortby_2002,year)</onload>		
+	<onload condition="string.isempty(skin.string(sortorder_2002))">skin.setstring(sortorder_2002,descending)</onload>	
+	<onload condition="string.isempty(skin.string(sortby_2003))">skin.setstring(sortby_2003,title)</onload>		
+	<onload condition="string.isempty(skin.string(sortorder_2003))">skin.setstring(sortorder_2003,ascending)</onload>	
+	<onload condition="string.isempty(skin.string(sortby_4000))">skin.setstring(sortby_4000,title)</onload>		
+	<onload condition="string.isempty(skin.string(sortorder_4000))">skin.setstring(sortorder_4000,ascending)</onload>		
+	<onload condition="string.isempty(skin.string(sortby_4001))">skin.setstring(sortby_4001,title)</onload>		
+	<onload condition="string.isempty(skin.string(sortorder_4001))">skin.setstring(sortorder_4001,ascending)</onload>	
+	<onload condition="string.isempty(skin.string(sortby_4002))">skin.setstring(sortby_4002,title)</onload>		
+	<onload condition="string.isempty(skin.string(sortorder_4002))">skin.setstring(sortorder_4002,ascending)</onload>	
+	<onload condition="string.isempty(skin.string(sortby_4003))">skin.setstring(sortby_4003,year)</onload>		
+	<onload condition="string.isempty(skin.string(sortorder_4003))">skin.setstring(sortorder_4003,descending)</onload>		
+	<onload condition="string.isempty(skin.string(saturation))">skin.setstring(saturation,30)</onload>	
+	<onload>alarmclock(startup,noop,00:20,silent)</onload>
+	<onload>replacewindow(home)</onload>
+<controls>	
+
+<control type="label">
+		<label></label>
+		<scroll>true</scroll>
+	</control>
+
+</controls>
+</window>

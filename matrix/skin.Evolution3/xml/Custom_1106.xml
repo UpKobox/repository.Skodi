@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window type="dialog" id="1106">
+	<zorder>9</zorder>
+	<visible>[!window.isvisible(fullscreenvideo) + system.hasalarm(masquer_tout)] | system.hasalarm(forcer_masquer_tout)</visible>	
+	<animation type="windowclose">
+		<effect type="fade" start="100" end="0" time="1000" reversible="false"/>
+	</animation>
+<controls>
+	<control type="image">
+		<texture colordiffuse="$VAR[gris]">commun/fond.png</texture>	
+	</control>
+	<include content="loading"/>
+	<control type="label">
+		<label>$NUMBER[]</label>
+		<scroll>true</scroll>
+	</control>
+</controls>
+</window>

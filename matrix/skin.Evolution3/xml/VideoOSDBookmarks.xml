@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<onload condition="!string.isequal(player.chaptercount,00)">alarmclock(focus,setfocus(11),00:00,silent)</onload>
+	<defaultcontrol always="true">2</defaultcontrol>	
+<controls>
+	<control type="group">
+		<top>270</top>
+		<animation effect="slide" end="0,-140" time="250" condition="string.isequal(skin.string(position_signets),haut)">conditional</animation>
+		<animation effect="slide" end="0,140" time="250" condition="string.isequal(skin.string(position_signets),bas)">conditional</animation>				
+	<control type="image">
+		<height>372</height>		
+		<texture colordiffuse="bf202020">commun/texture.png</texture>
+	</control>
+	<control type="list" id="11">																									<description>liste des signets</description>		
+		<top>40</top>		
+		<height>350</height>		
+		<right>0</right>		
+		<left>0</left>
+		<onup>100</onup>
+		<ondown>action(back)</ondown>
+		<orientation>horizontal</orientation>				
+		<scrolltime tween="cubic" easing="out">500</scrolltime>
+	<itemlayout height="350" width="480">		
+	<control type="image">
+		<top>17</top>
+		<left>17</left>
+		<width>446</width>
+		<height>253</height>
+		<texture colordiffuse="$VAR[couleur_dominante]">commun/texture.png</texture>
+		<visible>string.isequal(listitem.label,player.chaptername)</visible>
+	</control>
+	<control type="image">
+		<top>19</top>
+		<left>19</left>
+		<width>442</width>
+		<height>249</height>
+		<texture colordiffuse="20ffffff">commun/texture.png</texture>
+		<visible>!string.isequal(listitem.label,player.chaptername)</visible>
+	</control>
+	<control type="image">
+		<top>20</top>
+		<left>20</left>
+		<width>440</width>
+		<height>247</height>
+		<texture colordiffuse="ff000000">commun/texture.png</texture>
+		<visible>!string.isempty(listitem.icon)</visible>
+	</control>
+	<control type="image">
+		<top>20</top>
+		<left>20</left>
+		<width>440</width>
+		<height>247</height>
+		<texture>$INFO[listitem.icon]</texture>
+		<aspectratio aligny="center">keep</aspectratio> 
+		<visible>!string.isempty(listitem.icon)</visible>
+	</control>
+	<control type="image">
+		<top>20</top>
+		<left>20</left>
+		<width>440</width>
+		<height>247</height>
+		<texture>extras/divers/chapitre.png</texture>
+		<visible>string.isempty(listitem.icon)</visible>
+	</control>
+	<control type="label">			
+		<top>20</top>
+		<left>20</left>
+		<width>440</width>
+		<height>250</height>
+		<align>center</align>
+		<aligny>center</aligny>
+		<font>font21u</font>
+		<textcolor>ffffffff</textcolor>
+		<label>$INFO[listitem.label2]</label>
+		<visible>string.isempty(listitem.icon)</visible>
+	</control>	
+	<control type="label">			
+		<top>280</top>
+		<left>20</left>
+		<width>440</width>
+		<align>center</align>
+		<height>40</height>
+		<font>font21u</font>
+		<textcolor>40ffffff</textcolor>
+		<label>$INFO[listitem.label] • $INFO[listitem.label2]</label>
+		<visible>!string.isempty(listitem.icon)</visible>
+	</control>	
+	<control type="label">			
+		<top>280</top>
+		<left>20</left>
+		<width>440</width>
+		<align>center</align>
+		<height>40</height>
+		<font>font21u</font>
+		<textcolor>40ffffff</textcolor>
+		<label>$INFO[listitem.label]</label>
+		<visible>string.isempty(listitem.icon)</visible>
+	</control>	
+	</itemlayout>
+	<focusedlayout height="350" width="480">		
+	<control type="image">
+		<top>17</top>
+		<left>17</left>
+		<width>446</width>
+		<height>253</height>
+		<texture colordiffuse="$VAR[couleur_dominante]">commun/texture.png</texture>
+		<visible>string.isequal(listitem.label,player.chaptername)</visible>
+	</control>
+	<control type="image">
+		<top>19</top>
+		<left>19</left>
+		<width>442</width>
+		<height>249</height>
+		<texture colordiffuse="20ffffff">commun/texture.png</texture>
+		<visible>!string.isequal(listitem.label,player.chaptername)</visible>
+	</control>
+	<control type="image">
+		<top>20</top>
+		<left>20</left>
+		<width>440</width>
+		<height>247</height>
+		<texture colordiffuse="ff000000">commun/texture.png</texture>
+		<visible>!string.isempty(listitem.icon)</visible>
+	</control>
+	<control type="image">
+		<top>20</top>
+		<left>20</left>
+		<width>440</width>
+		<height>247</height>
+		<texture>$INFO[listitem.icon]</texture>
+		<aspectratio aligny="center">keep</aspectratio> 
+		<visible>!string.isempty(listitem.icon)</visible>
+	</control>
+	<control type="image">
+		<top>20</top>
+		<left>20</left>
+		<width>440</width>
+		<height>247</height>
+		<texture>extras/divers/chapitre.png</texture>
+		<visible>string.isempty(listitem.icon)</visible>
+	</control>
+	<control type="label">			
+		<top>20</top>
+		<left>20</left>
+		<width>440</width>
+		<height>250</height>
+		<align>center</align>
+		<aligny>center</aligny>
+		<font>font21u</font>
+		<textcolor>ffffffff</textcolor>
+		<label>$INFO[listitem.label2]</label>
+		<visible>string.isempty(listitem.icon)</visible>
+	</control>	
+	<control type="label">
+		<top>280</top>
+		<left>20</left>
+		<width>440</width>
+		<align>center</align>
+		<height>40</height>
+		<font>font21u</font>
+		<textcolor>ffffffff</textcolor>
+		<label>$INFO[listitem.label] • $INFO[listitem.label2]</label>
+		<visible>!string.isempty(listitem.icon) + control.hasfocus(11)</visible>
+	</control>	
+	<control type="label">
+		<top>280</top>
+		<left>20</left>
+		<width>440</width>
+		<align>center</align>
+		<height>40</height>
+		<font>font21u</font>
+		<textcolor>ffffffff</textcolor>
+		<label>$INFO[listitem.label]</label>
+		<visible>string.isempty(listitem.icon) + control.hasfocus(11)</visible>
+	</control>
+	<control type="label">
+		<top>280</top>
+		<left>20</left>
+		<width>440</width>
+		<align>center</align>
+		<height>40</height>
+		<font>font21u</font>
+		<textcolor>40ffffff</textcolor>
+		<label>$INFO[listitem.label] • $INFO[listitem.label2]</label>
+		<visible>!string.isempty(listitem.icon) + !control.hasfocus(11)</visible>
+	</control>	
+	<control type="label">
+		<top>280</top>
+		<left>20</left>
+		<width>440</width>
+		<align>center</align>
+		<height>40</height>
+		<font>font21u</font>
+		<textcolor>40ffffff</textcolor>
+		<label>$INFO[listitem.label]</label>
+		<visible>string.isempty(listitem.icon) + !control.hasfocus(11)</visible>
+	</control>		
+	</focusedlayout>
+	</control>		
+	
+	
+	
+	
+	
+	
+	
+	
+	<control type="grouplist" id="100">																								<description>liste boutons</description>	
+		<top>-40</top>	
+		<left>60</left>
+		<itemgap>12</itemgap>
+		<ondown>11</ondown>
+		<onright>201</onright>
+		<usecontrolcoords>true</usecontrolcoords>
+		<orientation>horizontal</orientation>				
+	<control type="button" id="20">
+		<enable>false</enable>
+		<top>2</top>
+		<height>38</height>
+		<width>80</width>
+		<texturenofocus colordiffuse="bf202020">boutons/demi_rond.png</texturenofocus>
+		<texturefocus colordiffuse="bf202020">boutons/demi_rond.png</texturefocus>
+	</control>
+	<control type="button" id="2">
+		<animation effect="zoom" start="100" end="125" center="auto" time="100" reversible="false" condition="control.hasfocus(2)">conditional</animation>
+		<animation effect="zoom" start="125" end="100" center="auto" time="100" reversible="false" condition="!control.hasfocus(2)">conditional</animation>		
+		<left>-82</left>
+		<top>10</top>
+		<height>60</height>
+		<width>60</width>
+		<texturenofocus colordiffuse="80ffffff">boutons/osd/ajouter.png</texturenofocus>
+		<texturefocus colordiffuse="ffffffff">boutons/osd/ajouter.png</texturefocus>
+	</control>		
+	<control type="button" id="21">
+		<enable>false</enable>
+		<top>2</top>
+		<height>38</height>
+		<width>80</width>
+		<texturenofocus colordiffuse="bf202020">boutons/demi_rond.png</texturenofocus>
+		<texturefocus colordiffuse="bf202020">boutons/demi_rond.png</texturefocus>
+	</control>
+	<control type="button" id="3">
+		<animation effect="zoom" start="100" end="125" center="auto" time="100" reversible="false" condition="control.hasfocus(3)">conditional</animation>
+		<animation effect="zoom" start="125" end="100" center="auto" time="100" reversible="false" condition="!control.hasfocus(3)">conditional</animation>		
+		<left>-82</left>
+		<top>10</top>
+		<height>60</height>
+		<width>60</width>
+		<texturenofocus colordiffuse="80ffffff">boutons/osd/supprimer.png</texturenofocus>
+		<texturefocus colordiffuse="ffffffff">boutons/osd/supprimer.png</texturefocus>
+	</control>	
+	</control>	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<control type="grouplist" id="200">																								<description>liste boutons</description>	
+		<top>-40</top>	
+		<left>1600</left>
+		<itemgap>12</itemgap>
+		<ondown>11</ondown>
+		<onleft>3</onleft>
+		<usecontrolcoords>true</usecontrolcoords>
+		<orientation>horizontal</orientation>			
+	<control type="button" id="40">
+		<enable>false</enable>
+		<top>2</top>
+		<height>38</height>
+		<width>80</width>
+		<texturenofocus colordiffuse="bf202020">boutons/demi_rond.png</texturenofocus>
+		<texturefocus colordiffuse="bf202020">boutons/demi_rond.png</texturefocus>
+	</control>
+	<control type="button" id="201">
+		<animation effect="zoom" start="100" end="125" center="auto" time="100" reversible="false" condition="control.hasfocus(201)">conditional</animation>
+		<animation effect="zoom" start="125" end="100" center="auto" time="100" reversible="false" condition="!control.hasfocus(201)">conditional</animation>		
+		<left>-82</left>
+		<top>10</top>
+		<height>60</height>
+		<width>60</width>
+		<onclick>skin.setstring(position_signets,haut)</onclick>
+		<texturenofocus colordiffuse="80ffffff">boutons/osd/signet_haut.png</texturenofocus>
+		<texturefocus colordiffuse="ffffffff">boutons/osd/signet_haut.png</texturefocus>
+	</control>		
+	<control type="button" id="41">
+		<enable>false</enable>
+		<top>2</top>
+		<height>38</height>
+		<width>80</width>
+		<texturenofocus colordiffuse="bf202020">boutons/demi_rond.png</texturenofocus>
+		<texturefocus colordiffuse="bf202020">boutons/demi_rond.png</texturefocus>
+	</control>
+	<control type="button" id="202">
+		<animation effect="zoom" start="100" end="125" center="auto" time="100" reversible="false" condition="control.hasfocus(202)">conditional</animation>
+		<animation effect="zoom" start="125" end="100" center="auto" time="100" reversible="false" condition="!control.hasfocus(202)">conditional</animation>		
+		<left>-82</left>
+		<top>10</top>
+		<height>60</height>
+		<width>60</width>
+		<onclick>skin.setstring(position_signets,centre)</onclick>
+		<texturenofocus colordiffuse="80ffffff">boutons/osd/signet_centre.png</texturenofocus>
+		<texturefocus colordiffuse="ffffffff">boutons/osd/signet_centre.png</texturefocus>
+	</control>			
+	<control type="button" id="42">
+		<enable>false</enable>
+		<top>2</top>
+		<height>38</height>
+		<width>80</width>
+		<texturenofocus colordiffuse="bf202020">boutons/demi_rond.png</texturenofocus>
+		<texturefocus colordiffuse="bf202020">boutons/demi_rond.png</texturefocus>
+	</control>
+	<control type="button" id="203">
+		<animation effect="zoom" start="100" end="125" center="auto" time="100" reversible="false" condition="control.hasfocus(203)">conditional</animation>
+		<animation effect="zoom" start="125" end="100" center="auto" time="100" reversible="false" condition="!control.hasfocus(203)">conditional</animation>		
+		<left>-82</left>
+		<top>10</top>
+		<height>60</height>
+		<width>60</width>
+		<onclick>skin.setstring(position_signets,bas)</onclick>
+		<texturenofocus colordiffuse="80ffffff">boutons/osd/signet_bas.png</texturenofocus>
+		<texturefocus colordiffuse="ffffffff">boutons/osd/signet_bas.png</texturefocus>
+	</control>	
+	</control>	
+	</control>	
+</controls>
+</window>

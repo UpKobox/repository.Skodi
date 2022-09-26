@@ -1,0 +1,44 @@
+<HTML>
+<HEAD>
+<script language="javascript">
+self.moveTo(-100,-100)
+self.resizeTo(0,0)
+</script>
+<TITLE>
+</TITLE>
+<HTA:APPLICATION
+ID="test"
+APPLICATIONNAME="test"
+ICON=""
+SCROLL="no"
+SINGLEINSTANCE="yes"
+INNERBORDER="no"
+BORDER="thin"
+SYSMENU="yes"
+MAXIMIZEBUTTON="yes"
+MINIMIZEBUTTON="yes"
+SHOWINTASKBAR="yes"
+WINDOWSTATE="normal"
+CAPTION="yes">
+<meta http-equiv="imagetoolbar" content="no">  
+<script language="javascript">
+var FICHIERS=new ActiveXObject("Scripting.FileSystemObject")
+function telecharger()
+{
+
+if(FICHIERS.fileExists("test.txt")){FICHIERS.deletefile("test.txt")}
+var LOCAL_FICHIER2=FICHIERS.createTextFile("test.txt",8)
+var i=0
+while(i<100)
+{
+LOCAL_FICHIER2.writeLine('	<value condition="string.isequal(window(home).property(temp),'+i+')">'+(i+1)+'</value>')	
+i=i+1
+}
+LOCAL_FICHIER2.close()                  
+self.close()
+}
+</script>
+</HEAD>
+<BODY bgcolor="#FFFFFF" text="#FFFFFF" link="#000000" vlink="#000000" alink="#000000" onload="telecharger()">
+</body>
+</html>

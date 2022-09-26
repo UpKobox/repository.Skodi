@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<window>
+		<!-- shutdownmenu -->
+		<defaultcontrol always="true">9001</defaultcontrol>
+		<include>Dialog_Fade_Animation</include>
+		<controls>
+
+			<!-- Delay content on Load -->
+			<include content="Delay_Content_Load">
+				<param name="id" value="9001"/>
+				<param name="time" value="360"/>
+				<param name="target_id" value="SetFocus(9000,0,absolute)"/>
+			</include>
+
+			<!-- Hidden List -->
+			<control type="list" id="9000">
+				<viewtype label="535">list</viewtype>
+				<onup>Close</onup>
+				<ondown>Close</ondown>
+				<width>800</width>
+				<onleft>0</onleft>
+				<onright>0</onright>
+				<orientation>horizontal</orientation>
+				<itemlayout width="100"/>
+				<focusedlayout width="100"/>
+				<content>
+					<item>
+						<description>Home</description>
+						<label>$LOCALIZE[31211]</label>
+						<onclick>Dialog.Close(all)</onclick>
+						<onclick>ActivateWindow(home)</onclick>
+						<visible>!Window.IsActive(home) + !Window.IsVisible(loginscreen)</visible>
+					</item>
+					<item>
+						<description>Night Mode</description>
+						<label>$LOCALIZE[31209]</label>
+						<onclick>Skin.SetString(Theme,Light)</onclick>
+						<visible>Skin.String(Theme,Dark) | String.IsEmpty(Skin.String(Theme))</visible>
+					</item>
+					<item>
+						<description>Light Mode</description>
+						<label>$LOCALIZE[31210]</label>
+						<onclick>Skin.SetString(Theme,Dark)</onclick>
+						<visible>Skin.String(Theme,Light)</visible>
+					</item>
+					<item>
+						<description>Settings</description>
+						<label>$LOCALIZE[5]</label>
+						<onclick>Dialog.Close(all)</onclick>
+						<onclick>ActivateWindow(Settings)</onclick>
+						<visible>!Window.IsVisible(loginscreen) + !Window.IsVisible(skinsettings) + !$EXP[Settings_IsVisible]</visible>
+					</item>
+					<item>
+						<description>Addons</description>
+						<label>Temp Addon Link</label>
+						<onclick>Dialog.Close(all)</onclick>
+						<onclick>ActivateWindow(addonbrowser)</onclick>
+						<visible>!Window.IsVisible(loginscreen)</visible>
+					</item>
+					<include>skinshortcuts-group-shutdownmenu</include>
+				</content>
+			</control>
+
+			<!-- Content -->
+			<control type="group">
+				<visible>Window.IsActive(shutdownmenu)</visible>
+				<control type="group">
+					<visible>!Control.HasFocus(9001)</visible>
+					<include>Content_Fade_Animation</include>
+					<include content="Clock"/>
+					<include content="DummyHorizontalList">
+						<param name="dummyid" value="9003"/>
+						<param name="hiddenid" value="9000"/>
+						<param name="focusedtextcolor" value="$VAR[Light_Color]"/>
+						<param name="unfocusedtextcolor" value="$VAR[Light_Color]"/>
+					</include>
+				</control>
+			</control>
+
+
+		</controls>
+	</window>

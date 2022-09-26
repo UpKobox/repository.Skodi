@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+<controls>		
+	<control type="group">
+		<visible>!window.isvisible(home)</visible>
+	<control type="image">
+		<centerleft>50%</centerleft>
+		<centertop>50%</centertop>
+		<width>200</width>
+		<height>200</height>
+		<texture colordiffuse="80ffffff">commun/fond_occupe.png</texture>
+		<aspectratio>keep</aspectratio>		
+	</control>
+	<control type="image">																														<description>animation</description>				
+		<centerleft>50%</centerleft>
+		<centertop>50%</centertop>
+		<width>200</width>
+		<height>200</height>
+		<texture colordiffuse="$VAR[couleur_texte]">commun/occupe.png</texture>
+		<aspectratio>keep</aspectratio>
+		<animation effect="rotate" center="auto" start="360" end="0" time="1500" loop="true" condition="true">Conditional</animation>
+	</control>
+	</control>
+</controls>
+</window>

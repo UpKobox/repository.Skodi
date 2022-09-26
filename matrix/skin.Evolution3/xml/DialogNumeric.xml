@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<zorder>3</zorder>						
+	<defaultcontrol always="true">21</defaultcontrol>	
+<controls>	
+	<control type="group">		
+		<animation type="windowopen" reversible="false">
+			<effect type="zoom" start="80" end="100" center="960,540" delay="160" tween="back" time="250"/>
+		</animation>
+		<animation type="windowclose" reversible="false">
+			<effect type="zoom" start="100" end="90" center="960,540" easing="in" tween="back" time="250"/>
+			<effect type="fade" delay="240" start="100" end="0" time="10"/>
+		</animation>
+	<control type="image">
+		<top>644</top>
+		<centerleft>50%</centerleft>
+		<height>140</height>
+		<width>580</width>
+		<texture colordiffuse="bf000000">commun/fanart_ombre.png</texture>
+		<aspectratio>stretch</aspectratio>
+	</control>	
+	<control type="image">				
+		<top>365</top>
+		<centerleft>50%</centerleft>
+		<width>514</width>
+		<height>350</height>
+		<texture colordiffuse="$VAR[couleur_texte]" border="44">commun/chaines.png</texture>
+	</control>	
+	<control type="image">				
+		<top>366</top>
+		<centerleft>50%</centerleft>
+		<width>512</width>
+		<height>348</height>
+		<texture colordiffuse="$VAR[blanc]" border="44">commun/chaines.png</texture>
+	</control>	
+	<control type="image">																											<description>fond texte</description>				
+		<centerleft>50%</centerleft>
+		<top>430</top>
+		<width>408</width>
+		<height>48</height>
+		<texture colordiffuse="$VAR[couleur_texture]">commun/texture.png</texture>
+	</control>
+	<control type="label" id="4">																									<description>texte entré</description>
+		<centerleft>50%</centerleft>
+		<top>414</top>		
+		<width>404</width>
+		<height>80</height>
+		<align>center</align>
+		<aligny>center</aligny>
+		<textcolor>$VAR[couleur_texte]</textcolor>
+		<focusedcolor>$VAR[couleur_texte]</focusedcolor>
+		<disabledcolor>$VAR[couleur_texte_40%]</disabledcolor>
+		<font>font22u</font>
+	</control>	
+	<control type="grouplist">	 																									<description>boutons du clavier</description>
+		<centerleft>50%</centerleft>
+		<top>480</top>
+		<width>480</width>
+		<height>500</height>
+		<itemgap>2</itemgap>
+		<orientation>vertical</orientation>
+	<control type="grouplist" id="949">																								<description>1ere rangée de boutons</description>
+		<align>center</align>
+		<height>60</height>
+		<itemgap>2</itemgap>
+		<orientation>horizontal</orientation>
+	<control type="button" id="11">
+		<onup>21</onup>
+		<ondown>16</ondown>
+	<include>bouton_clavier</include>	
+		<label>$LOCALIZE[12311]</label>
+	</control>
+	<control type="button" id="12">
+		<onup>301</onup>
+		<ondown>17</ondown>
+	<include>bouton_clavier</include>	
+		<label>$LOCALIZE[12312]</label>
+	</control>
+	<control type="button" id="13">
+		<onup>20</onup>
+		<ondown>18</ondown>
+	<include>bouton_clavier</include>	
+		<label>$LOCALIZE[12313]</label>
+	</control>
+	<control type="button" id="14">
+		<onup>22</onup>
+		<ondown>19</ondown>
+	<include>bouton_clavier</include>	
+		<label>$LOCALIZE[12314]</label>
+	</control>
+	<control type="button" id="15">
+		<onup>23</onup>
+		<ondown>10</ondown>
+	<include>bouton_clavier</include>	
+		<label>$LOCALIZE[12315]</label>
+	</control>
+	</control>	
+	<control type="grouplist" id="950">																								<description>2eme rangée de boutons</description>
+		<align>center</align>
+		<height>60</height>
+		<itemgap>2</itemgap>
+		<orientation>horizontal</orientation>	
+	<control type="button" id="16">
+		<onup>11</onup>
+		<ondown>21</ondown>
+	<include>bouton_clavier</include>	
+		<label>$LOCALIZE[12316]</label>
+	</control>
+	<control type="button" id="17">
+		<onup>12</onup>
+		<ondown>301</ondown>
+	<include>bouton_clavier</include>	
+		<label>$LOCALIZE[12317]</label>
+	</control>
+	<control type="button" id="18">
+		<onup>13</onup>
+		<ondown>20</ondown>
+	<include>bouton_clavier</include>	
+		<label>$LOCALIZE[12318]</label>
+	</control>
+	<control type="button" id="19">
+		<onup>14</onup>
+		<ondown>22</ondown>
+	<include>bouton_clavier</include>	
+		<label>$LOCALIZE[12319]</label>
+	</control>
+	<control type="button" id="10">
+		<onup>15</onup>
+		<ondown>23</ondown>
+	<include>bouton_clavier</include>	
+		<label>$LOCALIZE[12310]</label>
+	</control>
+	</control>	
+	<control type="grouplist" id="951">																								<description>boutons de controle</description>
+		<align>center</align>
+		<height>60</height>
+		<itemgap>2</itemgap>
+		<orientation>horizontal</orientation>
+	<control type="radiobutton" id="21">
+		<onup>16</onup>
+		<ondown>11</ondown>
+		<textureradioonfocus colordiffuse="$VAR[blanc]">boutons/clavier/valider.png</textureradioonfocus>
+		<textureradioonnofocus colordiffuse="$VAR[couleur_texte]">boutons/clavier/valider.png</textureradioonnofocus>
+		<textureradioofffocus colordiffuse="$VAR[blanc]">boutons/clavier/valider.png</textureradioofffocus>
+		<textureradiooffnofocus colordiffuse="$VAR[couleur_texte]">boutons/clavier/valider.png</textureradiooffnofocus>
+		<radioposx>20</radioposx>
+		<radiowidth>40</radiowidth>
+		<radioheight>40</radioheight>
+	<include>bouton_clavier</include>
+	</control>
+	<control type="radiobutton" id="301">			
+	    <onup>17</onup>
+		<ondown>12</ondown>
+		<textureradioonfocus colordiffuse="$VAR[blanc]">boutons/clavier/annuler.png</textureradioonfocus>
+		<textureradioonnofocus colordiffuse="$VAR[couleur_texte]">boutons/clavier/annuler.png</textureradioonnofocus>
+		<textureradioofffocus colordiffuse="$VAR[blanc]">boutons/clavier/annuler.png</textureradioofffocus>
+		<textureradiooffnofocus colordiffuse="$VAR[couleur_texte]">boutons/clavier/annuler.png</textureradiooffnofocus>
+		<radioposx>20</radioposx>
+		<radiowidth>40</radiowidth>
+		<radioheight>40</radioheight>
+		<onclick>action(back)</onclick>	
+	<include>bouton_clavier</include>
+	</control>
+	<control type="radiobutton" id="20">
+		<onup>18</onup>
+		<ondown>13</ondown>
+		<textureradioonfocus colordiffuse="$VAR[blanc]">boutons/clavier/arrowleft.png</textureradioonfocus>
+		<textureradioonnofocus colordiffuse="$VAR[couleur_texte]">boutons/clavier/arrowleft.png</textureradioonnofocus>
+		<textureradioofffocus colordiffuse="$VAR[blanc]">boutons/clavier/arrowleft.png</textureradioofffocus>
+		<textureradiooffnofocus colordiffuse="$VAR[couleur_texte]">boutons/clavier/arrowleft.png</textureradiooffnofocus>
+		<radioposx>20</radioposx>
+		<radiowidth>40</radiowidth>
+		<radioheight>40</radioheight>
+	<include>bouton_clavier</include>
+	</control>
+	<control type="radiobutton" id="22">
+		<onup>19</onup>		
+		<ondown>14</ondown>
+		<textureradioonfocus colordiffuse="$VAR[blanc]">boutons/clavier/arrowright.png</textureradioonfocus>
+		<textureradioonnofocus colordiffuse="$VAR[couleur_texte]">boutons/clavier/arrowright.png</textureradioonnofocus>
+		<textureradioofffocus colordiffuse="$VAR[blanc]">boutons/clavier/arrowright.png</textureradioofffocus>
+		<textureradiooffnofocus colordiffuse="$VAR[couleur_texte]">boutons/clavier/arrowright.png</textureradiooffnofocus>	
+		<radioposx>20</radioposx>
+		<radiowidth>40</radiowidth>
+		<radioheight>40</radioheight>
+	<include>bouton_clavier</include>
+	</control>
+	<control type="radiobutton" id="23">
+		<onup>10</onup>
+		<ondown>15</ondown>
+		<textureradioonfocus colordiffuse="$VAR[blanc]">boutons/clavier/backspace.png</textureradioonfocus>
+		<textureradioonnofocus colordiffuse="$VAR[couleur_texte]">boutons/clavier/backspace.png</textureradioonnofocus>
+		<textureradioofffocus colordiffuse="$VAR[blanc]">boutons/clavier/backspace.png</textureradioofffocus>
+		<textureradiooffnofocus colordiffuse="$VAR[couleur_texte]">boutons/clavier/backspace.png</textureradiooffnofocus>		
+		<radioposx>20</radioposx>
+		<radiowidth>40</radiowidth>
+		<radioheight>40</radioheight>
+	<include>bouton_clavier</include>
+	</control>
+	</control>
+	</control>		
+	</control>	
+</controls>
+</window>

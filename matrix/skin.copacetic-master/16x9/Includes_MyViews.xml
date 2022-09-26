@@ -1,0 +1,1150 @@
+	<includes>
+
+	<include name="AddonBrowser_Controls">
+		<control type="radiobutton" id="5">
+			<description>Enable auto update</description>
+			<visible allowhiddenfocus="true">false</visible>
+		</control>
+		<control type="radiobutton" id="6">
+			<description>Enable addon notifications</description>
+			<visible allowhiddenfocus="true">false</visible>
+		</control>
+		<control type="radiobutton" id="7">
+			<description>Enable language filter</description>
+			<visible allowhiddenfocus="true">false</visible>
+		</control>
+		<control type="radiobutton" id="8">
+			<description>Hide broken addons</description>
+			<visible allowhiddenfocus="true">false</visible>
+		</control>
+		<control type="button" id="9">
+			<description>Check for repo updates</description>
+			<visible allowhiddenfocus="true">false</visible>
+		</control>
+	</include>
+
+	<include name="MyMusicNav_Controls">
+		<control type="edit" id="8">
+			<description>Search for a string anywhere in the Kodi music database</description>
+			<visible allowhiddenfocus="true">false</visible>
+		</control>
+		<control type="radiobutton" id="16">
+			<description>Start party mode (randomly play songs from your entire music collection)</description>
+			<visible allowhiddenfocus="true">false</visible>
+		</control>
+		<control type="edit" id="19">
+			<description>Filter the media files to only show items that include the specified string in the name</description>
+			<visible allowhiddenfocus="true">false</visible>
+		</control>
+		<control type="button" id="20">
+			<description>Update library</description>
+			<visible allowhiddenfocus="true">false</visible>
+		</control>
+	</include>
+
+	<include name="MyPics_Controls">
+		<control type="button" id="6">
+			<description>Start a picture slideshow</description>
+			<visible allowhiddenfocus="true">false</visible>
+		</control>
+		<control type="button" id="7">
+			<description>Start a recursive picture slideshow</description>
+			<visible allowhiddenfocus="true">false</visible>
+		</control>
+		<control type="radiobutton" id="9">
+			<onup>SetFocus(3000)</onup>
+			<ondown>0</ondown>
+			<onback>3001</onback>
+			<onleft>3001</onleft>
+			<onright>3001</onright>
+			<description>Randomize the picture slideshow</description>
+			<visible allowhiddenfocus="true">false</visible>
+			<onfocus>ClearProperty(Scrollbars,home)</onfocus>
+			<onfocus>SetProperty(OptionsMenu,Active,home)</onfocus>
+			<onunfocus>ClearProperty(OptionsMenu,home)</onunfocus>
+		</control>
+
+		<include content="Hidden_List">
+			<param name="visible" value="ListItem.IsFolder"/>
+			<param name="sortby" value="date"/>
+			<param name="sortorder" value="descending"/>
+		</include>
+
+	</include>
+
+	<include name="MyPlaylist_Controls">
+		<control type="radiobutton" id="20">
+			<description>Shuffle the playlist</description>
+			<visible allowhiddenfocus="true">false</visible>
+		</control>
+		<control type="button" id="21">
+			<description>Save the playlist</description>
+			<visible allowhiddenfocus="true">false</visible>
+		</control>
+		<control type="button" id="22">
+			<description>Clear the playlist</description>
+			<visible allowhiddenfocus="true">false</visible>
+		</control>
+		<control type="button" id="23">
+			<description>Play the playlist</description>
+			<visible allowhiddenfocus="true">false</visible>
+		</control>
+		<control type="button" id="24">
+			<description>Play next item in playlist</description>
+			<visible allowhiddenfocus="true">false</visible>
+		</control>
+		<control type="button" id="25">
+			<description>Play previous item in playlist</description>
+			<visible allowhiddenfocus="true">false</visible>
+		</control>
+		<control type="button" id="26">
+			<description>Put the playlist on repeat</description>
+			<visible allowhiddenfocus="true">false</visible>
+		</control>
+	</include>
+
+	<include name="MyVideoNav_Controls">
+		<control type="edit" id="8">
+			<description>Search for a string anywhere in the Kodi music database</description>
+			<visible allowhiddenfocus="true">false</visible>
+		</control>
+		<control type="button" id="14">
+			<description>Show only unwatched or all videos</description>
+			<visible allowhiddenfocus="true">false</visible>
+		</control>
+		<control type="edit" id="19">
+			<description>Filter the media files to only show items that include the specified string in the name</description>
+			<visible allowhiddenfocus="true">false</visible>
+		</control>
+		<control type="button" id="20">
+			<description>Update library</description>
+			<visible allowhiddenfocus="true">false</visible>
+		</control>
+
+		<include content="Hidden_List">
+			<param name="visible" value="ListItem.IsCollection + !Skin.HasSetting(Secondary_List_Enabled)"/>
+			<param name="sortby" value="year"/>
+			<param name="sortorder" value="ascending"/>
+		</include>
+
+	</include>
+
+
+	<include name="MyViews_Hidden_Controls">
+		<control type="group">
+
+			<!-- Hidden buttons for all windows -->
+			<control type="button" id="2">
+				<description>Select viewtype</description>
+				<visible allowhiddenfocus="true">false</visible>
+			</control>
+			<control type="button" id="3">
+				<description>Select sort method</description>
+				<visible allowhiddenfocus="true">false</visible>
+			</control>
+			<control type="togglebutton" id="4">
+				<description>Select sortmode (ascending or descending)</description>
+				<visible allowhiddenfocus="true">false</visible>
+			</control>
+
+			<!-- Hidden GridView dropshadow checkers -->
+			<control type="group" id="9601">
+				<visible>!String.IsEmpty(ListItemNoWrap(1).Label)</visible>
+			</control>
+			<control type="group" id="9602">
+				<visible>!String.IsEmpty(ListItemNoWrap(2).Label)</visible>
+			</control>
+			<control type="group" id="9603">
+				<visible>!String.IsEmpty(ListItemNoWrap(3).Label)</visible>
+			</control>
+			<control type="group" id="9604">
+				<visible>!String.IsEmpty(ListItemNoWrap(4).Label)</visible>
+			</control>
+			<control type="group" id="9605">
+				<visible>!String.IsEmpty(ListItemNoWrap(5).Label)</visible>
+			</control>
+			<control type="group" id="9606">
+				<visible>!String.IsEmpty(ListItemNoWrap(6).Label)</visible>
+			</control>
+			<control type="group" id="9607">
+				<visible>String.IsEqual(ListItemNoWrap(-6).Overlay,OverlayWatched.png)</visible>
+			</control>
+			<control type="group" id="9608">
+				<visible>String.IsEqual(ListItemNoWrap(-5).Overlay,OverlayWatched.png)</visible>
+			</control>
+			<control type="group" id="9609">
+				<visible>String.IsEqual(ListItemNoWrap(-4).Overlay,OverlayWatched.png)</visible>
+			</control>
+			<control type="group" id="9610">
+				<visible>String.IsEqual(ListItemNoWrap(-3).Overlay,OverlayWatched.png)</visible>
+			</control>
+			<control type="group" id="9611">
+				<visible>String.IsEqual(ListItemNoWrap(-2).Overlay,OverlayWatched.png)</visible>
+			</control>
+			<control type="group" id="9612">
+				<visible>String.IsEqual(ListItemNoWrap(-1).Overlay,OverlayWatched.png)</visible>
+			</control>
+			<control type="group" id="9613">
+				<visible>String.IsEqual(ListItemNoWrap(1).Overlay,OverlayWatched.png)</visible>
+			</control>
+			<control type="group" id="9614">
+				<visible>String.IsEqual(ListItemNoWrap(2).Overlay,OverlayWatched.png)</visible>
+			</control>
+			<control type="group" id="9615">
+				<visible>String.IsEqual(ListItemNoWrap(3).Overlay,OverlayWatched.png)</visible>
+			</control>
+			<control type="group" id="9616">
+				<visible>String.IsEqual(ListItemNoWrap(4).Overlay,OverlayWatched.png)</visible>
+			</control>
+			<control type="group" id="9617">
+				<visible>String.IsEqual(ListItemNoWrap(5).Overlay,OverlayWatched.png)</visible>
+			</control>
+			<control type="group" id="9618">
+				<visible>String.IsEqual(ListItemNoWrap(6).Overlay,OverlayWatched.png)</visible>
+			</control>
+
+			<!-- Close Options Menu -->
+			<control type="button" id="3001">
+				<visible allowhiddenfocus="true">false</visible>
+				<onfocus>SetFocus(50)</onfocus>
+			</control>
+
+			<!-- Open Scrollbars -->
+			<control type="button" id="61">
+				<visible allowhiddenfocus="true">false</visible>
+				<onfocus>SetProperty(Scrollbars,true,home)</onfocus>
+				<onfocus>SetFocus(60)</onfocus>
+			</control>
+
+			<!-- Close Scrollbars -->
+			<control type="button" id="62">
+				<visible allowhiddenfocus="true">false</visible>
+				<onfocus>ClearProperty(Scrollbars,home)</onfocus>
+				<onfocus>SetFocus(50)</onfocus>
+			</control>
+
+			<!-- Flag checkers -->
+			<control type="image" id="914">
+				<left>-100</left>
+				<width>10</width>
+				<height>10</height>
+				<texture fallback="flags/blank.png">$VAR[Studio_Flag]</texture>
+			</control>
+			<control type="image" id="915">
+				<left>-100</left>
+				<width>10</width>
+				<height>10</height>
+				<texture fallback="flags/blank.png">$VAR[MPAA_Flag]</texture>
+			</control>
+
+			<!-- Hidden Music Player Controls -->
+			<include condition="Skin.HasSetting(Music_Player_Enabled)" content="Music_Player_Buttons"/>
+
+			<!-- Hidden Controls for animation trigger on menu switching and resetting multiart if enabled-->
+			<control type="button" id="940">
+				<visible allowhiddenfocus="true">false</visible>
+				<onfocus>SetProperty(OptionsSwitching,Active,Home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow)">ClearProperty(Multiart_0,home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow)">ClearProperty(Multiart_1,home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow)">ClearProperty(Multiart_2,home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow)">ClearProperty(Multiart_3,home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow)">ClearProperty(Multiart_4,home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow)">ClearProperty(Multiart_5,home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow)">ClearProperty(Multiart_6,home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow)">ClearProperty(Multiart_7,home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow)">ClearProperty(Multiart_8,home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow)">ClearProperty(Multiart_9,home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow)">ClearProperty(Multiart_10,home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow)">ClearProperty(Multiart_11,home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow)">ClearProperty(Multiart_12,home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow)">ClearProperty(Multiart_13,home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow)">ClearProperty(Multiart_14,home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow)">ClearProperty(Multiart_15,home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),thumb) + !String.IsEmpty(ListItem.Art(thumb))">SetProperty(Multiart_0,$ESCINFO[Container.ListItem.Art(thumb)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),thumb) + !String.IsEmpty(ListItem.Art(thumb1))">SetProperty(Multiart_1,$ESCINFO[Container.ListItem.Art(thumb1)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),thumb) + !String.IsEmpty(ListItem.Art(thumb2))">SetProperty(Multiart_2,$ESCINFO[Container.ListItem.Art(thumb2)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),thumb) + !String.IsEmpty(ListItem.Art(thumb3))">SetProperty(Multiart_3,$ESCINFO[Container.ListItem.Art(thumb3)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),thumb) + !String.IsEmpty(ListItem.Art(thumb4))">SetProperty(Multiart_4,$ESCINFO[Container.ListItem.Art(thumb4)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),thumb) + !String.IsEmpty(ListItem.Art(thumb5))">SetProperty(Multiart_5,$ESCINFO[Container.ListItem.Art(thumb5)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),thumb) + !String.IsEmpty(ListItem.Art(thumb6))">SetProperty(Multiart_6,$ESCINFO[Container.ListItem.Art(thumb6)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),thumb) + !String.IsEmpty(ListItem.Art(thumb7))">SetProperty(Multiart_7,$ESCINFO[Container.ListItem.Art(thumb7)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),thumb) + !String.IsEmpty(ListItem.Art(thumb8))">SetProperty(Multiart_8,$ESCINFO[Container.ListItem.Art(thumb8)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),thumb) + !String.IsEmpty(ListItem.Art(thumb9))">SetProperty(Multiart_9,$ESCINFO[Container.ListItem.Art(thumb9)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),thumb) + !String.IsEmpty(ListItem.Art(thumb10))">SetProperty(Multiart_10,$ESCINFO[Container.ListItem.Art(thumb10)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),thumb) + !String.IsEmpty(ListItem.Art(thumb11))">SetProperty(Multiart_11,$ESCINFO[Container.ListItem.Art(thumb11)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),thumb) + !String.IsEmpty(ListItem.Art(thumb12))">SetProperty(Multiart_12,$ESCINFO[Container.ListItem.Art(thumb12)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),thumb) + !String.IsEmpty(ListItem.Art(thumb13))">SetProperty(Multiart_13,$ESCINFO[Container.ListItem.Art(thumb13)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),thumb) + !String.IsEmpty(ListItem.Art(thumb14))">SetProperty(Multiart_14,$ESCINFO[Container.ListItem.Art(thumb14)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),thumb) + !String.IsEmpty(ListItem.Art(thumb15))">SetProperty(Multiart_15,$ESCINFO[Container.ListItem.Art(thumb15)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),keyart) + !String.IsEmpty(ListItem.Art(keyart))">SetProperty(Multiart_0,$ESCINFO[Container.ListItem.Art(keyart)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),keyart) + !String.IsEmpty(ListItem.Art(keyart1))">SetProperty(Multiart_1,$ESCINFO[Container.ListItem.Art(keyart1)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),keyart) + !String.IsEmpty(ListItem.Art(keyart2))">SetProperty(Multiart_2,$ESCINFO[Container.ListItem.Art(keyart2)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),keyart) + !String.IsEmpty(ListItem.Art(keyart3))">SetProperty(Multiart_3,$ESCINFO[Container.ListItem.Art(keyart3)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),keyart) + !String.IsEmpty(ListItem.Art(keyart4))">SetProperty(Multiart_4,$ESCINFO[Container.ListItem.Art(keyart4)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),keyart) + !String.IsEmpty(ListItem.Art(keyart5))">SetProperty(Multiart_5,$ESCINFO[Container.ListItem.Art(keyart5)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),keyart) + !String.IsEmpty(ListItem.Art(keyart6))">SetProperty(Multiart_6,$ESCINFO[Container.ListItem.Art(keyart6)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),keyart) + !String.IsEmpty(ListItem.Art(keyart7))">SetProperty(Multiart_7,$ESCINFO[Container.ListItem.Art(keyart7)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),keyart) + !String.IsEmpty(ListItem.Art(keyart8))">SetProperty(Multiart_8,$ESCINFO[Container.ListItem.Art(keyart8)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),keyart) + !String.IsEmpty(ListItem.Art(keyart9))">SetProperty(Multiart_9,$ESCINFO[Container.ListItem.Art(keyart9)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),keyart) + !String.IsEmpty(ListItem.Art(keyart10))">SetProperty(Multiart_10,$ESCINFO[Container.ListItem.Art(keyart10)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),keyart) + !String.IsEmpty(ListItem.Art(keyart11))">SetProperty(Multiart_11,$ESCINFO[Container.ListItem.Art(keyart11)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),keyart) + !String.IsEmpty(ListItem.Art(keyart12))">SetProperty(Multiart_12,$ESCINFO[Container.ListItem.Art(keyart12)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),keyart) + !String.IsEmpty(ListItem.Art(keyart13))">SetProperty(Multiart_13,$ESCINFO[Container.ListItem.Art(keyart13)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),keyart) + !String.IsEmpty(ListItem.Art(keyart14))">SetProperty(Multiart_14,$ESCINFO[Container.ListItem.Art(keyart14)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),keyart) + !String.IsEmpty(ListItem.Art(keyart15))">SetProperty(Multiart_15,$ESCINFO[Container.ListItem.Art(keyart15)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),poster) + !String.IsEmpty(ListItem.Art(poster))">SetProperty(Multiart_0,$ESCINFO[Container.ListItem.Art(poster)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),poster) + !String.IsEmpty(ListItem.Art(poster1))">SetProperty(Multiart_1,$ESCINFO[Container.ListItem.Art(poster1)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),poster) + !String.IsEmpty(ListItem.Art(poster2))">SetProperty(Multiart_2,$ESCINFO[Container.ListItem.Art(poster2)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),poster) + !String.IsEmpty(ListItem.Art(poster3))">SetProperty(Multiart_3,$ESCINFO[Container.ListItem.Art(poster3)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),poster) + !String.IsEmpty(ListItem.Art(poster4))">SetProperty(Multiart_4,$ESCINFO[Container.ListItem.Art(poster4)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),poster) + !String.IsEmpty(ListItem.Art(poster5))">SetProperty(Multiart_5,$ESCINFO[Container.ListItem.Art(poster5)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),poster) + !String.IsEmpty(ListItem.Art(poster6))">SetProperty(Multiart_6,$ESCINFO[Container.ListItem.Art(poster6)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),poster) + !String.IsEmpty(ListItem.Art(poster7))">SetProperty(Multiart_7,$ESCINFO[Container.ListItem.Art(poster7)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),poster) + !String.IsEmpty(ListItem.Art(poster8))">SetProperty(Multiart_8,$ESCINFO[Container.ListItem.Art(poster8)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),poster) + !String.IsEmpty(ListItem.Art(poster9))">SetProperty(Multiart_9,$ESCINFO[Container.ListItem.Art(poster9)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),poster) + !String.IsEmpty(ListItem.Art(poster10))">SetProperty(Multiart_10,$ESCINFO[Container.ListItem.Art(poster10)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),poster) + !String.IsEmpty(ListItem.Art(poster11))">SetProperty(Multiart_11,$ESCINFO[Container.ListItem.Art(poster11)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),poster) + !String.IsEmpty(ListItem.Art(poster12))">SetProperty(Multiart_12,$ESCINFO[Container.ListItem.Art(poster12)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),poster) + !String.IsEmpty(ListItem.Art(poster13))">SetProperty(Multiart_13,$ESCINFO[Container.ListItem.Art(poster13)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),poster) + !String.IsEmpty(ListItem.Art(poster14))">SetProperty(Multiart_14,$ESCINFO[Container.ListItem.Art(poster14)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),poster) + !String.IsEmpty(ListItem.Art(poster15))">SetProperty(Multiart_15,$ESCINFO[Container.ListItem.Art(poster15)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),fanart) + !String.IsEmpty(ListItem.Art(fanart))">SetProperty(Multiart_0,$ESCINFO[Container.ListItem.Art(fanart)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),fanart) + !String.IsEmpty(ListItem.Art(fanart1))">SetProperty(Multiart_1,$ESCINFO[Container.ListItem.Art(fanart1)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),fanart) + !String.IsEmpty(ListItem.Art(fanart2))">SetProperty(Multiart_2,$ESCINFO[Container.ListItem.Art(fanart2)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),fanart) + !String.IsEmpty(ListItem.Art(fanart3))">SetProperty(Multiart_3,$ESCINFO[Container.ListItem.Art(fanart3)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),fanart) + !String.IsEmpty(ListItem.Art(fanart4))">SetProperty(Multiart_4,$ESCINFO[Container.ListItem.Art(fanart4)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),fanart) + !String.IsEmpty(ListItem.Art(fanart5))">SetProperty(Multiart_5,$ESCINFO[Container.ListItem.Art(fanart5)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),fanart) + !String.IsEmpty(ListItem.Art(fanart6))">SetProperty(Multiart_6,$ESCINFO[Container.ListItem.Art(fanart6)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),fanart) + !String.IsEmpty(ListItem.Art(fanart7))">SetProperty(Multiart_7,$ESCINFO[Container.ListItem.Art(fanart7)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),fanart) + !String.IsEmpty(ListItem.Art(fanart8))">SetProperty(Multiart_8,$ESCINFO[Container.ListItem.Art(fanart8)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),fanart) + !String.IsEmpty(ListItem.Art(fanart9))">SetProperty(Multiart_9,$ESCINFO[Container.ListItem.Art(fanart9)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),fanart) + !String.IsEmpty(ListItem.Art(fanart10))">SetProperty(Multiart_10,$ESCINFO[Container.ListItem.Art(fanart10)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),fanart) + !String.IsEmpty(ListItem.Art(fanart11))">SetProperty(Multiart_11,$ESCINFO[Container.ListItem.Art(fanart11)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),fanart) + !String.IsEmpty(ListItem.Art(fanart12))">SetProperty(Multiart_12,$ESCINFO[Container.ListItem.Art(fanart12)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),fanart) + !String.IsEmpty(ListItem.Art(fanart13))">SetProperty(Multiart_13,$ESCINFO[Container.ListItem.Art(fanart13)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),fanart) + !String.IsEmpty(ListItem.Art(fanart14))">SetProperty(Multiart_14,$ESCINFO[Container.ListItem.Art(fanart14)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),fanart) + !String.IsEmpty(ListItem.Art(fanart15))">SetProperty(Multiart_15,$ESCINFO[Container.ListItem.Art(fanart15)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),square) + !String.IsEmpty(ListItem.Art(square))">SetProperty(Multiart_0,$ESCINFO[Container.ListItem.Art(square)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),square) + !String.IsEmpty(ListItem.Art(square1))">SetProperty(Multiart_1,$ESCINFO[Container.ListItem.Art(square1)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),square) + !String.IsEmpty(ListItem.Art(square2))">SetProperty(Multiart_2,$ESCINFO[Container.ListItem.Art(square2)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),square) + !String.IsEmpty(ListItem.Art(square3))">SetProperty(Multiart_3,$ESCINFO[Container.ListItem.Art(square3)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),square) + !String.IsEmpty(ListItem.Art(square4))">SetProperty(Multiart_4,$ESCINFO[Container.ListItem.Art(square4)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),square) + !String.IsEmpty(ListItem.Art(square5))">SetProperty(Multiart_5,$ESCINFO[Container.ListItem.Art(square5)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),square) + !String.IsEmpty(ListItem.Art(square6))">SetProperty(Multiart_6,$ESCINFO[Container.ListItem.Art(square6)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),square) + !String.IsEmpty(ListItem.Art(square7))">SetProperty(Multiart_7,$ESCINFO[Container.ListItem.Art(square7)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),square) + !String.IsEmpty(ListItem.Art(square8))">SetProperty(Multiart_8,$ESCINFO[Container.ListItem.Art(square8)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),square) + !String.IsEmpty(ListItem.Art(square9))">SetProperty(Multiart_9,$ESCINFO[Container.ListItem.Art(square9)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),square) + !String.IsEmpty(ListItem.Art(square10))">SetProperty(Multiart_10,$ESCINFO[Container.ListItem.Art(square10)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),square) + !String.IsEmpty(ListItem.Art(square11))">SetProperty(Multiart_11,$ESCINFO[Container.ListItem.Art(square11)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),square) + !String.IsEmpty(ListItem.Art(square12))">SetProperty(Multiart_12,$ESCINFO[Container.ListItem.Art(square12)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),square) + !String.IsEmpty(ListItem.Art(square13))">SetProperty(Multiart_13,$ESCINFO[Container.ListItem.Art(square13)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),square) + !String.IsEmpty(ListItem.Art(square14))">SetProperty(Multiart_14,$ESCINFO[Container.ListItem.Art(square14)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),square) + !String.IsEmpty(ListItem.Art(square15))">SetProperty(Multiart_15,$ESCINFO[Container.ListItem.Art(square15)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),tvshow.keyart) + !String.IsEmpty(ListItem.Art(tvshow.keyart))">SetProperty(Multiart_0,$ESCINFO[Container.ListItem.Art(tvshow.keyart)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),tvshow.keyart) + !String.IsEmpty(ListItem.Art(tvshow.keyart1))">SetProperty(Multiart_1,$ESCINFO[Container.ListItem.Art(tvshow.keyart1)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),tvshow.keyart) + !String.IsEmpty(ListItem.Art(tvshow.keyart2))">SetProperty(Multiart_2,$ESCINFO[Container.ListItem.Art(tvshow.keyart2)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),tvshow.keyart) + !String.IsEmpty(ListItem.Art(tvshow.keyart3))">SetProperty(Multiart_3,$ESCINFO[Container.ListItem.Art(tvshow.keyart3)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),tvshow.keyart) + !String.IsEmpty(ListItem.Art(tvshow.keyart4))">SetProperty(Multiart_4,$ESCINFO[Container.ListItem.Art(tvshow.keyart4)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),tvshow.keyart) + !String.IsEmpty(ListItem.Art(tvshow.keyart5))">SetProperty(Multiart_5,$ESCINFO[Container.ListItem.Art(tvshow.keyart5)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),tvshow.keyart) + !String.IsEmpty(ListItem.Art(tvshow.keyart6))">SetProperty(Multiart_6,$ESCINFO[Container.ListItem.Art(tvshow.keyart6)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),tvshow.keyart) + !String.IsEmpty(ListItem.Art(tvshow.keyart7))">SetProperty(Multiart_7,$ESCINFO[Container.ListItem.Art(tvshow.keyart7)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),tvshow.keyart) + !String.IsEmpty(ListItem.Art(tvshow.keyart8))">SetProperty(Multiart_8,$ESCINFO[Container.ListItem.Art(tvshow.keyart8)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),tvshow.keyart) + !String.IsEmpty(ListItem.Art(tvshow.keyart9))">SetProperty(Multiart_9,$ESCINFO[Container.ListItem.Art(tvshow.keyart9)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),tvshow.keyart) + !String.IsEmpty(ListItem.Art(tvshow.keyart10))">SetProperty(Multiart_10,$ESCINFO[Container.ListItem.Art(tvshow.keyart10)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),tvshow.keyart) + !String.IsEmpty(ListItem.Art(tvshow.keyart11))">SetProperty(Multiart_11,$ESCINFO[Container.ListItem.Art(tvshow.keyart11)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),tvshow.keyart) + !String.IsEmpty(ListItem.Art(tvshow.keyart12))">SetProperty(Multiart_12,$ESCINFO[Container.ListItem.Art(tvshow.keyart12)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),tvshow.keyart) + !String.IsEmpty(ListItem.Art(tvshow.keyart13))">SetProperty(Multiart_13,$ESCINFO[Container.ListItem.Art(tvshow.keyart13)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),tvshow.keyart) + !String.IsEmpty(ListItem.Art(tvshow.keyart14))">SetProperty(Multiart_14,$ESCINFO[Container.ListItem.Art(tvshow.keyart14)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),tvshow.keyart) + !String.IsEmpty(ListItem.Art(tvshow.keyart15))">SetProperty(Multiart_15,$ESCINFO[Container.ListItem.Art(tvshow.keyart15)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),tvshow.poster) + !String.IsEmpty(ListItem.Art(tvshow.poster))">SetProperty(Multiart_0,$ESCINFO[Container.ListItem.Art(tvshow.poster)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),tvshow.poster) + !String.IsEmpty(ListItem.Art(tvshow.poster1))">SetProperty(Multiart_1,$ESCINFO[Container.ListItem.Art(tvshow.poster1)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),tvshow.poster) + !String.IsEmpty(ListItem.Art(tvshow.poster2))">SetProperty(Multiart_2,$ESCINFO[Container.ListItem.Art(tvshow.poster2)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),tvshow.poster) + !String.IsEmpty(ListItem.Art(tvshow.poster3))">SetProperty(Multiart_3,$ESCINFO[Container.ListItem.Art(tvshow.poster3)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),tvshow.poster) + !String.IsEmpty(ListItem.Art(tvshow.poster4))">SetProperty(Multiart_4,$ESCINFO[Container.ListItem.Art(tvshow.poster4)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),tvshow.poster) + !String.IsEmpty(ListItem.Art(tvshow.poster5))">SetProperty(Multiart_5,$ESCINFO[Container.ListItem.Art(tvshow.poster5)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),tvshow.poster) + !String.IsEmpty(ListItem.Art(tvshow.poster6))">SetProperty(Multiart_6,$ESCINFO[Container.ListItem.Art(tvshow.poster6)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),tvshow.poster) + !String.IsEmpty(ListItem.Art(tvshow.poster7))">SetProperty(Multiart_7,$ESCINFO[Container.ListItem.Art(tvshow.poster7)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),tvshow.poster) + !String.IsEmpty(ListItem.Art(tvshow.poster8))">SetProperty(Multiart_8,$ESCINFO[Container.ListItem.Art(tvshow.poster8)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),tvshow.poster) + !String.IsEmpty(ListItem.Art(tvshow.poster9))">SetProperty(Multiart_9,$ESCINFO[Container.ListItem.Art(tvshow.poster9)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),tvshow.poster) + !String.IsEmpty(ListItem.Art(tvshow.poster10))">SetProperty(Multiart_10,$ESCINFO[Container.ListItem.Art(tvshow.poster10)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),tvshow.poster) + !String.IsEmpty(ListItem.Art(tvshow.poster11))">SetProperty(Multiart_11,$ESCINFO[Container.ListItem.Art(tvshow.poster11)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),tvshow.poster) + !String.IsEmpty(ListItem.Art(tvshow.poster12))">SetProperty(Multiart_12,$ESCINFO[Container.ListItem.Art(tvshow.poster12)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),tvshow.poster) + !String.IsEmpty(ListItem.Art(tvshow.poster13))">SetProperty(Multiart_13,$ESCINFO[Container.ListItem.Art(tvshow.poster13)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),tvshow.poster) + !String.IsEmpty(ListItem.Art(tvshow.poster14))">SetProperty(Multiart_14,$ESCINFO[Container.ListItem.Art(tvshow.poster14)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),tvshow.poster) + !String.IsEmpty(ListItem.Art(tvshow.poster15))">SetProperty(Multiart_15,$ESCINFO[Container.ListItem.Art(tvshow.poster15)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),tvshow.fanart) + !String.IsEmpty(ListItem.Art(tvshow.fanart))">SetProperty(Multiart_0,$ESCINFO[Container.ListItem.Art(tvshow.fanart)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),tvshow.fanart) + !String.IsEmpty(ListItem.Art(tvshow.fanart1))">SetProperty(Multiart_1,$ESCINFO[Container.ListItem.Art(tvshow.fanart1)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),tvshow.fanart) + !String.IsEmpty(ListItem.Art(tvshow.fanart2))">SetProperty(Multiart_2,$ESCINFO[Container.ListItem.Art(tvshow.fanart2)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),tvshow.fanart) + !String.IsEmpty(ListItem.Art(tvshow.fanart3))">SetProperty(Multiart_3,$ESCINFO[Container.ListItem.Art(tvshow.fanart3)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),tvshow.fanart) + !String.IsEmpty(ListItem.Art(tvshow.fanart4))">SetProperty(Multiart_4,$ESCINFO[Container.ListItem.Art(tvshow.fanart4)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),tvshow.fanart) + !String.IsEmpty(ListItem.Art(tvshow.fanart5))">SetProperty(Multiart_5,$ESCINFO[Container.ListItem.Art(tvshow.fanart5)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),tvshow.fanart) + !String.IsEmpty(ListItem.Art(tvshow.fanart6))">SetProperty(Multiart_6,$ESCINFO[Container.ListItem.Art(tvshow.fanart6)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),tvshow.fanart) + !String.IsEmpty(ListItem.Art(tvshow.fanart7))">SetProperty(Multiart_7,$ESCINFO[Container.ListItem.Art(tvshow.fanart7)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),tvshow.fanart) + !String.IsEmpty(ListItem.Art(tvshow.fanart8))">SetProperty(Multiart_8,$ESCINFO[Container.ListItem.Art(tvshow.fanart8)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),tvshow.fanart) + !String.IsEmpty(ListItem.Art(tvshow.fanart9))">SetProperty(Multiart_9,$ESCINFO[Container.ListItem.Art(tvshow.fanart9)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),tvshow.fanart) + !String.IsEmpty(ListItem.Art(tvshow.fanart10))">SetProperty(Multiart_10,$ESCINFO[Container.ListItem.Art(tvshow.fanart10)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),tvshow.fanart) + !String.IsEmpty(ListItem.Art(tvshow.fanart11))">SetProperty(Multiart_11,$ESCINFO[Container.ListItem.Art(tvshow.fanart11)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),tvshow.fanart) + !String.IsEmpty(ListItem.Art(tvshow.fanart12))">SetProperty(Multiart_12,$ESCINFO[Container.ListItem.Art(tvshow.fanart12)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),tvshow.fanart) + !String.IsEmpty(ListItem.Art(tvshow.fanart13))">SetProperty(Multiart_13,$ESCINFO[Container.ListItem.Art(tvshow.fanart13)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),tvshow.fanart) + !String.IsEmpty(ListItem.Art(tvshow.fanart14))">SetProperty(Multiart_14,$ESCINFO[Container.ListItem.Art(tvshow.fanart14)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),tvshow.fanart) + !String.IsEmpty(ListItem.Art(tvshow.fanart15))">SetProperty(Multiart_15,$ESCINFO[Container.ListItem.Art(tvshow.fanart15)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),tvshow.square) + !String.IsEmpty(ListItem.Art(tvshow.square))">SetProperty(Multiart_0,$ESCINFO[Container.ListItem.Art(tvshow.square)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),tvshow.square) + !String.IsEmpty(ListItem.Art(tvshow.square1))">SetProperty(Multiart_1,$ESCINFO[Container.ListItem.Art(tvshow.square1)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),tvshow.square) + !String.IsEmpty(ListItem.Art(tvshow.square2))">SetProperty(Multiart_2,$ESCINFO[Container.ListItem.Art(tvshow.square2)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),tvshow.square) + !String.IsEmpty(ListItem.Art(tvshow.square3))">SetProperty(Multiart_3,$ESCINFO[Container.ListItem.Art(tvshow.square3)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),tvshow.square) + !String.IsEmpty(ListItem.Art(tvshow.square4))">SetProperty(Multiart_4,$ESCINFO[Container.ListItem.Art(tvshow.square4)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),tvshow.square) + !String.IsEmpty(ListItem.Art(tvshow.square5))">SetProperty(Multiart_5,$ESCINFO[Container.ListItem.Art(tvshow.square5)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),tvshow.square) + !String.IsEmpty(ListItem.Art(tvshow.square6))">SetProperty(Multiart_6,$ESCINFO[Container.ListItem.Art(tvshow.square6)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),tvshow.square) + !String.IsEmpty(ListItem.Art(tvshow.square7))">SetProperty(Multiart_7,$ESCINFO[Container.ListItem.Art(tvshow.square7)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),tvshow.square) + !String.IsEmpty(ListItem.Art(tvshow.square8))">SetProperty(Multiart_8,$ESCINFO[Container.ListItem.Art(tvshow.square8)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),tvshow.square) + !String.IsEmpty(ListItem.Art(tvshow.square9))">SetProperty(Multiart_9,$ESCINFO[Container.ListItem.Art(tvshow.square9)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),tvshow.square) + !String.IsEmpty(ListItem.Art(tvshow.square10))">SetProperty(Multiart_10,$ESCINFO[Container.ListItem.Art(tvshow.square10)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),tvshow.square) + !String.IsEmpty(ListItem.Art(tvshow.square11))">SetProperty(Multiart_11,$ESCINFO[Container.ListItem.Art(tvshow.square11)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),tvshow.square) + !String.IsEmpty(ListItem.Art(tvshow.square12))">SetProperty(Multiart_12,$ESCINFO[Container.ListItem.Art(tvshow.square12)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),tvshow.square) + !String.IsEmpty(ListItem.Art(tvshow.square13))">SetProperty(Multiart_13,$ESCINFO[Container.ListItem.Art(tvshow.square13)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),tvshow.square) + !String.IsEmpty(ListItem.Art(tvshow.square14))">SetProperty(Multiart_14,$ESCINFO[Container.ListItem.Art(tvshow.square14)],home)</onfocus>
+				<onfocus condition="Skin.HasSetting(Multiart_Slideshow) + String.IsEqual(Control.GetLabel(38000),tvshow.square) + !String.IsEmpty(ListItem.Art(tvshow.square15))">SetProperty(Multiart_15,$ESCINFO[Container.ListItem.Art(tvshow.square15)],home)</onfocus>
+				<onfocus>SetFocus(3000)</onfocus>
+			</control>
+			<control type="group" id="941">
+				<visible>Control.HasFocus(940)</visible>
+				<animation effect="slide" end="0,0" time="360" reversible="false">Hidden</animation>
+			</control>
+
+			<!-- Labels to check if artwork is the same as next/previous for List/Billboardview -->
+			<control type="label" id="5020">
+				<visible>false</visible>
+				<label>$VAR[Thumbnail(-1)Content]</label>
+			</control>
+			<control type="label" id="5021">
+				<visible>false</visible>
+				<label>$VAR[Thumbnail(0)Content]</label>
+			</control>
+			<control type="label" id="5022">
+				<visible>false</visible>
+				<label>$VAR[Thumbnail(1)Content]</label>
+			</control>
+			<control type="label" id="50120">
+				<visible>false</visible>
+				<label>$VAR[Thumbnail(-1)Content]</label>
+			</control>
+			<control type="label" id="50121">
+				<visible>false</visible>
+				<label>$VAR[Thumbnail(0)Content]</label>
+			</control>
+			<control type="label" id="50122">
+				<visible>false</visible>
+				<label>$VAR[Thumbnail(1)Content]</label>
+			</control>
+
+			<!-- OnPrevious delay -->
+			<control type="group" id="5001">
+				<visible>Container.OnPrevious</visible>
+				<animation effect="slide" end="0,0" time="360" reversible="false">Hidden</animation>
+			</control>
+
+			<!-- OnNext delay -->
+			<control type="group" id="5002">
+				<visible>Container.OnNext</visible>
+				<animation effect="slide" end="0,0" time="360" reversible="false">Hidden</animation>
+			</control>
+
+			<!-- Container Update Bounce Test For Dialog_Info_Label -->
+			<control type="button" id="5003">
+				<visible allowhiddenfocus="true">false</visible>
+				<onfocus condition="Container.IsUpdating">SetFocus(5004)</onfocus>
+				<onfocus condition="!Container.IsUpdating">SetFocus(50)</onfocus>
+				<onfocus condition="!Container.IsUpdating">Action(Info)</onfocus>
+			</control>
+
+			<control type="button" id="5004">
+				<visible allowhiddenfocus="true">false</visible>
+				<onfocus condition="Container.IsUpdating">SetFocus(5003)</onfocus>
+				<onfocus condition="!Container.IsUpdating">SetFocus(50)</onfocus>
+				<onfocus condition="!Container.IsUpdating">Action(Info)</onfocus>
+			</control>
+
+			<!-- Secondary list OnPrevious delay -->
+			<control type="group" id="5007">
+				<visible>Container(4501).OnPrevious</visible>
+				<animation effect="slide" end="0,0" time="360" reversible="false">Hidden</animation>
+			</control>
+
+			<!-- Secondary list OnNext delay -->
+			<control type="group" id="5008">
+				<visible>Container(4501).OnNext</visible>
+				<animation effect="slide" end="0,0" time="360" reversible="false">Hidden</animation>
+			</control>
+
+		</control>
+	</include>
+
+	<include name="Multiart_Template">
+		<definition>
+			<control type="fadelabel" id="38001">
+				<left>-100</left>
+				<width>1</width>
+				<height>1</height>
+				<font>Body</font>
+				<info>Window(home).Property(Multiart_0)</info>
+				<info>Window(home).Property(Multiart_1)</info>
+				<info>Window(home).Property(Multiart_2)</info>
+				<info>Window(home).Property(Multiart_3)</info>
+				<info>Window(home).Property(Multiart_4)</info>
+				<info>Window(home).Property(Multiart_5)</info>
+				<info>Window(home).Property(Multiart_6)</info>
+				<info>Window(home).Property(Multiart_7)</info>
+				<info>Window(home).Property(Multiart_8)</info>
+				<info>Window(home).Property(Multiart_9)</info>
+				<info>Window(home).Property(Multiart_10)</info>
+				<info>Window(home).Property(Multiart_11)</info>
+				<info>Window(home).Property(Multiart_12)</info>
+				<info>Window(home).Property(Multiart_13)</info>
+				<info>Window(home).Property(Multiart_14)</info>
+				<info>Window(home).Property(Multiart_15)</info>
+				<randomize>true</randomize>
+				<pauseatend>$PARAM[transition_time]</pauseatend>
+				<scroll>false</scroll>
+				<scrollout>false</scrollout>
+				<resetonlabelchange>true</resetonlabelchange>
+			</control>
+		</definition>
+	</include>
+
+	<include name="MyViews_Multiart_Labels">
+
+		<control type="label" id="38000">
+			<visible>false</visible>
+			<label>$VAR[Multiart_Type]</label>
+		</control>
+		<control type="label" id="38002">
+			<visible>false</visible>
+			<label>$VAR[Multiart(-1)Content]</label>
+		</control>
+		<control type="label" id="38003">
+			<visible>false</visible>
+			<label>$VAR[Multiart(1)Content]</label>
+		</control>
+
+		<control type="group" id="5009">
+			<visible>Container.OnPrevious | Container(9010).OnPrevious | Container(9020).OnPrevious | Container(9030).OnPrevious | Container(9040).OnPrevious | Container(9050).OnPrevious | Container(9060).OnPrevious | Container(9070).OnPrevious | Container(9080).OnPrevious | Container(9090).OnPrevious</visible>
+			<animation effect="slide" end="0,0" time="1000" reversible="false">Hidden</animation>
+		</control>
+		<control type="group" id="5010">
+			<visible>Container.OnNext | Container(9010).OnNext | Container(9020).OnNext | Container(9030).OnNext | Container(9040).OnNext | Container(9050).OnNext | Container(9060).OnNext | Container(9070).OnNext | Container(9080).OnNext | Container(9090).OnNext</visible>
+			<animation effect="slide" end="0,0" time="1000" reversible="false">Hidden</animation>
+		</control>
+
+		<!-- Default -->
+		<include condition="!Skin.HasSetting(3_Second_Slideshow) + !Skin.HasSetting(5_Second_Slideshow) + !Skin.HasSetting(7_Second_Slideshow) + !Skin.HasSetting(10_Second_Slideshow)" content="Multiart_Template">
+			<param name="transition_time" value="4000"/>
+		</include>
+		<!-- Others -->
+		<include condition="Skin.HasSetting(3_Second_Slideshow)" content="Multiart_Template">
+			<param name="transition_time" value="3000"/>
+		</include>
+		<include condition="Skin.HasSetting(5_Second_Slideshow)" content="Multiart_Template">
+			<param name="transition_time" value="5000"/>
+		</include>
+		<include condition="Skin.HasSetting(7_Second_Slideshow)" content="Multiart_Template">
+			<param name="transition_time" value="7000"/>
+		</include>
+		<include condition="Skin.HasSetting(10_Second_Slideshow)" content="Multiart_Template">
+			<param name="transition_time" value="10000"/>
+		</include>
+	</include>
+
+
+	<include name="MyViews_Main">
+		<control type="group">
+			<!-- To fix audiostutter on navigation during video playback -->
+			<control type="videowindow">
+				<include>Hidden_Control</include>
+			</control>
+
+			<!-- Light view gradient -->
+			<control type="image">
+				<visible>Skin.String(Theme,Light)</visible>
+				<width>100%</width>
+				<bottom>0</bottom>
+				<height>50%</height>
+				<texture colordiffuse="$VAR[Light_Grey_Color]">views/gradient_light-background.png</texture>
+			</control>
+
+			<control type="group">
+				<visible>!$EXP[InfoDialog_IsVisible]</visible>
+				<include>Viewtype_Fade_Animation</include>
+
+				<!-- Embedded Lists -->
+
+				<include condition="Skin.HasSetting(Secondary_List_Enabled)" content="Secondary_List">
+					<param name="visible" value="Control.HasFocus(505) + Container.Content(sets)"/>
+					<param name="layout" value="Hidden"/>
+				</include>
+
+				<control type="group">
+					<visible>$EXP[ListView_IsVisible] | $EXP[BillboardView_IsVisible] | $EXP[ShowcaseView_IsVisible]</visible>
+					<include>Delayed_Content_Fade_Animation</include>
+					<include condition="Skin.HasSetting(Secondary_List_Enabled)" content="Secondary_List">
+						<param name="visible" value="[$EXP[ListView_Display_IsThumbnails] | $EXP[ShowcaseView_Display_IsPosters]] + $EXP[Secondary_List_Video_Conditions]"/>
+					</include>
+					<include condition="Skin.HasSetting(Secondary_List_Enabled)" content="Secondary_List">
+						<param name="visible" value="$EXP[ListView_Display_IsThumbnails] + Container.Content(artists)"/>
+						<param name="top" value="180"/>
+						<param name="height" value="720"/>
+						<param name="layout" value="720x720"/>
+					</include>
+					<include condition="Skin.HasSetting(Secondary_List_Enabled)" content="Secondary_List">
+						<param name="visible" value="[$EXP[ListView_Display_IsBackground] | $EXP[BillboardView_IsVisible]] + $EXP[Secondary_List_Video_Conditions]"/>
+						<param name="width" value="1920"/>
+						<param name="layout" value="1920x1080"/>
+					</include>
+				</control>
+
+				<control type="group">
+					<visible>$EXP[ShowcaseView_IsVisible]</visible>
+					<include>Delayed_Content_Fade_Animation</include>
+					<include condition="Skin.HasSetting(Secondary_List_Enabled)" content="Secondary_List">
+						<param name="visible" value="$EXP[ShowcaseView_Display_IsSquare] + $EXP[Secondary_List_Video_Conditions]"/>
+						<param name="width" value="1080"/>
+						<param name="layout" value="1080x1080"/>
+					</include>
+					<include condition="Skin.HasSetting(Secondary_List_Enabled)" content="Secondary_List">
+						<param name="visible" value="$EXP[ShowcaseView_Display_IsSquare] + Container.Content(artists)"/>
+						<param name="width" value="1080"/>
+						<param name="layout" value="1080x1080"/>
+					</include>
+				</control>
+
+				<control type="group">
+					<visible>$EXP[StripView_IsVisible]</visible>
+					<include>Delayed_Content_Fade_Animation</include>
+					<include condition="Skin.HasSetting(Secondary_List_Enabled)" content="Secondary_List">
+						<param name="visible" value="$EXP[StripView_Display_IsPosters] + $EXP[Secondary_List_Video_Conditions]"/>
+						<param name="width" value="480"/>
+						<param name="left" value="720"/>
+						<param name="height" value="720"/>
+						<param name="top" value="900"/>
+						<param name="layout" value="480x720"/>
+					</include>
+					<include condition="Skin.HasSetting(Secondary_List_Enabled)" content="Secondary_List">
+						<param name="visible" value="$EXP[StripView_Display_IsFanart] + $EXP[Secondary_List_Video_Conditions]"/>
+						<param name="width" value="1120"/>
+						<param name="left" value="400"/>
+						<param name="height" value="630"/>
+						<param name="top" value="870"/>
+						<param name="layout" value="1120x630"/>
+					</include>
+					<include condition="Skin.HasSetting(Secondary_List_Enabled)" content="Secondary_List">
+						<param name="visible" value="$EXP[StripView_Display_IsSquare] + Container.Content(artists)"/>
+						<param name="width" value="630"/>
+						<param name="left" value="645"/>
+						<param name="height" value="630"/>
+						<param name="top" value="870"/>
+						<param name="layout" value="630x630"/>
+					</include>
+				</control>
+
+				<!-- Primary Views -->
+				<include>ListView_Display</include>
+				<include>ListView_Container</include>
+				<include>BillboardView_Container</include>
+				<include>BillboardView_Display</include>
+				<include>BillboardView_Details</include>
+				<include>ShowcaseView_Container</include>
+				<include>ShowcaseView_Display</include>
+				<include>ShowcaseView_Details</include>
+				<include>StripView_Container</include>
+				<include>StripView_Display</include>
+				<include>StripView_Details</include>
+				<!-- Music Player -->
+				<include condition="Skin.HasSetting(Music_Player_Enabled)" content="Shared_Dialog_Layouts"/>
+				<include>GridView_Container</include>
+				<!-- Busy spinner for transition between infodialogs -->
+				<control type="image">
+					<visible>String.IsEqual(Window(home).Property(InfoDialog_Transition),true)</visible>
+					<include>Dialog_Fade_Animation</include>
+					<centerleft>50%</centerleft>
+					<centertop>50%</centertop>
+					<width>90</width>
+					<height>90</height>
+					<texture colordiffuse="$VAR[Primary_Color]">views/dialogs/busy.png</texture>
+					<animation effect="rotate" start="0" end="-360" center="auto" time="1800" loop="true" tween="cubic" easing="out" condition="true">Conditional</animation>
+				</control>
+
+			</control>
+
+		</control>
+	</include>
+
+
+	<include name="MyViews_ListOnly">
+		<control type="group">
+			<!-- To fix audiostutter on navigation during video playback -->
+			<control type="videowindow">
+				<include>Hidden_Control</include>
+			</control>
+			<!-- Light view gradient -->
+			<control type="image">
+				<visible>Skin.String(Theme,Light)</visible>
+				<width>100%</width>
+				<bottom>0</bottom>
+				<height>50%</height>
+				<texture colordiffuse="$VAR[Light_Grey_Color]">views/gradient_light-background.png</texture>
+			</control>
+			<control type="group">
+				<visible>!$EXP[InfoDialog_IsVisible]</visible>
+				<include>Viewtype_Fade_Animation</include>
+				<include>ListView_Display</include>
+				<include>ListView_Container</include>
+				<include condition="Skin.HasSetting(Music_Player_Enabled)" content="Shared_Dialog_Layouts"/>
+			</control>
+		</control>
+	</include>
+
+	<include name="MyViews_Addons">
+		<control type="group">
+			<!-- To fix audiostutter on navigation during video playback -->
+			<control type="videowindow">
+				<include>Hidden_Control</include>
+			</control>
+			<!-- Light view gradient -->
+			<control type="image">
+				<visible>Skin.String(Theme,Light)</visible>
+				<width>100%</width>
+				<bottom>0</bottom>
+				<height>50%</height>
+				<texture colordiffuse="$VAR[Light_Grey_Color]">views/gradient_light-background.png</texture>
+			</control>
+
+			<control type="group">
+				<visible>Window.Is(addonbrowser) + !Container.Content(addons)</visible>
+				<include>Dialog_Fade_Animation</include>
+				<include condition="System.HasAddon(script.embuary.helper)" content="Settings_Fanart_Slideshow"/>
+			</control>
+
+			<control type="group">
+				<visible>!$EXP[InfoDialog_IsVisible] + !Window.IsVisible(addonsettings) + ![Window.Is(addonbrowser) + Window.IsVisible(selectdialog)]</visible>
+				<include>Viewtype_Fade_Animation</include>
+				<include>ListView_Display</include>
+				<include>ListView_Container</include>
+				<include condition="Skin.HasSetting(Music_Player_Enabled)" content="Shared_Dialog_Layouts"/>
+				<include>GridView_Container</include>
+			</control>
+		</control>
+	</include>
+
+	<include name="MyViews_Options_Menu">
+		<param name="left" default="120"/>
+		<param name="top" default="230"/>
+		<definition>
+			<control type="group">
+				<visible>String.IsEqual(Window(home).Property(OptionsMenu),Active) | [Window.IsVisible(pictures) + Control.HasFocus(9)]</visible>
+				<include>Options_Menu_Fade_Animation</include>
+					<control type="image">
+						<texture colordiffuse="$VAR[Transparent_Dialog_Mask]">views/white_100.png</texture>
+					</control>
+			</control>
+
+			<control type="group">
+				<visible>String.IsEqual(Window(home).Property(OptionsMenu),Active) | [Window.IsVisible(pictures) + Control.HasFocus(9)]</visible>
+				<include>Delayed_Dialog_Fade_Animation</include>
+				<left>$PARAM[left]</left>
+				<top>$PARAM[top]</top>
+
+				<control type="group">
+					<visible>!Window.IsVisible(shutdownmenu)</visible>
+					<include>Content_Fade_Animation</include>
+					<!-- dummy labels for viewmode -->
+					<control type="label">
+						<include>ContextMenuLabelFocused</include>
+						<label>$INFO[Container.ViewMode,$LOCALIZE[31130] ,  $LOCALIZE[31131]]</label>
+						<visible>Container(3000).HasFocus(939)</visible>
+					</control>
+					<control type="label">
+						<include>ContextMenuLabelUnfocused</include>
+						<label>$LOCALIZE[31224]$INFO[Container.ViewMode, $LOCALIZE[31116] ]</label>
+						<visible>!Container(3000).HasFocus(939) + Integer.IsGreater(Container(3000).ViewCount,1)</visible>
+					</control>
+					<!-- dummy labels for Random button on pictures -->
+					<control type="label">
+						<top>220</top>
+						<include>ContextMenuLabelFocused</include>
+						<label>$VAR[Pictures_RandomButton_Focused_Label]</label>
+						<visible>Window.IsVisible(pictures) + !Control.HasFocus(3000)</visible>
+					</control>
+					<control type="label">
+						<top>220</top>
+						<include>ContextMenuLabelUnfocused</include>
+						<label>$VAR[Pictures_RandomButton_Unfocused_Label]</label>
+						<visible>Window.IsVisible(pictures) + Control.HasFocus(3000)</visible>
+					</control>
+				</control>
+
+				<control type="fixedlist" id="3000">
+					<viewtype label="535">list</viewtype>
+					<visible allowhiddenfocus="true">!Window.IsVisible(shutdownmenu) + !Window.IsVisible(virtualkeyboard)</visible>
+					<include>Content_Fade_Animation</include>
+					<description>Options menu</description>
+					<width>1080</width>
+					<height>675</height>
+					<onup>0</onup>
+					<onback>3001</onback>
+					<onfocus>ClearProperty(Scrollbars,home)</onfocus>
+					<onfocus>SetProperty(OptionsMenu,Active,home)</onfocus>
+					<onunfocus>ClearProperty(OptionsMenu,home)</onunfocus>
+					<ondown condition="Window.Is(pictures)">SetFocus(9)</ondown>
+					<ondown condition="!Window.Is(pictures)">0</ondown>
+					<onleft condition="String.IsEmpty(Container(3000).ListItem.Property(ActionLeft))">3001</onleft>
+					<onright condition="String.IsEmpty(Container(3000).ListItem.Property(ActionRight))">3001</onright>
+					<onleft condition="!String.IsEmpty(Container(3000).ListItem.Property(ActionLeft))">$INFO[Container(3000).ListItem.Property(ActionLeft)]</onleft>
+					<onright condition="!String.IsEmpty(Container(3000).ListItem.Property(ActionRight))">$INFO[Container(3000).ListItem.Property(ActionRight)]</onright>
+					<onleft condition="!String.IsEmpty(Container(3000).ListItem.Property(ActionLeft2))">$INFO[Container(3000).ListItem.Property(ActionLeft2)]</onleft>
+					<onright condition="!String.IsEmpty(Container(3000).ListItem.Property(ActionRight2))">$INFO[Container(3000).ListItem.Property(ActionRight2)]</onright>
+
+					<!-- Reset multiart on viewchange -->
+					<onleft condition="Container(3000).HasFocus(939)">SetFocus(940)</onleft>
+					<onright condition="Container(3000).HasFocus(939)">SetFocus(940)</onright>
+
+					<!-- Transition on left or right -->
+					<onleft condition="Container(3000).HasFocus(942)">SetFocus(940)</onleft>
+					<onright condition="Container(3000).HasFocus(942)">SetFocus(940)</onright>
+					<!-- Transition on left only -->
+					<onleft condition="Container(3000).HasFocus(943)">SetFocus(940)</onleft>
+					<!-- Transition on right only -->
+					<onright condition="Container(3000).HasFocus(944)">SetFocus(940)</onright>
+					<!-- Showcase: Turn off Logos & transition on left only -->
+					<onleft condition="Container(3000).HasFocus(947) + Container.Content(movies)">Skin.SetString(ShowcaseView_Logo_Movies,Off)</onleft>
+					<onleft condition="Container(3000).HasFocus(947) + Container.Content(sets)">Skin.SetString(ShowcaseView_Logo_Sets,Off)</onleft>
+					<onleft condition="Container(3000).HasFocus(947) + Container.Content(tvshows)">Skin.SetString(ShowcaseView_Logo_TVShows,Off)</onleft>
+					<onleft condition="Container(3000).HasFocus(947) + Container.Content(artists)">Skin.SetString(ShowcaseView_Logo_Artists,Off)</onleft>
+					<onleft condition="Container(3000).HasFocus(947)">SetFocus(940)</onleft>
+					<!-- Showcase: Turn off Logos & transition on right only -->
+					<onright condition="Container(3000).HasFocus(948) + Container.Content(movies)">Skin.SetString(ShowcaseView_Logo_Movies,Off)</onright>
+					<onright condition="Container(3000).HasFocus(948) + Container.Content(sets)">Skin.SetString(ShowcaseView_Logo_Sets,Off)</onright>
+					<onright condition="Container(3000).HasFocus(948) + Container.Content(tvshows)">Skin.SetString(ShowcaseView_Logo_TVShows,Off)</onright>
+					<onright condition="Container(3000).HasFocus(948) + Container.Content(artists)">Skin.SetString(ShowcaseView_Logo_Artists,Off)</onright>
+					<onright condition="Container(3000).HasFocus(948)">SetFocus(940)</onright>
+					<!-- Strip: Turn off Logos & transition on right only -->
+					<onright condition="Container(3000).HasFocus(946) + Container.Content(movies)">Skin.SetString(StripView_Logo_Movies,Off)</onright>
+					<onright condition="Container(3000).HasFocus(946) + Container.Content(sets)">Skin.SetString(StripView_Logo_Sets,Off)</onright>
+					<onright condition="Container(3000).HasFocus(946) + Container.Content(tvshows)">Skin.SetString(StripView_Logo_TVShows,Off)</onright>
+					<onright condition="Container(3000).HasFocus(946) + Container.Content(artists)">Skin.SetString(StripView_Logo_Artists,Off)</onright>
+					<onright condition="Container(3000).HasFocus(946)">SetFocus(940)</onright>
+					<!-- Strip: Turn off Logos & transition on left only -->
+					<onleft condition="Container(3000).HasFocus(949) + Container.Content(movies)">Skin.SetString(StripView_Logo_Movies,Off)</onleft>
+					<onleft condition="Container(3000).HasFocus(949) + Container.Content(sets)">Skin.SetString(StripView_Logo_Sets,Off)</onleft>
+					<onleft condition="Container(3000).HasFocus(949) + Container.Content(tvshows)">Skin.SetString(StripView_Logo_TVShows,Off)</onleft>
+					<onright condition="Container(3000).HasFocus(949) + Container.Content(artists)">Skin.SetString(StripView_Logo_Artists,Off)</onright>
+					<onleft condition="Container(3000).HasFocus(949)">SetFocus(940)</onleft>
+					<!-- Strip: Turn off Logos on left only -->
+					<onleft condition="Container(3000).HasFocus(950) + Container.Content(movies)">Skin.SetString(StripView_Logo_Movies,Off)</onleft>
+					<onleft condition="Container(3000).HasFocus(950) + Container.Content(sets)">Skin.SetString(StripView_Logo_Sets,Off)</onleft>
+					<onleft condition="Container(3000).HasFocus(950) + Container.Content(tvshows)">Skin.SetString(StripView_Logo_TVShows,Off)</onleft>
+					<onleft condition="Container(3000).HasFocus(950) + Container.Content(artists)">Skin.SetString(StripView_Logo_Artists,Off)</onleft>
+					<!-- Strip: Turn off Logos on right only -->
+					<onright condition="Container(3000).HasFocus(945) + Container.Content(movies)">Skin.SetString(StripView_Logo_Movies,Off)</onright>
+					<onright condition="Container(3000).HasFocus(945) + Container.Content(sets)">Skin.SetString(StripView_Logo_Sets,Off)</onright>
+					<onright condition="Container(3000).HasFocus(945) + Container.Content(tvshows)">Skin.SetString(StripView_Logo_TVShows,Off)</onright>
+					<onright condition="Container(3000).HasFocus(945) + Container.Content(artists)">Skin.SetString(StripView_Logo_Artists,Off)</onright>
+
+					<orientation>vertical</orientation>
+					<focusposition>0</focusposition>
+					<movement>12</movement>
+					<defaultcontrol>1</defaultcontrol>
+					<scrolltime tween="sine" easing="inout">380</scrolltime>
+					<itemlayout height="55" width="1080">
+						<include content="Common_List_Layout">
+							<param name="nowplayingvisible" value="false"/>
+							<param name="iconvisible" value="false"/>
+							<param name="label" value="$INFO[ListItem.Label2]"/>
+							<param name="labelleft" value="0"/>
+							<param name="labelmaxwidth" value="100%"/>
+							<param name="textcolor" value="$VAR[Light_Color]"/>
+							<param name="tracknumber" value="false"/>
+						</include>
+					</itemlayout>
+					<focusedlayout height="60" width="1080">
+						<include content="Common_List_Layout">
+							<param name="visible" value="![Window.Is(pictures) + !Control.HasFocus(3000)]"/>
+							<param name="nowplayingvisible" value="false"/>
+							<param name="iconvisible" value="false"/>
+							<param name="label" value="$INFO[ListItem.Label]"/>
+							<param name="labelleft" value="0"/>
+							<param name="labelmaxwidth" value="100%"/>
+							<param name="font" value="List_Title_Focused"/>
+							<param name="textcolor" value="$VAR[Light_Color]"/>
+							<param name="tracknumber" value="false"/>
+						</include>
+						<include content="Common_List_Layout">
+							<param name="visible" value="Window.Is(pictures) + !Control.HasFocus(3000)"/>
+							<param name="nowplayingvisible" value="false"/>
+							<param name="iconvisible" value="false"/>
+							<param name="label" value="$INFO[ListItem.Label]"/>
+							<param name="labelleft" value="0"/>
+							<param name="labelmaxwidth" value="100%"/>
+							<param name="textcolor" value="$VAR[Light_Color]"/>
+							<param name="tracknumber" value="false"/>
+						</include>
+					</focusedlayout>
+					<content>
+
+						<!-- Layout -->
+						<item id="939">
+							<description>Layout / Container Name</description>
+							<onclick>SetFocus(50)</onclick>
+							<label></label>
+							<label2></label2>
+							<property name="ActionLeft">Container.PreviousViewMode</property>
+							<property name="ActionRight">Container.NextViewMode</property>
+							<visible>Integer.IsGreater(Container.ViewCount,1)</visible>
+						</item>
+
+
+						<!-- View Opions -->
+						<include content="ListView_Menu_Options"/>
+						<include condition="Window.Is(videos) | Window.Is(music)" content="BillboardView_Menu_Options"/>
+						<include condition="Window.Is(videos) | Window.Is(music)" content="ShowcaseView_Menu_Options"/>
+						<include condition="Window.Is(videos) | Window.Is(music)" content="StripView_Menu_Options"/>
+						<include condition="!Window.Is(musicplaylisteditor) + !Window.Is(pictures) + !Window.Is(musicplaylist) + !Window.Is(videoplaylist)" content="GridView_Menu_Options"/>
+
+						<!-- Shared -->
+						<!-- Sort -->
+						<item id="942">
+						  <onclick>SetFocus(50)</onclick>
+						  <label>$LOCALIZE[31130] $INFO[Container.SortMethod] $LOCALIZE[31131]</label>
+						  <label2>$LOCALIZE[32118] $LOCALIZE[31116] $INFO[Container.SortMethod]</label2>
+						  <property name="ActionLeft">Container.PreviousSortMethod</property>
+						  <property name="ActionRight">Container.NextSortMethod</property>
+						  <visible>Control.IsEnabled(3)</visible>
+						</item>
+
+						<!-- Sort mode -->
+						<item id="942">
+							<description>Order / Ascending</description>
+							<onclick>SetFocus(50)</onclick>
+							<label>$LOCALIZE[31130] $LOCALIZE[584] $LOCALIZE[31131]</label>
+							<label2>$LOCALIZE[32119] $LOCALIZE[31116] $LOCALIZE[584]</label2>
+							<property name="ActionLeft">Container.SetSortDirection</property>
+							<property name="ActionRight">Container.SetSortDirection</property>
+							<visible>Control.IsEnabled(4) + Container.SortDirection(ascending)</visible>
+						</item>
+						<item id="942">
+							<description>Order / Descending</description>
+							<onclick>SetFocus(50)</onclick>
+							<label>$LOCALIZE[31130] $LOCALIZE[585] $LOCALIZE[31131]</label>
+							<label2>$LOCALIZE[32119] $LOCALIZE[31116] $LOCALIZE[585]</label2>
+							<property name="ActionLeft">Container.SetSortDirection</property>
+							<property name="ActionRight">Container.SetSortDirection</property>
+							<visible>Control.IsEnabled(4) + Container.SortDirection(descending)</visible>
+						</item>
+
+						<!-- Show only unwatched or all videos -->
+						<item id="942">
+							<onclick>SetFocus(50)</onclick>
+							<label>$LOCALIZE[31130] $LOCALIZE[16100]$INFO[Container.NumItems, (,)] $LOCALIZE[31131]</label>
+							<label2>$LOCALIZE[32120] $LOCALIZE[31116] $LOCALIZE[16100]$INFO[Container.NumItems, (,)]</label2>
+							<property name="ActionLeft">SendClick(14)</property>
+							<property name="ActionRight">SendClick(14)</property>
+							<visible>Window.Is(videos) + Control.IsEnabled(14) + !System.Setting(hidewatched) + !Container.Content(actors) + !Container.Content(sets)</visible>
+						</item>
+						<item id="942">
+							<onclick>SetFocus(50)</onclick>
+							<label>$LOCALIZE[31130] $LOCALIZE[16101]$INFO[Container.TotalUnWatched, (,)] $LOCALIZE[31131]</label>
+							<label2>$LOCALIZE[32120] $LOCALIZE[31116] $LOCALIZE[16101]$INFO[Container.TotalUnWatched, (,)]</label2>
+							<property name="ActionLeft">SendClick(14)</property>
+							<property name="ActionRight">SendClick(14)</property>
+							<visible>Window.Is(videos) + Control.IsEnabled(14) + System.Setting(hidewatched) + !Container.Content(actors) + !Container.Content(sets)</visible>
+						</item>
+
+						<!-- Party mode -->
+						<item>
+							<onclick>SetFocus(50)</onclick>
+							<onclick>SendClick(16)</onclick>
+							<label>$LOCALIZE[589]</label>
+							<label2>$LOCALIZE[589]</label2>
+							<visible>Control.IsEnabled(16) + !MusicPartyMode.Enabled</visible>
+						</item>
+
+						<!-- Filter -->
+						<item>
+							<onclick>SetFocus(50)</onclick>
+							<onclick condition="Container.CanFilterAdvanced">Filter</onclick>
+							<label>$LOCALIZE[587]</label>
+							<label2>$LOCALIZE[587]</label2>
+							<visible>Container.CanFilterAdvanced</visible>
+						</item>
+
+						<!-- Search -->
+						<item>
+							<onclick>SetFocus(50)</onclick>
+							<onclick>SendClick(8)</onclick>
+							<label>$LOCALIZE[137]</label>
+							<label2>$LOCALIZE[137]</label2>
+							<visible>Control.IsEnabled(8) + !Window.Is(addonbrowser) + !Window.Is(programs)</visible>
+						</item>
+
+						<!-- Current playlist -->
+						<item>
+							<onclick>SetFocus(50)</onclick>
+							<onclick>ActivateWindow(videoplaylist)</onclick>
+							<label>$LOCALIZE[13350]</label>
+							<label2>$LOCALIZE[13350]</label2>
+							<visible>Window.Is(videos) + !String.IsEqual(Playlist.Length(video),0)</visible>
+						</item>
+						<item>
+							<onclick>SetFocus(50)</onclick>
+							<onclick>ActivateWindow(musicplaylist)</onclick>
+							<label>$LOCALIZE[13350]</label>
+							<label2>$LOCALIZE[13350]</label2>
+							<visible>Window.Is(music) + !String.IsEqual(Playlist.Length(music),0)</visible>
+						</item>
+
+						<!-- Update Library -->
+						<item>
+							<description>Update Library</description>
+							<onclick>SetFocus(50)</onclick>
+							<onclick>SendClick(20)</onclick>
+							<label>$LOCALIZE[653]</label>
+							<label2>$LOCALIZE[653]</label2>
+							<visible>Control.IsEnabled(20) + !Library.IsScanningVideo + !Library.IsScanningMusic</visible>
+						</item>
+						<item>
+							<description>Cancel Update</description>
+							<onclick>SetFocus(50)</onclick>
+							<onclick>SendClick(20)</onclick>
+							<label>$LOCALIZE[13353]</label>
+							<label2>$LOCALIZE[13353]</label2>
+							<visible>Control.IsEnabled(20) + Library.IsScanningVideo | Library.IsScanningMusic</visible>
+						</item>
+
+						<!-- Playlist -->
+						<!-- Shuffle playlist -->
+						<!-- Off -->
+						<item>
+							<onclick>SetFocus(50)</onclick>
+							<label>$LOCALIZE[31130] $LOCALIZE[591] $LOCALIZE[31131]</label>
+							<label2>$LOCALIZE[191] $LOCALIZE[31116] $LOCALIZE[591]</label2>
+							<property name="ActionLeft">SendClick(20)</property>
+							<property name="ActionRight">SendClick(20)</property>
+							<visible>Window.Is(musicplaylist) + Control.IsEnabled(20) + String.Contains(Playlist.Random,$LOCALIZE[591])</visible>
+						</item>
+						<!-- On -->
+						<item>
+							<onclick>SetFocus(50)</onclick>
+							<label>$LOCALIZE[31130] $LOCALIZE[34222] $LOCALIZE[31131]</label>
+							<label2>$LOCALIZE[191] $LOCALIZE[31116] $LOCALIZE[34222]</label2>
+							<property name="ActionLeft">SendClick(20)</property>
+							<property name="ActionRight">SendClick(20)</property>
+							<visible>Window.Is(musicplaylist) + Control.IsEnabled(20) + String.Contains(Playlist.Random,$LOCALIZE[34222])</visible>
+						</item>
+						<!-- Repeat playlist -->
+						<!-- Off -->
+						<item>
+							<onclick>SetFocus(50)</onclick>
+							<label>$LOCALIZE[31130] $LOCALIZE[591] $LOCALIZE[31131]</label>
+							<label2>$LOCALIZE[486] $LOCALIZE[31116] $LOCALIZE[591]</label2>
+							<property name="ActionLeft">SendClick(26)</property>
+							<property name="ActionLeft2">SendClick(26)</property>
+							<property name="ActionRight">SendClick(26)</property>
+							<visible>Window.Is(musicplaylist) + Control.IsEnabled(26) + String.Contains(Playlist.Repeat,$LOCALIZE[591])</visible>
+						</item>
+						<!-- One -->
+						<item>
+							<onclick>SetFocus(50)</onclick>
+							<label>$LOCALIZE[31130] $LOCALIZE[592] $LOCALIZE[31131]</label>
+							<label2>$LOCALIZE[486] $LOCALIZE[31116] $LOCALIZE[592]</label2>
+							<property name="ActionLeft">SendClick(26)</property>
+							<property name="ActionLeft2">SendClick(26)</property>
+							<property name="ActionRight">SendClick(26)</property>
+							<visible>Window.Is(musicplaylist) + Control.IsEnabled(26) + String.Contains(Playlist.Repeat,$LOCALIZE[592])</visible>
+						</item>
+						<!-- All -->
+						<item>
+							<onclick>SetFocus(50)</onclick>
+							<label>$LOCALIZE[31130] $LOCALIZE[593] $LOCALIZE[31131]</label>
+							<label2>$LOCALIZE[486] $LOCALIZE[31116] $LOCALIZE[593]</label2>
+							<property name="ActionLeft">SendClick(26)</property>
+							<property name="ActionLeft2">SendClick(26)</property>
+							<property name="ActionRight">SendClick(26)</property>
+							<visible>Window.Is(musicplaylist) + Control.IsEnabled(26) + String.Contains(Playlist.Repeat,$LOCALIZE[593])</visible>
+						</item>
+						<!-- Save playlist -->
+						<item>
+							<onclick>SendClick(21)</onclick>
+							<label>$LOCALIZE[190]</label>
+							<label2>$LOCALIZE[190]</label2>
+							<visible>[Window.Is(musicplaylist) | Window.Is(videoplaylist)] + Control.IsEnabled(21)</visible>
+						</item>
+						<!-- Clear playlist -->
+						<item>
+							<onclick>SendClick(22)</onclick>
+							<onclick>SetFocus(50)</onclick>
+							<onclick>ReplaceWindow(Videos)</onclick>
+							<label>$LOCALIZE[192]</label>
+							<label2>$LOCALIZE[192]</label2>
+							<visible>[Window.Is(musicplaylist) | Window.Is(videoplaylist)] + Control.IsEnabled(22)</visible>
+						</item>
+
+						<!-- Pictures -->
+						<!-- Start slideshow -->
+						<item>
+							<onclick>SendClick(6)</onclick>
+							<label>$LOCALIZE[13317]</label>
+							<label2>$LOCALIZE[13317]</label2>
+							<visible>Window.Is(pictures) + Control.IsEnabled(6)</visible>
+						</item>
+						<!-- Recursive slideshow -->
+						<item>
+							<onclick>SendClick(7)</onclick>
+							<label>$LOCALIZE[13318]</label>
+							<label2>$LOCALIZE[13318]</label2>
+							<visible>Window.Is(pictures) + Control.IsEnabled(7)</visible>
+						</item>
+
+						<!-- Addon Browser -->
+						<!-- Settings -->
+						<item>
+							<onclick>SendClick(5)</onclick>
+							<label>$LOCALIZE[10004]</label>
+							<label2>$LOCALIZE[10004]</label2>
+							<visible>Window.Is(addonbrowser) + Control.IsEnabled(5)</visible>
+						</item>
+						<!-- Broken -->
+						<item>
+							<onclick>SetFocus(50)</onclick>
+							<label>$LOCALIZE[31130] $LOCALIZE[16039] $LOCALIZE[31131]</label>
+							<label2>$LOCALIZE[24999] $LOCALIZE[31116] $LOCALIZE[16039]</label2>
+							<property name="ActionLeft">SendClick(8)</property>
+							<property name="ActionLeft2">Skin.SetString(AddonBroken,on)</property>
+							<property name="ActionRight">SendClick(8)</property>
+							<property name="ActionRight2">Skin.SetString(AddonBroken,on)</property>
+							<visible>Window.Is(addonbrowser) + Control.IsEnabled(8) + String.Contains(Skin.String(AddonBroken),off)</visible>
+						</item>
+						<item>
+							<onclick>SetFocus(50)</onclick>
+							<label>$LOCALIZE[31130] $LOCALIZE[16041] $LOCALIZE[31131]</label>
+							<label2>$LOCALIZE[24999] $LOCALIZE[31116] $LOCALIZE[16041]</label2>
+							<property name="ActionLeft">SendClick(8)</property>
+							<property name="ActionLeft2">Skin.SetString(AddonBroken,off)</property>
+							<property name="ActionRight">SendClick(8)</property>
+							<property name="ActionRight2">Skin.SetString(AddonBroken,off)</property>
+							<visible>Window.Is(addonbrowser) + Control.IsEnabled(8) + String.Contains(Skin.String(AddonBroken),on)</visible>
+						</item>
+						<!-- Check updates -->
+						<item>
+							<onclick>SendClick(9)</onclick>
+							<onclick>SetFocus(50)</onclick>
+							<label>$LOCALIZE[24034]</label>
+							<label2>$LOCALIZE[24034]</label2>
+							<visible>Window.Is(addonbrowser) + Control.IsEnabled(9)</visible>
+						</item>
+
+					</content>
+				</control>
+
+			</control>
+		</definition>
+	</include>
+
+</includes>

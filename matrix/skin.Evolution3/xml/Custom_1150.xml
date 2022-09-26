@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window type="dialog" id="1150">
+	<zorder>1</zorder>
+	<visible>player.hasvideo + !videoplayer.isfullscreen + !system.hasalarm(masquer_tout) + !window.isvisible(videos) + !window.isvisible(music) + !window.isvisible(addonbrowser) + [!$EXP[zoom_interface] + [[$EXP[superieur_liste_courante_1000] | $EXP[superieur_liste_courante_2000] | $EXP[superieur_liste_courante_3000] | $EXP[superieur_liste_courante_4000] | $EXP[superieur_liste_courante_5000]]] | [window.isvisible(movieinformation) + [string.isequal(window(home).property(liste),suggestions) | $EXP[liste_500]]]]</visible>
+<controls>
+	<control type="group">																				<description>lecteur video miniature PIP</description>
+		<animation effect="slide" start="0,0" end="0,-280" time="150" condition="$EXP[gestion_librairie]">conditional</animation>
+		<animation effect="slide" start="0,0" end="0,1080" condition="skin.hassetting(pas_de_mini_lecteur)">conditional</animation>
+		<top>380</top>
+		<left>1303</left>
+		<width>587</width>
+		<height>330</height>
+	<control type="image">
+		<texture colordiffuse="ff000000">commun/texture.png</texture>	
+	</control>
+	<control type="videowindow">		
+	</control>
+	<control type="image">
+		<texture colordiffuse="$VAR[blanc]" border="10">commun/bordure.png</texture>	
+	</control>
+	<control type="image">
+		<bottom>-24</bottom>
+		<left>-50</left>
+		<right>-50</right>
+		<height>24</height>
+		<texture>commun/ombre.png</texture>	
+	</control>
+	</control>
+</controls>
+</window>
