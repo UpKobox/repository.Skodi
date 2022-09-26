@@ -590,8 +590,8 @@ def FanKai():
 # IMPORT CHOIX SKIN
 def importSkin(zipurl):
     # suppression dossier temporaire
-    xbmc.executebuiltin("Notification(DOSSIER TEMP,Effacement en cours...)")
-    dirPath = xbmc.translatePath('special://home/temp/temp/')
+    xbmc.executebuiltin("Notification(DOSSIER TEMP,Effacement en cours...,10)")
+    dirPath = xbmc.translatePath('special://temp/')
     try:
        shutil.rmtree(dirPath)
     except:
@@ -600,14 +600,15 @@ def importSkin(zipurl):
     # telechargement et extraction du zip
     with urlopen(zipurl) as zipresp:
         with ZipFile(BytesIO(zipresp.read())) as zfile:
-            zfile.extractall(xbmc.translatePath('special://home/temp/temp/'))
+            zfile.extractall(xbmc.translatePath('special://temp/'))
     # copie des fichiers extraie
-    source_dir = xbmc.translatePath('special://home/temp/temp/addon_data')
-    destination_dir = xbmc.translatePath('special://home/userdata/addon_data')
+    source_dir = xbmc.translatePath('special://temp/addon_data/')
+    destination_dir = xbmc.translatePath('special://masterprofile/addon_data')
     shutil.copytree(source_dir, destination_dir, dirs_exist_ok=True)
-    xbmc.executebuiltin("Notification(COPIE SKIN OK, Profitez !)")
+    xbmc.executebuiltin("Notification(Copie Skin , OK ,100)")
     xbmc.sleep(1000)
-
+    xbmc.executebuiltin( 'ReloadSkin()' )
+    xbmc.executebuiltin( "Notification(Rafraichissement Skin , Profitez...,2000)" )
 ##############################################
 
 # MENU SAUVEGARDE RESTAURATION
