@@ -84,7 +84,7 @@ def inst_add2():
 def inst_tout():
     #install repository additionnels
     # suppression dossier temporaire
-    dirPath = xbmc.translatePath('special://home/temp/temp/')
+    dirPath = xbmcvfs.translatePath('special://home/temp/temp/')
     try:
         shutil.rmtree(dirPath)
     except:
@@ -95,10 +95,10 @@ def inst_tout():
     zipurl = 'https://github.com/UpKobox/Skodi/raw/main/repo.zip'
     with urlopen(zipurl) as zipresp:
         with ZipFile(BytesIO(zipresp.read())) as zfile:
-            zfile.extractall(xbmc.translatePath('special://home/temp/temp/'))
+            zfile.extractall(xbmcvfs.translatePath('special://home/temp/temp/'))
     # copie des fichiers extraie
-    source_dir = xbmc.translatePath('special://home/temp/temp/addons')
-    destination_dir = xbmc.translatePath('special://home/addons')
+    source_dir = xbmcvfs.translatePath('special://home/temp/temp/addons')
+    destination_dir = xbmcvfs.translatePath('special://home/addons')
     shutil.copytree(source_dir, destination_dir, dirs_exist_ok=True)
     xbmc.sleep(3000)
     xbmc.executebuiltin("Notification(MISE A JOUR OK,Addons copiés !)")
@@ -157,7 +157,7 @@ def inst_act():
 def inst_tout2():
     #install addons additionnels
     # suppression dossier temporaire
-    dirPath = xbmc.translatePath('special://home/temp/temp/')
+    dirPath = xbmcvfs.translatePath('special://home/temp/temp/')
     try:
         shutil.rmtree(dirPath)
     except:
@@ -168,10 +168,10 @@ def inst_tout2():
     zipurl = 'http://kodi.prf2.ovh/dbs/addons.zip'
     with urlopen(zipurl) as zipresp:
         with ZipFile(BytesIO(zipresp.read())) as zfile:
-            zfile.extractall(xbmc.translatePath('special://home/temp/temp/'))
+            zfile.extractall(xbmcvfs.translatePath('special://home/temp/temp/'))
     # copie des fichiers extraie
-    source_dir = xbmc.translatePath('special://home/temp/temp/addons')
-    destination_dir = xbmc.translatePath('special://home/addons')
+    source_dir = xbmcvfs.translatePath('special://home/temp/temp/addons')
+    destination_dir = xbmcvfs.translatePath('special://home/addons')
     shutil.copytree(source_dir, destination_dir, dirs_exist_ok=True)
     xbmc.sleep(3000)
     #active addon
@@ -216,14 +216,14 @@ def au_maj():
     zipurl = 'https://github.com/prf2/pack/raw/kodi/au_maj.zip'
     with urlopen(zipurl) as zipresp:
         with ZipFile(BytesIO(zipresp.read())) as zfile:
-            zfile.extractall(xbmc.translatePath('special://home/temp/temp/'))
+            zfile.extractall(xbmcvfs.translatePath('special://home/temp/temp/'))
     # copie des fichiers extraie
-    source_dir = xbmc.translatePath('special://home/temp/temp/addon_data')
-    destination_dir = xbmc.translatePath('special://home/userdata/addon_data')
-    source_dir2 = xbmc.translatePath('special://home/temp/temp/addons')
-    destination_dir2 = xbmc.translatePath('special://home/addons')
-    source_dir3 = xbmc.translatePath('special://home/temp/temp/keymaps')
-    destination_dir3 = xbmc.translatePath('special://home/userdata/keymaps')
+    source_dir = xbmcvfs.translatePath('special://home/temp/temp/addon_data')
+    destination_dir = xbmcvfs.translatePath('special://home/userdata/addon_data')
+    source_dir2 = xbmcvfs.translatePath('special://home/temp/temp/addons')
+    destination_dir2 = xbmcvfs.translatePath('special://home/addons')
+    source_dir3 = xbmcvfs.translatePath('special://home/temp/temp/keymaps')
+    destination_dir3 = xbmcvfs.translatePath('special://home/userdata/keymaps')
     shutil.copytree(source_dir, destination_dir, dirs_exist_ok=True)
     shutil.copytree(source_dir2, destination_dir2, dirs_exist_ok=True)
     shutil.copytree(source_dir3, destination_dir3, dirs_exist_ok=True)
@@ -237,20 +237,20 @@ def au_majCoKo():
     zipurl = 'https://github.com/UpKobox/Skodi/raw/main/SKIN/media(CoKodico).zip'
     with urlopen(zipurl) as zipresp:
         with ZipFile(BytesIO(zipresp.read())) as zfile:
-            zfile.extractall(xbmc.translatePath('special://home/temp/temp/'))
+            zfile.extractall(xbmcvfs.translatePath('special://home/temp/temp/'))
     # copie des fichiers extraie
-    source_dir = xbmc.translatePath('special://home/temp/temp')
-    destination_dir = xbmc.translatePath('special://home/media')
+    source_dir = xbmcvfs.translatePath('special://home/temp/temp')
+    destination_dir = xbmcvfs.translatePath('special://home/media')
     shutil.copytree(source_dir, destination_dir, dirs_exist_ok=True)
     xbmc.executebuiltin("Notification(EXTRACTION OK,Maj 1 effectuée !)")
     xbmc.sleep(2000)
     zipurl = 'https://github.com/UpKobox/Skodi/raw/main/SKIN/png(CoKodico).zip'
     with urlopen(zipurl) as zipresp:
         with ZipFile(BytesIO(zipresp.read())) as zfile:
-            zfile.extractall(xbmc.translatePath('special://home/temp/temp/'))
+            zfile.extractall(xbmcvfs.translatePath('special://home/temp/temp/'))
     # copie des fichiers extraie
-    source_dir = xbmc.translatePath('special://home/temp/temp')
-    destination_dir = xbmc.translatePath('special://home/media')
+    source_dir = xbmcvfs.translatePath('special://home/temp/temp')
+    destination_dir = xbmcvfs.translatePath('special://home/media')
     shutil.copytree(source_dir, destination_dir, dirs_exist_ok=True)
     xbmc.executebuiltin("Notification(EXTRACTION OK,Maj 2 effectuée !)")
     xbmc.sleep(2000)
@@ -260,24 +260,24 @@ def au_majCoKo():
 def au_maj2():
     #install repository additionnels
     # suppression dossier temporaire
-    dirPath = xbmc.translatePath('special://home/temp/temp/')
+    dirPath = xbmcvfs.translatePath('special://home/temp/temp/')
     try:
         shutil.rmtree(dirPath)
     except:
         print('Error while deleting directory')
     xbmc.sleep(2000)
-    xbmc.executebuiltin("Notification(REPO,Téléchargement en cours...)")
+    xbmc.executebuiltin("Notification(Repository,Téléchargement en cours...)")
     # telechargement et extraction du zip
     zipurl = 'https://github.com/UpKobox/Skodi/raw/main/repo.zip'
     with urlopen(zipurl) as zipresp:
         with ZipFile(BytesIO(zipresp.read())) as zfile:
-            zfile.extractall(xbmc.translatePath('special://home/temp/temp/'))
+            zfile.extractall(xbmcvfs.translatePath('special://home/temp/temp/'))
     # copie des fichiers extraie
-    source_dir = xbmc.translatePath('special://home/temp/temp/addons')
-    destination_dir = xbmc.translatePath('special://home/addons')
+    source_dir = xbmcvfs.translatePath('special://home/temp/temp/addons')
+    destination_dir = xbmcvfs.translatePath('special://home/addons')
     shutil.copytree(source_dir, destination_dir, dirs_exist_ok=True)
     xbmc.sleep(3000)
-    xbmc.executebuiltin("Notification(MISE A JOUR OK,Addons copiés !)")
+    xbmc.executebuiltin("Notification(Maj OK, Repository copiés !)")
     #active addon
     xbmc.executeJSONRPC('{"jsonrpc": "2.0", "id":1, "method": "Addons.SetAddonEnabled", "params": { "addonid": "repository.autowidget", "enabled": true }}')
     xbmc.executeJSONRPC('{"jsonrpc": "2.0", "id":1, "method": "Addons.SetAddonEnabled", "params": { "addonid": "repository.jurialmunkey", "enabled": true }}')
@@ -591,7 +591,7 @@ def FanKai():
 def importSkin(zipurl):
     # suppression dossier temporaire
     xbmc.executebuiltin("Notification(DOSSIER TEMP,Effacement en cours...,10)")
-    dirPath = xbmc.translatePath('special://temp/')
+    dirPath = xbmcvfs.translatePath('special://temp/')
     try:
        shutil.rmtree(dirPath)
     except:
@@ -600,15 +600,16 @@ def importSkin(zipurl):
     # telechargement et extraction du zip
     with urlopen(zipurl) as zipresp:
         with ZipFile(BytesIO(zipresp.read())) as zfile:
-            zfile.extractall(xbmc.translatePath('special://temp/'))
+            zfile.extractall(xbmcvfs.translatePath('special://temp/'))
     # copie des fichiers extraie
-    source_dir = xbmc.translatePath('special://temp/addon_data/')
-    destination_dir = xbmc.translatePath('special://masterprofile/addon_data')
+    source_dir = xbmcvfs.translatePath('special://temp/addon_data/')
+    destination_dir = xbmcvfs.translatePath('special://masterprofile/addon_data')
     shutil.copytree(source_dir, destination_dir, dirs_exist_ok=True)
     xbmc.executebuiltin("Notification(Copie Skin , OK ,100)")
     xbmc.sleep(1000)
     xbmc.executebuiltin( 'ReloadSkin()' )
     xbmc.executebuiltin( "Notification(Rafraichissement Skin , Profitez...,2000)" )
+
 ##############################################
 
 # MENU SAUVEGARDE RESTAURATION
@@ -637,37 +638,37 @@ def save_restor():
 def skin_save1():
     xbmc.executebuiltin("Notification(Patienter, Copie en cours...)")
     # COPIE DES DOSSIERS ET FICHIERS DU SKIN
-    source_dir = xbmc.translatePath('special://home/userdata/addon_data/skin.arctic.horizon.2')
-    destination_dir = xbmc.translatePath('special://home/userdata/Sauvegardes/Skin_sauvegarde/AH2/addon_data/skin.arctic.horizon.2')
-    source_dir1 = xbmc.translatePath('special://home/userdata/addon_data/script.skinshortcuts')
-    destination_dir1 = xbmc.translatePath('special://home/userdata/Sauvegardes/Skin_sauvegarde/AH2/addon_data/script.skinshortcuts')
+    source_dir = xbmcvfs.translatePath('special://home/userdata/addon_data/skin.arctic.horizon.2')
+    destination_dir = xbmcvfs.translatePath('special://home/userdata/Sauvegardes/Skin_sauvegarde/AH2/addon_data/skin.arctic.horizon.2')
+    source_dir1 = xbmcvfs.translatePath('special://home/userdata/addon_data/script.skinshortcuts')
+    destination_dir1 = xbmcvfs.translatePath('special://home/userdata/Sauvegardes/Skin_sauvegarde/AH2/addon_data/script.skinshortcuts')
     shutil.copytree(source_dir, destination_dir, dirs_exist_ok=True)
     shutil.copytree(source_dir1, destination_dir1, dirs_exist_ok=True)
     # CREATION ARCHIVE ZIP
-    shutil.make_archive((xbmc.translatePath('special://home/userdata/Sauvegardes/Skin_sauvegarde/Skin_sauvegardeAH2')),'zip',(xbmc.translatePath('special://home/userdata/Sauvegardes/Skin_sauvegarde/AH2')))
+    shutil.make_archive((xbmcvfs.translatePath('special://home/userdata/Sauvegardes/Skin_sauvegarde/Skin_sauvegardeAH2')),'zip',(xbmcvfs.translatePath('special://home/userdata/Sauvegardes/Skin_sauvegarde/AH2')))
     xbmc.executebuiltin("Notification(Skin Arctic H. 2 , Archive zip Créer !)")
     sys.exit()
 
 def skin_save2():
     xbmc.executebuiltin("Notification(PREPARATION DES FICHIERS,Copie en cours...)")
     # COPIE DES DOSSIERS ET FICHIERS DU SKIN
-    source_dir = xbmc.translatePath('special://home/userdata/addon_data/skin.project.aura')
-    destination_dir = xbmc.translatePath('special://home/userdata/addon_data/Scripts/Skin_save/2/addon_data/skin.project.aura')
-    source_dir1 = xbmc.translatePath('special://home/userdata/addon_data/script.skinshortcuts')
-    destination_dir1 = xbmc.translatePath('special://home/userdata/addon_data/Scripts/Skin_save/2/addon_data/script.skinshortcuts')
-    source_dir2 = xbmc.translatePath('special://home/addons/skin.project.aura/1080i/script-skinshortcuts-includes.xml')
-    destination_dir2 = xbmc.translatePath('special://home/userdata/addon_data/Scripts/Skin_save/2/addons/skin.project.aura/1080i/script-skinshortcuts-includes.xml')
+    source_dir = xbmcvfs.translatePath('special://home/userdata/addon_data/skin.project.aura')
+    destination_dir = xbmcvfs.translatePath('special://home/userdata/addon_data/Scripts/Skin_save/2/addon_data/skin.project.aura')
+    source_dir1 = xbmcvfs.translatePath('special://home/userdata/addon_data/script.skinshortcuts')
+    destination_dir1 = xbmcvfs.translatePath('special://home/userdata/addon_data/Scripts/Skin_save/2/addon_data/script.skinshortcuts')
+    source_dir2 = xbmcvfs.translatePath('special://home/addons/skin.project.aura/1080i/script-skinshortcuts-includes.xml')
+    destination_dir2 = xbmcvfs.translatePath('special://home/userdata/addon_data/Scripts/Skin_save/2/addons/skin.project.aura/1080i/script-skinshortcuts-includes.xml')
     shutil.copytree(source_dir, destination_dir, dirs_exist_ok=True)
     shutil.copytree(source_dir1, destination_dir1, dirs_exist_ok=True)
     shutil.copy(source_dir2, destination_dir2)
     # CREATION ARCHIVE ZIP
-    shutil.make_archive((xbmc.translatePath('special://home/userdata/addon_data/Scripts/Skin_save/Skin_save1')),'zip',(xbmc.translatePath('special://home/userdata/addon_data/Scripts/Skin_save/2')))
+    shutil.make_archive((xbmcvfs.translatePath('special://home/userdata/addon_data/Scripts/Skin_save/Skin_save1')),'zip',(xbmcvfs.translatePath('special://home/userdata/addon_data/Scripts/Skin_save/2')))
     xbmc.executebuiltin("Notification(SKIN SAUVEGARDE, Archive ZIP créée !)")
     sys.exit()
 
 def skin_save3():
-    #source_dir = xbmc.translatePath('special://home/addons/plugin.program.Skodi/resources/script.xbmcbackup')
-    #destination_dir = xbmc.translatePath('special://home/userdata/addon_data/script.xbmcbackup')
+    #source_dir = xbmcvfs.translatePath('special://home/addons/plugin.program.Skodi/resources/script.xbmcbackup')
+    #destination_dir = xbmcvfs.translatePath('special://home/userdata/addon_data/script.xbmcbackup')
     #shutil.copytree(source_dir, destination_dir, dirs_exist_ok=True)
     #xbmc.sleep(1000)
     xbmc.executebuiltin('RunScript(script.xbmcbackup,mode=backup)')
@@ -681,8 +682,8 @@ def skin_save4():
 
 #def AddonbBackupKodi():
     #xbmc.executebuiltin('Addon.OpenSettings(script.xbmcbackup)')  
-    #source_dir = xbmc.translatePath('special://home/addons/plugin.program.Skodi/resources/script.xbmcbackup')
-    #destination_dir = xbmc.translatePath('special://home/userdata/addon_data/script.xbmcbackup')
+    #source_dir = xbmcvfs.translatePath('special://home/addons/plugin.program.Skodi/resources/script.xbmcbackup')
+    #destination_dir = xbmcvfs.translatePath('special://home/userdata/addon_data/script.xbmcbackup')
     #shutil.copytree(source_dir, destination_dir, dirs_exist_ok=True)
     #xbmc.sleep(1000)
     #xbmc.executebuiltin('RunScript(script.xbmcbackup)')
@@ -695,10 +696,10 @@ def skin_save4():
 # RESTAURATION
 def skin_restor1():
     # copie des fichiers sauvegarde
-    source_dir = xbmc.translatePath('special://home/userdata/Sauvegardes/Skin_sauvegarde/AH2/addon_data')
-    destination_dir = xbmc.translatePath('special://home/userdata/addon_data')
-    source_dir1 = xbmc.translatePath('special://home/userdata/Sauvegardes/Skin_sauvegarde/AH2/addon_data')
-    destination_dir1 = xbmc.translatePath('special://home/userdata/addon_data')
+    source_dir = xbmcvfs.translatePath('special://home/userdata/Sauvegardes/Skin_sauvegarde/AH2/addon_data')
+    destination_dir = xbmcvfs.translatePath('special://home/userdata/addon_data')
+    source_dir1 = xbmcvfs.translatePath('special://home/userdata/Sauvegardes/Skin_sauvegarde/AH2/addon_data')
+    destination_dir1 = xbmcvfs.translatePath('special://home/userdata/addon_data')
     shutil.copytree(source_dir, destination_dir, dirs_exist_ok=True)
     shutil.copytree(source_dir1, destination_dir1, dirs_exist_ok=True)
     xbmc.executebuiltin("Notification(COPIE OK,Mise à jour effectuée !)")
@@ -711,10 +712,10 @@ def skin_restor1():
 
 def skin_restor2():
     # copie des fichiers sauvegarde
-    source_dir = xbmc.translatePath('special://home/userdata/addon_data/Scripts/Skin_save/2/addon_data')
-    destination_dir = xbmc.translatePath('special://home/userdata/addon_data')
-    source_dir2 = xbmc.translatePath('special://home/userdata/addon_data/Scripts/Skin_save/2/addons/skin.project.aura')
-    destination_dir2 = xbmc.translatePath('special://home/addons/skin.project.aura')
+    source_dir = xbmcvfs.translatePath('special://home/userdata/addon_data/Scripts/Skin_save/2/addon_data')
+    destination_dir = xbmcvfs.translatePath('special://home/userdata/addon_data')
+    source_dir2 = xbmcvfs.translatePath('special://home/userdata/addon_data/Scripts/Skin_save/2/addons/skin.project.aura')
+    destination_dir2 = xbmcvfs.translatePath('special://home/addons/skin.project.aura')
     shutil.copytree(source_dir, destination_dir, dirs_exist_ok=True)
     shutil.copytree(source_dir2, destination_dir2, dirs_exist_ok=True)
     xbmc.executebuiltin("Notification(COPIE OK,Mise à jour effectuée !)")
@@ -779,7 +780,7 @@ def vider_cache():
     #nettoyer tout
     xbmc.executebuiltin("Notification(FICHIER TEMP,Effacement en cours...)")
     # suppression dossier temporaire
-    dirPath = xbmc.translatePath('special://home/temp/temp/')
+    dirPath = xbmcvfs.translatePath('special://home/temp/temp/')
     try:
        shutil.rmtree(dirPath)
     except:
@@ -787,7 +788,7 @@ def vider_cache():
     xbmc.sleep(1000)
     xbmc.executebuiltin("Notification(DOSSIER PACKAGES,Effacement en cours...)")
     # suppression dossier packages
-    dirPath = xbmc.translatePath('special://home/addons/packages/')
+    dirPath = xbmcvfs.translatePath('special://home/addons/packages/')
     try:
        shutil.rmtree(dirPath)
     except:
@@ -795,7 +796,7 @@ def vider_cache():
     xbmc.sleep(1000)
     xbmc.executebuiltin("Notification(DOSSIER THUMBNAILS,Effacement en cours...)")
     # suppression dossier thumbnails
-    dirPath = xbmc.translatePath('special://home/userdata/Thumbnails/')
+    dirPath = xbmcvfs.translatePath('special://home/userdata/Thumbnails/')
     try:
        shutil.rmtree(dirPath)
     except:
@@ -803,7 +804,7 @@ def vider_cache():
     xbmc.sleep(1000)
     xbmc.executebuiltin("Notification(CACHE TEMP,Effacement en cours...)")
     # suppression dossier cache
-    dirPath = xbmc.translatePath('special://home/cache/temp/')
+    dirPath = xbmcvfs.translatePath('special://home/cache/temp/')
     try:
        shutil.rmtree(dirPath)
     except:
@@ -823,7 +824,7 @@ def cache_seul():
     #nettoyaer cache uniquement
     xbmc.executebuiltin("Notification(CACHE TEMP,Effacement en cours...)")
     # suppression dossier cache
-    dirPath = xbmc.translatePath('special://home/cache/temp/')
+    dirPath = xbmcvfs.translatePath('special://home/cache/temp/')
     try:
        shutil.rmtree(dirPath)
     except:
@@ -841,7 +842,7 @@ def tmp_seul():
     #nettoyaer tmp uniquement
     xbmc.executebuiltin("Notification(FICHIER TEMP,Effacement en cours...)")
     # suppression dossier temporaire
-    dirPath = xbmc.translatePath('special://home/temp/temp/')
+    dirPath = xbmcvfs.translatePath('special://home/temp/temp/')
     try:
        shutil.rmtree(dirPath)
     except:
@@ -859,7 +860,7 @@ def package_seul():
     #nettoyaer packages uniquement
     xbmc.executebuiltin("Notification(DOSSIER PACKAGES,Effacement en cours...)")
     # suppression dossier packages
-    dirPath = xbmc.translatePath('special://home/addons/packages/')
+    dirPath = xbmcvfs.translatePath('special://home/addons/packages/')
     try:
        shutil.rmtree(dirPath)
     except:
@@ -877,7 +878,7 @@ def thumb_seul():
     #nettoyaer thumbnails uniquement
     xbmc.executebuiltin("Notification(DOSSIER THUMBNAILS,Effacement en cours...)")
     # suppression dossier thumbnails
-    dirPath = xbmc.translatePath('special://home/userdata/Thumbnails/')
+    dirPath = xbmcvfs.translatePath('special://home/userdata/Thumbnails/')
     try:
        shutil.rmtree(dirPath)
     except:

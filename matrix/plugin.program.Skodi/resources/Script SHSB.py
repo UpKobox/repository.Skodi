@@ -1,2 +1,2 @@
 xbmc.executebuiltin('Dialog.Close(busydialog)')
-xbmc.executebuiltin('RunAddon(plugin.video.script.skin.helper.skinbackup)')
+xbmc.executebuiltin('RunAddon(script.skin.helper.skinbackup)')
