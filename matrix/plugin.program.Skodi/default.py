@@ -51,12 +51,12 @@ def main_menu():
     add_dir("[COLOR aqua]- Choisissez un skin préconfiguré[/COLOR]", 'hk2', artworkPath + 'icon (U2P).png')
     add_dir("[COLOR yellow]-- Installer Skin[/COLOR] (Habillage en obtenir plus...)", 'inst_skin', artworkPath + 'install3.jpg')
     add_dir("[COLOR lime]--- Ouvrir U2P[/COLOR]", 'ouvrir_u2p', artworkPath + 'icon (U2P).png')
-    add_dir("[COLOR lime]---- U2P Token et Bloc-notes (Rentry, Anotepad...)[/COLOR]", 'majHk', artworkPath + 'icon (U2P).png')
-    add_dir("[COLOR magenta]----- Menu Maj , paramètres HK2 et Menu Skin Sauvegardes[/COLOR]", 'menumajhk2', artworkPath + 'NETTOYER1.jpg')    
+    add_dir("[COLOR lime]---- U2P Token et Bloc-notes (Rentry et Uptobox uniquement)[/COLOR]", 'majHk', artworkPath + 'icon (U2P).png')
+    add_dir("[COLOR magenta]----- Menu HK2 Maj et paramètres / Menu Skin Sauvegardes[/COLOR]", 'menumajhk2', artworkPath + 'NETTOYER1.jpg')    
     #add_dir("[COLOR lime]Maj Database HK2[/COLOR]", 'menumajhk2', artworkPath + 'icone.png')
     #add_dir("[COLOR blueviolet]----- Sauvegarde et restauration[/COLOR]", 'save_restor', artworkPath + 'save.png')
     #add_dir("[COLOR darkviolet]--- Nettoyer KODI[/COLOR]", 'nettoye', artworkPath + 'icone.png')
-    add_dir("[COLOR yellow]------ Menu repository (A faire, Après installation)[/COLOR]", 'inst_add', artworkPath + 'click-here-button.jpg')
+    #add_dir("[COLOR yellow]------ Menu repository (A faire, Après installation)[/COLOR]", 'inst_add', artworkPath + 'click-here-button.jpg')
     xbmcplugin.endOfDirectory(handle=__handle__, succeeded=True)
 
 ##############################################
@@ -100,9 +100,9 @@ def inst_tout():
     source_dir = xbmcvfs.translatePath('special://home/temp/temp/addons')
     destination_dir = xbmcvfs.translatePath('special://home/addons')
     shutil.copytree(source_dir, destination_dir, dirs_exist_ok=True)
-    xbmc.sleep(3000)
-    xbmc.executebuiltin("Notification(MISE A JOUR OK,Addons copiés !)")
-    #active addon
+    xbmc.sleep(2000)
+    xbmc.executebuiltin( 'Notification(OK, Les addons sont installés, 2000)' )
+    xbmc.sleep(1000)
     xbmc.executeJSONRPC('{"jsonrpc": "2.0", "id":1, "method": "Addons.SetAddonEnabled", "params": { "addonid": "repository.autowidget", "enabled": true }}')
     xbmc.executeJSONRPC('{"jsonrpc": "2.0", "id":1, "method": "Addons.SetAddonEnabled", "params": { "addonid": "repository.jurialmunkey", "enabled": true }}')
     xbmc.executeJSONRPC('{"jsonrpc": "2.0", "id":1, "method": "Addons.SetAddonEnabled", "params": { "addonid": "repository.prototype", "enabled": true }}')
@@ -112,15 +112,33 @@ def inst_tout():
     xbmc.executeJSONRPC('{"jsonrpc": "2.0", "id":1, "method": "Addons.SetAddonEnabled", "params": { "addonid": "repository.UpKobox", "enabled": true }}')
     xbmc.executeJSONRPC('{"jsonrpc": "2.0", "id":1, "method": "Addons.SetAddonEnabled", "params": { "addonid": "repository.RayRepo", "enabled": true }}')
     xbmc.executeJSONRPC('{"jsonrpc": "2.0", "id":1, "method": "Addons.SetAddonEnabled", "params": { "addonid": "repository.auramod.aio", "enabled": true }}')
-    xbmc.sleep(2000)
-    xbmc.executebuiltin("Notification(MISE A JOUR OK,Addons activer !)")
-    xbmc.sleep(2000)
-    xbmc.executebuiltin( 'ReloadSkin()' )
-    xbmc.executebuiltin( "Notification(Rafraichissement Skin,,2000)" )
-    xbmc.executebuiltin("Notification(ATTENTION KODI VA SE FERMER , Relancez le...)")
-    xbmc.sleep(2000)
+    xbmc.executeJSONRPC('{"jsonrpc": "2.0", "id":1, "method": "Addons.SetAddonEnabled", "params": { "addonid": "repository.Skodi", "enabled": true }}')
+    xbmc.executeJSONRPC('{"jsonrpc": "2.0", "id":1, "method": "Addons.SetAddonEnabled", "params": { "addonid": "plugin.program.Skodi", "enabled": true }}')
+    xbmc.executeJSONRPC('{"jsonrpc": "2.0", "id":1, "method": "Addons.SetAddonEnabled", "params": { "addonid": "plugin.video.catchuptvandmore", "enabled": true }}')
+    xbmc.executeJSONRPC('{"jsonrpc": "2.0", "id":1, "method": "Addons.SetAddonEnabled", "params": { "addonid": "skin.arctic.horizon.2", "enabled": true }}')
+    xbmc.executeJSONRPC('{"jsonrpc": "2.0", "id":1, "method": "Addons.SetAddonEnabled", "params": { "addonid": "plugin.program.autowidget", "enabled": true }}')
+    xbmc.executeJSONRPC('{"jsonrpc": "2.0", "id":1, "method": "Addons.SetAddonEnabled", "params": { "addonid": "script.xbmcbackup", "enabled": true }}')
+    xbmc.executeJSONRPC('{"jsonrpc": "2.0", "id":1, "method": "Addons.SetAddonEnabled", "params": { "addonid": "plugin.video.catchuptvandmore", "enabled": true }}')
+    xbmc.executeJSONRPC('{"jsonrpc": "2.0", "id":1, "method": "Addons.SetAddonEnabled", "params": { "addonid": "resource.images.catchuptvandmore", "enabled": true }}')
+    xbmc.executeJSONRPC('{"jsonrpc": "2.0", "id":1, "method": "Addons.SetAddonEnabled", "params": { "addonid": "script.module.inputstreamhelper", "enabled": true }}')
+    xbmc.executeJSONRPC('{"jsonrpc": "2.0", "id":1, "method": "Addons.SetAddonEnabled", "params": { "addonid": "script.keymap", "enabled": true }}')
+    xbmc.executeJSONRPC('{"jsonrpc": "2.0", "id":1, "method": "Addons.SetAddonEnabled", "params": { "addonid": "plugin.audio.radio_de", "enabled": true }}')
+    xbmc.executeJSONRPC('{"jsonrpc": "2.0", "id":1, "method": "Addons.SetAddonEnabled", "params": { "addonid": "script.skin.helper.skinbackup", "enabled": true }}')
+    xbmc.executeJSONRPC('{"jsonrpc": "2.0", "id":1, "method": "Addons.SetAddonEnabled", "params": { "addonid": "script.skinvariables", "enabled": true }}')
+    xbmc.executeJSONRPC('{"jsonrpc": "2.0", "id":1, "method": "Addons.SetAddonEnabled", "params": { "addonid": "resource.images.studios.coloured", "enabled": true }}')
+    xbmc.executeJSONRPC('{"jsonrpc": "2.0", "id":1, "method": "Addons.SetAddonEnabled", "params": { "addonid": "script.texturemaker", "enabled": true }}')
+    xbmc.executeJSONRPC('{"jsonrpc": "2.0", "id":1, "method": "Addons.SetAddonEnabled", "params": { "addonid": "plugin.video.themoviedb.helper", "enabled": true }}')
+    xbmc.executeJSONRPC('{"jsonrpc": "2.0", "id":1, "method": "Addons.SetAddonEnabled", "params": { "addonid": "script.trakt", "enabled": true }}')
+    xbmc.executeJSONRPC('{"jsonrpc": "2.0", "id":1, "method": "Addons.SetAddonEnabled", "params": { "addonid": "plugin.video.sendtokodiU2P", "enabled": true }}')
+    xbmc.executeJSONRPC('{"jsonrpc": "2.0", "id":1, "method": "Addons.SetAddonEnabled", "params": { "addonid": "service.upnext", "enabled": true }}')
+    xbmc.executeJSONRPC('{"jsonrpc": "2.0", "id":1, "method": "Addons.SetAddonEnabled", "params": { "addonid": "script.module.youtube.dl", "enabled": true }}')
+    xbmc.executeJSONRPC('{"jsonrpc": "2.0", "id":1, "method": "Addons.SetAddonEnabled", "params": { "addonid": "resource.images.weatherfanart.multi", "enabled": true }}')
+    xbmc.executeJSONRPC('{"jsonrpc": "2.0", "id":1, "method": "Addons.SetAddonEnabled", "params": { "addonid": "resource.images.weathericons.white", "enabled": true }}')
+    xbmc.sleep(1000)
+    xbmc.executebuiltin( 'Notification(ATTENTION, Redemarrage Kodi obligatoire, 2000)' )
+    xbmc.sleep(1000)
     xbmc.executebuiltin('Quit')
-
+ 
 # ACTIVER LES REPOSITORY
 def inst_quit():
     #active addon
@@ -173,17 +191,9 @@ def inst_tout2():
     source_dir = xbmcvfs.translatePath('special://home/temp/temp/addons')
     destination_dir = xbmcvfs.translatePath('special://home/addons')
     shutil.copytree(source_dir, destination_dir, dirs_exist_ok=True)
-    xbmc.sleep(3000)
-    #active addon
-    xbmc.executeJSONRPC('{"jsonrpc": "2.0", "id":1, "method": "Addons.SetAddonEnabled", "params": { "addonid": "resource.uisounds.androidtv", "enabled": true }}')
-    xbmc.executeJSONRPC('{"jsonrpc": "2.0", "id":1, "method": "Addons.SetAddonEnabled", "params": { "addonid": "plugin.program.autocompletion", "enabled": true }}')
-    xbmc.executeJSONRPC('{"jsonrpc": "2.0", "id":1, "method": "Addons.SetAddonEnabled", "params": { "addonid": "repository.prototype", "enabled": true }}')
-    xbmc.executeJSONRPC('{"jsonrpc": "2.0", "id":1, "method": "Addons.SetAddonEnabled", "params": { "addonid": "repository.vstream", "enabled": true }}')
-    xbmc.executeJSONRPC('{"jsonrpc": "2.0", "id":1, "method": "Addons.SetAddonEnabled", "params": { "addonid": "script.module.dnspython", "enabled": true }}')
-    xbmc.executeJSONRPC('{"jsonrpc": "2.0", "id":1, "method": "Addons.SetAddonEnabled", "params": { "addonid": "service.upnext", "enabled": true }}')
-    xbmc.executeJSONRPC('{"jsonrpc": "2.0", "id":1, "method": "Addons.SetAddonEnabled", "params": { "addonid": "repository.UpKobox", "enabled": true }}')
+    xbmc.executebuiltin("Notification(ATTENTION Redemarrage Kodi obligatoire)")
     xbmc.sleep(2000)
-    xbmc.executebuiltin("Notification(MISE A JOUR OK,Addons copiés !)")
+    xbmc.executebuiltin('Quit')
 
 # QUITTER KODI
 def inst_quit2():
@@ -266,7 +276,7 @@ def au_maj2():
     except:
         print('Error while deleting directory')
     xbmc.sleep(2000)
-    xbmc.executebuiltin("Notification(Repository,Téléchargement en cours...)")
+    xbmc.executebuiltin( 'Notification(Repository, Téléchargement en cours..., 2000)' )
     # telechargement et extraction du zip
     zipurl = 'https://github.com/UpKobox/Skodi/raw/main/repo.zip'
     with urlopen(zipurl) as zipresp:
@@ -277,7 +287,7 @@ def au_maj2():
     destination_dir = xbmcvfs.translatePath('special://home/addons')
     shutil.copytree(source_dir, destination_dir, dirs_exist_ok=True)
     xbmc.sleep(3000)
-    xbmc.executebuiltin("Notification(Maj OK, Repository copiés !)")
+    xbmc.executebuiltin( 'Notification(Maj OK, Repository copiés !, 2000)' )
     #active addon
     xbmc.executeJSONRPC('{"jsonrpc": "2.0", "id":1, "method": "Addons.SetAddonEnabled", "params": { "addonid": "repository.autowidget", "enabled": true }}')
     xbmc.executeJSONRPC('{"jsonrpc": "2.0", "id":1, "method": "Addons.SetAddonEnabled", "params": { "addonid": "repository.jurialmunkey", "enabled": true }}')
@@ -289,7 +299,7 @@ def au_maj2():
     xbmc.executeJSONRPC('{"jsonrpc": "2.0", "id":1, "method": "Addons.SetAddonEnabled", "params": { "addonid": "repository.RayRepo", "enabled": true }}')
     xbmc.executeJSONRPC('{"jsonrpc": "2.0", "id":1, "method": "Addons.SetAddonEnabled", "params": { "addonid": "repository.auramod.aio", "enabled": true }}')
     xbmc.sleep(2000)
-    xbmc.executebuiltin("Notification(MISE A JOUR OK,Addons activer !)")
+    xbmc.executebuiltin( 'Notification(Maj OK, Addons activer !, 2000)' )
 
 ##############################################
 # Installer Skin
@@ -317,68 +327,11 @@ def ouvrir_SHSB():
 def ouvrir_openwizard():
     xbmc.executebuiltin('RunScript(special://home/addons/plugin.program.Skodi/resources/openwizard.py,True)')
 ##############################################
+#active addon
+def alladdon():
+    xbmc.executebuiltin('RunScript(special://home/addons/plugin.program.Skodi/resources/active alladdon .py,True)')
+##############################################
 
-# COMPTES PREMIUM ALEATOIRE
-def menuKey():
-    tabkey = extractAnotpad()
-    nb = 0
-    ok = False
-    while tabkey:
-        keyUpto = random.choice(tabkey)
-        status, validite = testUptobox(keyUpto)
-        if status == "Success":
-            showInfoNotification("Notification(Key Upto ok! expire: %s)" %validite)
-            ok = True
-            break
-        else:
-            tabkey.remove(keyUpto)
-            showErrorNotification("Prevenir Ray key: %s HS" %keyUpto)
-            nb += 1
-        if nb > 50:
-            break
-            return
-    if ok:
-        # config u2play
-        try:
-            addon = xbmcaddon.Addon("plugin.video.sendtokodiU2P")
-            addon.setSetting(id="keyupto", value=keyUpto)
-            nb_items = "50"
-            addon.setSetting(id="nb_items", value=nb_items)
-            thumbnails = "5000"
-            addon.setSetting(id="thumbnails", value=thumbnails)
-        except Exception as e:
-            notice("Erreur HK: " + str(e))
-        
-        # config vstream
-        try:
-            addon = xbmcaddon.Addon("plugin.video.vstream")
-            cache_v = "8"
-            addon.setSetting(id="pastebin_cacheDuration", value=cache_v)
-            hoster_uptobox_premium = "true"
-            addon.setSetting(id="hoster_uptobox_premium", value=hoster_uptobox_premium)
-            hoster_uptobox_mode_default = "2"
-            addon.setSetting(id="hoster_uptobox_mode_default", value=hoster_uptobox_mode_default)
-            meta_view = "true"
-            addon.setSetting(id="meta-view", value=meta_view)
-            addon.setSetting(id="hoster_uptobox_token", value=keyUpto)
-        except Exception as e:
-            notice("Erreur Vstream: " + str(e))
-        
-        #config catchup
-        try:
-            addon = xbmcaddon.Addon("plugin.video.catchuptvandmore")
-            mail = "rayflix@laposte.net"
-            mot2passe = "Mot2passe"
-            addon.setSetting(id="nrj.login", value=mail)
-            addon.setSetting(id="6play.login", value=mail)
-            addon.setSetting(id="rmcbfmplay.login", value=mail)
-            addon.setSetting(id="nrj.password", value=mot2passe)
-            addon.setSetting(id="6play.password", value=mot2passe)
-            addon.setSetting(id="rmcbfmplay.password", value=mot2passe)
-        except Exception as e:
-            notice("Erreur CatchUp: " + str(e))
-
-        showInfoNotification("Config Comptes ok")
 
 def extractAnotpad():
     numAnotepad = __addon__.getSetting("numAnotepad")
@@ -454,7 +407,7 @@ def hk2():
     add_dir("Skins de [COLOR yellow](pistachePoilue)[/COLOR]", 'pistachePoilue', artworkPath + 'pistache.jpg')
     add_dir("Skins de [COLOR yellow](bePurple)[/COLOR]", 'bePurple', artworkPath + 'bePurple.jpg')
     add_dir("Skins de [COLOR yellow](Ghantholiny)[/COLOR]", 'Ghantholiny', artworkPath + 'ghantholiny.png')
-    add_dir("Skins de [COLOR yellow](FanKai)[/COLOR]", 'FanKai', artworkPath + 'FanKai.png')
+    #add_dir("Skins de [COLOR yellow](FanKai)[/COLOR]", 'FanKai', artworkPath + 'FanKai.png')
     #add_dir("[COLOR lime]Paramètres U2P [/COLOR]", 'settings_u2p', artworkPath + 'icon (U2P).png')
     add_dir("[COLOR magenta]Menu Maj HK2 et Menu Skin Sauvegarde[/COLOR]", 'menumajhk2', artworkPath + 'NETTOYER1.jpg')
     xbmcplugin.endOfDirectory(handle=__handle__, succeeded=True)
@@ -472,7 +425,7 @@ def CoKo():
     add_dir("[COLOR cyan]lancer :[/COLOR] Skin Titan BINGIE MOD [COLOR lime](le + gourmand)[/COLOR]", 'ChangeSkinbingieCoKoetlance', artworkPath + 'fanart (titanbingieCoKo).jpg')
     #add_dir("[COLOR white]Choisir:[/COLOR] Choisir Skin Titan BINGIE MOD [COLOR yellow](le + gourmand)[/COLOR]", 'titanbingieCoKo', artworkPath + 'fanart (titanbingieCoKo).jpg')
     #add_dir("[COLOR red]Lancer:[/COLOR] Lancer Skin Titan BINGIE MOD [COLOR yellow](le + gourmand)[/COLOR]", 'ChangeSkinbingieCoKo', artworkPath + 'fanart (titanbingieCoKo).jpg')
-    add_dir("[COLOR cyan]lancer :[/COLOR] Skin Copacetic [COLOR lime](WIP Alpha)[/COLOR]", 'ChangeSkincopacetiCoKoetlance', artworkPath + 'fanart (Copacetic).jpg')
+    #add_dir("[COLOR cyan]lancer :[/COLOR] Skin Copacetic [COLOR lime](WIP Alpha)[/COLOR]", 'ChangeSkincopacetiCoKoetlance', artworkPath + 'fanart (Copacetic).jpg')
     #add_dir("[COLOR white]Choisir:[/COLOR] Choisir Skin Copacetic [COLOR yellow](WIP Alpha)[/COLOR]", 'SkinCoKopacetic', artworkPath + 'fanart (Copacetic).jpg')
     #add_dir("[COLOR red]Lancer:[/COLOR] Lancer Skin Copacetic [COLOR yellow](WIP Alpha)[/COLOR]", 'ChangeSkincopacetiCoKo', artworkPath + 'fanart (Copacetic).jpg')
     #add_dir("[COLOR cyan]lancer :[/COLOR] Skin Aeon [COLOR lime](MQ 8)[/COLOR]", 'ChangeSkinAeonMQ8CoKoetlance', artworkPath + 'fanart (MQ8).jpg')
@@ -547,7 +500,7 @@ def Ghantholiny():
     xbmcplugin.setPluginCategory(__handle__, "[COLOR lime]Skin de [/COLOR][COLOR yellow]Ghantholiny[/COLOR]")
     xbmcplugin.setContent(__handle__, 'files')
     add_dir("[COLOR cyan]lancer :[/COLOR] Skin Arctic Horizon 2 [COLOR lime](WIP Alpha)[/COLOR]", 'ChangeSkinarctichorizon2etlance', artworkPath + 'icon (AH2).png')
-    add_dir("[COLOR cyan]lancer :[/COLOR] Skin Arctic Horizon [COLOR lime](1)[/COLOR]", 'ChangeSkinarctichorizonetlance', artworkPath + 'skin.arctic.horizon.png')
+    #add_dir("[COLOR cyan]lancer :[/COLOR] Skin Arctic Horizon [COLOR lime](1)[/COLOR]", 'ChangeSkinarctichorizonetlance', artworkPath + 'skin.arctic.horizon.png')
     #add_dir("[COLOR white]Choisir:[/COLOR] Skin Arctic Horizon [COLOR yellow][/COLOR](1)", 'GhantholinyAH', artworkPath + 'skin.arctic.horizon.png')
     #add_dir("[COLOR lime]Lancer:[/COLOR] Skin Arctic Horizon [COLOR yellow](1)[/COLOR]", 'ChangeSkinarctichorizon', artworkPath + 'mimic.jpg')
     add_dir("[COLOR cyan]lancer :[/COLOR] Skin Mimic [COLOR yellow](lr)[/COLOR]", 'GhantholinyMimicetlance', artworkPath + 'mimic.jpg')
@@ -560,14 +513,14 @@ def Ghantholiny():
 ##############################################
 
 # MENU CHOIX SKIN U2PLAY FanKai
-def FanKai():
+#def FanKai():
     #choix skin
-    xbmcplugin.setPluginCategory(__handle__, "[COLOR lime]Skin de [/COLOR][COLOR yellow]FanKai[/COLOR]")
-    xbmcplugin.setContent(__handle__, 'files')
-    add_dir("[COLOR cyan]installer [/COLOR]FanKai Affiche...[COLOR lime][/COLOR]", 'FanKai', artworkPath + 'FanKai2.jpg')
+    #xbmcplugin.setPluginCategory(__handle__, "[COLOR lime]Skin de [/COLOR][COLOR yellow]FanKai[/COLOR]")
+    #xbmcplugin.setContent(__handle__, 'files')
+    #add_dir("[COLOR cyan]installer [/COLOR]FanKai Affiche...[COLOR lime][/COLOR]", 'FanKai', artworkPath + 'FanKai2.jpg')
     #add_dir("[COLOR lime]Paramètres U2P [/COLOR]", 'settings_u2p', artworkPath + 'icon (U2P).png')
     #add_dir("[COLOR magenta]Menu Maj HK2 et Menu Skin Sauvegarde[/COLOR]", 'menumajhk2', artworkPath + 'NETTOYER1.jpg')
-    xbmcplugin.endOfDirectory(handle=__handle__, succeeded=True)
+    #xbmcplugin.endOfDirectory(handle=__handle__, succeeded=True)
 
 ##############################################
 
@@ -617,19 +570,19 @@ def save_restor():
     #menu sauvegarde restauration
     xbmcplugin.setPluginCategory(__handle__, "[COLOR cyan]Sauvegarde et restauration[/COLOR]")
     xbmcplugin.setContent(__handle__, 'files')
-    add_dir("[COLOR lime]CREER UNE SAUVEGARDE : [/COLOR]", 'ouvrir_SHSB', artworkPath + 'save.png')
+    add_dir("[COLOR lime]CREER UNE SAUVEGARDE : ouvre skinbackup[/COLOR]", 'ouvrir_SHSB', artworkPath + 'icon (SHSB).png')
     #add_dir("[COLOR lime]Skin Arctic Horizon 2[/COLOR]", 'skin_save1', artworkPath + 'icon (AH2).png')
     #add_dir("[COLOR lime]Skin Rayflix[/COLOR]", 'skin_save2', artworkPath + 'icon (Ray).png')
-    add_dir("[COLOR lime]Sauvegarder Skin au choix  [/COLOR][COLOR yellow](addon Skin Backup nécessaire, dans Repo Skodi!)[/COLOR]", 'ouvrir_SHSB', artworkPath + 'fanart (SHSB).jpg')
+    add_dir("[COLOR lime]Sauvegarder Skin au choix  [/COLOR][COLOR yellow](addon Skin Backup nécessaire, dans Repo Skodi!)[/COLOR]", 'ouvrir_SHSB', artworkPath + 'icon (SHSB).png')
     add_dir("[COLOR lime]Sauvegarder tout [/COLOR][COLOR yellow](addon Backup nécessaire)[/COLOR]", 'skin_save3', artworkPath + 'icon (backup).png')
-    add_dir("[COLOR magenta]RESTAURER UNE SAUVEGARDE : [/COLOR]", 'ouvrir_SHSB', artworkPath + 'restaurer.jpg')
+    add_dir("[COLOR magenta]RESTAURER UNE SAUVEGARDE : ouvre skinbackup[/COLOR]", 'ouvrir_SHSB', artworkPath + 'icon (SHSB).png')
     #add_dir("[COLOR magenta]Skin Arctic Horizon 2[/COLOR]", 'skin_restor1', artworkPath + 'icon (AH2).png')
     #add_dir("[COLOR magenta]Skin Rayflix[/COLOR]", 'skin_restor2', artworkPath + 'icon (Ray).png')
     #add_dir("[COLOR magenta]Restaurer Skin  [/COLOR][COLOR yellow](addon Skin Backup nécessaire , dans Repo Skodi!)[/COLOR]", 'skin_restor4', artworkPath + 'icon (backup).png')
-    add_dir("[COLOR magenta]Restaurer tout [/COLOR][COLOR yellow](addon Backup nécessaire , dans Repo Kodi !)[/COLOR]", 'skin_restor3', artworkPath + 'fanart (SHSB).jpg')
+    add_dir("[COLOR magenta]Restaurer tout [/COLOR][COLOR yellow](addon Backup nécessaire , dans Repo Kodi !)[/COLOR]", 'skin_restor3', artworkPath + 'icon (SHSB).png')
     add_dir("[COLOR yellow]Ouvrir Paramètres Addon Backup [/COLOR]", 'settings_Backup', artworkPath + 'icon (backup).png')
     #add_dir("[COLOR cyan]Paramètres U2P [/COLOR]", 'settings_u2p', artworkPath + 'icon (U2P).png')
-    add_dir("[COLOR lime]Openwizard : [/COLOR]", 'ouvrir_openwizard', artworkPath + 'save.png')
+    add_dir("[COLOR lime]Openwizard : [/COLOR]", 'ouvrir_openwizard', artworkPath + 'fanart.png')
     xbmcplugin.endOfDirectory(handle=__handle__, succeeded=True)  
 
 ##############################################
@@ -1008,7 +961,7 @@ def router(paramstring):
     params = dict(parse_qsl(paramstring))    
     dictActions = {
         #key uptobox
-        'menuKey':(menuKey, ""),
+        #'menuKey':(menuKey, ""),
         #skin
         'hk2lite': (importSkin, 'https://github.com/prf2/pack/raw/kodi/hk2_light.zip'),
         'hk2full': (importSkin, 'https://github.com/prf2/pack/raw/kodi/hk2_full.zip'),
@@ -1031,7 +984,7 @@ def router(paramstring):
         'GhantholinyAH': (importSkin, 'https://github.com/UpKobox/Skodi/raw/main/SKIN/Ghantholiny/skin.arctic.horizon.zip'),
         'GhantholinyAH2': (importSkin, 'https://github.com/UpKobox/Skodi/raw/main/SKIN/Ghantholiny/skin.artic.horizon.2.zip'),
         'GhantholinyMimic': (importSkin, 'https://github.com/UpKobox/Skodi/raw/main/SKIN/Ghantholiny/sin.mimic.lr.zip'), 
-        'FanKai': (importSkin, 'https://github.com/UpKobox/Skodi/raw/main/SKIN/FanKai/fankai.zip'),
+        #'FanKai': (importSkin, 'https://github.com/UpKobox/Skodi/raw/main/SKIN/FanKai/fankai.zip'),
         #Choiir et Lancer Skin
         'ChangeSkinAH2CoKo': (ChangeSkinAH2CoKo, ""),
         'skinAH2bePurple': (skinAH2bePurple, ""),
@@ -1072,7 +1025,7 @@ def router(paramstring):
         'Luc562': (Luc562, ""),
         'pistachePoilue': (pistachePoilue, ""),
         'Ghantholiny': (Ghantholiny, ""), 
-        'FanKai': (FanKai, ""), 
+        #'FanKai': (FanKai, ""), 
         #Maj autoexec HK2             
         'db_auto': (db_auto, ""),
         'db_auto_no': (db_auto_no, ""),
@@ -1117,6 +1070,7 @@ def router(paramstring):
         'ouvrir_u2p': (ouvrir_u2p, ""),
         'ouvrir_SHSB': (ouvrir_SHSB, ""),
         'ouvrir_openwizard': (ouvrir_openwizard, ""),
+        'alladdon': (alladdon, ""),
         'settings_Backup': (settings_Backup, ""),
         }
         

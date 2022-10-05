@@ -11,7 +11,7 @@
         <!--<setting id="ChoixSkinAuramodbePurpleEnfants" label="Skin Auramod Enfants [COLOR yellow](bePurple)[/COLOR]" type="action" action="RunPlugin(plugin://plugin.program.Skodi/?action=ChangeSkinbePurpleAuraKidetlance)">-->
         <setting label="Choisir et Lancer [COLOR lime]Skin Mimic de: [/COLOR]" type="lsep" />
         <setting id="ChoixSkinMimicLuc562" label="Skin Mimic [COLOR yellow](Luc562)[/COLOR]" type="action" action="RunPlugin(plugin://plugin.program.Skodi/?action=ChangeSkinmimiclretlance)"/>
-        <!--<setting id="ChoixSkinMimicGhantholiny" label="Lancer Skin Mimic [COLOR yellow](Ghantholiny)[/COLOR]" type="action" action="RunPlugin(plugin://plugin.program.Skodi/?action=GhantholinyMimicetlance)">-->
+        <setting id="ChoixSkinMimicGhantholiny" label="Lancer Skin Mimic [COLOR yellow](Ghantholiny)[/COLOR]" type="action" action="RunPlugin(plugin://plugin.program.Skodi/?action=GhantholinyMimicetlance)"/>
         <setting label="Choisir et Lancer [COLOR lime]Skin ProjectAura de: [/COLOR]" type="lsep" />
         <setting id="ChoixSkinRayFlixLite" label="RayFlixSkin Project Aura [COLOR yellow](Leger)[/COLOR]" type="action" action="RunPlugin(plugin://plugin.program.Skodi/?action=ChangeSkinsProjectAuraliteetlance)"/>
         <setting id="ChoixSkinRayFlixComplet" label="RayFlixSkin Project Aura [COLOR yellow](Complet)[/COLOR]" type="action" action="RunPlugin(plugin://plugin.program.Skodi/?action=ChangeSkinsProjectAurahk2fulletlance)"/>
@@ -25,32 +25,35 @@
         <setting id="ChoixSkinAeonMQ8CoKodi" label="Skin Aeon MQ8 [COLOR yellow](CoKodico)[/COLOR]" type="action" action="RunPlugin(plugin://plugin.program.Skodi/?action=AeonMQ8)"/>
         <setting label="Choisir et Lancer [COLOR lime]Skin Aeon Nox Silvo de: [/COLOR]" type="lsep" />
         <setting id="ChoixSkinaeonnoxsilvoLuc562" label="Skin Aeon Nox Silvo [COLOR yellow](Luc562)[/COLOR]" type="action" action="RunPlugin(plugin://plugin.program.Skodi/?action=ChangeSkinaeonnoxsilvoetlance)"/>
-        <setting label="Choisir et Lancer [COLOR lime]Skin Arctic Horizon 1 de: [/COLOR]" type="lsep" />
-        <setting id="ChoixSkinGhantholinyarctichorizon1" label="Skin Arctic Horizon 1 [COLOR yellow](Ghantholiny)[/COLOR]" type="action" action="RunPlugin(plugin://plugin.program.Skodi/?action=ChangeSkinarctichorizonetlance)"/>
+        <!--<setting label="Choisir et Lancer [COLOR lime]Skin Arctic Horizon 1 de: [/COLOR]" type="lsep">-->
+        <!--<setting id="ChoixSkinGhantholinyarctichorizon1" label="Skin Arctic Horizon 1 [COLOR yellow](Ghantholiny)[/COLOR]" type="action" action="RunPlugin(plugin://plugin.program.Skodi/?action=ChangeSkinarctichorizonetlance)">-->
     </category>
 
+    <category label="[COLOR orange]Import et Maj Database HK2[/COLOR]">
+        <setting label="[COLOR yellow]Maj Database HK2[/COLOR]" type="lsep" />
+        <setting id="majhk2S" label="[COLOR lime]Maj HK2 et Skin rafraichissement (Addon service Maj HK2 et Skin nécessaire)[/COLOR]" type="action" action="RunScript(special://home/addons/service.U2PplayMaj/U2Pplay.py,True)"/>
+        <setting id="majhk2" label="[COLOR lime]Maj HK2 seulement (rapide)(Addon service Maj HK2 seulement nécessaire)[/COLOR]" type="action" action="RunScript(special://home/addons/service.U2PplayMaj/U2PplayFast.py,True)"/>
+        <setting id="settingmajHk2" label="[COLOR lime]U2Pplay Token et Bloc-notes en ligne (Rentry et Uptobox)[/COLOR]" type="action" action="RunPlugin(plugin://plugin.program.Skodi/?action=majHk)" />
+        <setting label="[COLOR yellow]Import et Reset Database HK2[/COLOR]" type="lsep" />
+        <setting label="[COLOR lime]Import Database[/COLOR]" type="action" action="RunPlugin(plugin://plugin.video.sendtokodiU2P/?action=folderPastebin&maj=false)"/>
+        <setting label="[COLOR lime]Reset Database[/COLOR]" type="action" action="RunPlugin(plugin://plugin.video.sendtokodiU2P/?action=resetBDhkNew)"/>
+        <!--<setting label="[COLOR yellow]Paramétres U2Pplay[/COLOR]" type="lsep" />
+        <setting label="[COLOR lime]Allez dans Paramétres U2Pplay[/COLOR]" type="action" action="RunPlugin(plugin://plugin.program.Skodi/?action=settings_u2p)">-->
+    </category>
 
-        <category label="[COLOR orange]Sauvegarde Skin et kodi [/COLOR]">
+    <category label="[COLOR orange]Sauvegarde Skin et kodi [/COLOR]">
+        <setting label="[COLOR yellow]Sauvegarde et Restauration  (Skin Backup Addon)[/COLOR]" type="lsep" />
+        <setting label="Sauvegarde Skin (Skin Backup Addon)" type="action" action="RunPlugin(plugin://plugin.program.Skodi/?action=ouvrir_SHSB)"/>
         <setting label="[COLOR yellow]Sauvegarde Skin (Arctic Horizon 2)[/COLOR]" type="lsep" />
         <setting label="Sauvegarde Skin (Arctic Horizon 2)" type="action" action="RunPlugin(plugin://plugin.program.Skodi/?action=skin_save1)"/>
         <setting label="Restauration Skin (Arctic Horizon 2)" type="action" action="RunPlugin(plugin://plugin.program.Skodi/?action=skin_restor1)" />
         <setting label="[COLOR yellow]Sauvegarde Skin (Rayflix)[/COLOR]" type="lsep" />
         <setting label="Sauvegarde Skin (Rayflix)" type="action" action="RunPlugin(plugin://plugin.program.Skodi/?action=skin_save2)"/>
         <setting label="Restauration Skin (Rayflix)" type="action" action="RunPlugin(plugin://plugin.program.Skodi/?action=skin_restor2)" />
-        <setting label="[COLOR yellow]Sauvegarde Skin Addon Backup[/COLOR]" type="lsep" />
+        <setting label="[COLOR yellow]Sauvegarde Addon Backup[/COLOR]" type="lsep" />
         <setting label="Sauvegarde (Tout Kodi avec Addon Backup)" type="action" action="RunPlugin(plugin://plugin.program.Skodi/?action=skin_save3)"/>
         <setting label="Restauration (Tout Kodi avec Addon Backup)" type="action" action="RunPlugin(plugin://plugin.program.Skodi/?action=skin_restor3)" />
-    </category>
-
-
-    <category label="[COLOR orange]Import et Maj Database HK2[/COLOR]">
-        <setting label="[COLOR yellow]Maj Database HK2[/COLOR]" type="lsep" />
-        <setting id="majhk2S" label="[COLOR lime]Maj HK2 et Skin rafraichissement[/COLOR]" type="action" action="RunScript(special://home/addons/service.U2PplayMaj/U2Pplay.py,True)"/>
-        <setting id="majhk2" label="[COLOR lime]Maj HK2 seulement (rapide)[/COLOR]" type="action" action="RunScript(special://home/addons/service.U2PplayMaj/U2PplayFast.py,True)"/>
-        <setting id="settingmajHk2" label="[COLOR lime]U2Pplay Token et Bloc-notes en ligne (Rentry, Anotepad...)[/COLOR]" type="action" action="RunPlugin(plugin://plugin.program.Skodi/?action=majHk)" />
-        <setting label="[COLOR yellow]Import et Reset Database HK2[/COLOR]" type="lsep" />
-        <setting label="[COLOR lime]Import Database[/COLOR]" type="action" action="RunPlugin(plugin://plugin.video.sendtokodiU2P/?action=folderPastebin&maj=false)"/>
-        <setting label="[COLOR lime]Reset Database[/COLOR]" type="action" action="RunPlugin(plugin://plugin.video.sendtokodiU2P/?action=resetBDhkNew)"/>
+        <setting label="Sauvegarde et Restauration (Openwizard)" type="action" action="RunPlugin(plugin://plugin.program.Skodi/?action=ouvrir_openwizard)"/>
     </category>
 
 
@@ -65,9 +68,9 @@
  
 
     <category label="[COLOR orange]Installation Repo Skin [/COLOR]">
-        <setting label="[COLOR yellow]Installation des Repo Skin (À faire après installation de cet addon ou ajout repo) [/COLOR]" type="lsep" />
-        <setting id="InstaSkin" label="[COLOR lime]Installation des repo[/COLOR]" type="action" action="RunPlugin(plugin://plugin.program.Skodi/?action=inst_tout)"/>
-        <setting id="ActiSkin" label="[COLOR lime]Activation  des repo[/COLOR]" type="action" action="RunPlugin(plugin://plugin.program.Skodi/?action=au_maj2)"/>
+        <setting label="[COLOR yellow]Installation des Repo Skin (Pour installer et activer tous les repo et addons) [/COLOR]" type="lsep" />
+        <setting id="InstaSkin" label="[COLOR lime]Installation des repo (Redemarrage Kodi, ATTENTION !!!)[/COLOR]" type="action" action="RunPlugin(plugin://plugin.program.Skodi/?action=inst_tout)"/>
+        <setting id="ActiSkin" label="[COLOR lime]Activation  des repo (Apres Redemarrage Kodi)[/COLOR]" type="action" action="RunPlugin(plugin://plugin.program.Skodi/?action=alladdon)"/>
     </category>
    
 </settings>
