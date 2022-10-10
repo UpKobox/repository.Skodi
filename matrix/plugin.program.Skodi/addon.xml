@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="plugin.program.Skodi" version="0.0.5" name="[COLOR lime]Skodi[/COLOR]" provider-name="CoKodico">
+<addon id="plugin.program.Skodi" version="0.0.6" name="[COLOR lime]Skodi[/COLOR]" provider-name="CoKodico">
 	<requires>
         <import addon="script.module.requests" />
 	</requires>

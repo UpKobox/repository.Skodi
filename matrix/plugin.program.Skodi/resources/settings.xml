@@ -25,6 +25,8 @@
         <setting id="ChoixSkinAeonMQ8CoKodi" label="Skin Aeon MQ8 [COLOR yellow](CoKodico)[/COLOR]" type="action" action="RunPlugin(plugin://plugin.program.Skodi/?action=AeonMQ8)"/>
         <setting label="Choisir et Lancer [COLOR lime]Skin Aeon Nox Silvo de: [/COLOR]" type="lsep" />
         <setting id="ChoixSkinaeonnoxsilvoLuc562" label="Skin Aeon Nox Silvo [COLOR yellow](Luc562)[/COLOR]" type="action" action="RunPlugin(plugin://plugin.program.Skodi/?action=ChangeSkinaeonnoxsilvoetlance)"/>
+        <setting label="Choisir et Lancer [COLOR lime]Skin Cosmic de: [/COLOR]" type="lsep" />
+        <setting id="ChoixSkincosmicvic" label="Skin Cosmic [COLOR yellow](VicQing)[/COLOR]" type="action" action="RunPlugin(plugin://plugin.program.Skodi/?action=vicosmicetlance)"/>
         <!--<setting label="Choisir et Lancer [COLOR lime]Skin Arctic Horizon 1 de: [/COLOR]" type="lsep">-->
         <!--<setting id="ChoixSkinGhantholinyarctichorizon1" label="Skin Arctic Horizon 1 [COLOR yellow](Ghantholiny)[/COLOR]" type="action" action="RunPlugin(plugin://plugin.program.Skodi/?action=ChangeSkinarctichorizonetlance)">-->
     </category>

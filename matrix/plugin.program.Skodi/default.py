@@ -405,6 +405,7 @@ def hk2():
     add_dir("Skins de [COLOR yellow](Luc562)[/COLOR]", 'Luc562', artworkPath + 'Luc562logos.png')
     add_dir("Skins de [COLOR yellow](Rayflix)[/COLOR]", 'rayhk2', artworkPath + 'icon (Ray).png')
     add_dir("Skins de [COLOR yellow](pistachePoilue)[/COLOR]", 'pistachePoilue', artworkPath + 'pistache.jpg')
+    add_dir("Skins de [COLOR yellow](Vicqing)[/COLOR]", 'Vicqing', artworkPath + 'VicQing.png')
     add_dir("Skins de [COLOR yellow](bePurple)[/COLOR]", 'bePurple', artworkPath + 'bePurple.jpg')
     add_dir("Skins de [COLOR yellow](Ghantholiny)[/COLOR]", 'Ghantholiny', artworkPath + 'ghantholiny.png')
     #add_dir("Skins de [COLOR yellow](FanKai)[/COLOR]", 'FanKai', artworkPath + 'FanKai.png')
@@ -486,6 +487,20 @@ def pistachePoilue():
     xbmcplugin.setPluginCategory(__handle__, "[COLOR lime]Skin de [/COLOR][COLOR yellow]pistachePoilue[/COLOR]")
     xbmcplugin.setContent(__handle__, 'files')
     add_dir("[COLOR cyan]lancer :[/COLOR] Skin Arctic Horizon 2 [COLOR lime](WIP Alpha)[/COLOR]", 'skinAH2pistachePoilueetlance', artworkPath + 'icon (AH2).png')
+    #add_dir("[COLOR white]Choisir:[/COLOR] Skin Arctic Horizon 2 [COLOR yellow](WIP Alpha)[/COLOR]", 'pistachePoilueAH2', artworkPath + 'icon (AH2).png')
+    #add_dir("[COLOR lime]Lancer:[/COLOR] Skin Arctic Horizon 2 [COLOR yellow](Alpha)[/COLOR]", 'skinAH2pistachePoilue', artworkPath + 'icon (AH2).png')
+    #add_dir("[COLOR lime]Paramètres U2P [/COLOR]", 'settings_u2p', artworkPath + 'icon (U2P).png')
+    #add_dir("[COLOR magenta]Menu Maj HK2 et Menu Skin Sauvegarde[/COLOR]", 'menumajhk2', artworkPath + 'NETTOYER1.jpg')
+    xbmcplugin.endOfDirectory(handle=__handle__, succeeded=True)
+
+##############################################
+
+# MENU CHOIX SKIN U2PLAY Vicqing
+def Vicqing():
+    #choix skin
+    xbmcplugin.setPluginCategory(__handle__, "[COLOR lime]Skin de [/COLOR][COLOR yellow]Vicqing[/COLOR]")
+    xbmcplugin.setContent(__handle__, 'files')
+    add_dir("[COLOR cyan]lancer :[/COLOR] Cosmic [COLOR lime](WIP Alpha)[/COLOR]", 'vicosmicetlance', artworkPath + 'SkinCosmicIcon.png')
     #add_dir("[COLOR white]Choisir:[/COLOR] Skin Arctic Horizon 2 [COLOR yellow](WIP Alpha)[/COLOR]", 'pistachePoilueAH2', artworkPath + 'icon (AH2).png')
     #add_dir("[COLOR lime]Lancer:[/COLOR] Skin Arctic Horizon 2 [COLOR yellow](Alpha)[/COLOR]", 'skinAH2pistachePoilue', artworkPath + 'icon (AH2).png')
     #add_dir("[COLOR lime]Paramètres U2P [/COLOR]", 'settings_u2p', artworkPath + 'icon (U2P).png')
@@ -953,6 +968,8 @@ def ChangeSkinsProjectAurahk2kidsetlance():
     xbmc.executebuiltin('RunScript(special://home/addons/plugin.program.Skodi/resources/testprofilesChangeSkinsProjectAurahk2kidsetlance.py)') 
 def ChangeSkinsProjectAurahk2retretlance():
     xbmc.executebuiltin('RunScript(special://home/addons/plugin.program.Skodi/resources/testprofilesChangeSkinsProjectAurahk2retretlance.py)')
+def vicosmicetlance():
+    xbmc.executebuiltin('RunScript(special://home/addons/plugin.program.Skodi/resources/skinVicosmic.py)')
 
 
 ##############################################
@@ -983,7 +1000,8 @@ def router(paramstring):
         'pistachePoilueAH2': (importSkin, 'https://github.com/UpKobox/Skodi/raw/main/SKIN/pistachePoilue/skin.arctic.horizon.2.zip'),   
         'GhantholinyAH': (importSkin, 'https://github.com/UpKobox/Skodi/raw/main/SKIN/Ghantholiny/skin.arctic.horizon.zip'),
         'GhantholinyAH2': (importSkin, 'https://github.com/UpKobox/Skodi/raw/main/SKIN/Ghantholiny/skin.artic.horizon.2.zip'),
-        'GhantholinyMimic': (importSkin, 'https://github.com/UpKobox/Skodi/raw/main/SKIN/Ghantholiny/sin.mimic.lr.zip'), 
+        'GhantholinyMimic': (importSkin, 'https://github.com/UpKobox/Skodi/raw/main/SKIN/Ghantholiny/sin.mimic.lr.zip'),
+        'vicosmic': (importSkin, 'https://github.com/UpKobox/Skodi/raw/main/SKIN/Vicing/CosmicVic.zip'), 
         #'FanKai': (importSkin, 'https://github.com/UpKobox/Skodi/raw/main/SKIN/FanKai/fankai.zip'),
         #Choiir et Lancer Skin
         'ChangeSkinAH2CoKo': (ChangeSkinAH2CoKo, ""),
@@ -1016,6 +1034,7 @@ def router(paramstring):
         'ChangeSkinsProjectAurahk2fulletlance': (ChangeSkinsProjectAurahk2fulletlance, ""),
         'ChangeSkinsProjectAurahk2kidsetlance': (ChangeSkinsProjectAurahk2kidsetlance, ""),
         'ChangeSkinsProjectAurahk2retretlance': (ChangeSkinsProjectAurahk2retretlance, ""),
+        'vicosmicetlance': (vicosmicetlance, ""),
         #skin HK2
         'hk2': (hk2, ""),
         'rayhk2': (rayhk2, ""),
@@ -1024,6 +1043,7 @@ def router(paramstring):
         'bePurple': (bePurple, ""),
         'Luc562': (Luc562, ""),
         'pistachePoilue': (pistachePoilue, ""),
+        'Vicqing': (Vicqing, ""),
         'Ghantholiny': (Ghantholiny, ""), 
         #'FanKai': (FanKai, ""), 
         #Maj autoexec HK2             
