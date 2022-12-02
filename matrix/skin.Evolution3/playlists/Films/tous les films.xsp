@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
-<smartplaylist type="movies">
-<name>tous les films</name>
-<group>none</group>   
-<order direction="ascending">title</order>
-</smartplaylist>

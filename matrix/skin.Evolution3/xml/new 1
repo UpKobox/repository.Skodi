@@ -1,7 +1,0 @@
-		<onfocus condition="!string.isequal(window(home).property(type_de_recherche),musique) + !integer.isequal(container(902).numitems,0)">setproperty(sous_type_de_recherche_musique,902,home)</onfocus>
-		<onfocus condition="!string.isequal(window(home).property(type_de_recherche),musique) + !integer.isequal(container(901).numitems,0)">setproperty(sous_type_de_recherche_musique,901,home)</onfocus>
-		<onfocus condition="!string.isequal(window(home).property(type_de_recherche),musique) + !integer.isequal(container(900).numitems,0)">setproperty(sous_type_de_recherche_musique,900,home)</onfocus>
-		<onfocus condition="!string.isequal(window(home).property(type_de_recherche),musique) + !integer.isequal(container(902).numitems,0)">setproperty(bouton_recherche_musique,403,home)</onfocus>
-		<onfocus condition="!string.isequal(window(home).property(type_de_recherche),musique) + !integer.isequal(container(901).numitems,0)">setproperty(bouton_recherche_musique,402,home)</onfocus>
-		<onfocus condition="!string.isequal(window(home).property(type_de_recherche),musique) + !integer.isequal(container(900).numitems,0)">setproperty(bouton_recherche_musique,401,home)</onfocus>
-				

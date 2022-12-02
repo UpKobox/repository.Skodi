@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<window>	
-	<onload>dialog.close(settings,true)</onload>
-<controls>
-</controls>
-</window>
