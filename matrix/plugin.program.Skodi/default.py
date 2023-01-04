@@ -389,7 +389,7 @@ def rayhk2():
     add_dir("lancer : Skin [COLOR red]RETRO[/COLOR] [COLOR orange] (pour les nostalgiques)[/COLOR]", 'ChangeSkinsProjectAurahk2retretlance', artworkPath + 'icon (Ray).png')
     #add_dir("[COLOR white]Choisir Rayflix:[/COLOR] Skin RETRO [COLOR deepskyblue](pour les nostalgiques) [/COLOR]", 'hk2retro', artworkPath + 'icon (Ray).png')
     #add_dir("[COLOR lime]Lancer: Skin Rayflix choisi [/COLOR]", 'ChangeSkinsProjectAura', artworkPath + 'icon (Ray).png')
-    add_dir("Menu installation [COLOR lime](Redemarrage necessaire)[/COLOR]", 'inst_add2', artworkPath + 'icon (Ray).png')
+    #add_dir("Menu installation [COLOR lime](Redemarrage necessaire)[/COLOR]", 'inst_add2', artworkPath + 'icon (Ray).png')
     add_dir("Mettre a jour les icones [COLOR lime](Pour les Skins de Rayflix)[/COLOR]", 'au_maj', artworkPath + 'icon (Ray).png')
     #add_dir("[COLOR lime]Paramètres U2P [/COLOR]", 'settings_u2p', artworkPath + 'icon (U2P).png')
     #add_dir("[COLOR magenta]Menu Maj HK2 et Skin Sauvegarde[/COLOR]", 'menumajhk2', artworkPath + 'icon (U2P).png')
@@ -519,7 +519,7 @@ def Ghantholiny():
     xbmcplugin.setContent(__handle__, 'files')
     add_dir("[COLOR cyan]lancer :[/COLOR] Skin Arctic Horizon 2 [COLOR lime](WIP Alpha)[/COLOR]", 'ChangeSkinarctichorizon2etlance', artworkPath + 'icon (AH2).png')
     #add_dir("[COLOR cyan]lancer :[/COLOR] Skin Arctic Horizon [COLOR lime](1)[/COLOR]", 'ChangeSkinarctichorizonetlance', artworkPath + 'skin.arctic.horizon.png')
-    add_dir("[COLOR cyan]lancer :[/COLOR] Skin Arctic Horizon [COLOR lime](1)[/COLOR]", 'GhantholinyAH', artworkPath + 'skin.arctic.horizon.png')
+    add_dir("[COLOR cyan]lancer :[/COLOR] Skin Arctic Horizon [COLOR lime](1)[/COLOR]", 'ChangeSkinarctichorizonetlance', artworkPath + 'skin.arctic.horizon.png')
     #add_dir("[COLOR lime]Lancer:[/COLOR] Skin Arctic Horizon [COLOR yellow](1)[/COLOR]", 'ChangeSkinarctichorizon', artworkPath + 'mimic.jpg')
     add_dir("[COLOR cyan]lancer :[/COLOR] Skin Mimic [COLOR yellow](lr)[/COLOR]", 'GhantholinyMimicetlance', artworkPath + 'mimic.jpg')
     #add_dir("[COLOR white]Choisir:[/COLOR] Skin Mimic [COLOR yellow](lr)[/COLOR]", 'GhantholinyMimic', artworkPath + 'mimic.jpg')
@@ -720,8 +720,8 @@ def menumajhk2():
     xbmcplugin.setPluginCategory(__handle__, "[COLOR yellow]Mise a Jour Database HK2[/COLOR]")
     xbmcplugin.setContent(__handle__, 'files')
     add_dir("[COLOR lime]- Paramètres U2P [/COLOR]", 'settings_u2p', artworkPath + 'icon (U2P).png')
-    add_dir("[COLOR lime]- M.A.J HK2 et Skin rafraichissement[/COLOR]", 'forcermaj', artworkPath + 'icon (U2P).png')
-    add_dir("[COLOR lime]- M.A.J HK2 seulement (rapide)[/COLOR]", 'actuskin', artworkPath + 'icon (U2P).png')
+    add_dir("[COLOR lime]- M.A.J HK2 et Skin rafraichissement[/COLOR]", 'actuskin', artworkPath + 'icon (U2P).png')
+    add_dir("[COLOR lime]- M.A.J HK2 seulement (rapide)[/COLOR]", 'forcermaj', artworkPath + 'icon (U2P).png')
     #add_dir("[COLOR red]En cas de soucis [/COLOR][COLOR deepskyblue]CHANGER COMPTES PREMIUM ALEATOIRE[/COLOR]", 'menuKey', artworkPath + 'icone.png')
     add_dir("[COLOR cyan]-- Menu Sauvegarde [/COLOR]", 'save_restor', artworkPath + 'save.png')
     add_dir("[COLOR magenta]--- Menu Nettoyage [/COLOR](Attention !)", 'nettoye', artworkPath + 'cleaning-thumbnail.png')
@@ -995,13 +995,13 @@ def router(paramstring):
         #key uptobox
         #'menuKey':(menuKey, ""),
         #skin
-        'hk2lite': (importSkin, 'https://github.com/prf2/pack/raw/kodi/hk2_light.zip'),
-        'hk2full': (importSkin, 'https://github.com/prf2/pack/raw/kodi/hk2_full.zip'),
-        'hk2kids': (importSkin, 'https://github.com/prf2/pack/raw/kodi/hk2_kids.zip'),
-        'hk2leger': (importSkin, 'https://github.com/prf2/pack/raw/kodi/hk2_light.zip'),
-        'hk2complet': (importSkin, 'https://github.com/prf2/pack/raw/kodi/hk2_full.zip'),
-        'hk2enfants': (importSkin, 'https://github.com/prf2/pack/raw/kodi/hk2_kids.zip'),
-        'hk2retro': (importSkin, 'https://github.com/prf2/pack/raw/kodi/hk2_retro.zip'),
+        'hk2lite': (importSkin, 'https://github.com/UpKobox/Skodi/raw/main/SKIN/RayFlix/hk2_light/hk2_light.zip'),
+        'hk2full': (importSkin, 'https://github.com/UpKobox/Skodi/raw/main/SKIN/RayFlix/hk2_full/hk2_full.zip'),
+        'hk2kids': (importSkin, 'https://github.com/UpKobox/Skodi/raw/main/SKIN/RayFlix/hk2_kids/hk2_kids.zip'),
+        'hk2leger': (importSkin, 'https://github.com/UpKobox/Skodi/raw/main/SKIN/RayFlix/hk2_light/hk2_light.zip'),
+        'hk2complet': (importSkin, 'https://github.com/UpKobox/Skodi/raw/main/SKIN/RayFlix/hk2_full/hk2_full.zip'),
+        'hk2enfants': (importSkin, 'https://github.com/UpKobox/Skodi/raw/main/SKIN/RayFlix/hk2_kids/hk2_kids.zip'),
+        'hk2retro': (importSkin, 'https://github.com/UpKobox/Skodi/raw/main/SKIN/RayFlix/hk2_retro/hk2_retro.zip'),
         'hk2AH2': (importSkin, 'https://github.com/UpKobox/Skodi/raw/main/SKIN/AH2_HK2.zip'),
         'titanbingieCoKo': (importSkin, 'https://github.com/UpKobox/Skodi/raw/main/SKIN/Skin_Titan_BINGIE_MOD.zip'),
         'SkinCoKopacetic': (importSkin, 'https://github.com/UpKobox/Skodi/raw/main/SKIN/Skin_Copacetic.zip'), 

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<addons><addon id="plugin.program.Skodi" version="0.0.9" name="[COLOR lime]Skodi[/COLOR]" provider-name="CoKodico">
+<addons><addon id="plugin.program.Skodi" version="0.1.0" name="[COLOR lime]Skodi[/COLOR]" provider-name="CoKodico">
 	<requires>
         <import addon="script.module.requests" />
 	</requires>
@@ -75,8 +75,8 @@
             <fanart>fanart.jpg</fanart>
         </assets>
     </extension>
-</addon><addon id="repository.UpKobox" name="UpKobox Alpha Repository" version="1.0" provider-name="UpKobox">
-    <extension point="xbmc.addon.repository" name="UpKobox Alpha Repository">
+</addon><addon id="repository.UpKobox" name="UpKobox U2P Stable Repository" version="1.0" provider-name="U2Pplay">
+    <extension point="xbmc.addon.repository" name="UpKobox U2P Stable Repository">
         <dir>
             <info compressed="false">https://raw.githubusercontent.com/UpKobox/repository.UpKobox/master/repo/zips/addons.xml</info>
             <checksum>https://raw.githubusercontent.com/UpKobox/repository.UpKobox/master/repo/zips/addons.xml.md5</checksum>
@@ -89,8 +89,8 @@
         </dir>
     </extension>
     <extension point="xbmc.addon.metadata">
-        <summary>UpKobox Alpha Repository</summary>
-        <description>Un référentiel pour les versions alpha </description>
+        <summary>UpKobox U2P Stable Repository</summary>
+        <description>Un référentiel pour les versions Stable U2Pplay </description>
         <disclaimer />
         <platform>all</platform>
         <assets>
