@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<settings>
+    <!-- Général -->
+    <category label="Général">
+        <setting label="Compte Uptobox" type="lsep" />
+        <setting id="numAnotepad" label="Numéro Anotepad" type="text" values="" default="AjouterVotreCode" />
+        </category>
+    
+</settings>

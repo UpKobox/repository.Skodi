@@ -34,6 +34,31 @@
         <screenshot>resources/screenshot-10.jpg</screenshot>
     </assets>		
     </extension>
+</addon><addon id="plugin.program.skinrayflix" version="2.0.8" name="Skin Rayflix" provider-name="Rayflix, Osmoze06, Noway">
+	<requires>
+        <import addon="script.module.requests" />
+	</requires>
+    <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>executable</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en">Skin Rayflix</summary>
+        <description lang="en">Packages de Skin réalisé par Rayflix sur la monture du skin "Project Aura".</description>
+        <disclaimer lang="en">En cas de bugs, propositions d'améliorations ou ajout de contenus, contactez-nous sur Discord.</disclaimer>
+        <language>en</language>
+        <platform>all</platform>
+        <forum />
+        <website />
+        <source />
+    <news>
+VERSION 1.0.1 - 28/10/2021
+- Création initiale
+    </news>		
+        <assets>
+            <icon>icon.png</icon>
+            <fanart>fanart.jpg</fanart>
+        </assets>		
+    </extension>
 </addon><addon id="repository.RayRepo" name="RayFlix Repo" version="1.1" provider-name="Rayflix">
     <extension point="xbmc.addon.repository" name="RayFlix Repo">
         <dir>
