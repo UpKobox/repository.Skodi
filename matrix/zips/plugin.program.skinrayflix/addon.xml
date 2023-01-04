@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="plugin.program.skinrayflix" version="2.0.8a" name="Skin Rayflix" provider-name="Rayflix, Osmoze06, Noway">
+<addon id="plugin.program.skinrayflix" version="2.0.9" name="Skin Rayflix" provider-name="Rayflix, Osmoze06, Noway">
 	<requires>
         <import addon="script.module.requests" />
 	</requires>
