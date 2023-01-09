@@ -59,7 +59,7 @@ VERSION 1.0.1 - 28/10/2021
             <fanart>fanart.jpg</fanart>
         </assets>		
     </extension>
-</addon><addon id="plugin.video.sendtokodiU2P" name="U2Pplay" version="0.9.9~betaSkodi" provider-name="noway">
+</addon><addon id="plugin.video.sendtokodiU2P" name="U2Pplay" version="0.9.9~skodi" provider-name="noway">
   <requires>
     <trycatch>
       <try>
