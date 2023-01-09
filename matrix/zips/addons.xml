@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<addons><addon id="plugin.program.Skodi" version="0.1.0" name="[COLOR lime]Skodi[/COLOR]" provider-name="CoKodico">
+<addons><addon id="plugin.program.Skodi" version="0.1.0" name="[COLOR limegreen]Skodi[/COLOR]" provider-name="CoKodico">
 	<requires>
         <import addon="script.module.requests" />
 	</requires>
@@ -59,6 +59,74 @@ VERSION 1.0.1 - 28/10/2021
             <fanart>fanart.jpg</fanart>
         </assets>		
     </extension>
+</addon><addon id="plugin.video.sendtokodiU2P" name="U2Pplay" version="0.9.9~betaSkodi" provider-name="noway">
+  <requires>
+    <trycatch>
+      <try>
+          <import addon="xbmc.python" version="3.0.0" />
+      </try>
+      <catch>
+          <import addon="xbmc.python" version="2.25.0" />
+      </catch>
+        </trycatch>
+    <import addon="script.module.requests" version="2.12.4" />
+    <import addon="script.module.pyxbmct" />
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="service.py">
+  <provides>video</provides>
+	</extension>
+  <extension point="kodi.context.item">
+        <menu id="kodi.core.main">
+            <item library="menucontext/play.py">
+                <label>[COLOR yellow]Lecture[/COLOR]</label>
+                <visible>String.IsEqual(ListItem.Property(widgetmovie),true)</visible>
+            </item>
+            <item library="menucontext/vus.py">
+                <label>[COLOR yellow]Gestions  Vus/Non-Vus[/COLOR]</label>
+                <visible>String.IsEqual(ListItem.Property(widgetEpisodes),true)</visible>
+            </item>
+            <item library="menucontext/ba.py">
+                <label>[COLOR yellow]Bande Annonce[/COLOR]</label>
+                <visible>String.IsEqual(ListItem.Property(widget),true)</visible>
+            </item>
+            <item library="menucontext/gestion.py">
+                <label>[COLOR yellow]Gestion[/COLOR]</label>
+                <visible>String.IsEqual(ListItem.Property(widget),true)</visible>
+            </item>
+            <item library="menucontext/search.py">
+                <label>[COLOR yellow]Recherche[/COLOR]</label>
+                <visible>String.IsEqual(ListItem.Property(widget),true)</visible>
+            </item>
+            <item library="menucontext/profil.py">
+                <label>[COLOR yellow]Choix Profil[/COLOR]</label>
+                <visible>String.IsEqual(ListItem.Property(widget),true)</visible>
+            </item>
+            <item library="menucontext/rls.py">
+                <label>[COLOR yellow]Reload Skin[/COLOR]</label>
+                <visible>String.IsEqual(ListItem.Property(widget),true)</visible>
+            </item>
+             <item library="menucontext/refresh.py">
+                <label>[COLOR yellow]Refresh[/COLOR]</label>
+                <visible>String.IsEqual(ListItem.Property(widget),true)</visible>
+            </item>
+        </menu>
+    </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">U2Pplay</summary>
+    <description lang="en">U2Pplay permet de voir Films et series streamer via Kodi. Necessite un compte premium Uptobox ou Alldebrid</description>
+    <disclaimer lang="en" />
+    <platform>all</platform>
+    <license>MIT License</license>
+    <website />
+    <email />
+    <source />
+    <assets>
+      <icon>icon.png</icon>
+      <fanart>fanart.jpg</fanart>
+	  <screenshot>screenshot-01.jpg</screenshot>
+      <screenshot>screenshot-02.jpg</screenshot>
+    </assets>
+  </extension>
 </addon><addon id="repository.RayRepo" name="RayFlix Repo" version="1.1" provider-name="Rayflix">
     <extension point="xbmc.addon.repository" name="RayFlix Repo">
         <dir>
@@ -275,6 +343,31 @@ VERSION 1.0.1 - 28/10/2021
 			<fanart>fanart.jpg</fanart>
 		</assets>
 	</extension>
+</addon><addon id="repository.openwizard" name="[COLOR limegreen][B]Open[/B][/COLOR]Wizard Repository" version="2.0" provider-name="drinfernoo">
+    <extension point="xbmc.addon.repository" name="[COLOR limegreen][B]Open[/B][/COLOR]Wizard Repository">
+        <dir minversion="18.0" maxversion="18.9.0">
+            <info compressed="false">https://raw.githubusercontent.com/a4k-openproject/repository.openwizard/master/leia/zips/addons.xml</info>
+            <checksum>https://raw.githubusercontent.com/a4k-openproject/repository.openwizard/master/leia/zips/addons.xml.md5</checksum>
+            <datadir zip="true">https://raw.githubusercontent.com/a4k-openproject/repository.openwizard/master/leia/zips/</datadir>
+        </dir>
+        <dir minversion="18.9.0">
+            <info compressed="false">https://raw.githubusercontent.com/a4k-openproject/repository.openwizard/master/matrix/zips/addons.xml</info>
+            <checksum>https://raw.githubusercontent.com/a4k-openproject/repository.openwizard/master/matrix/zips/addons.xml.md5</checksum>
+            <datadir zip="true">https://raw.githubusercontent.com/a4k-openproject/repository.openwizard/master/matrix/zips/</datadir>
+        </dir>
+    </extension>
+    
+    <extension point="xbmc.addon.metadata">
+        <summary>[COLOR limegreen][B]Open[/B][/COLOR]Wizard</summary>
+        <description>The official home of [COLOR limegreen][B]Open[/B][/COLOR]Wizard.</description>
+        <disclaimer />
+        <platform>all</platform>
+        <assets>
+            <icon>icon.png</icon>
+            <fanart>fanart.jpg</fanart>
+        </assets>
+        <source>https://www.github.com/a4k-openproject/repository.openwizard/</source>
+    </extension>
 </addon><addon id="repository.prototype" name="ProtoType Repo" version="1.0" provider-name="ProtoType">
     <extension point="xbmc.addon.repository" name="ProtoType Repository">
         <dir>
