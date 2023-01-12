@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="plugin.program.Skodi" version="0.1.0" name="[COLOR limegreen]Skodi[/COLOR]" provider-name="CoKodico">
+<addon id="plugin.program.Skodi" version="0.1.2" name="[COLOR limegreen]Skodi[/COLOR]" provider-name="CoKodiCo">
 	<requires>
         <import addon="script.module.requests" />
 	</requires>
@@ -7,8 +7,9 @@
         <provides>executable</provides>
     </extension>
     <extension point="xbmc.addon.metadata">
-        <summary lang="en">[COLOR aqua]Skin kodi[/COLOR]</summary>
-        <description lang="en">[COLOR orange]Packages de Skin kodi pour U2Pplay...[/COLOR]</description>
+        <summary lang="en">[COLOR green]Skodi[/COLOR]</summary>
+        <description lang="en">[COLOR orange]Packages de Skin kodi pour avoir des skins configurés avec U2Pplay, TMDB Helper, Trakt, AutoWidget.
+Mais aussi l’installation de Repository des skins, de U2Play, Sauvegarde skin et Kodi et nettoyage…...[/COLOR]                                                                                                                                                           Version="0.1.2"= Ajout Menu Bedo et son skin Titan Bingie, Menu Bazogueur Tobal et son skin Arctic: Zephyr - Reloaded</description>
         <disclaimer lang="en">[COLOR red]En cas de bugs, propositions d'améliorations ou ajout de contenus, contactez-nous sur Discord.[/COLOR]</disclaimer>
         <language>fr</language>
         <platform>all</platform>

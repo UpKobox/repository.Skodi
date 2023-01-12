@@ -19,6 +19,7 @@
         <setting id="ChoixSkinRayFlixretro" label="RayFlixSkin Project Aura [COLOR yellow](Retro)[/COLOR]" type="action" action="RunPlugin(plugin://plugin.program.Skodi/?action=ChangeSkinsProjectAurahk2retretlance)"/>
         <setting label="Choisir et Lancer [COLOR blue]Skin Titan Bingie de: [/COLOR]" type="lsep" />
         <setting id="ChoixSkinbingieCoKodi" label="Skin Titan Bingie [COLOR yellow](CoKodico)[/COLOR]" type="action" action="RunPlugin(plugin://plugin.program.Skodi/?action=ChangeSkinbingieCoKoetlance)"/>
+        <setting id="ChoixSkinbingiebedo" label="Skin Titan Bingie [COLOR yellow](Bedo)[/COLOR]" type="action" action="RunPlugin(plugin://plugin.program.Skodi/?action=BedoLancetitan)"/>
         <setting label="Choisir et Lancer [COLOR blue]Skin Copacetic de: [/COLOR]" type="lsep" />
         <setting id="ChoixSkinCoKopacetiCoKodi" label="Skin Copacetic [COLOR yellow](CoKodico)[/COLOR]" type="action" action="RunPlugin(plugin://plugin.program.Skodi/?action=ChangeSkincopacetiCoKoetlance)"/>
         <setting label="Choisir et Lancer [COLOR blue]Skin Aeon MQ8 de: [/COLOR]" type="lsep" />
@@ -30,6 +31,8 @@
         <setting id="ChoixSkincosmicLuc" label="Skin Cosmic [COLOR yellow](Luc562)[/COLOR]" type="action" action="RunPlugin(plugin://plugin.program.Skodi/?action=vicosmicetlanceLuc)"/>
         <setting label="Choisir et Lancer [COLOR blue]Skin Arctic Horizon 1 de: [/COLOR]" type="lsep" />
         <setting id="ChoixSkinLucarctichorizon1" label="Skin Arctic Horizon 1 [COLOR yellow](Luc562)[/COLOR]" type="action" action="RunPlugin(plugin://plugin.program.Skodi/?action=horizonetlance)"/>
+        <setting label="Choisir et Lancer [COLOR blue]Skin Arctic Zephyr (Reloaded) de: [/COLOR]" type="lsep" />
+        <setting id="ChoixSkinbazoArcticZ" label="Skin Arctic Zephyr  [COLOR yellow](Bazogueur tobal)[/COLOR]" type="action" action="RunPlugin(plugin://plugin.program.Skodi/?action=horizonetlance)"/>
     </category>
 
     <category label="[COLOR blue]Import et Maj Database HK2[/COLOR]">
